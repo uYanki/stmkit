@@ -1,70 +1,78 @@
 /* USER CODE BEGIN Header */
 /**
-  ******************************************************************************
-  * @file   fatfs.c
-  * @brief  Code for fatfs applications
-  ******************************************************************************
-  * @attention
-  *
-  * Copyright (c) 2025 STMicroelectronics.
-  * All rights reserved.
-  *
-  * This software is licensed under terms that can be found in the LICENSE file
-  * in the root directory of this software component.
-  * If no LICENSE file comes with this software, it is provided AS-IS.
-  *
-  ******************************************************************************
-  */
+ ******************************************************************************
+ * @file   fatfs.c
+ * @brief  Code for fatfs applications
+ ******************************************************************************
+ * @attention
+ *
+ * Copyright (c) 2025 STMicroelectronics.
+ * All rights reserved.
+ *
+ * This software is licensed under terms that can be found in the LICENSE file
+ * in the root directory of this software component.
+ * If no LICENSE file comes with this software, it is provided AS-IS.
+ *
+ ******************************************************************************
+ */
 /* USER CODE END Header */
 #include "fatfs.h"
 
-uint8_t retSD;    /* Return value for SD */
-char SDPath[4];   /* SD logical drive path */
-FATFS SDFatFS;    /* File system object for SD logical drive */
-FIL SDFile;       /* File object for SD */
-uint8_t retUSER;    /* Return value for USER */
-char USERPath[4];   /* USER logical drive path */
-FATFS USERFatFS;    /* File system object for USER logical drive */
-FIL USERFile;       /* File object for USER */
+uint8_t retSD;       /* Return value for SD */
+char    SDPath[4];   /* SD logical drive path */
+FATFS   SDFatFS;     /* File system object for SD logical drive */
+FIL     SDFile;      /* File object for SD */
+uint8_t retUSER;     /* Return value for USER */
+char    USERPath[4]; /* USER logical drive path */
+FATFS   USERFatFS;   /* File system object for USER logical drive */
+FIL     USERFile;    /* File object for USER */
 
 /* USER CODE BEGIN Variables */
 
-#include "rtc.h"
+#include "logger.h"
+
+#define LOG_LOCAL_TAG   "fafts"
+#define LOG_LOCAL_LEVEL LOG_LEVEL_VERBOSE
+
+#ifdef HAL_RTC_MODULE_ENABLED
+extern RTC_HandleTypeDef hrtc;
+#endif
 
 BYTE work[_MAX_SS] = {0};
+
 /* USER CODE END Variables */
 
 void MX_FATFS_Init(void)
 {
-  /*## FatFS: Link the SD driver ###########################*/
-  retSD = FATFS_LinkDriver(&SD_Driver, SDPath);
-  /*## FatFS: Link the USER driver ###########################*/
-  retUSER = FATFS_LinkDriver(&USER_Driver, USERPath);
+    /*## FatFS: Link the SD driver ###########################*/
+    retSD   = FATFS_LinkDriver(&SD_Driver, SDPath);
+    /*## FatFS: Link the USER driver ###########################*/
+    retUSER = FATFS_LinkDriver(&USER_Driver, USERPath);
 
-  /* USER CODE BEGIN Init */
-  /* additional user code for init */
-    SPI_Master_Init(&spi, 500000, SPI_DUTYCYCLE_50_50, W25QXX_SPI_TIMING | SPI_FLAG_SOFT_CS);
+    /* USER CODE BEGIN Init */
+    /* additional user code for init */
 
-    if (W25Qxx_Init(&w25qxx) == ERR_NONE)
+    // if (W25Qxx_Init(&w25qxx) == ERR_NONE)
     {
-#if 0  // ¥•∑¢∏Ò ΩªØœµÕ≥
+#if 0  // Ëß¶ÂèëÊ†ºÂºèÂåñÁ≥ªÁªü
         W25Qxx_EraseSector(&w25qxx, 0);
         DelayBlockMs(1000);
 #endif
     }
 
     LOGD("path %s", USERPath);
-  /* USER CODE END Init */
+    /* USER CODE END Init */
 }
 
 /**
-  * @brief  Gets Time from RTC
-  * @param  None
-  * @retval Time in DWORD
-  */
+ * @brief  Gets Time from RTC
+ * @param  None
+ * @retval Time in DWORD
+ */
 DWORD get_fattime(void)
 {
-  /* USER CODE BEGIN get_fattime */
+    /* USER CODE BEGIN get_fattime */
+
 #ifdef HAL_RTC_MODULE_ENABLED
 
     RTC_TimeTypeDef sTime;
@@ -85,8 +93,10 @@ DWORD get_fattime(void)
     }
 
 #endif
-  return 0;
-  /* USER CODE END get_fattime */
+
+    return 0;
+
+    /* USER CODE END get_fattime */
 }
 
 /* USER CODE BEGIN Application */
