@@ -18,10 +18,10 @@
 /* USER CODE END Header */
 #include "fatfs.h"
 
-uint8_t retUSER;     /* Return value for USER */
-char    USERPath[4]; /* USER logical drive path */
-FATFS   USERFatFS;   /* File system object for USER logical drive */
-FIL     USERFile;    /* File object for USER */
+uint8_t retUSER;    /* Return value for USER */
+char USERPath[4];   /* USER logical drive path */
+FATFS USERFatFS;    /* File system object for USER logical drive */
+FIL USERFile;       /* File object for USER */
 
 /* USER CODE BEGIN Variables */
 
@@ -40,32 +40,32 @@ BYTE work[_MAX_SS] = {0};
 
 void MX_FATFS_Init(void)
 {
-    /*## FatFS: Link the USER driver ###########################*/
-    retUSER = FATFS_LinkDriver(&USER_Driver, USERPath);
+  /*## FatFS: Link the USER driver ###########################*/
+  retUSER = FATFS_LinkDriver(&USER_Driver, USERPath);
 
-    /* USER CODE BEGIN Init */
+  /* USER CODE BEGIN Init */
     /* additional user code for init */
 
     // if (W25Qxx_Init(&w25qxx) == ERR_NONE)
     {
-#if 0  // 触发格式化
+#if 0  // 触发格式�?
         W25Qxx_EraseSector(&w25qxx, 0);
         DelayBlockMs(1000);
 #endif
     }
 
     LOGD("path %s", USERPath);
-    /* USER CODE END Init */
+  /* USER CODE END Init */
 }
 
 /**
- * @brief  Gets Time from RTC
- * @param  None
- * @retval Time in DWORD
- */
+  * @brief  Gets Time from RTC
+  * @param  None
+  * @retval Time in DWORD
+  */
 DWORD get_fattime(void)
 {
-    /* USER CODE BEGIN get_fattime */
+  /* USER CODE BEGIN get_fattime */
 
 #ifdef HAL_RTC_MODULE_ENABLED
 
@@ -90,7 +90,7 @@ DWORD get_fattime(void)
 
     return 0;
 
-    /* USER CODE END get_fattime */
+  /* USER CODE END get_fattime */
 }
 
 /* USER CODE BEGIN Application */

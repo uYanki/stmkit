@@ -105,15 +105,10 @@ int main(void)
     MX_USART1_UART_Init();
     MX_RTC_Init();
     MX_QUADSPI_Init();
-    // MX_SDMMC1_SD_Init();
     MX_FATFS_Init();
     MX_USB_DEVICE_Init();
     /* USER CODE BEGIN 2 */
-    // 如果跳转至HardFault,请调大栈！！
-    // 由于Fafts对最小空间有要求，使用片上SRAM过小时会导致初始化失败，可在电脑上进行格式化
     InitFileSys();
-
-    // AC6: 优化等级需调整为 O0
 
     /* USER CODE END 2 */
 
