@@ -121,6 +121,9 @@ uint8_t * USBD_FS_ProductStrDescriptor(USBD_SpeedTypeDef speed, uint16_t *length
 uint8_t * USBD_FS_SerialStrDescriptor(USBD_SpeedTypeDef speed, uint16_t *length);
 uint8_t * USBD_FS_ConfigStrDescriptor(USBD_SpeedTypeDef speed, uint16_t *length);
 uint8_t * USBD_FS_InterfaceStrDescriptor(USBD_SpeedTypeDef speed, uint16_t *length);
+#if (USBD_LPM_ENABLED == 1)
+uint8_t * USBD_FS_USR_BOSDescriptor(USBD_SpeedTypeDef speed, uint16_t *length);
+#endif /* (USBD_LPM_ENABLED == 1) */
 
 /**
   * @}
@@ -140,6 +143,9 @@ USBD_DescriptorsTypeDef FS_Desc =
 , USBD_FS_SerialStrDescriptor
 , USBD_FS_ConfigStrDescriptor
 , USBD_FS_InterfaceStrDescriptor
+#if (USBD_LPM_ENABLED == 1)
+, USBD_FS_USR_BOSDescriptor
+#endif /* (USBD_LPM_ENABLED == 1) */
 };
 
 #if defined ( __ICCARM__ ) /* IAR Compiler */
@@ -150,7 +156,13 @@ __ALIGN_BEGIN uint8_t USBD_FS_DeviceDesc[USB_LEN_DEV_DESC] __ALIGN_END =
 {
   0x12,                       /*bLength */
   USB_DESC_TYPE_DEVICE,       /*bDescriptorType*/
+#if (USBD_LPM_ENABLED == 1)
+  0x01,                       /*bcdUSB */ /* changed to USB version 2.01
+                                             in order to support LPM L1 suspend
+                                             resume test of USBCV3.0*/
+#else
   0x00,                       /*bcdUSB */
+#endif /* (USBD_LPM_ENABLED == 1) */
   0x02,
   0x00,                       /*bDeviceClass*/
   0x00,                       /*bDeviceSubClass*/
@@ -353,6 +365,20 @@ uint8_t * USBD_FS_InterfaceStrDescriptor(USBD_SpeedTypeDef speed, uint16_t *leng
   return USBD_StrDesc;
 }
 
+#if (USBD_LPM_ENABLED == 1)
+/**
+  * @brief  Return the BOS descriptor
+  * @param  speed : Current device speed
+  * @param  length : Pointer to data length variable
+  * @retval Pointer to descriptor buffer
+  */
+uint8_t * USBD_FS_USR_BOSDescriptor(USBD_SpeedTypeDef speed, uint16_t *length)
+{
+  UNUSED(speed);
+  *length = sizeof(USBD_FS_BOSDesc);
+  return (uint8_t*)USBD_FS_BOSDesc;
+}
+#endif /* (USBD_LPM_ENABLED == 1) */
 /**
   * @brief  Create the serial number string descriptor
   * @param  None

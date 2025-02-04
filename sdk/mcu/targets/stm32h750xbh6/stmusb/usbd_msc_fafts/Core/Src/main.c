@@ -20,10 +20,10 @@
 #include "main.h"
 #include "fatfs.h"
 #include "usb_device.h"
-#include "logger.h"
+
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-
+#include "printf.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -59,17 +59,16 @@ UART_HandleTypeDef huart1;
 void        SystemClock_Config(void);
 static void MPU_Config(void);
 static void MX_GPIO_Init(void);
+static void MX_USART1_UART_Init(void);
+static void MX_RTC_Init(void);
 static void MX_QUADSPI_Init(void);
 static void MX_SDMMC1_SD_Init(void);
-static void MX_RTC_Init(void);
-static void MX_USART1_UART_Init(void);
 /* USER CODE BEGIN PFP */
 
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
-
 /* USER CODE END 0 */
 
 /**
@@ -103,17 +102,18 @@ int main(void)
 
     /* Initialize all configured peripherals */
     MX_GPIO_Init();
-    MX_RTC_Init();
     MX_USART1_UART_Init();
-    // MX_QUADSPI_Init();
-    MX_SDMMC1_SD_Init();
+    MX_RTC_Init();
+    MX_QUADSPI_Init();
+    // MX_SDMMC1_SD_Init();
     MX_FATFS_Init();
     MX_USB_DEVICE_Init();
-
     /* USER CODE BEGIN 2 */
     // 如果跳转至HardFault,请调大栈！！
     // 由于Fafts对最小空间有要求，使用片上SRAM过小时会导致初始化失败，可在电脑上进行格式化
     InitFileSys();
+
+    // AC6: 优化等级需调整为 O0
 
     /* USER CODE END 2 */
 
@@ -278,6 +278,10 @@ static void MX_SDMMC1_SD_Init(void)
     hsd1.Init.BusWide             = SDMMC_BUS_WIDE_4B;
     hsd1.Init.HardwareFlowControl = SDMMC_HARDWARE_FLOW_CONTROL_DISABLE;
     hsd1.Init.ClockDiv            = 0;
+    if (HAL_SD_Init(&hsd1) != HAL_OK)
+    {
+        Error_Handler();
+    }
     /* USER CODE BEGIN SDMMC1_Init 2 */
 
     /* USER CODE END SDMMC1_Init 2 */

@@ -18,10 +18,6 @@
 /* USER CODE END Header */
 #include "fatfs.h"
 
-uint8_t retSD;       /* Return value for SD */
-char    SDPath[4];   /* SD logical drive path */
-FATFS   SDFatFS;     /* File system object for SD logical drive */
-FIL     SDFile;      /* File object for SD */
 uint8_t retUSER;     /* Return value for USER */
 char    USERPath[4]; /* USER logical drive path */
 FATFS   USERFatFS;   /* File system object for USER logical drive */
@@ -44,8 +40,6 @@ BYTE work[_MAX_SS] = {0};
 
 void MX_FATFS_Init(void)
 {
-    /*## FatFS: Link the SD driver ###########################*/
-    retSD   = FATFS_LinkDriver(&SD_Driver, SDPath);
     /*## FatFS: Link the USER driver ###########################*/
     retUSER = FATFS_LinkDriver(&USER_Driver, USERPath);
 
@@ -54,7 +48,7 @@ void MX_FATFS_Init(void)
 
     // if (W25Qxx_Init(&w25qxx) == ERR_NONE)
     {
-#if 0  // 触发格式化系统
+#if 0  // 触发格式化
         W25Qxx_EraseSector(&w25qxx, 0);
         DelayBlockMs(1000);
 #endif
@@ -166,20 +160,26 @@ FRESULT InitFileSys(void)
 
     res = f_mount(&USERFatFS, USERPath, 1);
 
-#if 0
     if (res == FR_NO_FILESYSTEM)
-#else
-    if (res != FR_OK)
-#endif
     {
-        LOGD("Init FileSystem");
+        LOGD("init fs");
 
         // No Disk file system,format disk !
         res = f_mkfs(USERPath, FM_FAT, 4096, work, sizeof work);
-        if (res == FR_OK)
+
+        if (res != FR_OK)
         {
-            f_mount(NULL, USERPath, 1);  // unmount
-            res = f_mount(&USERFatFS, USERPath, 1);
+            LOGW("fail to mkfs, errcode %d", res);
+            goto __exit;
+        }
+
+        f_mount(NULL, USERPath, 1);  // unmount
+        res = f_mount(&USERFatFS, USERPath, 1);
+
+        if (res != FR_OK)
+        {
+            LOGW("fail to mount, errcode %d", res);
+            goto __exit;
         }
     }
 
@@ -190,11 +190,8 @@ FRESULT InitFileSys(void)
             return ReadFile();
         }
     }
-    else
-    {
-        LOGW("fail to mount, errcode %d", res);
-    }
 
+__exit:
     return res;
 }
 

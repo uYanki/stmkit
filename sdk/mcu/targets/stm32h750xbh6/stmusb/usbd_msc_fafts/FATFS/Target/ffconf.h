@@ -24,7 +24,6 @@
 /-----------------------------------------------------------------------------*/
 #include "main.h"
 #include "stm32h7xx_hal.h"
-#include "bsp_driver_sd.h"
 
 /*-----------------------------------------------------------------------------/
 / Function Configurations
@@ -239,7 +238,7 @@
 /      lock control is independent of re-entrancy. */
 
 #define _FS_REENTRANT    0  /* 0:Disable or 1:Enable */
-#define _FS_TIMEOUT      2000 /* Timeout period in unit of time ticks */
+#define _FS_TIMEOUT      1000 /* Timeout period in unit of time ticks */
 #define _SYNC_t          NULL
 /* The option _FS_REENTRANT switches the re-entrancy (thread safe) of the FatFs
 /  module itself. Note that regardless of this option, file access to different
