@@ -190,7 +190,7 @@
             <hadIRAM2>1</hadIRAM2>
             <hadIROM2>0</hadIROM2>
             <StupSel>8</StupSel>
-            <useUlib>0</useUlib>
+            <useUlib>1</useUlib>
             <EndSel>0</EndSel>
             <uLtcg>0</uLtcg>
             <nSecure>0</nSecure>
@@ -340,7 +340,7 @@
               <MiscControls></MiscControls>
               <Define>USE_HAL_DRIVER,STM32H750xx</Define>
               <Undefine></Undefine>
-              <IncludePath>../USB_DEVICE/App;../USB_DEVICE/Target;../Core/Inc;F:/app-usb/sdk/mcu/libcpu/STM32Cube_FW_H7_V1.11.0/Drivers/STM32H7xx_HAL_Driver/Inc;F:/app-usb/sdk/mcu/libcpu/STM32Cube_FW_H7_V1.11.0/Drivers/STM32H7xx_HAL_Driver/Inc/Legacy;F:/app-usb/sdk/mcu/libcpu/STM32Cube_FW_H7_V1.11.0/Middlewares/ST/STM32_USB_Device_Library/Core/Inc;F:/app-usb/sdk/mcu/libcpu/STM32Cube_FW_H7_V1.11.0/Drivers/CMSIS/Device/ST/STM32H7xx/Include;F:/app-usb/sdk/mcu/libcpu/STM32Cube_FW_H7_V1.11.0/Drivers/CMSIS/Include;F:/app-usb/sdk/mcu/libcpu/STM32Cube_FW_H7_V1.11.0/Middlewares/ST/STM32_USB_Device_Library/Class/MSC/Inc;../FATFS/Target;../FATFS/App;F:/app-usb/sdk/mcu/libcpu/STM32Cube_FW_H7_V1.11.0/Middlewares/Third_Party/FatFs/src;../../../../../components;../../../../../include</IncludePath>
+              <IncludePath>../USB_DEVICE/App;../USB_DEVICE/Target;../Core/Inc;F:/app-usb/sdk/mcu/libcpu/STM32Cube_FW_H7_V1.11.0/Drivers/STM32H7xx_HAL_Driver/Inc;F:/app-usb/sdk/mcu/libcpu/STM32Cube_FW_H7_V1.11.0/Drivers/STM32H7xx_HAL_Driver/Inc/Legacy;F:/app-usb/sdk/mcu/libcpu/STM32Cube_FW_H7_V1.11.0/Middlewares/ST/STM32_USB_Device_Library/Core/Inc;F:/app-usb/sdk/mcu/libcpu/STM32Cube_FW_H7_V1.11.0/Drivers/CMSIS/Device/ST/STM32H7xx/Include;F:/app-usb/sdk/mcu/libcpu/STM32Cube_FW_H7_V1.11.0/Drivers/CMSIS/Include;F:/app-usb/sdk/mcu/libcpu/STM32Cube_FW_H7_V1.11.0/Middlewares/ST/STM32_USB_Device_Library/Class/MSC/Inc;../FATFS/Target;../FATFS/App;F:/app-usb/sdk/mcu/libcpu/STM32Cube_FW_H7_V1.11.0/Middlewares/Third_Party/FatFs/src;../../../../../components;../../../../../include;../Core/qspi</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -394,6 +394,11 @@
         <Group>
           <GroupName>Application/User/Core</GroupName>
           <Files>
+            <File>
+              <FileName>qspi_exflash.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Core\Src\qspi_exflash.c</FilePath>
+            </File>
             <File>
               <FileName>main.c</FileName>
               <FileType>1</FileType>
