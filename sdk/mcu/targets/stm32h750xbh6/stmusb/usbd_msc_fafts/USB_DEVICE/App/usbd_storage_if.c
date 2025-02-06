@@ -62,14 +62,15 @@
  */
 
 #define STORAGE_LUN_NBR 2
-#define STORAGE_BLK_NBR 0x10000
-#define STORAGE_BLK_SIZ 0x200
+// #define STORAGE_BLK_NBR 0x10000
+// #define STORAGE_BLK_SIZ 0x200
 
 /* USER CODE BEGIN PRIVATE_DEFINES */
 
-#define STORAGE_SRAM_ID 0
+#define STORAGE_SRAM_ID  0
+#define STORAGE_SRAM2_ID 1
 // #define STORAGE_CPU_FLASH 0
-#define STORAGE_QSPI_EXFLASH 1
+// #define STORAGE_QSPI_EXFLASH 0
 // #define STORAGE_FSMC_SDRAM 0
 
 #ifdef STORAGE_QSPI_EXFLASH
@@ -82,6 +83,12 @@
 #define SRAM_BLK_SIZ 512  // unit: byte
 #define SRAM_BLK_NBR 512  // at least 512 sectors
 static uint8_t m_au8SramBuff[SRAM_BLK_SIZ * SRAM_BLK_NBR] = {0};
+#endif
+
+#ifdef STORAGE_SRAM2_ID
+#define SRAM_BLK_SIZ 512  // unit: byte
+#define SRAM_BLK_NBR 512  // at least 512 sectors
+static uint8_t m_au8SramBuff2[SRAM_BLK_SIZ * SRAM_BLK_NBR] = {0};
 #endif
 
 /* USER CODE END PRIVATE_DEFINES */
@@ -111,9 +118,21 @@ static uint8_t m_au8SramBuff[SRAM_BLK_SIZ * SRAM_BLK_NBR] = {0};
 /* USER CODE BEGIN INQUIRY_DATA_FS */
 /** USB Mass storage Standard Inquiry Data. */
 const int8_t STORAGE_Inquirydata_FS[] = {
-    /* 36 */
-
     /* LUN 0 */
+    0x00,
+    0x80,
+    0x02,
+    0x02,
+    (STANDARD_INQUIRY_DATA_LEN - 5),
+    0x00,
+    0x00,
+    0x00,
+    'S', 'T', 'M', ' ', ' ', ' ', ' ', ' ', /* Manufacturer : 8 bytes */
+    'P', 'r', 'o', 'd', 'u', 'c', 't', ' ', /* Product      : 16 Bytes */
+    ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ',
+    '0', '.', '0', '1', /* Version      : 4 Bytes */
+
+    /* LUN 1 */
     0x00,
     0x80,
     0x02,
@@ -221,6 +240,13 @@ int8_t STORAGE_GetCapacity_FS(uint8_t lun, uint32_t* block_num, uint16_t* block_
             return USBD_OK;
         }
 
+        case STORAGE_SRAM2_ID:
+        {
+            *block_num  = SRAM_BLK_NBR;
+            *block_size = SRAM_BLK_SIZ;
+            return USBD_OK;
+        }
+
 #endif
 
 #ifdef STORAGE_QSPI_EXFLASH
@@ -293,6 +319,13 @@ int8_t STORAGE_Read_FS(uint8_t lun, uint8_t* buf, uint32_t blk_addr, uint16_t bl
             return USBD_OK;
         }
 
+        case STORAGE_SRAM2_ID:
+        {
+            memcpy(buf, m_au8SramBuff2 + blk_addr * SRAM_BLK_SIZ, blk_len * SRAM_BLK_SIZ);
+
+            return USBD_OK;
+        }
+
 #endif
 
 #ifdef STORAGE_QSPI_EXFLASH
@@ -335,12 +368,20 @@ int8_t STORAGE_Write_FS(uint8_t lun, uint8_t* buf, uint32_t blk_addr, uint16_t b
             return USBD_OK;
         }
 
+        case STORAGE_SRAM2_ID:
+        {
+            memcpy(m_au8SramBuff2 + blk_addr * SRAM_BLK_SIZ, buf, blk_len * SRAM_BLK_SIZ);
+
+            return USBD_OK;
+        }
+
 #endif
 
 #ifdef STORAGE_QSPI_EXFLASH
 
         case STORAGE_QSPI_EXFLASH:
         {
+            W25Qx_QSPI_EraseSector(blk_addr * QSPI_FLASH_BLK_SIZ);
             return W25Qx_QSPI_WriteBuffer(blk_addr * QSPI_FLASH_BLK_SIZ, blk_len * QSPI_FLASH_BLK_SIZ, buf) == true ? USBD_OK : USBD_FAIL;
         }
 

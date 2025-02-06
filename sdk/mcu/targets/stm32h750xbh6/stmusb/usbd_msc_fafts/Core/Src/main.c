@@ -116,6 +116,7 @@ int main(void)
     MX_USB_DEVICE_Init();
     /* USER CODE BEGIN 2 */
 
+    // W25Qx_QSPI_Reset();
     InitFileSys();
 
 #ifdef HAL_QSPI_MODULE_ENABLED

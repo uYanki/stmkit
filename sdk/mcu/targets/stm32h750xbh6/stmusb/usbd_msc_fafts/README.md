@@ -119,7 +119,7 @@ sCommand.DataMode         = QSPI_DATA_4_LINES;
 
 #### W25Qxx 内存映射模式
 
-1. 需关闭 MPU 才能正常读写，并且开启 Cache 能显著提升读写速度。
+1. 需关闭 MPU 才能正常读，并且开启 Cache 能显著提升读写速度。（该模式下不可写）
 
 ![image-20250206004044563](.assets/README/image-20250206004044563.png)
 
@@ -133,3 +133,14 @@ QSPI Flash 映射到内存地址是 0x9000 0000，芯片内部flash地址是 0x0
 
 > 注：QSPI FLASH 寻址空间不能大于256MB，但是QSPI FLASH芯片可以大于256MB。
 
+
+
+
+
+### MSC
+
+#### 双盘符
+
+![image-20250206015245239](.assets/README/image-20250206015245239.png)
+
+![image-20250206015406146](.assets/README/image-20250206015406146.png)
