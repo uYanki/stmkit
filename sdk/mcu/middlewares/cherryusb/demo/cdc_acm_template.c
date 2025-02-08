@@ -270,10 +270,10 @@ void usbd_cdc_acm_set_dtr(uint8_t busid, uint8_t intf, bool dtr)
 
 void cdc_acm_data_send_with_dtr_test(uint8_t busid)
 {
-   if (dtr_enable) {
+    if (dtr_enable) {
         ep_tx_busy_flag = true;
         usbd_ep_start_write(busid, CDC_IN_EP, write_buffer, 2048);
         while (ep_tx_busy_flag) {
         }
-   }
+    }
 }
