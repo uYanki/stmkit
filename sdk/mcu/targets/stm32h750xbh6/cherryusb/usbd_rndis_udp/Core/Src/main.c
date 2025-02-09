@@ -22,6 +22,25 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include <stdio.h>
+#include "dhserver.h"
+#include "netif/etharp.h"
+#include "lwip/init.h"
+#include "lwip/netif.h"
+#include "lwip/pbuf.h"
+#include "lwip/icmp.h"
+#include "lwip/udp.h"
+#include "lwip/opt.h"
+#include "lwip/arch.h"
+#include "lwip/api.h"
+#include "lwip/inet.h"
+#include "lwip/dns.h"
+#include "lwip/tcp.h"
+// #include "httpd.h"
+#include "usbd_core.h"
+#include "usbd_rndis.h"
+// #include "cdc_rndis_device.h"
+#include "udp_echo.h"
+
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -31,6 +50,9 @@
 
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
+#define LWIP_SYS_TIME_MS 1
+#define NUM_DHCP_ENTRY   3
+#define PADDR(ptr)       ((ip_addr_t*)ptr)
 
 /* USER CODE END PD */
 
@@ -46,7 +68,31 @@ UART_HandleTypeDef huart1;
 PCD_HandleTypeDef hpcd_USB_OTG_FS;
 
 /* USER CODE BEGIN PV */
-extern void cdc_acm_init(uint8_t busid, uint32_t reg_base);
+
+static uint32_t     sys_tick;
+static struct netif netif_data;
+
+static uint8_t hwaddr[6]  = {0x20, 0x89, 0x84, 0x6A, 0x96, 00};
+static uint8_t ipaddr[4]  = {192, 168, 7, 1};
+static uint8_t netmask[4] = {255, 255, 255, 0};
+static uint8_t gateway[4] = {0, 0, 0, 0};
+
+static dhcp_entry_t entries[NUM_DHCP_ENTRY] = {
+    /* mac    ip address        subnet mask        lease time */
+    {{0}, {192, 168, 7, 2}, {255, 255, 255, 0}, 24 * 60 * 60},
+    {{0}, {192, 168, 7, 3}, {255, 255, 255, 0}, 24 * 60 * 60},
+    {{0}, {192, 168, 7, 4}, {255, 255, 255, 0}, 24 * 60 * 60}
+};
+
+static dhcp_config_t dhcp_config = {
+    {192, 168, 7, 1}, /* server address */
+    67, /* port */
+    {192, 168, 7, 1}, /* dns server */
+    "hpm", /* dns suffix */
+    NUM_DHCP_ENTRY, /* num entry */
+    entries  /* entries */
+};
+
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -56,7 +102,16 @@ static void MX_GPIO_Init(void);
 static void MX_USB_OTG_FS_PCD_Init(void);
 static void MX_USART1_UART_Init(void);
 /* USER CODE BEGIN PFP */
-extern void cdc_acm_data_send_with_dtr_test(uint8_t busid);
+
+static void  user_init_lwip(void);
+static err_t netif_init_cb(struct netif* netif);
+static err_t linkoutput_fn(struct netif* netif, struct pbuf* p);
+static void  lwip_service_traffic(void);
+
+/* USER CODE END PFP */
+
+/* Private user code ---------------------------------------------------------*/
+/* USER CODE BEGIN 0 */
 
 void usb_dc_low_level_init(void)
 {
@@ -66,11 +121,70 @@ void usb_dc_low_level_init(void)
 void usb_dc_low_level_deinit(void)
 {}
 
-/* USER CODE END PFP */
+static void user_init_lwip(void)
+{
+    struct netif* netif = &netif_data;
 
-/* Private user code ---------------------------------------------------------*/
-/* USER CODE BEGIN 0 */
+    lwip_init();
+    netif->hwaddr_len = 6;
+    memcpy(netif->hwaddr, hwaddr, 6);
 
+    netif = netif_add(netif, PADDR(ipaddr), PADDR(netmask), PADDR(gateway), NULL, netif_init_cb, netif_input);
+    netif_set_default(netif);
+}
+
+static err_t netif_init_cb(struct netif* netif)
+{
+    LWIP_ASSERT("netif != NULL", (netif != NULL));
+    netif->mtu        = 1500;
+    netif->flags      = NETIF_FLAG_BROADCAST | NETIF_FLAG_ETHARP | NETIF_FLAG_LINK_UP | NETIF_FLAG_UP;
+    netif->state      = NULL;
+    netif->name[0]    = 'E';
+    netif->name[1]    = 'X';
+    netif->linkoutput = linkoutput_fn;
+    netif->output     = etharp_output;
+    return ERR_OK;
+}
+
+static err_t linkoutput_fn(struct netif* netif, struct pbuf* p)
+{
+    (void)netif;
+    int ret;
+
+    ret = usbd_rndis_eth_tx(p);
+
+    if (0 != ret)
+    {
+        ret = ERR_BUF;
+    }
+
+    return ret;
+}
+
+static void lwip_service_traffic(void)
+{
+    err_t        err;
+    struct pbuf* p;
+
+    p = usbd_rndis_eth_rx();
+
+    if (p != NULL)
+    {
+        /* entry point to the LwIP stack */
+        err = netif_data.input(p, &netif_data);
+
+        if (err != ERR_OK)
+        {
+            LWIP_DEBUGF(NETIF_DEBUG, ("ethernetif_input: IP input error\n"));
+            pbuf_free(p);
+        }
+    }
+}
+
+uint32_t sys_now(void)
+{
+    return HAL_GetTick();
+}
 /* USER CODE END 0 */
 
 /**
@@ -111,6 +225,21 @@ int main(void)
 
     /* Infinite loop */
     /* USER CODE BEGIN WHILE */
+    user_init_lwip();
+    while (!netif_is_up(&netif_data))
+    {
+    }
+    while (dhserv_init(&dhcp_config) != ERR_OK)
+    {
+    }
+
+    udp_echo_init();
+
+    while (1)
+    {
+        lwip_service_traffic();
+    }
+
     while (1)
     {
         /* USER CODE END WHILE */

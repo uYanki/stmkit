@@ -162,7 +162,7 @@ static void udp_recv_proc(void *arg, struct udp_pcb *upcb, struct pbuf *p, const
     answer->Class       = htons(1);
     answer->ttl         = htonl(32);
     answer->len         = htons(4);
-    answer->addr        = host_addr.u_addr.ip4.addr;
+    answer->addr        = host_addr.addr;
 
     udp_sendto(upcb, out, addr, port);
     pbuf_free(out);

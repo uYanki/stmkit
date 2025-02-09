@@ -400,6 +400,16 @@
               <FilePath>../Core/Src/main.c</FilePath>
             </File>
             <File>
+              <FileName>cdc_rndis.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Core\Src\cdc_rndis.c</FilePath>
+            </File>
+            <File>
+              <FileName>udp_echo.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Core\Src\udp_echo.c</FilePath>
+            </File>
+            <File>
               <FileName>stm32h7xx_it.c</FileName>
               <FileType>1</FileType>
               <FilePath>../Core/Src/stm32h7xx_it.c</FilePath>
@@ -666,15 +676,10 @@
               <FileType>1</FileType>
               <FilePath>..\..\..\..\..\middlewares\cherryusb\class\wireless\usbd_rndis.c</FilePath>
             </File>
-            <File>
-              <FileName>cdc_rndis_template.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\middlewares\CherryUSB\demo\cdc_rndis_template.c</FilePath>
-            </File>
           </Files>
         </Group>
         <Group>
-          <GroupName>lwip</GroupName>
+          <GroupName>Middleware/lwIP/API</GroupName>
           <Files>
             <File>
               <FileName>api_lib.c</FileName>
@@ -724,7 +729,17 @@
           </Files>
         </Group>
         <Group>
-          <GroupName>lwip/core</GroupName>
+          <GroupName>Middleware/lwIP/Netif</GroupName>
+          <Files>
+            <File>
+              <FileName>ethernet.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\..\..\middlewares\lwip-2.1.2\src\netif\ethernet.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>Middleware/lwIP/Core</GroupName>
           <Files>
             <File>
               <FileName>altcp.c</FileName>
@@ -829,7 +844,7 @@
           </Files>
         </Group>
         <Group>
-          <GroupName>lwip/core/ipv6</GroupName>
+          <GroupName>Middleware/lwIP/Core/IPv6</GroupName>
           <Files>
             <File>
               <FileName>dhcp6.c</FileName>
@@ -879,7 +894,7 @@
           </Files>
         </Group>
         <Group>
-          <GroupName>lwip/core/ipv4</GroupName>
+          <GroupName>Middleware/lwIP/Core/IPv4</GroupName>
           <Files>
             <File>
               <FileName>autoip.c</FileName>
@@ -924,13 +939,8 @@
           </Files>
         </Group>
         <Group>
-          <GroupName>dns</GroupName>
+          <GroupName>Middleware/dnserver</GroupName>
           <Files>
-            <File>
-              <FileName>dhserver.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\middlewares\dhcp-server\dhserver.c</FilePath>
-            </File>
             <File>
               <FileName>dnserver.c</FileName>
               <FileType>1</FileType>
@@ -939,12 +949,12 @@
           </Files>
         </Group>
         <Group>
-          <GroupName>netif</GroupName>
+          <GroupName>Middleware/dhserver</GroupName>
           <Files>
             <File>
-              <FileName>ethernet.c</FileName>
+              <FileName>dhserver.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\middlewares\lwip-2.1.2\src\netif\ethernet.c</FilePath>
+              <FilePath>..\..\..\..\..\middlewares\dhcp-server\dhserver.c</FilePath>
             </File>
           </Files>
         </Group>
