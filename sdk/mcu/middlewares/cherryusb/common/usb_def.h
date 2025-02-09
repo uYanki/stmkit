@@ -716,7 +716,7 @@ struct usb_desc_header {
     0x00                                       /* iFunction */
 
 #define USB_LANGID_INIT(id)                           \
-    0x04,                           /* bLength */     \
+    0x04,                       /* bLength */         \
     USB_DESCRIPTOR_TYPE_STRING, /* bDescriptorType */ \
     WBVAL(id)                   /* wLangID0 */
 // clang-format on
