@@ -46,7 +46,7 @@ UART_HandleTypeDef huart1;
 PCD_HandleTypeDef hpcd_USB_OTG_FS;
 
 /* USER CODE BEGIN PV */
-extern void cdc_acm_init(uint8_t busid, uint32_t reg_base);
+
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -56,7 +56,6 @@ static void MX_GPIO_Init(void);
 static void MX_USB_OTG_FS_PCD_Init(void);
 static void MX_USART1_UART_Init(void);
 /* USER CODE BEGIN PFP */
-extern void cdc_acm_data_send_with_dtr_test(uint8_t busid);
 
 void usb_dc_low_level_init(void)
 {
