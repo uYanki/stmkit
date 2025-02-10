@@ -1,0 +1,168 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Tool Versions:</h2>
+IDE-Version: ¦ÌVision V5.35.0.0
+Copyright (C) 2021 ARM Ltd and ARM Germany GmbH. All rights reserved.
+License Information:  ,  , LIC=FQQMA-19LUL-MSWYP-M5F2T-A9NMZ-12GW5
+ 
+Tool Versions:
+Toolchain:       MDK-ARM Professional  Version: 5.35.0.2
+Toolchain Path:  C:\Keil_v5\ARM\ARMCC\Bin
+C Compiler:      Armcc.exe V5.06 update 7 (build 960)
+Assembler:       Armasm.exe V5.06 update 7 (build 960)
+Linker/Locator:  ArmLink.exe V5.06 update 7 (build 960)
+Library Manager: ArmAr.exe V5.06 update 7 (build 960)
+Hex Converter:   FromElf.exe V5.06 update 7 (build 960)
+CPU DLL:         SARMCM3.DLL V5.35.0.2
+Dialog DLL:      DCM.DLL V1.17.3.0
+Target DLL:      CMSIS_AGDI.dll V1.33.0.0
+Dialog DLL:      TCM.DLL V1.53.0.0
+ 
+<h2>Project:</h2>
+F:\app_usb\sdk\mcu\targets\stm32h750xbh6\cherryusb\usbh\MDK-ARM\demo.uvprojx
+Project File Date:  02/11/2025
+
+<h2>Output:</h2>
+*** Using Compiler 'V5.06 update 7 (build 960)', folder: 'C:\Keil_v5\ARM\ARMCC\Bin'
+Build target 'demo'
+assembling startup_stm32h750xx.s...
+compiling hid_host.c...
+..\Core\Src\hid_host.c(8): error:  #5: cannot open source input file "FreeRTOS.h": No such file or directory
+  #include "FreeRTOS.h"
+..\Core\Src\hid_host.c: 0 warnings, 1 error
+compiling stm32h7xx_hal_gpio.c...
+compiling stm32h7xx_hal_hsem.c...
+compiling stm32h7xx_hal_msp.c...
+compiling stm32h7xx_hal_flash_ex.c...
+compiling stm32h7xx_hal_flash.c...
+compiling stm32h7xx_it.c...
+../Core/Src/stm32h7xx_it.c(181): warning:  #223-D: function "USBH_IRQHandler" declared implicitly
+    USBH_IRQHandler(0);
+../Core/Src/stm32h7xx_it.c: 1 warning, 0 errors
+compiling stm32h7xx_hal_cortex.c...
+compiling main.c...
+../Core/Src/main.c(106): warning:  #223-D: function "usbh_initialize" declared implicitly
+      usbh_initialize(0, USB_OTG_HS_PERIPH_BASE);
+../Core/Src/main.c(107): warning:  #223-D: function "vTaskStartScheduler" declared implicitly
+      vTaskStartScheduler();
+../Core/Src/main.c: 2 warnings, 0 errors
+compiling stm32h7xx_hal_rcc.c...
+compiling stm32h7xx_hal_rcc_ex.c...
+compiling stm32h7xx_hal_dma.c...
+compiling stm32h7xx_hal_tim.c...
+compiling stm32h7xx_hal_tim_ex.c...
+compiling stm32h7xx_hal_i2c_ex.c...
+compiling stm32h7xx_hal_pwr_ex.c...
+compiling stm32h7xx_hal_pwr.c...
+compiling usb_hc_dwc2.c...
+..\..\..\..\..\middlewares\CherryUSB\port\dwc2\usb_hc_dwc2.c(6): error:  #5: cannot open source input file "usbh_core.h": No such file or directory
+  #include "usbh_core.h"
+..\..\..\..\..\middlewares\CherryUSB\port\dwc2\usb_hc_dwc2.c: 0 warnings, 1 error
+compiling stm32h7xx_hal_mdma.c...
+compiling stm32h7xx_hal.c...
+compiling usb_glue_st.c...
+../Core/Inc/usb_config.h(14): error:  #5: cannot open source input file "FreeRTOS.h": No such file or directory
+  #include "FreeRTOS.h"
+..\..\..\..\..\middlewares\cherryusb\port\dwc2\usb_glue_st.c: 0 warnings, 1 error
+compiling usb_osal_freertos.c...
+..\..\..\..\..\middlewares\CherryUSB\osal\usb_osal_freertos.c(6): error:  #5: cannot open source input file "usb_osal.h": No such file or directory
+  #include "usb_osal.h"
+..\..\..\..\..\middlewares\CherryUSB\osal\usb_osal_freertos.c: 0 warnings, 1 error
+compiling usbh_core.c...
+../Core/Inc/usb_config.h(14): error:  #5: cannot open source input file "FreeRTOS.h": No such file or directory
+  #include "FreeRTOS.h"
+..\..\..\..\..\middlewares\CherryUSB\core\usbh_core.c: 0 warnings, 1 error
+compiling usbh_video.c...
+..\..\..\..\..\middlewares\CherryUSB\class\video\usbh_video.c(6): error:  #5: cannot open source input file "usbh_core.h": No such file or directory
+  #include "usbh_core.h"
+..\..\..\..\..\middlewares\CherryUSB\class\video\usbh_video.c: 0 warnings, 1 error
+compiling usbh_msc.c...
+..\..\..\..\..\middlewares\CherryUSB\class\msc\usbh_msc.c(6): error:  #5: cannot open source input file "usbh_core.h": No such file or directory
+  #include "usbh_core.h"
+..\..\..\..\..\middlewares\CherryUSB\class\msc\usbh_msc.c: 0 warnings, 1 error
+compiling usbh_hid.c...
+..\..\..\..\..\middlewares\CherryUSB\class\hid\usbh_hid.c(6): error:  #5: cannot open source input file "usbh_core.h": No such file or directory
+  #include "usbh_core.h"
+..\..\..\..\..\middlewares\CherryUSB\class\hid\usbh_hid.c: 0 warnings, 1 error
+compiling stm32h7xx_hal_exti.c...
+compiling usbh_hub.c...
+..\..\..\..\..\middlewares\CherryUSB\class\hub\usbh_hub.c(6): error:  #5: cannot open source input file "usbh_core.h": No such file or directory
+  #include "usbh_core.h"
+..\..\..\..\..\middlewares\CherryUSB\class\hub\usbh_hub.c: 0 warnings, 1 error
+compiling usbh_cdc_acm.c...
+..\..\..\..\..\middlewares\CherryUSB\class\cdc\usbh_cdc_acm.c(6): error:  #5: cannot open source input file "usbh_core.h": No such file or directory
+  #include "usbh_core.h"
+..\..\..\..\..\middlewares\CherryUSB\class\cdc\usbh_cdc_acm.c: 0 warnings, 1 error
+compiling usbh_audio.c...
+..\..\..\..\..\middlewares\CherryUSB\class\audio\usbh_audio.c(6): error:  #5: cannot open source input file "usbh_core.h": No such file or directory
+  #include "usbh_core.h"
+..\..\..\..\..\middlewares\CherryUSB\class\audio\usbh_audio.c: 0 warnings, 1 error
+compiling heap_4.c...
+..\..\..\..\..\middlewares\CherryUSB\third_party\FreeRTOS-10.4\portable\MemMang\heap_4.c(44): error:  #5: cannot open source input file "FreeRTOS.h": No such file or directory
+  #include "FreeRTOS.h"
+..\..\..\..\..\middlewares\CherryUSB\third_party\FreeRTOS-10.4\portable\MemMang\heap_4.c: 0 warnings, 1 error
+compiling port.c...
+..\..\..\..\..\middlewares\CherryUSB\third_party\FreeRTOS-10.4\portable\GCC\ARM_CM7\r0p1\port.c(34): error:  #5: cannot open source input file "FreeRTOS.h": No such file or directory
+  #include "FreeRTOS.h"
+..\..\..\..\..\middlewares\CherryUSB\third_party\FreeRTOS-10.4\portable\GCC\ARM_CM7\r0p1\port.c: 0 warnings, 1 error
+compiling croutine.c...
+..\..\..\..\..\middlewares\CherryUSB\third_party\FreeRTOS-10.4\croutine.c(29): error:  #5: cannot open source input file "FreeRTOS.h": No such file or directory
+  #include "FreeRTOS.h"
+..\..\..\..\..\middlewares\CherryUSB\third_party\FreeRTOS-10.4\croutine.c: 0 warnings, 1 error
+compiling event_groups.c...
+..\..\..\..\..\middlewares\CherryUSB\third_party\FreeRTOS-10.4\event_groups.c(38): error:  #5: cannot open source input file "FreeRTOS.h": No such file or directory
+  #include "FreeRTOS.h"
+..\..\..\..\..\middlewares\CherryUSB\third_party\FreeRTOS-10.4\event_groups.c: 0 warnings, 1 error
+compiling stm32h7xx_hal_dma_ex.c...
+compiling list.c...
+..\..\..\..\..\middlewares\CherryUSB\third_party\FreeRTOS-10.4\list.c(37): error:  #5: cannot open source input file "FreeRTOS.h": No such file or directory
+  #include "FreeRTOS.h"
+..\..\..\..\..\middlewares\CherryUSB\third_party\FreeRTOS-10.4\list.c: 0 warnings, 1 error
+compiling queue.c...
+..\..\..\..\..\middlewares\CherryUSB\third_party\FreeRTOS-10.4\queue.c(37): error:  #5: cannot open source input file "FreeRTOS.h": No such file or directory
+  #include "FreeRTOS.h"
+..\..\..\..\..\middlewares\CherryUSB\third_party\FreeRTOS-10.4\queue.c: 0 warnings, 1 error
+compiling tasks.c...
+..\..\..\..\..\middlewares\CherryUSB\third_party\FreeRTOS-10.4\tasks.c(39): error:  #5: cannot open source input file "FreeRTOS.h": No such file or directory
+  #include "FreeRTOS.h"
+..\..\..\..\..\middlewares\CherryUSB\third_party\FreeRTOS-10.4\tasks.c: 0 warnings, 1 error
+compiling timers.c...
+..\..\..\..\..\middlewares\CherryUSB\third_party\FreeRTOS-10.4\timers.c(37): error:  #5: cannot open source input file "FreeRTOS.h": No such file or directory
+  #include "FreeRTOS.h"
+..\..\..\..\..\middlewares\CherryUSB\third_party\FreeRTOS-10.4\timers.c: 0 warnings, 1 error
+compiling stm32h7xx_hal_uart.c...
+compiling stm32h7xx_hal_i2c.c...
+compiling system_stm32h7xx.c...
+compiling stm32h7xx_hal_uart_ex.c...
+compiling stm32h7xx_hal_hcd.c...
+compiling stm32h7xx_ll_usb.c...
+"demo\demo.axf" - 19 Error(s), 3 Warning(s).
+
+<h2>Software Packages used:</h2>
+
+Package Vendor: ARM
+                http://www.keil.com/pack/ARM.CMSIS.5.8.0.pack
+                ARM.CMSIS.5.8.0
+                CMSIS (Common Microcontroller Software Interface Standard)
+   * Component: CORE Version: 5.5.0
+
+Package Vendor: Keil
+                http://www.keil.com/pack/Keil.STM32H7xx_DFP.2.8.0.pack
+                Keil.STM32H7xx_DFP.2.8.0
+                STMicroelectronics STM32H7 Series Device Support and Examples
+
+<h2>Collection of Component include folders:</h2>
+  .\RTE\_demo
+  C:\Users\uYanki\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include
+  C:\Users\uYanki\AppData\Local\Arm\Packs\Keil\STM32H7xx_DFP\2.8.0\Drivers\CMSIS\Device\ST\STM32H7xx\Include
+
+<h2>Collection of Component Files used:</h2>
+
+   * Component: ARM::CMSIS:CORE:5.5.0
+Target not created.
+Build Time Elapsed:  00:00:28
+</pre>
+</body>
+</html>
