@@ -253,12 +253,12 @@
 /* largest non-periodic USB packet used / 4 */
 #define CONFIG_USB_DWC2_NPTX_FIFO_SIZE (512 / 4)
 /* largest periodic USB packet used / 4 */
-#define CONFIG_USB_DWC2_PTX_FIFO_SIZE (768 / 4)
+#define CONFIG_USB_DWC2_PTX_FIFO_SIZE (512 / 4)
 /*
  * (largest USB packet used / 4) + 1 for status information + 1 transfer complete +
  * 1 location each for Bulk/Control endpoint for handling NAK/NYET scenario
  */
-#define CONFIG_USB_DWC2_RX_FIFO_SIZE (((768-3*4) - CONFIG_USB_DWC2_NPTX_FIFO_SIZE - CONFIG_USB_DWC2_PTX_FIFO_SIZE) / 4)
+#define CONFIG_USB_DWC2_RX_FIFO_SIZE (((512-3*4) - CONFIG_USB_DWC2_NPTX_FIFO_SIZE - CONFIG_USB_DWC2_PTX_FIFO_SIZE) / 4)
 
 /* ---------------- MUSB Configuration ---------------- */
 // #define CONFIG_USB_MUSB_SUNXI

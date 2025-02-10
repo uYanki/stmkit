@@ -27,24 +27,18 @@ Project File Date:  02/11/2025
 <h2>Output:</h2>
 *** Using Compiler 'V6.16', folder: 'C:\Keil_v5\ARM\ARMCLANG\Bin'
 Build target 'demo'
-assembling startup_stm32h750xx.s...
-../Core/Src/stm32h7xx_it.c(181): warning: implicit declaration of function 'USBH_IRQHandler' is invalid in C99 [-Wimplicit-function-declaration]
-  USBH_IRQHandler(0);
-  ^
-1 warning generated.
-compiling stm32h7xx_it.c...
-../Core/Src/main.c(106): warning: implicit declaration of function 'usbh_initialize' is invalid in C99 [-Wimplicit-function-declaration]
+../Core/Src/main.c(150): warning: implicit declaration of function 'usbh_initialize' is invalid in C99 [-Wimplicit-function-declaration]
     usbh_initialize(0, USB_OTG_HS_PERIPH_BASE);
     ^
-../Core/Src/main.c(107): warning: implicit declaration of function 'vTaskStartScheduler' is invalid in C99 [-Wimplicit-function-declaration]
+../Core/Src/main.c(151): warning: implicit declaration of function 'vTaskStartScheduler' is invalid in C99 [-Wimplicit-function-declaration]
     vTaskStartScheduler();
     ^
 2 warnings generated.
 compiling main.c...
 linking...
-Program Size: Code=43360 RO-data=3764 RW-data=24 ZI-data=81128  
+Program Size: Code=42352 RO-data=3764 RW-data=24 ZI-data=80352  
 FromELF: creating hex file...
-".\demo\demo.axf" - 0 Error(s), 3 Warning(s).
+".\demo\demo.axf" - 0 Error(s), 2 Warning(s).
 
 <h2>Software Packages used:</h2>
 
