@@ -57,12 +57,12 @@ static void MX_USB_OTG_FS_HCD_Init(void);
 static void MX_USART1_UART_Init(void);
 /* USER CODE BEGIN PFP */
 
-void usb_dc_low_level_init(void)
+void usb_hc_low_level_init(void)
 {
     MX_USB_OTG_FS_HCD_Init();
 }
 
-void usb_dc_low_level_deinit(void)
+void usb_hc_low_level_deinit(void)
 {}
 
 /* USER CODE END PFP */
@@ -252,7 +252,7 @@ static void MX_USB_OTG_FS_HCD_Init(void)
   hhcd_USB_OTG_FS.Instance = USB_OTG_FS;
   hhcd_USB_OTG_FS.Init.Host_channels = 16;
   hhcd_USB_OTG_FS.Init.speed = HCD_SPEED_FULL;
-  hhcd_USB_OTG_FS.Init.dma_enable = DISABLE;
+  hhcd_USB_OTG_FS.Init.dma_enable = ENABLE;
   hhcd_USB_OTG_FS.Init.phy_itface = HCD_PHY_EMBEDDED;
   hhcd_USB_OTG_FS.Init.Sof_enable = DISABLE;
   if (HAL_HCD_Init(&hhcd_USB_OTG_FS) != HAL_OK)
