@@ -264,7 +264,7 @@ static int usbh_ch34x_connect(struct usbh_hubport *hport, uint8_t intf)
 
     USB_LOG_INFO("Register CH34X Class:%s\r\n", hport->config.intf[intf].devname);
 
-#if 0
+#if 1
     USB_LOG_INFO("Test ch34x rx and tx and rx for 5 times, baudrate is 115200\r\n");
 
     struct cdc_line_coding linecoding;
