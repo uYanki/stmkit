@@ -350,7 +350,7 @@ static void usbd_hid_custom_in_callback(uint8_t busid, uint8_t ep, uint32_t nbyt
 
         case I2C_FUNC_SCAN:
         {
-            uint8_t* au8ExitsAddr = &pOutData[2];
+            uint8_t* pu8ExitsAddr = &pOutData[2];
             uint8_t  u8RxData;
             uint8_t  u8Count = 0;
 
@@ -360,7 +360,7 @@ static void usbd_hid_custom_in_callback(uint8_t busid, uint8_t ep, uint32_t nbyt
 
                 if (u16Stat)
                 {
-                    au8ExitsAddr[u16DevAddr / 8] |= (1 << u16DevAddr % 8);
+                    pu8ExitsAddr[u16DevAddr / 8] |= (1 << u16DevAddr % 8);
                     u8Count++;
                 }
             }
