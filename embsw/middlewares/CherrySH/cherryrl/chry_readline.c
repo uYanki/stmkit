@@ -9,7 +9,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <stdbool.h>
-#include "csh.h"
+#include "chry_readline.h"
 
 #if defined(__CC_ARM) || defined(__CLANG_ARM) || defined(__GNUC__) || defined(__ADSPBLACKFIN__)
 #ifndef __unused
@@ -216,15 +216,16 @@ static uint8_t altmap[26] = {
 
 /*****************************************************************************
 * @brief        print decimal integer (0 - 65535)
-*
+* 
 * @param[in]    buf         print buf
 * @param[in]    idx         print idx
 * @param[in]    value       16bit unsigned integer
-*
+* 
 *****************************************************************************/
 static void chry_readline_print_integer(uint8_t *buf, size_t *idx, uint16_t value)
 {
-    uint8_t *intbuf = (uint8_t[5]){};
+    uint8_t array[5] = {0};
+    uint8_t *intbuf = array;
     uint8_t *outbuf = buf + *idx;
     size_t count = 0;
 
@@ -243,10 +244,10 @@ static void chry_readline_print_integer(uint8_t *buf, size_t *idx, uint16_t valu
 
 /*****************************************************************************
 * @brief        parse decimal integer (0 - 65535)
-*
+* 
 * @param[in]    buf         parse buf
 * @param[out]   value       16bit unsigned integer pointer
-*
+* 
 *****************************************************************************/
 static void chry_readline_parse_integer(uint8_t *buf, uint16_t *value)
 {
@@ -264,7 +265,7 @@ static void chry_readline_parse_integer(uint8_t *buf, uint16_t *value)
 *****************************************************************************/
 __unused static void chry_readline_seqgen_reset(uint8_t *buf, size_t *idx)
 {
-    buf[*idx + 0] = '\e';
+    buf[*idx + 0] = '\033';
     buf[*idx + 1] = 'c';
     *idx += 2;
 }
@@ -274,7 +275,7 @@ __unused static void chry_readline_seqgen_reset(uint8_t *buf, size_t *idx)
 *****************************************************************************/
 __unused static void chry_readline_seqgen_csi(uint8_t *buf, size_t *idx)
 {
-    buf[*idx + 0] = '\e';
+    buf[*idx + 0] = '\033';
     buf[*idx + 1] = '[';
     *idx += 2;
 }
@@ -502,7 +503,7 @@ __unused static void chry_readline_seqgen_normal_screen(uint8_t *buf, size_t *id
 }
 
 /*****************************************************************************
-* @brief        Report the size of the text area in characters
+* @brief        Report the size of the text area in characters 
 *               as CSI 8;row;column t
 *****************************************************************************/
 __unused static void chry_readline_seqgen_report_screen_size(uint8_t *buf, size_t *idx)
@@ -610,7 +611,7 @@ void chry_readline_erase_line(chry_readline_t *rl)
 *****************************************************************************/
 int chry_readline_edit_clear(chry_readline_t *rl)
 {
-    chry_readline_put(rl, "\e[2J\e[1;1H", 10, -1);
+    chry_readline_put(rl, "\033[2J\033[1;1H", 10, -1);
 
 #if defined(CONFIG_READLINE_REFRESH_PROMPT) && CONFIG_READLINE_REFRESH_PROMPT
     return chry_readline_edit_refresh(rl);
@@ -623,7 +624,7 @@ int chry_readline_edit_clear(chry_readline_t *rl)
 
 /*****************************************************************************
 * @brief        insert a character, (only support 0x20-0x7e)
-* @retval int               0:Success -1:Error
+* @retval int               0:Success -1:Error        
 *****************************************************************************/
 int chry_readline_edit_insert(chry_readline_t *rl, char c)
 {
@@ -644,7 +645,7 @@ int chry_readline_edit_insert(chry_readline_t *rl, char c)
 
 /*****************************************************************************
 * @brief        delete cursor left character
-* @retval int               0:Success -1:Error
+* @retval int               0:Success -1:Error    
 *****************************************************************************/
 int chry_readline_edit_backspace(chry_readline_t *rl)
 {
@@ -661,7 +662,7 @@ int chry_readline_edit_backspace(chry_readline_t *rl)
 
 /*****************************************************************************
 * @brief        delete cursor right character
-* @retval int               0:Success -1:Error
+* @retval int               0:Success -1:Error    
 *****************************************************************************/
 int chry_readline_edit_delete(chry_readline_t *rl)
 {
@@ -678,7 +679,7 @@ int chry_readline_edit_delete(chry_readline_t *rl)
 
 /*****************************************************************************
 * @brief        move cursor to left
-* @retval int               0:Success -1:Error
+* @retval int               0:Success -1:Error    
 *****************************************************************************/
 int chry_readline_edit_moveleft(chry_readline_t *rl)
 {
@@ -692,7 +693,7 @@ int chry_readline_edit_moveleft(chry_readline_t *rl)
 
 /*****************************************************************************
 * @brief        move cursor to right
-* @retval int               0:Success -1:Error
+* @retval int               0:Success -1:Error    
 *****************************************************************************/
 int chry_readline_edit_moveright(chry_readline_t *rl)
 {
@@ -706,7 +707,7 @@ int chry_readline_edit_moveright(chry_readline_t *rl)
 
 /*****************************************************************************
 * @brief        move cursor to start of line
-* @retval int               0:Success -1:Error
+* @retval int               0:Success -1:Error    
 *****************************************************************************/
 int chry_readline_edit_movehome(chry_readline_t *rl)
 {
@@ -716,7 +717,7 @@ int chry_readline_edit_movehome(chry_readline_t *rl)
 
 /*****************************************************************************
 * @brief        move cursor to end of line
-* @retval int               0:Success -1:Error
+* @retval int               0:Success -1:Error    
 *****************************************************************************/
 int chry_readline_edit_moveend(chry_readline_t *rl)
 {
@@ -726,7 +727,7 @@ int chry_readline_edit_moveend(chry_readline_t *rl)
 
 /*****************************************************************************
 * @brief        delete the whole line
-* @retval int               0:Success -1:Error
+* @retval int               0:Success -1:Error    
 *****************************************************************************/
 int chry_readline_edit_delline(chry_readline_t *rl)
 {
@@ -737,7 +738,7 @@ int chry_readline_edit_delline(chry_readline_t *rl)
 
 /*****************************************************************************
 * @brief        delete from cursor to end of line
-* @retval int               0:Success -1:Error
+* @retval int               0:Success -1:Error    
 *****************************************************************************/
 int chry_readline_edit_delend(chry_readline_t *rl)
 {
@@ -747,7 +748,7 @@ int chry_readline_edit_delend(chry_readline_t *rl)
 
 /*****************************************************************************
 * @brief        delete previosu word
-* @retval int               0:Success -1:Error
+* @retval int               0:Success -1:Error    
 *****************************************************************************/
 int chry_readline_edit_delword(chry_readline_t *rl)
 {
@@ -799,7 +800,7 @@ end:
 
 /*****************************************************************************
 * @brief        show help
-* @retval int               0:Success -1:Error
+* @retval int               0:Success -1:Error  
 *****************************************************************************/
 static int chry_readline_help(chry_readline_t *rl)
 {
@@ -811,11 +812,11 @@ static int chry_readline_help(chry_readline_t *rl)
 
 /*****************************************************************************
 * @brief        dispatch csi sequences
-*
+* 
 * @param[in]    rl          readline instance
 * @param[inout] c           character for dispatch
 * @param[in]    pns         params for dispatch
-*
+* 
 * @retval int               0:Success -1:Error
 *****************************************************************************/
 static int chry_readline_dispatch_csi(chry_readline_t *rl, uint8_t *c, uint16_t *pns)
@@ -838,9 +839,9 @@ static int chry_readline_dispatch_csi(chry_readline_t *rl, uint8_t *c, uint16_t 
             /*!< 2.clear screen buffer           <esc>[2J   */
             /*!< 3.move cursor to (1,1)          <esc>[1;1H */
             /*!< 4.enter normal screen buffer    <esc>[?47l */
-            chry_readline_put(rl, "\e[?47h\e[2J\e[1;1H", 16, -1);
+            chry_readline_put(rl, "\033[?47h\033[2J\033[1;1H", 16, -1);
             chry_readline_help(rl);
-            chry_readline_put(rl, "\e[?47l", 6, -1);
+            chry_readline_put(rl, "\033[?47l", 6, -1);
 #endif
         }
 
@@ -860,11 +861,11 @@ static int chry_readline_dispatch_csi(chry_readline_t *rl, uint8_t *c, uint16_t 
 
 /*****************************************************************************
 * @brief        dispatch o sequences
-*
+* 
 * @param[in]    rl          readline instance
 * @param[inout] c           character for dispatch
-* @param[in]    pns         params for dispatch
-*
+* @param[in]    pns         params for dispatch     
+* 
 * @retval int               0:Success -1:Error
 *****************************************************************************/
 static int chry_readline_dispatch_o(chry_readline_t *rl, uint8_t *c, uint16_t *pns)
@@ -895,11 +896,11 @@ static int chry_readline_dispatch_o(chry_readline_t *rl, uint8_t *c, uint16_t *p
 
 /*****************************************************************************
 * @brief        dispatch alt sequences
-*
+* 
 * @param[in]    rl          readline instance
 * @param[inout] c           character for dispatch
-* @param[in]    pns         params for dispatch
-*
+* @param[in]    pns         params for dispatch     
+* 
 * @retval int               0:Success -1:Error
 *****************************************************************************/
 static int chry_readline_dispatch_alt(chry_readline_t *rl, uint8_t *c, uint16_t *pns)
@@ -923,11 +924,11 @@ static int chry_readline_dispatch_alt(chry_readline_t *rl, uint8_t *c, uint16_t 
 
 /*****************************************************************************
 * @brief        dispatch ctrl sequences
-*
+* 
 * @param[in]    rl          readline instance
 * @param[inout] c           character for dispatch
-* @param[in]    pns         params for dispatch
-*
+* @param[in]    pns         params for dispatch     
+* 
 * @retval int               0:Success -1:Error
 *****************************************************************************/
 static int chry_readline_dispatch_ctrl(chry_readline_t *rl, uint8_t *c, uint16_t *pns)
@@ -946,12 +947,12 @@ static int chry_readline_dispatch_ctrl(chry_readline_t *rl, uint8_t *c, uint16_t
 
 /*****************************************************************************
 * @brief        parse csi sequences
-*
+* 
 * @param[in]    rl          readline instance
 * @param[out]   csiend      final csi seq character
 * @param[out]   expre       extend prefix character
 * @param[out]   pns         array of number param
-*
+* 
 * @retval int               0:Success -1:Error
 *****************************************************************************/
 static int chry_readline_seqexec_pcsi(chry_readline_t *rl, uint8_t *csiend, uint8_t *expre, uint16_t *pns)
@@ -995,11 +996,11 @@ static int chry_readline_seqexec_pcsi(chry_readline_t *rl, uint8_t *csiend, uint
 
 /*****************************************************************************
 * @brief        execute CSI sequences
-*
+* 
 * @param[in]    rl          readline instance
 * @param[out]   c           character for dispatch
 * @param[out]   pns         array of number param
-*
+* 
 * @retval int               0:Success -1:Error
 *****************************************************************************/
 static int chry_readline_seqexec_csi(chry_readline_t *rl, uint8_t *c, uint16_t *pns)
@@ -1019,11 +1020,11 @@ static int chry_readline_seqexec_csi(chry_readline_t *rl, uint8_t *c, uint16_t *
 
 /*****************************************************************************
 * @brief        execute ALT sequences
-*
+* 
 * @param[in]    rl          readline instance
 * @param[inout]   c         character for dispatch
 * @param[out]   pns         array of number param
-*
+* 
 * @retval int               0:Success -1:Error
 *****************************************************************************/
 static int chry_readline_seqexec_alt(chry_readline_t *rl, uint8_t *c, uint16_t *pns)
@@ -1033,11 +1034,11 @@ static int chry_readline_seqexec_alt(chry_readline_t *rl, uint8_t *c, uint16_t *
 
 /*****************************************************************************
 * @brief        execute O sequences
-*
+* 
 * @param[in]    rl          readline instance
 * @param[out]   c           character for dispatch
 * @param[out]   pns         array of number param
-*
+* 
 * @retval int               0:Success -1:Error
 *****************************************************************************/
 static int chry_readline_seqexec_o(chry_readline_t *rl, uint8_t *c, uint16_t *pns)
@@ -1050,11 +1051,11 @@ static int chry_readline_seqexec_o(chry_readline_t *rl, uint8_t *c, uint16_t *pn
 
 /*****************************************************************************
 * @brief        execute sequences
-*
+* 
 * @param[in]    rl          readline instance
 * @param[inout] c           character for dispatch
 * @param[out]   pns         array of number param
-*
+* 
 * @retval int               0:Success -1:Error
 *****************************************************************************/
 static int chry_readline_seqexec(chry_readline_t *rl, uint8_t *c, uint16_t *pns)
@@ -1078,11 +1079,11 @@ static int chry_readline_seqexec(chry_readline_t *rl, uint8_t *c, uint16_t *pns)
 
 /*****************************************************************************
 * @brief        reverse memcpy 2byte align
-*
-* @param[in]    dst
-* @param[in]    src
+* 
+* @param[in]    dst         
+* @param[in]    src         
 * @param[in]    n           byte
-*
+* 
 *****************************************************************************/
 static void chry_readline_rvsememcpy2(void *dst, const void *src, size_t n)
 {
@@ -1096,9 +1097,9 @@ static void chry_readline_rvsememcpy2(void *dst, const void *src, size_t n)
 
 /*****************************************************************************
 * @brief        align 2 up
-*
+* 
 * @param[in]    size        size
-*
+* 
 * @retval                   align size
 *****************************************************************************/
 static uint32_t chry_readline_align2(uint32_t size)
@@ -1112,9 +1113,9 @@ static uint32_t chry_readline_align2(uint32_t size)
 
 /*****************************************************************************
 * @brief        cache linbuff to history list
-*
+* 
 * @param[in]    rl          readline instance
-*
+* 
 *****************************************************************************/
 static void chry_readline_history_cache(chry_readline_t *rl)
 {
@@ -1152,9 +1153,9 @@ static void chry_readline_history_cache(chry_readline_t *rl)
 
 /*****************************************************************************
 * @brief        store linebuff to history list
-*
+* 
 * @param[in]    rl          readline instance
-*
+*                
 *****************************************************************************/
 static void chry_readline_history_store(chry_readline_t *rl)
 {
@@ -1168,10 +1169,10 @@ static void chry_readline_history_store(chry_readline_t *rl)
 
 /*****************************************************************************
 * @brief        load special index history to linebuff
-*
+* 
 * @param[in]    rl          readline instance
 * @param[in]    index       history index
-*
+* 
 * @retval                   0:Success -1:Error
 *****************************************************************************/
 static int chry_readline_history_load(chry_readline_t *rl, uint16_t index)
@@ -1238,7 +1239,7 @@ static int chry_readline_history_load(chry_readline_t *rl, uint16_t index)
 
 /*****************************************************************************
 * @brief        load prev history to linebuff
-*
+* 
 * @param[in]    rl          readline instance
 *
 * @retval                   0:Success -1:Error
@@ -1252,7 +1253,7 @@ static int chry_readline_history_loadprev(chry_readline_t *rl)
 
 /*****************************************************************************
 * @brief        load next history to linebuff
-*
+* 
 * @param[in]    rl          readline instance
 *
 * @retval                   0:Success -1:Error
@@ -1268,9 +1269,9 @@ static int chry_readline_history_loadnext(chry_readline_t *rl)
 
 /*****************************************************************************
 * @brief        auto completion
-*
+* 
 * @param[in]    rl          readline instance
-*
+* 
 * @retval int               0:Success -1:Error 1:Restart
 *****************************************************************************/
 int chry_readline_complete(chry_readline_t *rl)
@@ -1396,7 +1397,7 @@ static void chry_readline_calculate_prompt(chry_readline_t *rl)
             return;
         } else if (c == '\r') {
             rl->ln.pptoff = 0;
-        } else if (c == '\e') {
+        } else if (c == '\033') {
             flag = 1;
         } else if ((flag == 0) && (c != '\n')) {
             rl->ln.pptoff++;
@@ -1433,9 +1434,9 @@ __unused static int chry_readline_wait_altscreen(chry_readline_t *rl)
 
 /*****************************************************************************
 * @brief        readline internal
-*
+* 
 * @param[in]    rl          readline instance
-*
+* 
 * @retval char*             line pointer
 *****************************************************************************/
 static char *chry_readline_inernal(chry_readline_t *rl)
@@ -1761,11 +1762,11 @@ restart:
 }
 
 /*****************************************************************************
-* @brief        enable or disable altscreen buffer (xterm only)
-*
+* @brief        enable or disable altscreen buffer (xterm only) 
+* 
 * @param[in]    rl          readline instance
 * @param[in]    enable      altscreen enable
-*
+* 
 * @retval int               0:Success -1:Error
 *****************************************************************************/
 int chry_readline_altscreen(chry_readline_t *rl, uint8_t enable)
@@ -1778,10 +1779,10 @@ int chry_readline_altscreen(chry_readline_t *rl, uint8_t enable)
 
 #if defined(CONFIG_READLINE_XTERM) && CONFIG_READLINE_XTERM
     if (enable) {
-        chry_readline_put(rl, "\e[?47h", 6, );
+        chry_readline_put(rl, "\033[?47h", 6, );
         rl->term.alt = 1;
     } else {
-        chry_readline_put(rl, "\e[?47l", 6, );
+        chry_readline_put(rl, "\033[?47l", 6, );
         rl->term.alt = 0;
     }
 #endif
@@ -1791,10 +1792,10 @@ int chry_readline_altscreen(chry_readline_t *rl, uint8_t enable)
 
 /*****************************************************************************
 * @brief        Fill Character Attributes SGR set to sgrraw
-*
+* 
 * @param[in]    buf         buffer for fill, max 17byte
 * @param[in]    sgrraw      sgr attributes, 0 to reset
-*
+* 
 *****************************************************************************/
 __unused static uint8_t chry_readline_sgrset(char *buf, uint16_t sgrraw)
 {
@@ -1854,9 +1855,9 @@ __unused static uint8_t chry_readline_sgrset(char *buf, uint16_t sgrraw)
 
 /*****************************************************************************
 * @brief        output CONFIG_READLINE_NEWLINE
-*
+* 
 * @param[in]    rl          readline instance
-*
+* 
 *****************************************************************************/
 void chry_readline_newline(chry_readline_t *rl)
 {
@@ -1865,9 +1866,9 @@ void chry_readline_newline(chry_readline_t *rl)
 
 /*****************************************************************************
 * @brief        clear screen and refresh line
-*
+* 
 * @param[in]    rl          readline instance
-*
+* 
 *****************************************************************************/
 void chry_readline_clear(chry_readline_t *rl)
 {
@@ -1878,10 +1879,10 @@ void chry_readline_clear(chry_readline_t *rl)
 
 /*****************************************************************************
 * @brief        enable or disable block mode
-*
+* 
 * @param[in]    rl          readline instance
 * @param[in]    enable      block enable
-*
+* 
 *****************************************************************************/
 void chry_readline_block(chry_readline_t *rl, uint8_t enable)
 {
@@ -1897,10 +1898,10 @@ void chry_readline_block(chry_readline_t *rl, uint8_t enable)
 
 /*****************************************************************************
 * @brief        enable or disable ignore mode
-*
+* 
 * @param[in]    rl          readline instance
 * @param[in]    enable      ignore enable
-*
+* 
 *****************************************************************************/
 void chry_readline_ignore(chry_readline_t *rl, uint8_t enable)
 {
@@ -1911,10 +1912,10 @@ void chry_readline_ignore(chry_readline_t *rl, uint8_t enable)
 
 /*****************************************************************************
 * @brief        enable or disable ignore mode
-*
+* 
 * @param[in]    rl          readline instance
 * @param[in]    enable      ignore enable
-*
+* 
 *****************************************************************************/
 void chry_readline_auto_refresh(chry_readline_t *rl, uint8_t enable)
 {
@@ -1924,10 +1925,10 @@ void chry_readline_auto_refresh(chry_readline_t *rl, uint8_t enable)
 
 /*****************************************************************************
 * @brief        enable or disable mask mode
-*
+* 
 * @param[in]    rl          readline instance
 * @param[in]    enable      mask enable
-*
+* 
 *****************************************************************************/
 void chry_readline_mask(chry_readline_t *rl, uint8_t enable)
 {
@@ -1942,12 +1943,12 @@ void chry_readline_mask(chry_readline_t *rl, uint8_t enable)
 
 /*****************************************************************************
 * @brief        readline
-*
+* 
 * @param[in]    rl          readline instance
 * @param[in]    linebuff    linebuff pointer
 * @param[in]    buffsize    linebuff size
 * @param[in]    linesize    readline size (set NULL to ignore)
-*
+* 
 * @retval char*             line pointer
 *****************************************************************************/
 char *chry_readline(chry_readline_t *rl, char *linebuff, uint16_t buffsize, uint16_t *linesize)
@@ -2005,11 +2006,11 @@ restore:
 
 /*****************************************************************************
 * @brief        init readline
-*
+* 
 * @param[in]    rl          readline instance
 * @param[in]    init        init param
-*
-* @retval int               0:Success -1:Error
+* 
+* @retval int               0:Success -1:Error              
 *****************************************************************************/
 int chry_readline_init(chry_readline_t *rl, chry_readline_init_t *init)
 {
@@ -2080,7 +2081,7 @@ int chry_readline_init(chry_readline_t *rl, chry_readline_init_t *init)
 /*****************************************************************************
 * @brief        detects if it is xterm, result will be processed automatically
 *               if not xterm it will be blocked on next character
-*
+* 
 * @param[in]    rl          readline instance
 *****************************************************************************/
 void chry_readline_detect(chry_readline_t *rl)
@@ -2089,7 +2090,7 @@ void chry_readline_detect(chry_readline_t *rl)
     uint16_t pn[4];
 
     /*!< test sput and get screen size */
-    if (5 != rl->sput(rl, "\e[18t", 5)) {
+    if (5 != rl->sput(rl, "\033[18t", 5)) {
         return;
     }
 
@@ -2103,10 +2104,10 @@ void chry_readline_detect(chry_readline_t *rl)
 
 /*****************************************************************************
 * @brief        set auto complete callback
-*
+* 
 * @param[in]    rl          readline instance
 * @param[in]    acb         callback
-*
+* 
 *****************************************************************************/
 void chry_readline_set_completion_cb(chry_readline_t *rl, uint8_t (*acb)(chry_readline_t *rl, char *pre, uint16_t *size, const char **argv, uint8_t *argl, uint8_t argcmax))
 {
@@ -2119,10 +2120,10 @@ void chry_readline_set_completion_cb(chry_readline_t *rl, uint8_t (*acb)(chry_re
 
 /*****************************************************************************
 * @brief        set user event exec callback
-*
+* 
 * @param[in]    rl          readline instance
 * @param[in]    ucb         callback
-*
+* 
 *****************************************************************************/
 void chry_readline_set_user_cb(chry_readline_t *rl, int (*ucb)(chry_readline_t *rl, uint8_t exec))
 {
@@ -2131,11 +2132,11 @@ void chry_readline_set_user_cb(chry_readline_t *rl, int (*ucb)(chry_readline_t *
 
 /*****************************************************************************
 * @brief        set ctrl mapping
-*
+* 
 * @param[in]    rl          readline instance
 * @param[in]    mapidx      map index
 * @param[in]    exec        exec code
-*
+* 
 *****************************************************************************/
 void chry_readline_set_ctrlmap(chry_readline_t *rl, uint8_t mapidx, uint8_t exec)
 {
@@ -2150,11 +2151,11 @@ void chry_readline_set_ctrlmap(chry_readline_t *rl, uint8_t mapidx, uint8_t exec
 
 /*****************************************************************************
 * @brief        set alt mapping
-*
+* 
 * @param[in]    rl          readline instance
 * @param[in]    mapidx      map index
 * @param[in]    exec        exec code
-*
+* 
 *****************************************************************************/
 void chry_readline_set_altmap(chry_readline_t *rl, uint8_t mapidx, uint8_t exec)
 {
@@ -2170,9 +2171,9 @@ void chry_readline_set_altmap(chry_readline_t *rl, uint8_t mapidx, uint8_t exec)
 #if defined(CONFIG_READLINE_DEBUG) && CONFIG_READLINE_DEBUG
 /*****************************************************************************
 * @brief        debug for keycode test
-*
+* 
 * @param[in]    rl          readline instance
-*
+* 
 *****************************************************************************/
 void chry_readline_debug(chry_readline_t *rl)
 {
@@ -2215,13 +2216,13 @@ void chry_readline_debug(chry_readline_t *rl)
 /*****************************************************************************
 * @brief        edit the specified segment of the prompt,
 *               segment will be create at first edit
-*
+* 
 * @param[in]    rl          readline instance
 * @param[in]    secidx      segment index, < PPTSEG
 * @param[in]    sgrraw      sgr sequense raw data
 * @param[in]    format      string end with \0
 * @param[in]    ...         params
-*
+* 
 * @retval int               0:Success -1:Error -2:No space
 *****************************************************************************/
 int chry_readline_prompt_edit(chry_readline_t *rl, uint8_t segidx, uint16_t sgrraw, const char *format, ...)
@@ -2282,14 +2283,14 @@ int chry_readline_prompt_edit(chry_readline_t *rl, uint8_t segidx, uint16_t sgrr
             rl->pptseglen[segidx] = sgrlen + freelen;
 
             /*!< end with \e0m\0 */
-            memcpy(&(rl->prompt[segoff + sgrlen + freelen]), "\e[m", 4);
+            memcpy(&(rl->prompt[segoff + sgrlen + freelen]), "\033[m", 5);
             return -2;
         } else {
             /*!< set segment len */
             rl->pptseglen[segidx] = sgrlen + seglen;
 
             /*!< end with \e0m\0 */
-            memcpy(&(rl->prompt[segoff + sgrlen + seglen]), "\e[m", 4);
+            memcpy(&(rl->prompt[segoff + sgrlen + seglen]), "\033[m", 5);
 
             return 0;
         }
@@ -2326,7 +2327,7 @@ int chry_readline_prompt_edit(chry_readline_t *rl, uint8_t segidx, uint16_t sgrr
     rl->pptseglen[segidx] = actlen;
 
     /*!< end with \e0m\0 */
-    memcpy(&(rl->prompt[pptlen + actlen]), "\e[m", 4);
+    memcpy(&(rl->prompt[pptlen + actlen]), "\033[m", 5);
 
     if (seglen > freelen) {
         return -2;
@@ -2344,9 +2345,9 @@ int chry_readline_prompt_edit(chry_readline_t *rl, uint8_t segidx, uint16_t sgrr
 
 /*****************************************************************************
 * @brief        clear all seglen, next edit is first
-*
+* 
 * @param[in]    rl          readline instance
-*
+* 
 *****************************************************************************/
 void chry_readline_prompt_clear(chry_readline_t *rl)
 {

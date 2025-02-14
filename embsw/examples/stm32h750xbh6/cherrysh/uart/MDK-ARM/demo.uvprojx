@@ -340,7 +340,7 @@
               <MiscControls></MiscControls>
               <Define>USE_HAL_DRIVER,STM32H750xx</Define>
               <Undefine></Undefine>
-              <IncludePath>../Core/Inc;F:/app_usb/embsw/platform/STM32Cube_FW_H7_V1.11.0/Drivers/STM32H7xx_HAL_Driver/Inc;F:/app_usb/embsw/platform/STM32Cube_FW_H7_V1.11.0/Drivers/STM32H7xx_HAL_Driver/Inc/Legacy;F:/app_usb/embsw/platform/STM32Cube_FW_H7_V1.11.0/Drivers/CMSIS/Device/ST/STM32H7xx/Include;F:/app_usb/embsw/platform/STM32Cube_FW_H7_V1.11.0/Drivers/CMSIS/Include;../../../../../middlewares/cherryusb/class/cdc;../../../../../middlewares/cherryusb/core;../../../../../middlewares/cherryusb/common;..\..\..\..\..\middlewares\CherrySH;..\..\..\..\..\middlewares\CherryRB</IncludePath>
+              <IncludePath>../Core/Inc;F:/app_usb/embsw/platform/STM32Cube_FW_H7_V1.11.0/Drivers/STM32H7xx_HAL_Driver/Inc;F:/app_usb/embsw/platform/STM32Cube_FW_H7_V1.11.0/Drivers/STM32H7xx_HAL_Driver/Inc/Legacy;F:/app_usb/embsw/platform/STM32Cube_FW_H7_V1.11.0/Drivers/CMSIS/Device/ST/STM32H7xx/Include;F:/app_usb/embsw/platform/STM32Cube_FW_H7_V1.11.0/Drivers/CMSIS/Include;..\..\..\..\..\middlewares\CherrySH;..\..\..\..\..\middlewares\CherryRB</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -645,31 +645,6 @@
               <FileName>system_stm32h7xx.c</FileName>
               <FileType>1</FileType>
               <FilePath>../Core/Src/system_stm32h7xx.c</FilePath>
-            </File>
-          </Files>
-        </Group>
-        <Group>
-          <GroupName>Middleware/CherryUSB</GroupName>
-          <Files>
-            <File>
-              <FileName>usbd_core.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\middlewares\cherryusb\core\usbd_core.c</FilePath>
-            </File>
-            <File>
-              <FileName>usb_dc_dwc2.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\middlewares\cherryusb\port\dwc2\usb_dc_dwc2.c</FilePath>
-            </File>
-            <File>
-              <FileName>usb_glue_st.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\middlewares\cherryusb\port\dwc2\usb_glue_st.c</FilePath>
-            </File>
-            <File>
-              <FileName>usbd_cdc_acm.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\middlewares\CherryUSB\class\cdc\usbd_cdc_acm.c</FilePath>
             </File>
           </Files>
         </Group>

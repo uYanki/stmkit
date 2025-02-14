@@ -23,7 +23,6 @@
 /* USER CODE BEGIN Includes */
 #include <stdio.h>
 #include "shell.h"
-#include "usbd_core.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -48,6 +47,7 @@ UART_HandleTypeDef huart1;
 PCD_HandleTypeDef hpcd_USB_OTG_FS;
 
 /* USER CODE BEGIN PV */
+
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -57,14 +57,6 @@ static void MX_GPIO_Init(void);
 static void MX_USB_OTG_FS_PCD_Init(void);
 static void MX_USART1_UART_Init(void);
 /* USER CODE BEGIN PFP */
-
-void usb_dc_low_level_init(void)
-{
-    MX_USB_OTG_FS_PCD_Init();
-}
-
-void usb_dc_low_level_deinit(void)
-{}
 
 /* USER CODE END PFP */
 
@@ -151,22 +143,31 @@ int main(void)
     MX_USART1_UART_Init();
     /* USER CODE BEGIN 2 */
 
-    if (0 != shell_init(0, USB_OTG_FS_PERIPH_BASE, true))
-    {
-        /* shell failed to be initialized */
-        printf("Failed to initialize shell\r\n");
-        for (;;)
-        {
-            ;
-        }
-    }
     /* USER CODE END 2 */
 
     /* Infinite loop */
     /* USER CODE BEGIN WHILE */
+
+
+    /* default password is : 12345678 */
+    shell_init(&huart1, false);
+		
+    uint32_t now, time;
+
+    time = HAL_GetTick();
+
     while (1)
     {
         shell_main();
+
+//        now = HAL_GetTick();
+//        if (now > time + 5000)
+//        {
+//            time = now;
+//            shell_lock();
+//            printf("other task interval 5S\r\n");
+//            shell_unlock();
+//        }
 
         /* USER CODE END WHILE */
 
@@ -256,7 +257,7 @@ static void MX_USART1_UART_Init(void)
     huart1.Init.WordLength             = UART_WORDLENGTH_8B;
     huart1.Init.StopBits               = UART_STOPBITS_1;
     huart1.Init.Parity                 = UART_PARITY_NONE;
-    huart1.Init.Mode                   = UART_MODE_TX;
+    huart1.Init.Mode                   = UART_MODE_TX_RX;
     huart1.Init.HwFlowCtl              = UART_HWCONTROL_NONE;
     huart1.Init.OverSampling           = UART_OVERSAMPLING_16;
     huart1.Init.OneBitSampling         = UART_ONE_BIT_SAMPLE_DISABLE;
