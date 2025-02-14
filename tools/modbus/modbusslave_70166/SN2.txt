@@ -1,0 +1,5 @@
+Modbus Slave version 6.0.2 Build 826
+32位与64位
+
+序列号：
+5455415451475662
