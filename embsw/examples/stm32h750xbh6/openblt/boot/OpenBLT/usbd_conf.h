@@ -70,13 +70,9 @@
 /*---------- -----------*/
 #define USBD_DEBUG_LEVEL     0U
 /*---------- -----------*/
-#define USBD_SELF_POWERED     1U
+#define USBD_LPM_ENABLED     0U
 /*---------- -----------*/
-/* Enable/disable the loading of the WinUSB GUID through MS OS 2.0 descriptors. This
- * makes it possible to automatically install WinUSB devices without having to provide
- * a device specific INF file.
- */
-#define USBD_WINUSB_ENABLED     1U
+#define USBD_SELF_POWERED     1U
 
 /****************************************/
 /* #define for FS and HS identification */
@@ -95,26 +91,19 @@
   * @{
   */
 
-#if (USBD_WINUSB_ENABLED == 1)
-/* Reading out the MS OS 2.0 descriptors, requires support for BOS descriptors. This
- * is currently enabled in the ST USB stack by enabled the USBD_LPM_ENABLED feature.
- */
-#define USBD_LPM_ENABLED     1U
-#endif
-
 /* Memory management macros */
 
 /** Alias for memory allocation. */
-#define USBD_malloc         /* Not used */
+#define USBD_malloc         malloc
 
 /** Alias for memory release. */
-#define USBD_free           /* Not used */
+#define USBD_free           free
 
 /** Alias for memory set. */
-#define USBD_memset         /* Not used */
+#define USBD_memset         memset
 
 /** Alias for memory copy. */
-#define USBD_memcpy         /* Not used */
+#define USBD_memcpy         memcpy
 
 /** Alias for delay. */
 #define USBD_Delay          HAL_Delay
