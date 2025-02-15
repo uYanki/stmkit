@@ -65,9 +65,7 @@
  *
  */
 /** \brief Enable/disable USB transport layer. */
-#ifndef BOOT_COM_USB_ENABLE
-#define BOOT_COM_USB_ENABLE             (0)
-#endif 
+#define BOOT_COM_USB_ENABLE             (1)
 /** \brief Configure number of bytes in the target->host data packet. */
 #define BOOT_COM_USB_TX_MAX_DATA        (63)
 /** \brief Configure number of bytes in the host->target data packet. */
@@ -87,9 +85,7 @@
  *
  */
 /** \brief Enable/disable CAN transport layer. */
-#ifndef BOOT_COM_CAN_ENABLE
-#define BOOT_COM_CAN_ENABLE             (0)
-#endif 
+#define BOOT_COM_CAN_ENABLE             (1)
 /** \brief Configure the desired CAN baudrate. */
 #define BOOT_COM_CAN_BAUDRATE           (500000)
 /** \brief Configure CAN message ID target->host. */
@@ -112,9 +108,7 @@
  *
  */
 /** \brief Enable/disable UART transport layer. */
-#ifndef BOOT_COM_RS232_ENABLE
-#define BOOT_COM_RS232_ENABLE            (0)
-#endif 
+#define BOOT_COM_RS232_ENABLE            (1)
 /** \brief Configure the desired communication speed. */
 #define BOOT_COM_RS232_BAUDRATE          (57600)
 /** \brief Configure number of bytes in the target->host data packet. */
