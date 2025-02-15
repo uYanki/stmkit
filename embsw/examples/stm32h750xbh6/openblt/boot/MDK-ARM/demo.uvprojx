@@ -340,7 +340,7 @@
               <MiscControls></MiscControls>
               <Define>USE_HAL_DRIVER,STM32H750xx,USE_FULL_LL_DRIVER</Define>
               <Undefine></Undefine>
-              <IncludePath>../USB_DEVICE/App;../USB_DEVICE/Target;../Core/Inc;F:/app_usb/embsw/platform/STM32Cube_FW_H7_V1.11.0/Drivers/STM32H7xx_HAL_Driver/Inc;F:/app_usb/embsw/platform/STM32Cube_FW_H7_V1.11.0/Drivers/STM32H7xx_HAL_Driver/Inc/Legacy;F:/app_usb/embsw/platform/STM32Cube_FW_H7_V1.11.0/Middlewares/ST/STM32_USB_Device_Library/Core/Inc;F:/app_usb/embsw/platform/STM32Cube_FW_H7_V1.11.0/Drivers/CMSIS/Device/ST/STM32H7xx/Include;F:/app_usb/embsw/platform/STM32Cube_FW_H7_V1.11.0/Drivers/CMSIS/Include;F:/app_usb/embsw/platform/STM32Cube_FW_H7_V1.11.0/Middlewares/ST/STM32_USB_Device_Library/Class/CustomHID/Inc;../../../../../components;../../../../../middlewares/OpenBLT/source;../OpenBLT</IncludePath>
+              <IncludePath>../USB_DEVICE/App;../USB_DEVICE/Target;../Core/Inc;F:/app_usb/embsw/platform/STM32Cube_FW_H7_V1.11.0/Drivers/STM32H7xx_HAL_Driver/Inc;F:/app_usb/embsw/platform/STM32Cube_FW_H7_V1.11.0/Drivers/STM32H7xx_HAL_Driver/Inc/Legacy;F:/app_usb/embsw/platform/STM32Cube_FW_H7_V1.11.0/Middlewares/ST/STM32_USB_Device_Library/Core/Inc;F:/app_usb/embsw/platform/STM32Cube_FW_H7_V1.11.0/Drivers/CMSIS/Device/ST/STM32H7xx/Include;F:/app_usb/embsw/platform/STM32Cube_FW_H7_V1.11.0/Drivers/CMSIS/Include;F:/app_usb/embsw/platform/STM32Cube_FW_H7_V1.11.0/Middlewares/ST/STM32_USB_Device_Library/Class/CustomHID/Inc;../../../../../components;..\..\..\..\..\middlewares\OpenBLT\boot\core;../OpenBLT</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -586,51 +586,6 @@
               <FileName>usbd_ioreq.c</FileName>
               <FileType>1</FileType>
               <FilePath>F:/app_usb/embsw/platform/STM32Cube_FW_H7_V1.11.0/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ioreq.c</FilePath>
-            </File>
-          </Files>
-        </Group>
-        <Group>
-          <GroupName>Middlewares/OpenBLT/Core</GroupName>
-          <Files>
-            <File>
-              <FileName>asserts.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\middlewares\OpenBLT\source\asserts.c</FilePath>
-            </File>
-            <File>
-              <FileName>backdoor.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\middlewares\OpenBLT\source\backdoor.c</FilePath>
-            </File>
-            <File>
-              <FileName>boot.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\middlewares\OpenBLT\source\boot.c</FilePath>
-            </File>
-            <File>
-              <FileName>com.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\middlewares\OpenBLT\source\com.c</FilePath>
-            </File>
-            <File>
-              <FileName>cop.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\middlewares\OpenBLT\source\cop.c</FilePath>
-            </File>
-            <File>
-              <FileName>file.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\middlewares\OpenBLT\source\file.c</FilePath>
-            </File>
-            <File>
-              <FileName>net.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\middlewares\OpenBLT\source\net.c</FilePath>
-            </File>
-            <File>
-              <FileName>xcp.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\middlewares\OpenBLT\source\xcp.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -2679,6 +2634,56 @@
                   </Cads>
                 </FileArmAds>
               </FileOption>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>Middlewares/OpenBLT/Core</GroupName>
+          <Files>
+            <File>
+              <FileName>asserts.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\..\..\middlewares\OpenBLT\boot\core\asserts.c</FilePath>
+            </File>
+            <File>
+              <FileName>backdoor.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\..\..\middlewares\OpenBLT\boot\core\backdoor.c</FilePath>
+            </File>
+            <File>
+              <FileName>boot.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\..\..\middlewares\OpenBLT\boot\core\boot.c</FilePath>
+            </File>
+            <File>
+              <FileName>com.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\..\..\middlewares\OpenBLT\boot\core\com.c</FilePath>
+            </File>
+            <File>
+              <FileName>cop.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\..\..\middlewares\OpenBLT\boot\core\cop.c</FilePath>
+            </File>
+            <File>
+              <FileName>file.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\..\..\middlewares\OpenBLT\boot\core\file.c</FilePath>
+            </File>
+            <File>
+              <FileName>mb.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\..\..\middlewares\OpenBLT\boot\core\mb.c</FilePath>
+            </File>
+            <File>
+              <FileName>net.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\..\..\middlewares\OpenBLT\boot\core\net.c</FilePath>
+            </File>
+            <File>
+              <FileName>xcp.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\..\..\middlewares\OpenBLT\boot\core\xcp.c</FilePath>
             </File>
           </Files>
         </Group>

@@ -86,9 +86,6 @@ static void     Rs232TransmitByte(blt_int8u data);
 ****************************************************************************************/
 void Rs232Init(void)
 {
-	return;
-  LL_USART_InitTypeDef USART_InitStruct;
-
   /* the current implementation supports USART1 - USART5. throw an assertion error in
    * case a different UART channel is configured.
    */
@@ -101,20 +98,6 @@ void Rs232Init(void)
             (BOOT_COM_RS232_CHANNEL_INDEX == 6) ||
             (BOOT_COM_RS232_CHANNEL_INDEX == 7));
 
-  /* disable the UART peripheral */
-  LL_USART_Disable(USART_CHANNEL);
-  /* configure UART peripheral */
-  USART_InitStruct.PrescalerValue = LL_USART_PRESCALER_DIV1;
-  USART_InitStruct.BaudRate = BOOT_COM_RS232_BAUDRATE;
-  USART_InitStruct.DataWidth = LL_USART_DATAWIDTH_8B;
-  USART_InitStruct.StopBits = LL_USART_STOPBITS_1;
-  USART_InitStruct.Parity = LL_USART_PARITY_NONE;
-  USART_InitStruct.TransferDirection = LL_USART_DIRECTION_TX_RX;
-  USART_InitStruct.HardwareFlowControl = LL_USART_HWCONTROL_NONE;
-  USART_InitStruct.OverSampling = LL_USART_OVERSAMPLING_16;
-  /* initialize the UART peripheral */
-  LL_USART_Init(USART_CHANNEL, &USART_InitStruct);
-  LL_USART_Enable(USART_CHANNEL);
 } /*** end of Rs232Init ***/
 
 
