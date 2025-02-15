@@ -1,7 +1,7 @@
 #ifndef __ENDIAN_H__
 #define __ENDIAN_H__
 
-#include "./types.h"
+#include "./typebasic.h"
 
 #ifdef __cplusplus
 extern "C" {
