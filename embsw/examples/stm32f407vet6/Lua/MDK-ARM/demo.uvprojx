@@ -49,7 +49,7 @@
             <NotGenerated>0</NotGenerated>
             <InvalidFlash>1</InvalidFlash>
           </TargetStatus>
-          <OutputDirectory>.\Object\</OutputDirectory>
+          <OutputDirectory>.\objects\</OutputDirectory>
           <OutputName>demo</OutputName>
           <CreateExecutable>1</CreateExecutable>
           <CreateLib>0</CreateLib>
@@ -338,9 +338,9 @@
             <v6Rtti>0</v6Rtti>
             <VariousControls>
               <MiscControls>-Wno-shift-negative-value -Wno-shift-count-negative -Wno-int-to-void-pointer-cast -Wno-unused-value</MiscControls>
-              <Define>USE_HAL_DRIVER,STM32F407xx</Define>
+              <Define>USE_HAL_DRIVER,STM32F407xx,BOARD_STM32F407VET6_XWS</Define>
               <Undefine></Undefine>
-              <IncludePath>../Core/Inc;../../../../components/logger;../../../../libcpu\STM32Cube_FW_F4_V1.28.0\Drivers\STM32F4xx_HAL_Driver\Inc;../../../../libcpu\STM32Cube_FW_F4_V1.28.0\Drivers\STM32F4xx_HAL_Driver\Inc\Legacy;../../../../libcpu\STM32Cube_FW_F4_V1.28.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include;../../../../libcpu\STM32Cube_FW_F4_V1.28.0\Drivers\CMSIS\Device\CMSIS\Include</IncludePath>
+              <IncludePath>../Core/Inc;../../../../components/logger;../../../../platform/STM32Cube_FW_F4_V1.28.0/Drivers/STM32F4xx_HAL_Driver/Inc;../../../../platform/STM32Cube_FW_F4_V1.28.0/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy;../../../../platform/STM32Cube_FW_F4_V1.28.0/Drivers/CMSIS/Device/ST/STM32F4xx/Include;../../../../platform/STM32Cube_FW_F4_V1.28.0/Drivers/CMSIS/Device/CMSIS/Include;../../../../middlewares/lua/inc;../../../../boards;F:/app_usb/embsw/platform/STM32Cube_FW_F4_V1.28.0/Drivers/STM32F4xx_HAL_Driver/Inc;F:/app_usb/embsw/platform/STM32Cube_FW_F4_V1.28.0/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy;F:/app_usb/embsw/platform/STM32Cube_FW_F4_V1.28.0/Drivers/CMSIS/Device/ST/STM32F4xx/Include;F:/app_usb/embsw/platform/STM32Cube_FW_F4_V1.28.0/Drivers/CMSIS/Include</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -443,230 +443,6 @@
               <FilePath>../Core/Src/main.c</FilePath>
             </File>
             <File>
-              <FileName>gpio.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>../Core/Src/gpio.c</FilePath>
-              <FileOption>
-                <CommonProperty>
-                  <UseCPPCompiler>2</UseCPPCompiler>
-                  <RVCTCodeConst>0</RVCTCodeConst>
-                  <RVCTZI>0</RVCTZI>
-                  <RVCTOtherData>0</RVCTOtherData>
-                  <ModuleSelection>0</ModuleSelection>
-                  <IncludeInBuild>1</IncludeInBuild>
-                  <AlwaysBuild>2</AlwaysBuild>
-                  <GenerateAssemblyFile>2</GenerateAssemblyFile>
-                  <AssembleAssemblyFile>2</AssembleAssemblyFile>
-                  <PublicsOnly>2</PublicsOnly>
-                  <StopOnExitCode>11</StopOnExitCode>
-                  <CustomArgument></CustomArgument>
-                  <IncludeLibraryModules></IncludeLibraryModules>
-                  <ComprImg>1</ComprImg>
-                </CommonProperty>
-                <FileArmAds>
-                  <Cads>
-                    <interw>2</interw>
-                    <Optim>0</Optim>
-                    <oTime>2</oTime>
-                    <SplitLS>2</SplitLS>
-                    <OneElfS>2</OneElfS>
-                    <Strict>2</Strict>
-                    <EnumInt>2</EnumInt>
-                    <PlainCh>2</PlainCh>
-                    <Ropi>2</Ropi>
-                    <Rwpi>2</Rwpi>
-                    <wLevel>0</wLevel>
-                    <uThumb>2</uThumb>
-                    <uSurpInc>2</uSurpInc>
-                    <uC99>2</uC99>
-                    <uGnu>2</uGnu>
-                    <useXO>2</useXO>
-                    <v6Lang>0</v6Lang>
-                    <v6LangP>0</v6LangP>
-                    <vShortEn>2</vShortEn>
-                    <vShortWch>2</vShortWch>
-                    <v6Lto>2</v6Lto>
-                    <v6WtE>2</v6WtE>
-                    <v6Rtti>2</v6Rtti>
-                    <VariousControls>
-                      <MiscControls></MiscControls>
-                      <Define></Define>
-                      <Undefine></Undefine>
-                      <IncludePath></IncludePath>
-                    </VariousControls>
-                  </Cads>
-                </FileArmAds>
-              </FileOption>
-            </File>
-            <File>
-              <FileName>dma.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>../Core/Src/dma.c</FilePath>
-              <FileOption>
-                <CommonProperty>
-                  <UseCPPCompiler>2</UseCPPCompiler>
-                  <RVCTCodeConst>0</RVCTCodeConst>
-                  <RVCTZI>0</RVCTZI>
-                  <RVCTOtherData>0</RVCTOtherData>
-                  <ModuleSelection>0</ModuleSelection>
-                  <IncludeInBuild>1</IncludeInBuild>
-                  <AlwaysBuild>2</AlwaysBuild>
-                  <GenerateAssemblyFile>2</GenerateAssemblyFile>
-                  <AssembleAssemblyFile>2</AssembleAssemblyFile>
-                  <PublicsOnly>2</PublicsOnly>
-                  <StopOnExitCode>11</StopOnExitCode>
-                  <CustomArgument></CustomArgument>
-                  <IncludeLibraryModules></IncludeLibraryModules>
-                  <ComprImg>1</ComprImg>
-                </CommonProperty>
-                <FileArmAds>
-                  <Cads>
-                    <interw>2</interw>
-                    <Optim>0</Optim>
-                    <oTime>2</oTime>
-                    <SplitLS>2</SplitLS>
-                    <OneElfS>2</OneElfS>
-                    <Strict>2</Strict>
-                    <EnumInt>2</EnumInt>
-                    <PlainCh>2</PlainCh>
-                    <Ropi>2</Ropi>
-                    <Rwpi>2</Rwpi>
-                    <wLevel>0</wLevel>
-                    <uThumb>2</uThumb>
-                    <uSurpInc>2</uSurpInc>
-                    <uC99>2</uC99>
-                    <uGnu>2</uGnu>
-                    <useXO>2</useXO>
-                    <v6Lang>0</v6Lang>
-                    <v6LangP>0</v6LangP>
-                    <vShortEn>2</vShortEn>
-                    <vShortWch>2</vShortWch>
-                    <v6Lto>2</v6Lto>
-                    <v6WtE>2</v6WtE>
-                    <v6Rtti>2</v6Rtti>
-                    <VariousControls>
-                      <MiscControls></MiscControls>
-                      <Define></Define>
-                      <Undefine></Undefine>
-                      <IncludePath></IncludePath>
-                    </VariousControls>
-                  </Cads>
-                </FileArmAds>
-              </FileOption>
-            </File>
-            <File>
-              <FileName>tim.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>../Core/Src/tim.c</FilePath>
-              <FileOption>
-                <CommonProperty>
-                  <UseCPPCompiler>2</UseCPPCompiler>
-                  <RVCTCodeConst>0</RVCTCodeConst>
-                  <RVCTZI>0</RVCTZI>
-                  <RVCTOtherData>0</RVCTOtherData>
-                  <ModuleSelection>0</ModuleSelection>
-                  <IncludeInBuild>1</IncludeInBuild>
-                  <AlwaysBuild>2</AlwaysBuild>
-                  <GenerateAssemblyFile>2</GenerateAssemblyFile>
-                  <AssembleAssemblyFile>2</AssembleAssemblyFile>
-                  <PublicsOnly>2</PublicsOnly>
-                  <StopOnExitCode>11</StopOnExitCode>
-                  <CustomArgument></CustomArgument>
-                  <IncludeLibraryModules></IncludeLibraryModules>
-                  <ComprImg>1</ComprImg>
-                </CommonProperty>
-                <FileArmAds>
-                  <Cads>
-                    <interw>2</interw>
-                    <Optim>0</Optim>
-                    <oTime>2</oTime>
-                    <SplitLS>2</SplitLS>
-                    <OneElfS>2</OneElfS>
-                    <Strict>2</Strict>
-                    <EnumInt>2</EnumInt>
-                    <PlainCh>2</PlainCh>
-                    <Ropi>2</Ropi>
-                    <Rwpi>2</Rwpi>
-                    <wLevel>0</wLevel>
-                    <uThumb>2</uThumb>
-                    <uSurpInc>2</uSurpInc>
-                    <uC99>2</uC99>
-                    <uGnu>2</uGnu>
-                    <useXO>2</useXO>
-                    <v6Lang>0</v6Lang>
-                    <v6LangP>0</v6LangP>
-                    <vShortEn>2</vShortEn>
-                    <vShortWch>2</vShortWch>
-                    <v6Lto>2</v6Lto>
-                    <v6WtE>2</v6WtE>
-                    <v6Rtti>2</v6Rtti>
-                    <VariousControls>
-                      <MiscControls></MiscControls>
-                      <Define></Define>
-                      <Undefine></Undefine>
-                      <IncludePath></IncludePath>
-                    </VariousControls>
-                  </Cads>
-                </FileArmAds>
-              </FileOption>
-            </File>
-            <File>
-              <FileName>usart.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>../Core/Src/usart.c</FilePath>
-              <FileOption>
-                <CommonProperty>
-                  <UseCPPCompiler>2</UseCPPCompiler>
-                  <RVCTCodeConst>0</RVCTCodeConst>
-                  <RVCTZI>0</RVCTZI>
-                  <RVCTOtherData>0</RVCTOtherData>
-                  <ModuleSelection>0</ModuleSelection>
-                  <IncludeInBuild>1</IncludeInBuild>
-                  <AlwaysBuild>2</AlwaysBuild>
-                  <GenerateAssemblyFile>2</GenerateAssemblyFile>
-                  <AssembleAssemblyFile>2</AssembleAssemblyFile>
-                  <PublicsOnly>2</PublicsOnly>
-                  <StopOnExitCode>11</StopOnExitCode>
-                  <CustomArgument></CustomArgument>
-                  <IncludeLibraryModules></IncludeLibraryModules>
-                  <ComprImg>1</ComprImg>
-                </CommonProperty>
-                <FileArmAds>
-                  <Cads>
-                    <interw>2</interw>
-                    <Optim>0</Optim>
-                    <oTime>2</oTime>
-                    <SplitLS>2</SplitLS>
-                    <OneElfS>2</OneElfS>
-                    <Strict>2</Strict>
-                    <EnumInt>2</EnumInt>
-                    <PlainCh>2</PlainCh>
-                    <Ropi>2</Ropi>
-                    <Rwpi>2</Rwpi>
-                    <wLevel>0</wLevel>
-                    <uThumb>2</uThumb>
-                    <uSurpInc>2</uSurpInc>
-                    <uC99>2</uC99>
-                    <uGnu>2</uGnu>
-                    <useXO>2</useXO>
-                    <v6Lang>0</v6Lang>
-                    <v6LangP>0</v6LangP>
-                    <vShortEn>2</vShortEn>
-                    <vShortWch>2</vShortWch>
-                    <v6Lto>2</v6Lto>
-                    <v6WtE>2</v6WtE>
-                    <v6Rtti>2</v6Rtti>
-                    <VariousControls>
-                      <MiscControls></MiscControls>
-                      <Define></Define>
-                      <Undefine></Undefine>
-                      <IncludePath></IncludePath>
-                    </VariousControls>
-                  </Cads>
-                </FileArmAds>
-              </FileOption>
-            </File>
-            <File>
               <FileName>stm32f4xx_it.c</FileName>
               <FileType>1</FileType>
               <FilePath>../Core/Src/stm32f4xx_it.c</FilePath>
@@ -763,7 +539,7 @@
             <File>
               <FileName>stm32f4xx_hal_tim.c</FileName>
               <FileType>1</FileType>
-              <FilePath>../../../../libcpu\STM32Cube_FW_F4_V1.28.0\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_tim.c</FilePath>
+              <FilePath>F:/app_usb/embsw/platform/STM32Cube_FW_F4_V1.28.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c</FilePath>
               <FileOption>
                 <CommonProperty>
                   <UseCPPCompiler>2</UseCPPCompiler>
@@ -819,7 +595,7 @@
             <File>
               <FileName>stm32f4xx_hal_tim_ex.c</FileName>
               <FileType>1</FileType>
-              <FilePath>../../../../libcpu\STM32Cube_FW_F4_V1.28.0\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_tim_ex.c</FilePath>
+              <FilePath>F:/app_usb/embsw/platform/STM32Cube_FW_F4_V1.28.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c</FilePath>
               <FileOption>
                 <CommonProperty>
                   <UseCPPCompiler>2</UseCPPCompiler>
@@ -875,7 +651,7 @@
             <File>
               <FileName>stm32f4xx_hal_rcc.c</FileName>
               <FileType>1</FileType>
-              <FilePath>../../../../libcpu\STM32Cube_FW_F4_V1.28.0\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_rcc.c</FilePath>
+              <FilePath>F:/app_usb/embsw/platform/STM32Cube_FW_F4_V1.28.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c</FilePath>
               <FileOption>
                 <CommonProperty>
                   <UseCPPCompiler>2</UseCPPCompiler>
@@ -931,7 +707,7 @@
             <File>
               <FileName>stm32f4xx_hal_rcc_ex.c</FileName>
               <FileType>1</FileType>
-              <FilePath>../../../../libcpu\STM32Cube_FW_F4_V1.28.0\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_rcc_ex.c</FilePath>
+              <FilePath>F:/app_usb/embsw/platform/STM32Cube_FW_F4_V1.28.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c</FilePath>
               <FileOption>
                 <CommonProperty>
                   <UseCPPCompiler>2</UseCPPCompiler>
@@ -987,7 +763,7 @@
             <File>
               <FileName>stm32f4xx_hal_flash.c</FileName>
               <FileType>1</FileType>
-              <FilePath>../../../../libcpu\STM32Cube_FW_F4_V1.28.0\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_flash.c</FilePath>
+              <FilePath>F:/app_usb/embsw/platform/STM32Cube_FW_F4_V1.28.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c</FilePath>
               <FileOption>
                 <CommonProperty>
                   <UseCPPCompiler>2</UseCPPCompiler>
@@ -1043,7 +819,7 @@
             <File>
               <FileName>stm32f4xx_hal_flash_ex.c</FileName>
               <FileType>1</FileType>
-              <FilePath>../../../../libcpu\STM32Cube_FW_F4_V1.28.0\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_flash_ex.c</FilePath>
+              <FilePath>F:/app_usb/embsw/platform/STM32Cube_FW_F4_V1.28.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c</FilePath>
               <FileOption>
                 <CommonProperty>
                   <UseCPPCompiler>2</UseCPPCompiler>
@@ -1099,7 +875,7 @@
             <File>
               <FileName>stm32f4xx_hal_flash_ramfunc.c</FileName>
               <FileType>1</FileType>
-              <FilePath>../../../../libcpu\STM32Cube_FW_F4_V1.28.0\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_flash_ramfunc.c</FilePath>
+              <FilePath>F:/app_usb/embsw/platform/STM32Cube_FW_F4_V1.28.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.c</FilePath>
               <FileOption>
                 <CommonProperty>
                   <UseCPPCompiler>2</UseCPPCompiler>
@@ -1155,7 +931,7 @@
             <File>
               <FileName>stm32f4xx_hal_gpio.c</FileName>
               <FileType>1</FileType>
-              <FilePath>../../../../libcpu\STM32Cube_FW_F4_V1.28.0\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_gpio.c</FilePath>
+              <FilePath>F:/app_usb/embsw/platform/STM32Cube_FW_F4_V1.28.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c</FilePath>
               <FileOption>
                 <CommonProperty>
                   <UseCPPCompiler>2</UseCPPCompiler>
@@ -1211,7 +987,7 @@
             <File>
               <FileName>stm32f4xx_hal_dma_ex.c</FileName>
               <FileType>1</FileType>
-              <FilePath>../../../../libcpu\STM32Cube_FW_F4_V1.28.0\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_dma_ex.c</FilePath>
+              <FilePath>F:/app_usb/embsw/platform/STM32Cube_FW_F4_V1.28.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c</FilePath>
               <FileOption>
                 <CommonProperty>
                   <UseCPPCompiler>2</UseCPPCompiler>
@@ -1267,7 +1043,7 @@
             <File>
               <FileName>stm32f4xx_hal_dma.c</FileName>
               <FileType>1</FileType>
-              <FilePath>../../../../libcpu\STM32Cube_FW_F4_V1.28.0\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_dma.c</FilePath>
+              <FilePath>F:/app_usb/embsw/platform/STM32Cube_FW_F4_V1.28.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c</FilePath>
               <FileOption>
                 <CommonProperty>
                   <UseCPPCompiler>2</UseCPPCompiler>
@@ -1323,7 +1099,7 @@
             <File>
               <FileName>stm32f4xx_hal_pwr.c</FileName>
               <FileType>1</FileType>
-              <FilePath>../../../../libcpu\STM32Cube_FW_F4_V1.28.0\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_pwr.c</FilePath>
+              <FilePath>F:/app_usb/embsw/platform/STM32Cube_FW_F4_V1.28.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c</FilePath>
               <FileOption>
                 <CommonProperty>
                   <UseCPPCompiler>2</UseCPPCompiler>
@@ -1379,7 +1155,7 @@
             <File>
               <FileName>stm32f4xx_hal_pwr_ex.c</FileName>
               <FileType>1</FileType>
-              <FilePath>../../../../libcpu\STM32Cube_FW_F4_V1.28.0\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_pwr_ex.c</FilePath>
+              <FilePath>F:/app_usb/embsw/platform/STM32Cube_FW_F4_V1.28.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.c</FilePath>
               <FileOption>
                 <CommonProperty>
                   <UseCPPCompiler>2</UseCPPCompiler>
@@ -1435,7 +1211,7 @@
             <File>
               <FileName>stm32f4xx_hal_cortex.c</FileName>
               <FileType>1</FileType>
-              <FilePath>../../../../libcpu\STM32Cube_FW_F4_V1.28.0\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_cortex.c</FilePath>
+              <FilePath>F:/app_usb/embsw/platform/STM32Cube_FW_F4_V1.28.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c</FilePath>
               <FileOption>
                 <CommonProperty>
                   <UseCPPCompiler>2</UseCPPCompiler>
@@ -1491,7 +1267,7 @@
             <File>
               <FileName>stm32f4xx_hal.c</FileName>
               <FileType>1</FileType>
-              <FilePath>../../../../libcpu\STM32Cube_FW_F4_V1.28.0\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal.c</FilePath>
+              <FilePath>F:/app_usb/embsw/platform/STM32Cube_FW_F4_V1.28.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c</FilePath>
               <FileOption>
                 <CommonProperty>
                   <UseCPPCompiler>2</UseCPPCompiler>
@@ -1547,7 +1323,7 @@
             <File>
               <FileName>stm32f4xx_hal_exti.c</FileName>
               <FileType>1</FileType>
-              <FilePath>../../../../libcpu\STM32Cube_FW_F4_V1.28.0\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_exti.c</FilePath>
+              <FilePath>F:/app_usb/embsw/platform/STM32Cube_FW_F4_V1.28.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.c</FilePath>
               <FileOption>
                 <CommonProperty>
                   <UseCPPCompiler>2</UseCPPCompiler>
@@ -1603,7 +1379,7 @@
             <File>
               <FileName>stm32f4xx_hal_uart.c</FileName>
               <FileType>1</FileType>
-              <FilePath>../../../../libcpu\STM32Cube_FW_F4_V1.28.0\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_uart.c</FilePath>
+              <FilePath>F:/app_usb/embsw/platform/STM32Cube_FW_F4_V1.28.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c</FilePath>
               <FileOption>
                 <CommonProperty>
                   <UseCPPCompiler>2</UseCPPCompiler>
@@ -1656,180 +1432,10 @@
                 </FileArmAds>
               </FileOption>
             </File>
-            <File>
-              <FileName>stm32f4xx_hal_hash.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>../../../../libcpu\STM32Cube_FW_F4_V1.28.0\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_hash.c</FilePath>
-            </File>
           </Files>
         </Group>
         <Group>
-          <GroupName>middlewares/lua</GroupName>
-          <Files>
-            <File>
-              <FileName>lapi.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>../../../../middlewares/lua\lapi.c</FilePath>
-            </File>
-            <File>
-              <FileName>lauxlib.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>../../../../middlewares/lua\lauxlib.c</FilePath>
-            </File>
-            <File>
-              <FileName>lbaselib.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>../../../../middlewares/lua\lbaselib.c</FilePath>
-            </File>
-            <File>
-              <FileName>lcode.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>../../../../middlewares/lua\lcode.c</FilePath>
-            </File>
-            <File>
-              <FileName>lcorolib.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>../../../../middlewares/lua\lcorolib.c</FilePath>
-            </File>
-            <File>
-              <FileName>lctype.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>../../../../middlewares/lua\lctype.c</FilePath>
-            </File>
-            <File>
-              <FileName>ldblib.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>../../../../middlewares/lua\ldblib.c</FilePath>
-            </File>
-            <File>
-              <FileName>ldebug.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>../../../../middlewares/lua\ldebug.c</FilePath>
-            </File>
-            <File>
-              <FileName>ldo.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>../../../../middlewares/lua\ldo.c</FilePath>
-            </File>
-            <File>
-              <FileName>ldump.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>../../../../middlewares/lua\ldump.c</FilePath>
-            </File>
-            <File>
-              <FileName>lfunc.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>../../../../middlewares/lua\lfunc.c</FilePath>
-            </File>
-            <File>
-              <FileName>lgc.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>../../../../middlewares/lua\lgc.c</FilePath>
-            </File>
-            <File>
-              <FileName>linit.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>../../../../middlewares/lua\linit.c</FilePath>
-            </File>
-            <File>
-              <FileName>liolib.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>../../../../middlewares/lua\liolib.c</FilePath>
-            </File>
-            <File>
-              <FileName>llex.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>../../../../middlewares/lua\llex.c</FilePath>
-            </File>
-            <File>
-              <FileName>lmathlib.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>../../../../middlewares/lua\lmathlib.c</FilePath>
-            </File>
-            <File>
-              <FileName>lmem.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>../../../../middlewares/lua\lmem.c</FilePath>
-            </File>
-            <File>
-              <FileName>loadlib.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>../../../../middlewares/lua\loadlib.c</FilePath>
-            </File>
-            <File>
-              <FileName>lobject.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>../../../../middlewares/lua\lobject.c</FilePath>
-            </File>
-            <File>
-              <FileName>lopcodes.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>../../../../middlewares/lua\lopcodes.c</FilePath>
-            </File>
-            <File>
-              <FileName>loslib.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>../../../../middlewares/lua\loslib.c</FilePath>
-            </File>
-            <File>
-              <FileName>lparser.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>../../../../middlewares/lua\lparser.c</FilePath>
-            </File>
-            <File>
-              <FileName>lstate.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>../../../../middlewares/lua\lstate.c</FilePath>
-            </File>
-            <File>
-              <FileName>lstring.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>../../../../middlewares/lua\lstring.c</FilePath>
-            </File>
-            <File>
-              <FileName>lstrlib.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>../../../../middlewares/lua\lstrlib.c</FilePath>
-            </File>
-            <File>
-              <FileName>ltable.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>../../../../middlewares/lua\ltable.c</FilePath>
-            </File>
-            <File>
-              <FileName>ltablib.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>../../../../middlewares/lua\ltablib.c</FilePath>
-            </File>
-            <File>
-              <FileName>ltm.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>../../../../middlewares/lua\ltm.c</FilePath>
-            </File>
-            <File>
-              <FileName>lundump.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>../../../../middlewares/lua\lundump.c</FilePath>
-            </File>
-            <File>
-              <FileName>lutf8lib.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>../../../../middlewares/lua\lutf8lib.c</FilePath>
-            </File>
-            <File>
-              <FileName>lvm.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>../../../../middlewares/lua\lvm.c</FilePath>
-            </File>
-            <File>
-              <FileName>lzio.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>../../../../middlewares/lua\lzio.c</FilePath>
-            </File>
-          </Files>
-        </Group>
-        <Group>
-          <GroupName>components/logger</GroupName>
+          <GroupName>Components/logger</GroupName>
           <Files>
             <File>
               <FileName>hexdump.c</FileName>
@@ -1840,6 +1446,176 @@
               <FileName>logger.c</FileName>
               <FileType>1</FileType>
               <FilePath>../../../../components/logger\logger.c</FilePath>
+            </File>
+            <File>
+              <FileName>printf.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\..\components\logger\printf.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>Middlewares/Lua</GroupName>
+          <Files>
+            <File>
+              <FileName>lapi.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\..\middlewares\lua\src\lapi.c</FilePath>
+            </File>
+            <File>
+              <FileName>lauxlib.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\..\middlewares\lua\src\lauxlib.c</FilePath>
+            </File>
+            <File>
+              <FileName>lbaselib.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\..\middlewares\lua\src\lbaselib.c</FilePath>
+            </File>
+            <File>
+              <FileName>lcode.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\..\middlewares\lua\src\lcode.c</FilePath>
+            </File>
+            <File>
+              <FileName>lcorolib.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\..\middlewares\lua\src\lcorolib.c</FilePath>
+            </File>
+            <File>
+              <FileName>lctype.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\..\middlewares\lua\src\lctype.c</FilePath>
+            </File>
+            <File>
+              <FileName>ldblib.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\..\middlewares\lua\src\ldblib.c</FilePath>
+            </File>
+            <File>
+              <FileName>ldebug.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\..\middlewares\lua\src\ldebug.c</FilePath>
+            </File>
+            <File>
+              <FileName>ldo.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\..\middlewares\lua\src\ldo.c</FilePath>
+            </File>
+            <File>
+              <FileName>ldump.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\..\middlewares\lua\src\ldump.c</FilePath>
+            </File>
+            <File>
+              <FileName>lfunc.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\..\middlewares\lua\src\lfunc.c</FilePath>
+            </File>
+            <File>
+              <FileName>lgc.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\..\middlewares\lua\src\lgc.c</FilePath>
+            </File>
+            <File>
+              <FileName>linit.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\..\middlewares\lua\src\linit.c</FilePath>
+            </File>
+            <File>
+              <FileName>liolib.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\..\middlewares\lua\src\liolib.c</FilePath>
+            </File>
+            <File>
+              <FileName>llex.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\..\middlewares\lua\src\llex.c</FilePath>
+            </File>
+            <File>
+              <FileName>lmathlib.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\..\middlewares\lua\src\lmathlib.c</FilePath>
+            </File>
+            <File>
+              <FileName>lmem.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\..\middlewares\lua\src\lmem.c</FilePath>
+            </File>
+            <File>
+              <FileName>loadlib.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\..\middlewares\lua\src\loadlib.c</FilePath>
+            </File>
+            <File>
+              <FileName>lobject.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\..\middlewares\lua\src\lobject.c</FilePath>
+            </File>
+            <File>
+              <FileName>lopcodes.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\..\middlewares\lua\src\lopcodes.c</FilePath>
+            </File>
+            <File>
+              <FileName>loslib.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\..\middlewares\lua\src\loslib.c</FilePath>
+            </File>
+            <File>
+              <FileName>lparser.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\..\middlewares\lua\src\lparser.c</FilePath>
+            </File>
+            <File>
+              <FileName>lstate.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\..\middlewares\lua\src\lstate.c</FilePath>
+            </File>
+            <File>
+              <FileName>lstring.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\..\middlewares\lua\src\lstring.c</FilePath>
+            </File>
+            <File>
+              <FileName>lstrlib.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\..\middlewares\lua\src\lstrlib.c</FilePath>
+            </File>
+            <File>
+              <FileName>ltable.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\..\middlewares\lua\src\ltable.c</FilePath>
+            </File>
+            <File>
+              <FileName>ltablib.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\..\middlewares\lua\src\ltablib.c</FilePath>
+            </File>
+            <File>
+              <FileName>ltm.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\..\middlewares\lua\src\ltm.c</FilePath>
+            </File>
+            <File>
+              <FileName>lundump.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\..\middlewares\lua\src\lundump.c</FilePath>
+            </File>
+            <File>
+              <FileName>lutf8lib.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\..\middlewares\lua\src\lutf8lib.c</FilePath>
+            </File>
+            <File>
+              <FileName>lvm.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\..\middlewares\lua\src\lvm.c</FilePath>
+            </File>
+            <File>
+              <FileName>lzio.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\..\middlewares\lua\src\lzio.c</FilePath>
             </File>
           </Files>
         </Group>

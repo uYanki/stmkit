@@ -1,7 +1,8 @@
 #ifndef __LOGGER_H__
 #define __LOGGER_H__
 
-#include "sdkinc.h"
+#include "logconf.h"
+#include <stdint.h>
 #include "printf.h"
 
 #ifdef __cplusplus
@@ -23,6 +24,14 @@ extern "C" {
 
 #ifndef CONFIG_LOGGER_TIME_FORMAT
 #define CONFIG_LOGGER_TIME_FORMAT LOGGER_TIME_FORMAT_NONE
+#endif
+
+#ifndef PRINTF
+#define PRINTF(...) printf(__VA_ARGS__)
+#endif
+
+#ifndef PRINTLN
+#define PRINTLN(format, ...) PRINTF(format "\n", ##__VA_ARGS__)
 #endif
 
 /**

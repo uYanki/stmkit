@@ -1,4 +1,5 @@
-#include "sdkinc.h"
+#include "main.h"
+#include "board.h"
 #include "logger.h"
 
 #include "lua.h"
@@ -20,6 +21,7 @@
 static int lua_led_on(lua_State* L);
 static int lua_led_off(lua_State* L);
 static int lua_delay(lua_State* L);
+static int lua_print(lua_State* L);
 
 //---------------------------------------------------------------------------
 // Variables
@@ -40,7 +42,8 @@ const char lua_test[] = {
     " delay(on)\n"
     " led_off()\n"
     " delay(off)\n"
-    "end"};
+    " print('hello')\n"
+    "end",};
 
 //---------------------------------------------------------------------------
 // Functions
@@ -85,7 +88,7 @@ void LUA_Test(void)
 
     if (L == NULL)
     {
-        LOGE("ERR");
+        LOGE("fail setup lua");
         while (1) {};
     }
 

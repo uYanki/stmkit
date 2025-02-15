@@ -1,6 +1,7 @@
 #ifndef __HEXDUMP_H__
 #define __HEXDUMP_H__
 
+#include <stdbool.h>
 #include "logger.h"
 
 #ifdef __cplusplus

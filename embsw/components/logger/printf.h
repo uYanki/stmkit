@@ -8,7 +8,7 @@
 extern "C" {
 #endif
 
-#if 1
+#if 0
 #define printf    printf_
 #define sprintf   sprintf_
 #define snprintf  snprintf_

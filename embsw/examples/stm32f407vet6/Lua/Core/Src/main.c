@@ -18,14 +18,11 @@
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
-#include "dma.h"
-#include "tim.h"
-#include "usart.h"
-#include "gpio.h"
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-#include "sdkinc.h"
+#include <stdio.h>
+#include "logger.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -44,15 +41,28 @@
 /* USER CODE END PM */
 
 /* Private variables ---------------------------------------------------------*/
+TIM_HandleTypeDef htim11;
+
+UART_HandleTypeDef huart1;
+UART_HandleTypeDef huart2;
+DMA_HandleTypeDef  hdma_usart1_rx;
+DMA_HandleTypeDef  hdma_usart1_tx;
+DMA_HandleTypeDef  hdma_usart2_rx;
+DMA_HandleTypeDef  hdma_usart2_tx;
 
 /* USER CODE BEGIN PV */
 
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
-void SystemClock_Config(void);
+void        SystemClock_Config(void);
+static void MX_GPIO_Init(void);
+static void MX_DMA_Init(void);
+static void MX_TIM11_Init(void);
+static void MX_USART1_UART_Init(void);
+static void MX_USART2_UART_Init(void);
 /* USER CODE BEGIN PFP */
-void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef* htim)
+void        HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef* htim)
 {}
 /* USER CODE END PFP */
 
@@ -68,7 +78,7 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef* htim)
 int main(void)
 {
     /* USER CODE BEGIN 1 */
-    cm_backtrace_init("demo", "stm32", "V0.01");
+
     /* USER CODE END 1 */
 
     /* MCU Configuration--------------------------------------------------------*/
@@ -160,7 +170,193 @@ void SystemClock_Config(void)
     }
 }
 
+/**
+ * @brief TIM11 Initialization Function
+ * @param None
+ * @retval None
+ */
+static void MX_TIM11_Init(void)
+{
+    /* USER CODE BEGIN TIM11_Init 0 */
+
+    /* USER CODE END TIM11_Init 0 */
+
+    /* USER CODE BEGIN TIM11_Init 1 */
+
+    /* USER CODE END TIM11_Init 1 */
+    htim11.Instance               = TIM11;
+    htim11.Init.Prescaler         = 168 - 1;
+    htim11.Init.CounterMode       = TIM_COUNTERMODE_UP;
+    htim11.Init.Period            = 1000 - 1;
+    htim11.Init.ClockDivision     = TIM_CLOCKDIVISION_DIV1;
+    htim11.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_ENABLE;
+    if (HAL_TIM_Base_Init(&htim11) != HAL_OK)
+    {
+        Error_Handler();
+    }
+    /* USER CODE BEGIN TIM11_Init 2 */
+
+    /* USER CODE END TIM11_Init 2 */
+}
+
+/**
+ * @brief USART1 Initialization Function
+ * @param None
+ * @retval None
+ */
+static void MX_USART1_UART_Init(void)
+{
+    /* USER CODE BEGIN USART1_Init 0 */
+
+    /* USER CODE END USART1_Init 0 */
+
+    /* USER CODE BEGIN USART1_Init 1 */
+
+    /* USER CODE END USART1_Init 1 */
+    huart1.Instance          = USART1;
+    huart1.Init.BaudRate     = 115200;
+    huart1.Init.WordLength   = UART_WORDLENGTH_8B;
+    huart1.Init.StopBits     = UART_STOPBITS_1;
+    huart1.Init.Parity       = UART_PARITY_NONE;
+    huart1.Init.Mode         = UART_MODE_TX_RX;
+    huart1.Init.HwFlowCtl    = UART_HWCONTROL_NONE;
+    huart1.Init.OverSampling = UART_OVERSAMPLING_16;
+    if (HAL_UART_Init(&huart1) != HAL_OK)
+    {
+        Error_Handler();
+    }
+    /* USER CODE BEGIN USART1_Init 2 */
+
+    /* USER CODE END USART1_Init 2 */
+}
+
+/**
+ * @brief USART2 Initialization Function
+ * @param None
+ * @retval None
+ */
+static void MX_USART2_UART_Init(void)
+{
+    /* USER CODE BEGIN USART2_Init 0 */
+
+    /* USER CODE END USART2_Init 0 */
+
+    /* USER CODE BEGIN USART2_Init 1 */
+
+    /* USER CODE END USART2_Init 1 */
+    huart2.Instance          = USART2;
+    huart2.Init.BaudRate     = 115200;
+    huart2.Init.WordLength   = UART_WORDLENGTH_8B;
+    huart2.Init.StopBits     = UART_STOPBITS_1;
+    huart2.Init.Parity       = UART_PARITY_NONE;
+    huart2.Init.Mode         = UART_MODE_TX_RX;
+    huart2.Init.HwFlowCtl    = UART_HWCONTROL_NONE;
+    huart2.Init.OverSampling = UART_OVERSAMPLING_16;
+    if (HAL_UART_Init(&huart2) != HAL_OK)
+    {
+        Error_Handler();
+    }
+    /* USER CODE BEGIN USART2_Init 2 */
+
+    /* USER CODE END USART2_Init 2 */
+}
+
+/**
+ * Enable DMA controller clock
+ */
+static void MX_DMA_Init(void)
+{
+    /* DMA controller clock enable */
+    __HAL_RCC_DMA1_CLK_ENABLE();
+    __HAL_RCC_DMA2_CLK_ENABLE();
+
+    /* DMA interrupt init */
+    /* DMA1_Stream5_IRQn interrupt configuration */
+    HAL_NVIC_SetPriority(DMA1_Stream5_IRQn, 0, 0);
+    HAL_NVIC_EnableIRQ(DMA1_Stream5_IRQn);
+    /* DMA1_Stream6_IRQn interrupt configuration */
+    HAL_NVIC_SetPriority(DMA1_Stream6_IRQn, 0, 0);
+    HAL_NVIC_EnableIRQ(DMA1_Stream6_IRQn);
+    /* DMA2_Stream2_IRQn interrupt configuration */
+    HAL_NVIC_SetPriority(DMA2_Stream2_IRQn, 0, 0);
+    HAL_NVIC_EnableIRQ(DMA2_Stream2_IRQn);
+    /* DMA2_Stream7_IRQn interrupt configuration */
+    HAL_NVIC_SetPriority(DMA2_Stream7_IRQn, 0, 0);
+    HAL_NVIC_EnableIRQ(DMA2_Stream7_IRQn);
+}
+
+/**
+ * @brief GPIO Initialization Function
+ * @param None
+ * @retval None
+ */
+static void MX_GPIO_Init(void)
+{
+    GPIO_InitTypeDef GPIO_InitStruct = {0};
+    /* USER CODE BEGIN MX_GPIO_Init_1 */
+    /* USER CODE END MX_GPIO_Init_1 */
+
+    /* GPIO Ports Clock Enable */
+    __HAL_RCC_GPIOE_CLK_ENABLE();
+    __HAL_RCC_GPIOH_CLK_ENABLE();
+    __HAL_RCC_GPIOA_CLK_ENABLE();
+    __HAL_RCC_GPIOD_CLK_ENABLE();
+
+    /*Configure GPIO pin Output Level */
+    HAL_GPIO_WritePin(GPIOE, GPIO_PIN_2 | LED1_Pin | LED2_Pin | LED3_Pin, GPIO_PIN_RESET);
+
+    /*Configure GPIO pin Output Level */
+    HAL_GPIO_WritePin(RS485_RTS_GPIO_Port, RS485_RTS_Pin, GPIO_PIN_SET);
+
+    /*Configure GPIO pins : PE2 LED1_Pin LED2_Pin LED3_Pin */
+    GPIO_InitStruct.Pin   = GPIO_PIN_2 | LED1_Pin | LED2_Pin | LED3_Pin;
+    GPIO_InitStruct.Mode  = GPIO_MODE_OUTPUT_PP;
+    GPIO_InitStruct.Pull  = GPIO_NOPULL;
+    GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+    HAL_GPIO_Init(GPIOE, &GPIO_InitStruct);
+
+    /*Configure GPIO pins : KEY1_Pin KEY2_Pin KEY3_Pin */
+    GPIO_InitStruct.Pin  = KEY1_Pin | KEY2_Pin | KEY3_Pin;
+    GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
+    GPIO_InitStruct.Pull = GPIO_NOPULL;
+    HAL_GPIO_Init(GPIOE, &GPIO_InitStruct);
+
+    /*Configure GPIO pin : RS485_RTS_Pin */
+    GPIO_InitStruct.Pin   = RS485_RTS_Pin;
+    GPIO_InitStruct.Mode  = GPIO_MODE_OUTPUT_PP;
+    GPIO_InitStruct.Pull  = GPIO_NOPULL;
+    GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_HIGH;
+    HAL_GPIO_Init(RS485_RTS_GPIO_Port, &GPIO_InitStruct);
+
+    /* USER CODE BEGIN MX_GPIO_Init_2 */
+    /* USER CODE END MX_GPIO_Init_2 */
+}
+
 /* USER CODE BEGIN 4 */
+
+int fputc(int ch, FILE* f)
+{
+    if (ch == '\n')
+    {
+        HAL_UART_Transmit(&huart1, (uint8_t*)"\r", 1, 0xFF);
+    }
+
+    HAL_UART_Transmit(&huart1, (uint8_t*)&ch, 1, 0xFF);
+
+    return (ch);
+}
+
+int fgetc(FILE* f)
+{
+    uint8_t ch = '\0';
+    HAL_UART_Receive(&huart1, &ch, 1, 0xFF);
+    return ch;
+}
+
+void putchar_(char ch)
+{
+    HAL_UART_Transmit(&huart1, (uint8_t*)&ch, 1, 0xFF);
+}
 
 /* USER CODE END 4 */
 

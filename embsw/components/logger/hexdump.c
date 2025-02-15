@@ -7,6 +7,10 @@
 #define LOG_LOCAL_TAG   "hexdump"
 #define LOG_LOCAL_LEVEL LOG_LEVEL_INFO
 
+#ifndef nullptr
+#define nullptr  (void*)0
+#endif
+
 //---------------------------------------------------------------------------
 // Prototypes
 //---------------------------------------------------------------------------
