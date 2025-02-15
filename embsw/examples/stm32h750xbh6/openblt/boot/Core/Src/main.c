@@ -102,10 +102,15 @@ int main(void)
 
   /* USER CODE BEGIN SysInit */
 	MX_GPIO_Init();
+	
+#if BOOT_COM_RS232_ENABLE == 1
+  MX_USART1_UART_Init(); // init clk, gpio, fifo
+#endif
+
   /* USER CODE END SysInit */
 
   /* Initialize all configured peripherals */
-  MX_USART1_UART_Init();
+
   MX_RTC_Init();
 
   /* USER CODE BEGIN 2 */
