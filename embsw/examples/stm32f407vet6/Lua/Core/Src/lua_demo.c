@@ -43,7 +43,8 @@ const char lua_test[] = {
     " led_off()\n"
     " delay(off)\n"
     " print('hello')\n"
-    "end",};
+    "end",
+};
 
 //---------------------------------------------------------------------------
 // Functions
