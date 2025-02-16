@@ -1,6 +1,7 @@
 #include <stdint.h>
 
-#include "usart.h"  //本例使用STM32，其他平台无需引用此头文件
+#include "main.h"
+extern UART_HandleTypeDef huart1;
 
 /**************↓配置区↓**************/
 // 串口发送语句，需实现将buf指向的len个字节通过串口发出
