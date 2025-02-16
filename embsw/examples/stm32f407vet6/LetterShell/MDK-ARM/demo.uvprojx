@@ -338,9 +338,9 @@
             <v6Rtti>0</v6Rtti>
             <VariousControls>
               <MiscControls>-Wno-shift-negative-value -Wno-shift-count-negative -Wno-int-to-void-pointer-cast -Wno-unused-value</MiscControls>
-              <Define>USE_HAL_DRIVER,STM32F407xx,BOARD_STM32F407VET6_XWS</Define>
+              <Define>USE_HAL_DRIVER,STM32F407xx,SHELL_CFG_USER=&lt;shell_cfg_user.h&gt;</Define>
               <Undefine></Undefine>
-              <IncludePath>../Core/Inc;../../../../components/logger;../../../../middlewares/lua/inc;../../../../components/typebasic;F:/app_usb/embsw/platform/STM32Cube_FW_F4_V1.28.0/Drivers/STM32F4xx_HAL_Driver/Inc;F:/app_usb/embsw/platform/STM32Cube_FW_F4_V1.28.0/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy;F:/app_usb/embsw/platform/STM32Cube_FW_F4_V1.28.0/Drivers/CMSIS/Device/ST/STM32F4xx/Include;F:/app_usb/embsw/platform/STM32Cube_FW_F4_V1.28.0/Drivers/CMSIS/Include</IncludePath>
+              <IncludePath>../Core/Inc;../../../../middlewares/letter-shell/src;..\..\..\..\middlewares\letter-shell\extensions\shell_enhance;F:/app_usb/embsw/platform/STM32Cube_FW_F4_V1.28.0/Drivers/STM32F4xx_HAL_Driver/Inc;F:/app_usb/embsw/platform/STM32Cube_FW_F4_V1.28.0/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy;F:/app_usb/embsw/platform/STM32Cube_FW_F4_V1.28.0/Drivers/CMSIS/Device/ST/STM32F4xx/Include;F:/app_usb/embsw/platform/STM32Cube_FW_F4_V1.28.0/Drivers/CMSIS/Include</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -432,11 +432,6 @@
         <Group>
           <GroupName>Application/User/Core</GroupName>
           <Files>
-            <File>
-              <FileName>lua_demo.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\Core\Src\lua_demo.c</FilePath>
-            </File>
             <File>
               <FileName>main.c</FileName>
               <FileType>1</FileType>
@@ -596,6 +591,62 @@
               <FileName>stm32f4xx_hal_tim_ex.c</FileName>
               <FileType>1</FileType>
               <FilePath>F:/app_usb/embsw/platform/STM32Cube_FW_F4_V1.28.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c</FilePath>
+              <FileOption>
+                <CommonProperty>
+                  <UseCPPCompiler>2</UseCPPCompiler>
+                  <RVCTCodeConst>0</RVCTCodeConst>
+                  <RVCTZI>0</RVCTZI>
+                  <RVCTOtherData>0</RVCTOtherData>
+                  <ModuleSelection>0</ModuleSelection>
+                  <IncludeInBuild>1</IncludeInBuild>
+                  <AlwaysBuild>2</AlwaysBuild>
+                  <GenerateAssemblyFile>2</GenerateAssemblyFile>
+                  <AssembleAssemblyFile>2</AssembleAssemblyFile>
+                  <PublicsOnly>2</PublicsOnly>
+                  <StopOnExitCode>11</StopOnExitCode>
+                  <CustomArgument></CustomArgument>
+                  <IncludeLibraryModules></IncludeLibraryModules>
+                  <ComprImg>1</ComprImg>
+                </CommonProperty>
+                <FileArmAds>
+                  <Cads>
+                    <interw>2</interw>
+                    <Optim>0</Optim>
+                    <oTime>2</oTime>
+                    <SplitLS>2</SplitLS>
+                    <OneElfS>2</OneElfS>
+                    <Strict>2</Strict>
+                    <EnumInt>2</EnumInt>
+                    <PlainCh>2</PlainCh>
+                    <Ropi>2</Ropi>
+                    <Rwpi>2</Rwpi>
+                    <wLevel>0</wLevel>
+                    <uThumb>2</uThumb>
+                    <uSurpInc>2</uSurpInc>
+                    <uC99>2</uC99>
+                    <uGnu>2</uGnu>
+                    <useXO>2</useXO>
+                    <v6Lang>0</v6Lang>
+                    <v6LangP>0</v6LangP>
+                    <vShortEn>2</vShortEn>
+                    <vShortWch>2</vShortWch>
+                    <v6Lto>2</v6Lto>
+                    <v6WtE>2</v6WtE>
+                    <v6Rtti>2</v6Rtti>
+                    <VariousControls>
+                      <MiscControls></MiscControls>
+                      <Define></Define>
+                      <Undefine></Undefine>
+                      <IncludePath></IncludePath>
+                    </VariousControls>
+                  </Cads>
+                </FileArmAds>
+              </FileOption>
+            </File>
+            <File>
+              <FileName>stm32f4xx_hal_uart.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>F:/app_usb/embsw/platform/STM32Cube_FW_F4_V1.28.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c</FilePath>
               <FileOption>
                 <CommonProperty>
                   <UseCPPCompiler>2</UseCPPCompiler>
@@ -1376,246 +1427,70 @@
                 </FileArmAds>
               </FileOption>
             </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>Middlewares/letter-shell/Core</GroupName>
+          <Files>
             <File>
-              <FileName>stm32f4xx_hal_uart.c</FileName>
+              <FileName>shell.c</FileName>
               <FileType>1</FileType>
-              <FilePath>F:/app_usb/embsw/platform/STM32Cube_FW_F4_V1.28.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c</FilePath>
-              <FileOption>
-                <CommonProperty>
-                  <UseCPPCompiler>2</UseCPPCompiler>
-                  <RVCTCodeConst>0</RVCTCodeConst>
-                  <RVCTZI>0</RVCTZI>
-                  <RVCTOtherData>0</RVCTOtherData>
-                  <ModuleSelection>0</ModuleSelection>
-                  <IncludeInBuild>1</IncludeInBuild>
-                  <AlwaysBuild>2</AlwaysBuild>
-                  <GenerateAssemblyFile>2</GenerateAssemblyFile>
-                  <AssembleAssemblyFile>2</AssembleAssemblyFile>
-                  <PublicsOnly>2</PublicsOnly>
-                  <StopOnExitCode>11</StopOnExitCode>
-                  <CustomArgument></CustomArgument>
-                  <IncludeLibraryModules></IncludeLibraryModules>
-                  <ComprImg>1</ComprImg>
-                </CommonProperty>
-                <FileArmAds>
-                  <Cads>
-                    <interw>2</interw>
-                    <Optim>0</Optim>
-                    <oTime>2</oTime>
-                    <SplitLS>2</SplitLS>
-                    <OneElfS>2</OneElfS>
-                    <Strict>2</Strict>
-                    <EnumInt>2</EnumInt>
-                    <PlainCh>2</PlainCh>
-                    <Ropi>2</Ropi>
-                    <Rwpi>2</Rwpi>
-                    <wLevel>0</wLevel>
-                    <uThumb>2</uThumb>
-                    <uSurpInc>2</uSurpInc>
-                    <uC99>2</uC99>
-                    <uGnu>2</uGnu>
-                    <useXO>2</useXO>
-                    <v6Lang>0</v6Lang>
-                    <v6LangP>0</v6LangP>
-                    <vShortEn>2</vShortEn>
-                    <vShortWch>2</vShortWch>
-                    <v6Lto>2</v6Lto>
-                    <v6WtE>2</v6WtE>
-                    <v6Rtti>2</v6Rtti>
-                    <VariousControls>
-                      <MiscControls></MiscControls>
-                      <Define></Define>
-                      <Undefine></Undefine>
-                      <IncludePath></IncludePath>
-                    </VariousControls>
-                  </Cads>
-                </FileArmAds>
-              </FileOption>
+              <FilePath>..\..\..\..\middlewares\letter-shell\src\shell.c</FilePath>
+            </File>
+            <File>
+              <FileName>shell_cmd_list.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\..\middlewares\letter-shell\src\shell_cmd_list.c</FilePath>
+            </File>
+            <File>
+              <FileName>shell_companion.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\..\middlewares\letter-shell\src\shell_companion.c</FilePath>
+            </File>
+            <File>
+              <FileName>shell_ext.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\..\middlewares\letter-shell\src\shell_ext.c</FilePath>
             </File>
           </Files>
         </Group>
         <Group>
-          <GroupName>Components/logger</GroupName>
+          <GroupName>Middlewares/letter-shell/Game</GroupName>
           <Files>
             <File>
-              <FileName>hexdump.c</FileName>
+              <FileName>game.c</FileName>
               <FileType>1</FileType>
-              <FilePath>../../../../components/logger\hexdump.c</FilePath>
+              <FilePath>..\..\..\..\middlewares\letter-shell\extensions\game\game.c</FilePath>
             </File>
             <File>
-              <FileName>logger.c</FileName>
+              <FileName>pushbox.c</FileName>
               <FileType>1</FileType>
-              <FilePath>../../../../components/logger\logger.c</FilePath>
+              <FilePath>..\..\..\..\middlewares\letter-shell\extensions\game\pushbox\pushbox.c</FilePath>
             </File>
             <File>
-              <FileName>printf.c</FileName>
+              <FileName>2048.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\components\logger\printf.c</FilePath>
+              <FilePath>..\..\..\..\middlewares\letter-shell\extensions\game\2048\2048.c</FilePath>
             </File>
           </Files>
         </Group>
         <Group>
-          <GroupName>Middlewares/Lua</GroupName>
+          <GroupName>Middlewares/letter-shell/Enhance</GroupName>
           <Files>
             <File>
-              <FileName>lapi.c</FileName>
+              <FileName>shell_cmd_group.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\middlewares\lua\src\lapi.c</FilePath>
+              <FilePath>..\..\..\..\middlewares\letter-shell\extensions\shell_enhance\shell_cmd_group.c</FilePath>
             </File>
             <File>
-              <FileName>lauxlib.c</FileName>
+              <FileName>shell_passthrough.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\middlewares\lua\src\lauxlib.c</FilePath>
+              <FilePath>..\..\..\..\middlewares\letter-shell\extensions\shell_enhance\shell_passthrough.c</FilePath>
             </File>
             <File>
-              <FileName>lbaselib.c</FileName>
+              <FileName>shell_secure_user.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\middlewares\lua\src\lbaselib.c</FilePath>
-            </File>
-            <File>
-              <FileName>lcode.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\..\middlewares\lua\src\lcode.c</FilePath>
-            </File>
-            <File>
-              <FileName>lcorolib.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\..\middlewares\lua\src\lcorolib.c</FilePath>
-            </File>
-            <File>
-              <FileName>lctype.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\..\middlewares\lua\src\lctype.c</FilePath>
-            </File>
-            <File>
-              <FileName>ldblib.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\..\middlewares\lua\src\ldblib.c</FilePath>
-            </File>
-            <File>
-              <FileName>ldebug.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\..\middlewares\lua\src\ldebug.c</FilePath>
-            </File>
-            <File>
-              <FileName>ldo.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\..\middlewares\lua\src\ldo.c</FilePath>
-            </File>
-            <File>
-              <FileName>ldump.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\..\middlewares\lua\src\ldump.c</FilePath>
-            </File>
-            <File>
-              <FileName>lfunc.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\..\middlewares\lua\src\lfunc.c</FilePath>
-            </File>
-            <File>
-              <FileName>lgc.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\..\middlewares\lua\src\lgc.c</FilePath>
-            </File>
-            <File>
-              <FileName>linit.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\..\middlewares\lua\src\linit.c</FilePath>
-            </File>
-            <File>
-              <FileName>liolib.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\..\middlewares\lua\src\liolib.c</FilePath>
-            </File>
-            <File>
-              <FileName>llex.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\..\middlewares\lua\src\llex.c</FilePath>
-            </File>
-            <File>
-              <FileName>lmathlib.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\..\middlewares\lua\src\lmathlib.c</FilePath>
-            </File>
-            <File>
-              <FileName>lmem.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\..\middlewares\lua\src\lmem.c</FilePath>
-            </File>
-            <File>
-              <FileName>loadlib.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\..\middlewares\lua\src\loadlib.c</FilePath>
-            </File>
-            <File>
-              <FileName>lobject.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\..\middlewares\lua\src\lobject.c</FilePath>
-            </File>
-            <File>
-              <FileName>lopcodes.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\..\middlewares\lua\src\lopcodes.c</FilePath>
-            </File>
-            <File>
-              <FileName>loslib.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\..\middlewares\lua\src\loslib.c</FilePath>
-            </File>
-            <File>
-              <FileName>lparser.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\..\middlewares\lua\src\lparser.c</FilePath>
-            </File>
-            <File>
-              <FileName>lstate.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\..\middlewares\lua\src\lstate.c</FilePath>
-            </File>
-            <File>
-              <FileName>lstring.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\..\middlewares\lua\src\lstring.c</FilePath>
-            </File>
-            <File>
-              <FileName>lstrlib.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\..\middlewares\lua\src\lstrlib.c</FilePath>
-            </File>
-            <File>
-              <FileName>ltable.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\..\middlewares\lua\src\ltable.c</FilePath>
-            </File>
-            <File>
-              <FileName>ltablib.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\..\middlewares\lua\src\ltablib.c</FilePath>
-            </File>
-            <File>
-              <FileName>ltm.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\..\middlewares\lua\src\ltm.c</FilePath>
-            </File>
-            <File>
-              <FileName>lundump.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\..\middlewares\lua\src\lundump.c</FilePath>
-            </File>
-            <File>
-              <FileName>lutf8lib.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\..\middlewares\lua\src\lutf8lib.c</FilePath>
-            </File>
-            <File>
-              <FileName>lvm.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\..\middlewares\lua\src\lvm.c</FilePath>
-            </File>
-            <File>
-              <FileName>lzio.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\..\middlewares\lua\src\lzio.c</FilePath>
+              <FilePath>..\..\..\..\middlewares\letter-shell\extensions\shell_enhance\shell_secure_user.c</FilePath>
             </File>
           </Files>
         </Group>
