@@ -7,6 +7,7 @@
 #endif
 
 #include <stdio.h>
+#include <assert.h>
 
 #ifdef __cplusplus
 extern "C" {
@@ -355,6 +356,56 @@ typedef enum {
 #define GET_MACRO(_1, _2, _3, _4, NAME, ...) NAME
 #define LINK64(...)                          GET_MACRO(__VA_ARGS__, LINK64_4, LINK64_2, LINK64_2)(__VA_ARGS__)
 
+/*!
+ * Count the number of set bits in a 32-bit word.
+ * Algorithm comes from Hacker's Delight by Henry S. Warren, Jr
+ */
+static inline int bitcnt(uint32_t x)
+{
+    uint32_t n;
+
+    n = (x >> 1) & 0x77777777;
+    x = x - n;
+    n = (n >> 1) & 0x77777777;
+    x = x - n;
+    n = (n >> 1) & 0x77777777;
+    x = x - n;
+    x = (x + (x >> 4)) & 0x0F0F0F0F;
+    x = x * 0x01010101;
+
+    return x >> 24;
+}
+
+/*!
+ * Count leading zeros.
+ */
+static inline int clz(uint32_t x)
+{
+    x = x | (x >> 1);
+    x = x | (x >> 2);
+    x = x | (x >> 4);
+    x = x | (x >> 8);
+    x = x | (x >> 16);
+    return bitcnt(~x);
+}
+
+/*!
+ * Count trailing zeros.
+ */
+static inline int ctz(uint32_t x)
+{
+    return bitcnt(~x & (x - 1));
+}
+
+/*!
+ * Integer logarithm in base 2.
+ */
+static inline int ilog2(uint32_t x)
+{
+    assert(x);
+    return 31 - clz(x);
+}
+
 /**
  * @}
  */
@@ -586,7 +637,6 @@ static inline u64 be64(void* p)
 #endif
 
 #ifndef ASSERT
-#include "assert.h"
 #define ASSERT(cond, msg) assert((msg, cond))
 #endif
 
