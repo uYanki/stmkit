@@ -137,10 +137,8 @@ bool hexdump(const uint8_t* cpu8Buffer, uint32_t u32BytesDumped, uint8_t u8Bytes
             pLinePos += sprintf(pLinePos, "|");
         }
 
-#if defined(PRINTLN)
-        PRINTLN("%s", aLineBuf);
-#elif defined(PRINTF)
-        PRINTF("%s\n", aLineBuf);
+#if defined(LOG_IMPL)
+        LOG_IMPL("%s", aLineBuf);
 #else
 #error "hexdump is not effective"
 #endif

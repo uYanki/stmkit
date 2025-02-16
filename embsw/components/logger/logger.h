@@ -1,9 +1,8 @@
 #ifndef __LOGGER_H__
 #define __LOGGER_H__
 
-#include "logconf.h"
+#include <stdio.h>
 #include <stdint.h>
-#include "printf.h"
 
 #ifdef __cplusplus
 extern "C" {
@@ -26,19 +25,11 @@ extern "C" {
 #define CONFIG_LOGGER_TIME_FORMAT LOGGER_TIME_FORMAT_NONE
 #endif
 
-#ifndef PRINTF
-#define PRINTF(...) printf(__VA_ARGS__)
-#endif
-
-#ifndef PRINTLN
-#define PRINTLN(format, ...) PRINTF(format "\n", ##__VA_ARGS__)
-#endif
-
 /**
  * @brief log output interface
  */
 #ifndef LOG_IMPL
-#define LOG_IMPL(...) PRINTLN(__VA_ARGS__)
+#define LOG_IMPL(format, ...) printf(format "\n", ##__VA_ARGS__)
 #endif
 
 //---------------------------------------------------------------------------
