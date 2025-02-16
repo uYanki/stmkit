@@ -82,7 +82,7 @@
           </BeforeMake>
           <AfterMake>
             <RunUserProg1>1</RunUserProg1>
-            <RunUserProg2>0</RunUserProg2>
+            <RunUserProg2>1</RunUserProg2>
             <UserProg1Name>$K\ARM\ARMCC\bin\fromelf.exe --bin --output=@L.bin !L</UserProg1Name>
             <UserProg2Name></UserProg2Name>
             <UserProg1Dos16Mode>0</UserProg1Dos16Mode>
@@ -338,9 +338,9 @@
             <v6Rtti>0</v6Rtti>
             <VariousControls>
               <MiscControls>-Wno-shift-negative-value -Wno-shift-count-negative -Wno-int-to-void-pointer-cast -Wno-unused-value</MiscControls>
-              <Define>USE_HAL_DRIVER,STM32F407xx,BOARD_STM32F407VET6_XWS,CONFIG_HWUART_MODULE_SW</Define>
+              <Define>USE_HAL_DRIVER,STM32F407xx,BOARD_STM32F407VET6_XWS</Define>
               <Undefine></Undefine>
-              <IncludePath>../Core/Inc;..\..\..\..\middlewares\SFUD\inc;../../../../components/logger;../../../../components/device/core;../../../../components/device;..\..\..\..\components\typebasic;..\..\..\..\boards;F:/app_usb/embsw/platform/STM32Cube_FW_F4_V1.28.0/Drivers/STM32F4xx_HAL_Driver/Inc;F:/app_usb/embsw/platform/STM32Cube_FW_F4_V1.28.0/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy;F:/app_usb/embsw/platform/STM32Cube_FW_F4_V1.28.0/Drivers/CMSIS/Device/ST/STM32F4xx/Include;F:/app_usb/embsw/platform/STM32Cube_FW_F4_V1.28.0/Drivers/CMSIS/Include</IncludePath>
+              <IncludePath>../Core/Inc;../../../../middlewares/SFUD/inc;../../../../components/logger;../../../../components/device/core;../../../../components/device;../../../../components/typebasic;../../../../boards;F:/app_usb/embsw/platform/STM32Cube_FW_F4_V1.28.0/Drivers/STM32F4xx_HAL_Driver/Inc;F:/app_usb/embsw/platform/STM32Cube_FW_F4_V1.28.0/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy;F:/app_usb/embsw/platform/STM32Cube_FW_F4_V1.28.0/Drivers/CMSIS/Device/ST/STM32F4xx/Include;F:/app_usb/embsw/platform/STM32Cube_FW_F4_V1.28.0/Drivers/CMSIS/Include</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -531,6 +531,11 @@
               <FileName>bittab.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\..\..\..\components\typebasic\bittab.c</FilePath>
+            </File>
+            <File>
+              <FileName>syscall.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\..\components\device\lowlevel\stm32hal\syscall.c</FilePath>
             </File>
           </Files>
         </Group>

@@ -173,11 +173,6 @@ static inline status_t _W25Qxx_PollForIdle(spi_w25qxx_t* pHandle, uint16_t u16Ti
 // Functions
 //---------------------------------------------------------------------------
 
-static inline u16 be16(const uint8_t* p)
-{
-    return ((u16)p[1] << 0) | ((u16)p[0] << 8);
-}
-
 static inline status_t _W25Qxx_WriteAddr(spi_w25qxx_t* pHandle, uint32_t u32Address)
 {
     uint8_t au8Cmd[4];

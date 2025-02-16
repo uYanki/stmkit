@@ -451,6 +451,79 @@ static inline uint64_t bswap64(uint64_t x)
  */
 
 /**
+ * @brief number from byte array
+ * @{
+ */
+
+#if (HOST_ENDIAN == LITTLE_ENDIAN)
+
+#define he16(x) le16((void*)(x))
+#define he32(x) le32((void*)(x))
+#define he64(x) le64((void*)(x))
+
+#elif (HOST_ENDIAN == BIG_ENDIAN)
+
+#define he16(x) be16((void*)(x))
+#define he32(x) be32((void*)(x))
+#define he64(x) be64((void*)(x))
+
+#endif
+
+static inline u16 le16(void* p)
+{
+    return *(u16*)p;
+
+    u8* _p = p;
+
+    return ((u16)_p[1] << 8) |
+           ((u16)_p[0] << 0);
+}
+
+static inline u32 le32(void* p)
+{
+    u16* _p = p;
+
+    return ((u32)le16(_p + 1) << 16) |
+           ((u32)le16(_p + 0) << 0);
+}
+
+static inline u64 le64(void* p)
+{
+    u32* _p = p;
+
+    return ((u64)le32(_p + 1) << 32) |
+           ((u64)le32(_p + 0) << 0);
+}
+
+static inline u16 be16(void* p)
+{
+    u8* _p = p;
+
+    return ((u16)_p[0] << 8) |
+           ((u16)_p[1] << 0);
+}
+
+static inline u32 be32(void* p)
+{
+    u16* _p = p;
+
+    return ((u32)be16(_p + 0) << 16) |
+           ((u32)be16(_p + 1) << 0);
+}
+
+static inline u64 be64(void* p)
+{
+    u32* _p = p;
+
+    return ((u64)be32(_p + 0) << 32) |
+           ((u64)be32(_p + 1) << 0);
+}
+
+/**
+ * @}
+ */
+
+/**
  * @brief endian convert
  *
  * - host endian to big endian.
@@ -510,6 +583,11 @@ static inline uint64_t bswap64(uint64_t x)
 
 #ifndef PRINTLN
 #define PRINTLN(format, ...) PRINTF(format "\n", ##__VA_ARGS__)
+#endif
+
+#ifndef ASSERT
+#include "assert.h"
+#define ASSERT(cond, msg) assert((msg, cond))
 #endif
 
 /**

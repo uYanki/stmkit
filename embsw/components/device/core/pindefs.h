@@ -2,7 +2,7 @@
 #define __PIN_DEFS_H__
 
 #include "typebasic.h"
-
+#include "busconf.h"
 #include "errno.h"
 
 #ifdef __cplusplus

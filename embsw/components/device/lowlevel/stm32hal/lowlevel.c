@@ -1,6 +1,3 @@
-#include "board.h"
-#include "typebasic.h"
-
 #if 1
 
 #include "pindefs.h"
@@ -117,8 +114,6 @@ tick_t GetTickMs(void)
 #define DBGUART_HANDLE huart1
 #endif
 
-extern UART_HandleTypeDef DBGUART_HANDLE;
-
 //---------------------------------------------------------------------------
 // Definitions
 //---------------------------------------------------------------------------
@@ -133,6 +128,8 @@ extern UART_HandleTypeDef DBGUART_HANDLE;
 //---------------------------------------------------------------------------
 // Variables
 //---------------------------------------------------------------------------
+
+extern UART_HandleTypeDef DBGUART_HANDLE;
 
 //---------------------------------------------------------------------------
 // Functions
@@ -193,7 +190,6 @@ int $Sub$$__2printf(const char* fmt, ...)
 #if CONFIG_HWI2C_MODULE_SW
 
 #include "i2cdefs.h"
-#include "i2c.h"
 
 //---------------------------------------------------------------------------
 // Definitions
@@ -309,7 +305,6 @@ static inline status_t HWI2C_Master_TransmitBlock(i2c_mst_t* pHandle, uint16_t u
 #if CONFIG_HWSPI_MODULE_SW
 
 #include "spimst.h"
-#include "spi.h"
 
 //---------------------------------------------------------------------------
 // Definitions
