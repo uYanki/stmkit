@@ -29,3 +29,30 @@ f32 _invsqrtf(f32 v)
 
     return v;
 }
+
+/**
+ * @brief 求最大公约数, Greatest Common Divisor
+ */
+s32 gcd(s32 a, s32 b)
+{
+    // 辗转相除法
+
+    s32 r;
+
+    while (b != 0)
+    {
+        r = a % b;
+        a = b;
+        b = r;
+    }
+
+    return a;
+}
+
+/**
+ * @brief 求最小公倍数, Least Common Multiple
+ */
+s32 lcm(s32 a, s32 b)
+{
+    return a / gcd(a, b) * b;
+}

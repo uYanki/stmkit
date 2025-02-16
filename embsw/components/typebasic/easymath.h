@@ -28,6 +28,9 @@ static inline f32 _round(f32 x)
 inline f32 _sqrtf(f32 v);
 inline f32 _invsqrtf(f32 v);
 
+s32 gcd(s32 a, s32 b);
+s32 lcm(s32 a, s32 b);
+
 #ifdef __cplusplus
 }
 #endif /* __cplusplus */
