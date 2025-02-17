@@ -224,7 +224,7 @@
 
 /* ================ USB Host Port Configuration ==================*/
 #ifndef CONFIG_USBHOST_MAX_BUS
-#define CONFIG_USBHOST_MAX_BUS 1
+#define CONFIG_USBHOST_MAX_BUS 2
 #endif
 
 #ifndef CONFIG_USBHOST_PIPE_NUM

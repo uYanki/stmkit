@@ -82,7 +82,7 @@
           </BeforeMake>
           <AfterMake>
             <RunUserProg1>0</RunUserProg1>
-            <RunUserProg2>0</RunUserProg2>
+            <RunUserProg2>1</RunUserProg2>
             <UserProg1Name></UserProg1Name>
             <UserProg2Name></UserProg2Name>
             <UserProg1Dos16Mode>0</UserProg1Dos16Mode>
@@ -340,7 +340,7 @@
               <MiscControls></MiscControls>
               <Define>USE_HAL_DRIVER,STM32H750xx</Define>
               <Undefine></Undefine>
-              <IncludePath>../Core/Inc;F:/embkit/software/platform/STM32Cube_FW_H7_V1.11.0/Drivers/STM32H7xx_HAL_Driver/Inc;F:/embkit/software/platform/STM32Cube_FW_H7_V1.11.0/Drivers/STM32H7xx_HAL_Driver/Inc/Legacy;F:/embkit/software/platform/STM32Cube_FW_H7_V1.11.0/Drivers/CMSIS/Device/ST/STM32H7xx/Include;F:/embkit/software/platform/STM32Cube_FW_H7_V1.11.0/Drivers/CMSIS/Include;../../../../../middlewares/cherryusb/core;../../../../../middlewares/cherryusb/common;../../../../../middlewares/CherryUSB/osal;../../../../../middlewares/CherryUSB/third_party/FreeRTOS-10.4/include;../../../../../middlewares/CherryUSB/third_party/FreeRTOS-10.4/portable/GCC/ARM_CM7/r0p1;../../../../../middlewares/CherryUSB/class/hid;../../../../../middlewares/CherryUSB/class/video;../../../../../middlewares/CherryUSB/class/msc;../../../../../middlewares/CherryUSB/class/cdc;../../../../../middlewares/CherryUSB/class/audio;../../../../../middlewares/CherryUSB/class/hub;..\..\..\..\..\middlewares\CherryUSB\class\vendor\serial</IncludePath>
+              <IncludePath>../Core/Inc;F:/embkit/software/platform/STM32Cube_FW_H7_V1.11.0/Drivers/STM32H7xx_HAL_Driver/Inc;F:/embkit/software/platform/STM32Cube_FW_H7_V1.11.0/Drivers/STM32H7xx_HAL_Driver/Inc/Legacy;F:/embkit/software/platform/STM32Cube_FW_H7_V1.11.0/Drivers/CMSIS/Device/ST/STM32H7xx/Include;F:/embkit/software/platform/STM32Cube_FW_H7_V1.11.0/Drivers/CMSIS/Include;../../../../../middlewares/cherryusb/core;../../../../../middlewares/cherryusb/common;../../../../../middlewares/CherryUSB/osal;../../../../../middlewares/CherryUSB/third_party/FreeRTOS-10.4/include;../../../../../middlewares/CherryUSB/third_party/FreeRTOS-10.4/portable/GCC/ARM_CM7/r0p1;../../../../../middlewares/CherryUSB/class/hid;../../../../../middlewares/CherryUSB/class/video;../../../../../middlewares/CherryUSB/class/msc;../../../../../middlewares/CherryUSB/class/cdc;../../../../../middlewares/CherryUSB/class/audio;../../../../../middlewares/CherryUSB/class/hub;../../../../../middlewares/CherryUSB/class/vendor/serial</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
