@@ -10,3 +10,4 @@
 * [ ] i2c slave
 * [ ] cobs 编码
 * [ ] ppp 编码
+* [ ] auto init
