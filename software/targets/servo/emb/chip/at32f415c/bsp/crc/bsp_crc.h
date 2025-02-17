@@ -1,7 +1,7 @@
 #ifndef __BSP_CRC_H__
 #define __BSP_CRC_H__
 
-#include "common.h"
+#include "typebasic.h"
 
 #ifdef __cplusplus
 extern "C" {

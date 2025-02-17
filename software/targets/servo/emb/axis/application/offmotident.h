@@ -2,7 +2,7 @@
 #define __OFF_MOT_IDENT_H__
 
 #include "paratbl.h"
-#include "common.h"
+#include "typebasic.h"
 
 #define CONFIG_CURSAMP_SW 0
 

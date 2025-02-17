@@ -340,7 +340,7 @@
               <MiscControls>-Wno-shift-negative-value -Wno-shift-count-negative -Wno-int-to-void-pointer-cast -Wno-unused-value</MiscControls>
               <Define>USE_HAL_DRIVER,STM32G070xx</Define>
               <Undefine></Undefine>
-              <IncludePath>../Core/Inc;../Libraries;../Database;../../../../../../include;../../../02_axis;../../../02_axis/motdrv;../../../02_axis/pathplan;../../../02_axis/application;../../../02_axis/logicctrl;../../../03_func;../../../03_func/scope;../../../03_func/delay;../../../03_func/system;../../../03_func/filter;../../../03_func/alarm;../../bsp;..\..\database;../../bsp/enc;F:/xServo/libcpu/STM32Cube_FW_G0_V1.6.0/Drivers/STM32G0xx_HAL_Driver/Inc;F:/xServo/libcpu/STM32Cube_FW_G0_V1.6.0/Drivers/STM32G0xx_HAL_Driver/Inc/Legacy;F:/xServo/libcpu/STM32Cube_FW_G0_V1.6.0/Drivers/CMSIS/Device/ST/STM32G0xx/Include;F:/xServo/libcpu/STM32Cube_FW_G0_V1.6.0/Drivers/CMSIS/Include;..\..\..\core\func\paratbl;..\..\..\core\func\comm\modbus</IncludePath>
+              <IncludePath>../Core/Inc;../Libraries;../Database;../../../../../../include;../../../02_axis;../../../02_axis/motdrv;../../../02_axis/pathplan;../../../02_axis/application;../../../02_axis/logicctrl;../../../03_func;../../../03_func/scope;../../../03_func/delay;../../../03_func/system;../../../03_func/filter;../../../03_func/alarm;../../bsp;..\..\database;../../bsp/enc;F:/xServo/libcpu/STM32Cube_FW_G0_V1.6.0/Drivers/STM32G0xx_HAL_Driver/Inc;F:/xServo/libcpu/STM32Cube_FW_G0_V1.6.0/Drivers/STM32G0xx_HAL_Driver/Inc/Legacy;F:/xServo/libcpu/STM32Cube_FW_G0_V1.6.0/Drivers/CMSIS/Device/ST/STM32G0xx/Include;F:/xServo/libcpu/STM32Cube_FW_G0_V1.6.0/Drivers/CMSIS/Include;..\..\..\..\func\paratbl;..\..\..\..\func\comm\modbus</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -2617,62 +2617,62 @@
             <File>
               <FileName>axis.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\core\axis\axis.c</FilePath>
+              <FilePath>..\..\..\..\axis\axis.c</FilePath>
             </File>
             <File>
               <FileName>pathplan.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\core\axis\pathplan\pathplan.c</FilePath>
+              <FilePath>..\..\..\..\axis\pathplan\pathplan.c</FilePath>
             </File>
             <File>
               <FileName>cursamp.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\core\axis\motdrv\cursamp.c</FilePath>
+              <FilePath>..\..\..\..\axis\motdrv\cursamp.c</FilePath>
             </File>
             <File>
               <FileName>encsamp.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\core\axis\motdrv\encsamp.c</FilePath>
+              <FilePath>..\..\..\..\axis\motdrv\encsamp.c</FilePath>
             </File>
             <File>
               <FileName>mclib.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\core\axis\motdrv\mclib.c</FilePath>
+              <FilePath>..\..\..\..\axis\motdrv\mclib.c</FilePath>
             </File>
             <File>
               <FileName>motdrv.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\core\axis\motdrv\motdrv.c</FilePath>
+              <FilePath>..\..\..\..\axis\motdrv\motdrv.c</FilePath>
             </File>
             <File>
               <FileName>logicctrl.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\core\axis\logicctrl\logicctrl.c</FilePath>
+              <FilePath>..\..\..\..\axis\logicctrl\logicctrl.c</FilePath>
             </File>
             <File>
               <FileName>appmgr.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\core\axis\application\appmgr.c</FilePath>
+              <FilePath>..\..\..\..\axis\application\appmgr.c</FilePath>
             </File>
             <File>
               <FileName>looprsp.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\core\axis\application\looprsp.c</FilePath>
+              <FilePath>..\..\..\..\axis\application\looprsp.c</FilePath>
             </File>
             <File>
               <FileName>motencident.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\core\axis\application\motencident.c</FilePath>
+              <FilePath>..\..\..\..\axis\application\motencident.c</FilePath>
             </File>
             <File>
               <FileName>offmotident.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\core\axis\application\offmotident.c</FilePath>
+              <FilePath>..\..\..\..\axis\application\offmotident.c</FilePath>
             </File>
             <File>
               <FileName>openloop.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\core\axis\application\openloop.c</FilePath>
+              <FilePath>..\..\..\..\axis\application\openloop.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -2682,72 +2682,72 @@
             <File>
               <FileName>alarm.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\core\func\alarm\alarm.c</FilePath>
+              <FilePath>..\..\..\..\func\alarm\alarm.c</FilePath>
             </File>
             <File>
               <FileName>almtbl.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\core\func\alarm\almtbl.c</FilePath>
+              <FilePath>..\..\..\..\func\alarm\almtbl.c</FilePath>
             </File>
             <File>
               <FileName>paratbl.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\core\func\alarm\paratbl.c</FilePath>
+              <FilePath>..\..\..\..\func\alarm\paratbl.c</FilePath>
             </File>
             <File>
               <FileName>analog.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\core\func\analog\analog.c</FilePath>
+              <FilePath>..\..\..\..\func\analog\analog.c</FilePath>
             </File>
             <File>
               <FileName>pwrmgr.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\core\func\analog\pwrmgr.c</FilePath>
+              <FilePath>..\..\..\..\func\analog\pwrmgr.c</FilePath>
             </File>
             <File>
               <FileName>thermistor.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\core\func\analog\thermistor.c</FilePath>
+              <FilePath>..\..\..\..\func\analog\thermistor.c</FilePath>
             </File>
             <File>
               <FileName>delay.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\core\func\delay\delay.c</FilePath>
+              <FilePath>..\..\..\..\func\delay\delay.c</FilePath>
             </File>
             <File>
               <FileName>lpf.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\core\func\filter\lpf.c</FilePath>
+              <FilePath>..\..\..\..\func\filter\lpf.c</FilePath>
             </File>
             <File>
               <FileName>dido.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\core\func\pinctrl\dido.c</FilePath>
+              <FilePath>..\..\..\..\func\pinctrl\dido.c</FilePath>
             </File>
             <File>
               <FileName>hw_version.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\core\func\pinctrl\hw_version.c</FilePath>
+              <FilePath>..\..\..\..\func\pinctrl\hw_version.c</FilePath>
             </File>
             <File>
               <FileName>led.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\core\func\pinctrl\led.c</FilePath>
+              <FilePath>..\..\..\..\func\pinctrl\led.c</FilePath>
             </File>
             <File>
               <FileName>touch_probe.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\core\func\pinctrl\touch_probe.c</FilePath>
+              <FilePath>..\..\..\..\func\pinctrl\touch_probe.c</FilePath>
             </File>
             <File>
               <FileName>oled.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\core\func\panel\oled.c</FilePath>
+              <FilePath>..\..\..\..\func\panel\oled.c</FilePath>
             </File>
             <File>
               <FileName>scope.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\core\func\scope\scope.c</FilePath>
+              <FilePath>..\..\..\..\func\scope\scope.c</FilePath>
             </File>
             <File>
               <FileName>system.c</FileName>
@@ -2757,22 +2757,22 @@
             <File>
               <FileName>modbus.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\core\func\comm\modbus\modbus.c</FilePath>
+              <FilePath>..\..\..\..\func\comm\modbus\modbus.c</FilePath>
             </File>
             <File>
               <FileName>func.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\core\func\func.c</FilePath>
+              <FilePath>..\..\..\..\func\func.c</FilePath>
             </File>
             <File>
               <FileName>scheduler.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\core\scheduler.c</FilePath>
+              <FilePath>..\..\..\..\scheduler.c</FilePath>
             </File>
             <File>
               <FileName>storage.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\core\func\paratbl\storage.c</FilePath>
+              <FilePath>..\..\..\..\func\paratbl\storage.c</FilePath>
             </File>
           </Files>
         </Group>

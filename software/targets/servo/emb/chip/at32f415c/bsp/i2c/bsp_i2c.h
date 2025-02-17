@@ -1,7 +1,7 @@
 #ifndef __BSP_I2C_H__
 #define __BSP_I2C_H__
 
-#include "common.h"
+#include "typebasic.h"
 #include "i2c_application.h"
 
 #ifdef __cplusplus

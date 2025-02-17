@@ -35,7 +35,7 @@ static const pin_attr_t sIOMap[PIN_CNT] = {
 // Functions
 //---------------------------------------------------------------------------
 
-void PinSetLvl(pin_no_e ePinNo, pin_sts_e eNewState)
+void PinSetLvl(pin_no_e ePinNo, switch_e eNewState)
 {
     if (ePinNo < PIN_CNT)
     {
@@ -43,7 +43,7 @@ void PinSetLvl(pin_no_e ePinNo, pin_sts_e eNewState)
 
         if (pAttr->GPIO != nullptr)
         {
-            pin_sts_e     eTargetState  = pAttr->bInvert ? B_OFF : B_ON;
+            switch_e      eTargetState  = pAttr->bInvert ? B_OFF : B_ON;
             confirm_state eConfirmState = (eNewState == eTargetState) ? TRUE : FALSE;
 
             gpio_bits_write(pAttr->GPIO, pAttr->PIN, eConfirmState);
@@ -51,7 +51,7 @@ void PinSetLvl(pin_no_e ePinNo, pin_sts_e eNewState)
     }
 }
 
-pin_sts_e PinGetLvl(pin_no_e ePinNo)
+switch_e PinGetLvl(pin_no_e ePinNo)
 {
     if (ePinNo < PIN_CNT)
     {

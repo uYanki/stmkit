@@ -1,7 +1,7 @@
 #ifndef __BSP_CAN_H__
 #define __BSP_CAN_H__
 
-#include "common.h"
+#include "typebasic.h"
 
 #define CAN_ID_Pos  30
 #define CAN_ID_STD  (0 << CAN_ID_Pos)  // 11 bits standard identifier

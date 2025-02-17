@@ -1,7 +1,7 @@
 #ifndef __SCHEDULER_H__
 #define __SCHEDULER_H__
 
-#include "common.h"
+#include "typebasic.h"
 #include "axis.h"
 #include "func.h"
 #include "delay.h"

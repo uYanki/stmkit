@@ -336,9 +336,9 @@
             <v6Rtti>0</v6Rtti>
             <VariousControls>
               <MiscControls>--diag_suppress=513,174,177</MiscControls>
-              <Define>AT32F403AVGT7,USE_STDPERIPH_DRIVER,AT_START_F403A_V1</Define>
+              <Define>AT32F403AVGT7,USE_STDPERIPH_DRIVER,AT_START_F403A_V1,BOARD_USER_DEFINED</Define>
               <Undefine></Undefine>
-              <IncludePath>..\..\..\..\..\platform\AT32F403A_407_Firmware_Library_V2.1.9\libraries\drivers\inc;..\..\..\..\..\platform\AT32F403A_407_Firmware_Library_V2.1.9\libraries\cmsis\cm4\core_support;..\..\..\..\..\platform\AT32F403A_407_Firmware_Library_V2.1.9\libraries\cmsis\cm4\device_support;..\inc;..\..\bsp;..\..\bsp\enc;..\..\..\..\..\components\typebasic;..\..\..\core;..\..\..\core\basic;..\..\..\core\basic\database\standard;..\..\..\core\basic\delay;..\..\..\core\basic\filter;..\..\..\core\basic\alarm;..\..\..\core\axis;..\..\..\core\axis\application;..\..\..\core\axis\logicctrl;..\..\..\core\axis\motdrv;..\..\..\core\axis\pathplan;..\..\..\core\func;..\..\..\core\func\scope;..\..\..\core\func\delay;;..\..\..\core\func\filter;..\..\..\core\func\alarm;..\..\..\core\func\paratbl;..\..\..\core\func\comm\modbus</IncludePath>
+              <IncludePath>..\..\..\..\..\..\..\platform\AT32F403A_407_Firmware_Library_V2.1.9\libraries\drivers\inc;..\..\..\..\..\..\..\platform\AT32F403A_407_Firmware_Library_V2.1.9\libraries\cmsis\cm4\core_support;..\..\..\..\..\..\..\platform\AT32F403A_407_Firmware_Library_V2.1.9\libraries\cmsis\cm4\device_support;..\inc;..\..\bsp;..\..\bsp\enc;..\..\..\..\..\..\..\components\typebasic;..\..\..\..\;..\..\..\..\basic;..\..\..\..\basic\database\standard;..\..\..\..\basic\delay;..\..\..\..\basic\filter;..\..\..\..\basic\alarm;..\..\..\..\axis;..\..\..\..\axis\application;..\..\..\..\axis\logicctrl;..\..\..\..\axis\motdrv;..\..\..\..\axis\pathplan;..\..\..\..\func;..\..\..\..\func\scope;..\..\..\..\func\delay;..\..\..\..\func\filter;..\..\..\..\func\alarm;..\..\..\..\func\paratbl;..\..\..\..\func\comm\modbus</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -415,12 +415,12 @@
             <File>
               <FileName>system_at32f403a_407.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\platform\AT32F403A_407_Firmware_Library_V2.1.9\libraries\cmsis\cm4\device_support\system_at32f403a_407.c</FilePath>
+              <FilePath>..\..\..\..\..\..\..\platform\AT32F403A_407_Firmware_Library_V2.1.9\libraries\cmsis\cm4\device_support\system_at32f403a_407.c</FilePath>
             </File>
             <File>
               <FileName>startup_at32f403a_407.s</FileName>
               <FileType>2</FileType>
-              <FilePath>..\..\..\..\..\platform\AT32F403A_407_Firmware_Library_V2.1.9\libraries\cmsis\cm4\device_support\startup\mdk\startup_at32f403a_407.s</FilePath>
+              <FilePath>..\..\..\..\..\..\..\platform\AT32F403A_407_Firmware_Library_V2.1.9\libraries\cmsis\cm4\device_support\startup\mdk\startup_at32f403a_407.s</FilePath>
             </File>
           </Files>
         </Group>
@@ -430,127 +430,127 @@
             <File>
               <FileName>at32f403a_407_bpr.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\platform\AT32F403A_407_Firmware_Library_V2.1.9\libraries\drivers\src\at32f403a_407_bpr.c</FilePath>
+              <FilePath>..\..\..\..\..\..\..\platform\AT32F403A_407_Firmware_Library_V2.1.9\libraries\drivers\src\at32f403a_407_bpr.c</FilePath>
             </File>
             <File>
               <FileName>at32f403a_407_can.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\platform\AT32F403A_407_Firmware_Library_V2.1.9\libraries\drivers\src\at32f403a_407_can.c</FilePath>
+              <FilePath>..\..\..\..\..\..\..\platform\AT32F403A_407_Firmware_Library_V2.1.9\libraries\drivers\src\at32f403a_407_can.c</FilePath>
             </File>
             <File>
               <FileName>at32f403a_407_crc.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\platform\AT32F403A_407_Firmware_Library_V2.1.9\libraries\drivers\src\at32f403a_407_crc.c</FilePath>
+              <FilePath>..\..\..\..\..\..\..\platform\AT32F403A_407_Firmware_Library_V2.1.9\libraries\drivers\src\at32f403a_407_crc.c</FilePath>
             </File>
             <File>
               <FileName>at32f403a_407_crm.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\platform\AT32F403A_407_Firmware_Library_V2.1.9\libraries\drivers\src\at32f403a_407_crm.c</FilePath>
+              <FilePath>..\..\..\..\..\..\..\platform\AT32F403A_407_Firmware_Library_V2.1.9\libraries\drivers\src\at32f403a_407_crm.c</FilePath>
             </File>
             <File>
               <FileName>at32f403a_407_dac.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\platform\AT32F403A_407_Firmware_Library_V2.1.9\libraries\drivers\src\at32f403a_407_dac.c</FilePath>
+              <FilePath>..\..\..\..\..\..\..\platform\AT32F403A_407_Firmware_Library_V2.1.9\libraries\drivers\src\at32f403a_407_dac.c</FilePath>
             </File>
             <File>
               <FileName>at32f403a_407_debug.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\platform\AT32F403A_407_Firmware_Library_V2.1.9\libraries\drivers\src\at32f403a_407_debug.c</FilePath>
+              <FilePath>..\..\..\..\..\..\..\platform\AT32F403A_407_Firmware_Library_V2.1.9\libraries\drivers\src\at32f403a_407_debug.c</FilePath>
             </File>
             <File>
               <FileName>at32f403a_407_dma.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\platform\AT32F403A_407_Firmware_Library_V2.1.9\libraries\drivers\src\at32f403a_407_dma.c</FilePath>
+              <FilePath>..\..\..\..\..\..\..\platform\AT32F403A_407_Firmware_Library_V2.1.9\libraries\drivers\src\at32f403a_407_dma.c</FilePath>
             </File>
             <File>
               <FileName>at32f403a_407_emac.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\platform\AT32F403A_407_Firmware_Library_V2.1.9\libraries\drivers\src\at32f403a_407_emac.c</FilePath>
+              <FilePath>..\..\..\..\..\..\..\platform\AT32F403A_407_Firmware_Library_V2.1.9\libraries\drivers\src\at32f403a_407_emac.c</FilePath>
             </File>
             <File>
               <FileName>at32f403a_407_exint.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\platform\AT32F403A_407_Firmware_Library_V2.1.9\libraries\drivers\src\at32f403a_407_exint.c</FilePath>
+              <FilePath>..\..\..\..\..\..\..\platform\AT32F403A_407_Firmware_Library_V2.1.9\libraries\drivers\src\at32f403a_407_exint.c</FilePath>
             </File>
             <File>
               <FileName>at32f403a_407_flash.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\platform\AT32F403A_407_Firmware_Library_V2.1.9\libraries\drivers\src\at32f403a_407_flash.c</FilePath>
+              <FilePath>..\..\..\..\..\..\..\platform\AT32F403A_407_Firmware_Library_V2.1.9\libraries\drivers\src\at32f403a_407_flash.c</FilePath>
             </File>
             <File>
               <FileName>at32f403a_407_gpio.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\platform\AT32F403A_407_Firmware_Library_V2.1.9\libraries\drivers\src\at32f403a_407_gpio.c</FilePath>
+              <FilePath>..\..\..\..\..\..\..\platform\AT32F403A_407_Firmware_Library_V2.1.9\libraries\drivers\src\at32f403a_407_gpio.c</FilePath>
             </File>
             <File>
               <FileName>at32f403a_407_i2c.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\platform\AT32F403A_407_Firmware_Library_V2.1.9\libraries\drivers\src\at32f403a_407_i2c.c</FilePath>
+              <FilePath>..\..\..\..\..\..\..\platform\AT32F403A_407_Firmware_Library_V2.1.9\libraries\drivers\src\at32f403a_407_i2c.c</FilePath>
             </File>
             <File>
               <FileName>at32f403a_407_misc.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\platform\AT32F403A_407_Firmware_Library_V2.1.9\libraries\drivers\src\at32f403a_407_misc.c</FilePath>
+              <FilePath>..\..\..\..\..\..\..\platform\AT32F403A_407_Firmware_Library_V2.1.9\libraries\drivers\src\at32f403a_407_misc.c</FilePath>
             </File>
             <File>
               <FileName>at32f403a_407_pwc.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\platform\AT32F403A_407_Firmware_Library_V2.1.9\libraries\drivers\src\at32f403a_407_pwc.c</FilePath>
+              <FilePath>..\..\..\..\..\..\..\platform\AT32F403A_407_Firmware_Library_V2.1.9\libraries\drivers\src\at32f403a_407_pwc.c</FilePath>
             </File>
             <File>
               <FileName>at32f403a_407_rtc.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\platform\AT32F403A_407_Firmware_Library_V2.1.9\libraries\drivers\src\at32f403a_407_rtc.c</FilePath>
+              <FilePath>..\..\..\..\..\..\..\platform\AT32F403A_407_Firmware_Library_V2.1.9\libraries\drivers\src\at32f403a_407_rtc.c</FilePath>
             </File>
             <File>
               <FileName>at32f403a_407_sdio.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\platform\AT32F403A_407_Firmware_Library_V2.1.9\libraries\drivers\src\at32f403a_407_sdio.c</FilePath>
+              <FilePath>..\..\..\..\..\..\..\platform\AT32F403A_407_Firmware_Library_V2.1.9\libraries\drivers\src\at32f403a_407_sdio.c</FilePath>
             </File>
             <File>
               <FileName>at32f403a_407_spi.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\platform\AT32F403A_407_Firmware_Library_V2.1.9\libraries\drivers\src\at32f403a_407_spi.c</FilePath>
+              <FilePath>..\..\..\..\..\..\..\platform\AT32F403A_407_Firmware_Library_V2.1.9\libraries\drivers\src\at32f403a_407_spi.c</FilePath>
             </File>
             <File>
               <FileName>at32f403a_407_tmr.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\platform\AT32F403A_407_Firmware_Library_V2.1.9\libraries\drivers\src\at32f403a_407_tmr.c</FilePath>
+              <FilePath>..\..\..\..\..\..\..\platform\AT32F403A_407_Firmware_Library_V2.1.9\libraries\drivers\src\at32f403a_407_tmr.c</FilePath>
             </File>
             <File>
               <FileName>at32f403a_407_usart.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\platform\AT32F403A_407_Firmware_Library_V2.1.9\libraries\drivers\src\at32f403a_407_usart.c</FilePath>
+              <FilePath>..\..\..\..\..\..\..\platform\AT32F403A_407_Firmware_Library_V2.1.9\libraries\drivers\src\at32f403a_407_usart.c</FilePath>
             </File>
             <File>
               <FileName>at32f403a_407_usb.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\platform\AT32F403A_407_Firmware_Library_V2.1.9\libraries\drivers\src\at32f403a_407_usb.c</FilePath>
+              <FilePath>..\..\..\..\..\..\..\platform\AT32F403A_407_Firmware_Library_V2.1.9\libraries\drivers\src\at32f403a_407_usb.c</FilePath>
             </File>
             <File>
               <FileName>at32f403a_407_wdt.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\platform\AT32F403A_407_Firmware_Library_V2.1.9\libraries\drivers\src\at32f403a_407_wdt.c</FilePath>
+              <FilePath>..\..\..\..\..\..\..\platform\AT32F403A_407_Firmware_Library_V2.1.9\libraries\drivers\src\at32f403a_407_wdt.c</FilePath>
             </File>
             <File>
               <FileName>at32f403a_407_wwdt.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\platform\AT32F403A_407_Firmware_Library_V2.1.9\libraries\drivers\src\at32f403a_407_wwdt.c</FilePath>
+              <FilePath>..\..\..\..\..\..\..\platform\AT32F403A_407_Firmware_Library_V2.1.9\libraries\drivers\src\at32f403a_407_wwdt.c</FilePath>
             </File>
             <File>
               <FileName>at32f403a_407_xmc.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\platform\AT32F403A_407_Firmware_Library_V2.1.9\libraries\drivers\src\at32f403a_407_xmc.c</FilePath>
+              <FilePath>..\..\..\..\..\..\..\platform\AT32F403A_407_Firmware_Library_V2.1.9\libraries\drivers\src\at32f403a_407_xmc.c</FilePath>
             </File>
             <File>
               <FileName>at32f403a_407_acc.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\platform\AT32F403A_407_Firmware_Library_V2.1.9\libraries\drivers\src\at32f403a_407_acc.c</FilePath>
+              <FilePath>..\..\..\..\..\..\..\platform\AT32F403A_407_Firmware_Library_V2.1.9\libraries\drivers\src\at32f403a_407_acc.c</FilePath>
             </File>
             <File>
               <FileName>at32f403a_407_adc.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\platform\AT32F403A_407_Firmware_Library_V2.1.9\libraries\drivers\src\at32f403a_407_adc.c</FilePath>
+              <FilePath>..\..\..\..\..\..\..\platform\AT32F403A_407_Firmware_Library_V2.1.9\libraries\drivers\src\at32f403a_407_adc.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -560,7 +560,7 @@
             <File>
               <FileName>scheduler.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\core\scheduler.c</FilePath>
+              <FilePath>..\..\..\..\scheduler.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -570,27 +570,27 @@
             <File>
               <FileName>appmgr.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\core\axis\application\appmgr.c</FilePath>
+              <FilePath>..\..\..\..\axis\application\appmgr.c</FilePath>
             </File>
             <File>
               <FileName>motencident.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\core\axis\application\motencident.c</FilePath>
+              <FilePath>..\..\..\..\axis\application\motencident.c</FilePath>
             </File>
             <File>
               <FileName>looprsp.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\core\axis\application\looprsp.c</FilePath>
+              <FilePath>..\..\..\..\axis\application\looprsp.c</FilePath>
             </File>
             <File>
               <FileName>offmotident.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\core\axis\application\offmotident.c</FilePath>
+              <FilePath>..\..\..\..\axis\application\offmotident.c</FilePath>
             </File>
             <File>
               <FileName>openloop.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\core\axis\application\openloop.c</FilePath>
+              <FilePath>..\..\..\..\axis\application\openloop.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -600,37 +600,37 @@
             <File>
               <FileName>axis.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\core\axis\axis.c</FilePath>
+              <FilePath>..\..\..\..\axis\axis.c</FilePath>
             </File>
             <File>
               <FileName>pathplan.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\core\axis\pathplan\pathplan.c</FilePath>
+              <FilePath>..\..\..\..\axis\pathplan\pathplan.c</FilePath>
             </File>
             <File>
               <FileName>motdrv.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\core\axis\motdrv\motdrv.c</FilePath>
+              <FilePath>..\..\..\..\axis\motdrv\motdrv.c</FilePath>
             </File>
             <File>
               <FileName>logicctrl.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\core\axis\logicctrl\logicctrl.c</FilePath>
+              <FilePath>..\..\..\..\axis\logicctrl\logicctrl.c</FilePath>
             </File>
             <File>
               <FileName>cursamp.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\core\axis\motdrv\cursamp.c</FilePath>
+              <FilePath>..\..\..\..\axis\motdrv\cursamp.c</FilePath>
             </File>
             <File>
               <FileName>encsamp.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\core\axis\motdrv\encsamp.c</FilePath>
+              <FilePath>..\..\..\..\axis\motdrv\encsamp.c</FilePath>
             </File>
             <File>
               <FileName>mclib.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\core\axis\motdrv\mclib.c</FilePath>
+              <FilePath>..\..\..\..\axis\motdrv\mclib.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -640,57 +640,57 @@
             <File>
               <FileName>func.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\core\func\func.c</FilePath>
+              <FilePath>..\..\..\..\func\func.c</FilePath>
             </File>
             <File>
               <FileName>scope.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\core\func\scope\scope.c</FilePath>
+              <FilePath>..\..\..\..\func\scope\scope.c</FilePath>
             </File>
             <File>
               <FileName>oled.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\core\func\panel\oled.c</FilePath>
+              <FilePath>..\..\..\..\func\panel\oled.c</FilePath>
             </File>
             <File>
               <FileName>dido.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\core\func\pinctrl\dido.c</FilePath>
+              <FilePath>..\..\..\..\func\pinctrl\dido.c</FilePath>
             </File>
             <File>
               <FileName>hw_version.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\core\func\pinctrl\hw_version.c</FilePath>
+              <FilePath>..\..\..\..\func\pinctrl\hw_version.c</FilePath>
             </File>
             <File>
               <FileName>touch_probe.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\core\func\pinctrl\touch_probe.c</FilePath>
+              <FilePath>..\..\..\..\func\pinctrl\touch_probe.c</FilePath>
             </File>
             <File>
               <FileName>analog.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\core\func\analog\analog.c</FilePath>
+              <FilePath>..\..\..\..\func\analog\analog.c</FilePath>
             </File>
             <File>
               <FileName>pwrmgr.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\core\func\analog\pwrmgr.c</FilePath>
+              <FilePath>..\..\..\..\func\analog\pwrmgr.c</FilePath>
             </File>
             <File>
               <FileName>thermistor.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\core\func\analog\thermistor.c</FilePath>
+              <FilePath>..\..\..\..\func\analog\thermistor.c</FilePath>
             </File>
             <File>
               <FileName>modbus.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\core\func\comm\modbus\modbus.c</FilePath>
+              <FilePath>..\..\..\..\func\comm\modbus\modbus.c</FilePath>
             </File>
             <File>
               <FileName>storage.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\core\func\paratbl\storage.c</FilePath>
+              <FilePath>..\..\..\..\func\paratbl\storage.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -700,12 +700,12 @@
             <File>
               <FileName>almtbl.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\core\basic\alarm\almtbl.c</FilePath>
+              <FilePath>..\..\..\..\basic\alarm\almtbl.c</FilePath>
             </File>
             <File>
               <FileName>paraattr.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\core\basic\database\standard\paraattr.c</FilePath>
+              <FilePath>..\..\..\..\basic\database\standard\paraattr.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -805,22 +805,22 @@
             <File>
               <FileName>alarm.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\core\basic\alarm\alarm.c</FilePath>
+              <FilePath>..\..\..\..\basic\alarm\alarm.c</FilePath>
             </File>
             <File>
               <FileName>delay.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\core\basic\delay\delay.c</FilePath>
+              <FilePath>..\..\..\..\basic\delay\delay.c</FilePath>
             </File>
             <File>
               <FileName>fft.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\core\basic\filter\fft.c</FilePath>
+              <FilePath>..\..\..\..\basic\filter\fft.c</FilePath>
             </File>
             <File>
               <FileName>lpf.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\core\basic\filter\lpf.c</FilePath>
+              <FilePath>..\..\..\..\basic\filter\lpf.c</FilePath>
             </File>
           </Files>
         </Group>

@@ -1,7 +1,7 @@
 #ifndef __DELAY_H__
 #define __DELAY_H__
 
-#include "common.h"
+#include "typebasic.h"
 #include "tim/bsp_tim.h"
 
 #ifdef __cplusplus

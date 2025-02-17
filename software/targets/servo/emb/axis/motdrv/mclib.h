@@ -1,7 +1,7 @@
 #ifndef __MCLIB_H__
 #define __MCLIB_H__
 
-#include "common.h"
+#include "typebasic.h"
 
 typedef struct {
     s16 Ia;

@@ -1,7 +1,7 @@
 #ifndef __AXIS_H__
 #define __AXIS_H__
 
-#include "common.h"
+#include "typebasic.h"
 #include "paratbl.h"
 #include "application/appmgr.h"
 #include "logicctrl/logicctrl.h"

@@ -336,9 +336,9 @@
             <v6Rtti>0</v6Rtti>
             <VariousControls>
               <MiscControls>--diag_suppress=513,177</MiscControls>
-              <Define>AT32F415CBT7,USE_STDPERIPH_DRIVER</Define>
+              <Define>AT32F415CBT7,USE_STDPERIPH_DRIVER,BOARD_USER_DEFINED</Define>
               <Undefine></Undefine>
-              <IncludePath>..\..\..\..\..\platform\AT32F415_Firmware_Library_V2.1.6\libraries\drivers\inc;..\..\..\..\..\platform\AT32F415_Firmware_Library_V2.1.6\libraries\cmsis\cm4\core_support;..\..\..\..\..\platform\AT32F415_Firmware_Library_V2.1.6\libraries\cmsis\cm4\device_support;..\..\..\..\..\platform\AT32F415_Firmware_Library_V2.1.6\middlewares\i2c_application_library;..\inc;..\..\bsp;..\..\bsp\enc;..\..\..\..\..\components\typebasic;..\..\..\core;..\..\..\core\basic;..\..\..\core\basic\alarm;..\..\..\core\basic\delay;..\..\..\core\basic\filter;..\..\..\core\axis\application;..\..\..\core\basic\database\standard;..\..\..\core\axis;..\..\..\core\axis\logicctrl;..\..\..\core\axis\motdrv;..\..\..\core\axis\pathplan;..\..\..\core\func;..\..\..\core\func\scope;..\..\..\core\func\delay;..\..\..\core\func\filter;..\..\..\core\func\alarm;..\..\..\core\func\paratbl;..\..\..\core\func\comm\modbus</IncludePath>
+              <IncludePath>..\..\..\..\..\..\..\platform\AT32F415_Firmware_Library_V2.1.6\libraries\drivers\inc;..\..\..\..\..\..\..\platform\AT32F415_Firmware_Library_V2.1.6\libraries\cmsis\cm4\core_support;..\..\..\..\..\..\..\platform\AT32F415_Firmware_Library_V2.1.6\libraries\cmsis\cm4\device_support;..\..\..\..\..\..\..\platform\AT32F415_Firmware_Library_V2.1.6\middlewares\i2c_application_library;..\inc;..\..\bsp;..\..\bsp\enc;..\..\..\..\..\..\..\components\typebasic;..\..\..\..\;..\..\..\..\basic;..\..\..\..\basic\alarm;..\..\..\..\basic\delay;..\..\..\..\basic\filter;..\..\..\..\axis\application;..\..\..\..\basic\database\standard;..\..\..\..\axis;..\..\..\..\axis\logicctrl;..\..\..\..\axis\motdrv;..\..\..\..\axis\pathplan;..\..\..\..\func;..\..\..\..\func\scope;..\..\..\..\func\delay;..\..\..\..\func\filter;..\..\..\..\func\alarm;..\..\..\..\func\paratbl;..\..\..\..\func\comm\modbus</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -410,97 +410,97 @@
             <File>
               <FileName>at32f415_adc.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\platform\AT32F415_Firmware_Library_V2.1.6\libraries\drivers\src\at32f415_adc.c</FilePath>
+              <FilePath>..\..\..\..\..\..\..\platform\AT32F415_Firmware_Library_V2.1.6\libraries\drivers\src\at32f415_adc.c</FilePath>
             </File>
             <File>
               <FileName>at32f415_can.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\platform\AT32F415_Firmware_Library_V2.1.6\libraries\drivers\src\at32f415_can.c</FilePath>
+              <FilePath>..\..\..\..\..\..\..\platform\AT32F415_Firmware_Library_V2.1.6\libraries\drivers\src\at32f415_can.c</FilePath>
             </File>
             <File>
               <FileName>at32f415_crc.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\platform\AT32F415_Firmware_Library_V2.1.6\libraries\drivers\src\at32f415_crc.c</FilePath>
+              <FilePath>..\..\..\..\..\..\..\platform\AT32F415_Firmware_Library_V2.1.6\libraries\drivers\src\at32f415_crc.c</FilePath>
             </File>
             <File>
               <FileName>at32f415_crm.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\platform\AT32F415_Firmware_Library_V2.1.6\libraries\drivers\src\at32f415_crm.c</FilePath>
+              <FilePath>..\..\..\..\..\..\..\platform\AT32F415_Firmware_Library_V2.1.6\libraries\drivers\src\at32f415_crm.c</FilePath>
             </File>
             <File>
               <FileName>at32f415_debug.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\platform\AT32F415_Firmware_Library_V2.1.6\libraries\drivers\src\at32f415_debug.c</FilePath>
+              <FilePath>..\..\..\..\..\..\..\platform\AT32F415_Firmware_Library_V2.1.6\libraries\drivers\src\at32f415_debug.c</FilePath>
             </File>
             <File>
               <FileName>at32f415_dma.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\platform\AT32F415_Firmware_Library_V2.1.6\libraries\drivers\src\at32f415_dma.c</FilePath>
+              <FilePath>..\..\..\..\..\..\..\platform\AT32F415_Firmware_Library_V2.1.6\libraries\drivers\src\at32f415_dma.c</FilePath>
             </File>
             <File>
               <FileName>at32f415_exint.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\platform\AT32F415_Firmware_Library_V2.1.6\libraries\drivers\src\at32f415_exint.c</FilePath>
+              <FilePath>..\..\..\..\..\..\..\platform\AT32F415_Firmware_Library_V2.1.6\libraries\drivers\src\at32f415_exint.c</FilePath>
             </File>
             <File>
               <FileName>at32f415_flash.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\platform\AT32F415_Firmware_Library_V2.1.6\libraries\drivers\src\at32f415_flash.c</FilePath>
+              <FilePath>..\..\..\..\..\..\..\platform\AT32F415_Firmware_Library_V2.1.6\libraries\drivers\src\at32f415_flash.c</FilePath>
             </File>
             <File>
               <FileName>at32f415_gpio.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\platform\AT32F415_Firmware_Library_V2.1.6\libraries\drivers\src\at32f415_gpio.c</FilePath>
+              <FilePath>..\..\..\..\..\..\..\platform\AT32F415_Firmware_Library_V2.1.6\libraries\drivers\src\at32f415_gpio.c</FilePath>
             </File>
             <File>
               <FileName>at32f415_i2c.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\platform\AT32F415_Firmware_Library_V2.1.6\libraries\drivers\src\at32f415_i2c.c</FilePath>
+              <FilePath>..\..\..\..\..\..\..\platform\AT32F415_Firmware_Library_V2.1.6\libraries\drivers\src\at32f415_i2c.c</FilePath>
             </File>
             <File>
               <FileName>at32f415_misc.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\platform\AT32F415_Firmware_Library_V2.1.6\libraries\drivers\src\at32f415_misc.c</FilePath>
+              <FilePath>..\..\..\..\..\..\..\platform\AT32F415_Firmware_Library_V2.1.6\libraries\drivers\src\at32f415_misc.c</FilePath>
             </File>
             <File>
               <FileName>at32f415_pwc.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\platform\AT32F415_Firmware_Library_V2.1.6\libraries\drivers\src\at32f415_pwc.c</FilePath>
+              <FilePath>..\..\..\..\..\..\..\platform\AT32F415_Firmware_Library_V2.1.6\libraries\drivers\src\at32f415_pwc.c</FilePath>
             </File>
             <File>
               <FileName>at32f415_sdio.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\platform\AT32F415_Firmware_Library_V2.1.6\libraries\drivers\src\at32f415_sdio.c</FilePath>
+              <FilePath>..\..\..\..\..\..\..\platform\AT32F415_Firmware_Library_V2.1.6\libraries\drivers\src\at32f415_sdio.c</FilePath>
             </File>
             <File>
               <FileName>at32f415_spi.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\platform\AT32F415_Firmware_Library_V2.1.6\libraries\drivers\src\at32f415_spi.c</FilePath>
+              <FilePath>..\..\..\..\..\..\..\platform\AT32F415_Firmware_Library_V2.1.6\libraries\drivers\src\at32f415_spi.c</FilePath>
             </File>
             <File>
               <FileName>at32f415_tmr.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\platform\AT32F415_Firmware_Library_V2.1.6\libraries\drivers\src\at32f415_tmr.c</FilePath>
+              <FilePath>..\..\..\..\..\..\..\platform\AT32F415_Firmware_Library_V2.1.6\libraries\drivers\src\at32f415_tmr.c</FilePath>
             </File>
             <File>
               <FileName>at32f415_usart.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\platform\AT32F415_Firmware_Library_V2.1.6\libraries\drivers\src\at32f415_usart.c</FilePath>
+              <FilePath>..\..\..\..\..\..\..\platform\AT32F415_Firmware_Library_V2.1.6\libraries\drivers\src\at32f415_usart.c</FilePath>
             </File>
             <File>
               <FileName>at32f415_usb.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\platform\AT32F415_Firmware_Library_V2.1.6\libraries\drivers\src\at32f415_usb.c</FilePath>
+              <FilePath>..\..\..\..\..\..\..\platform\AT32F415_Firmware_Library_V2.1.6\libraries\drivers\src\at32f415_usb.c</FilePath>
             </File>
             <File>
               <FileName>at32f415_wdt.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\platform\AT32F415_Firmware_Library_V2.1.6\libraries\drivers\src\at32f415_wdt.c</FilePath>
+              <FilePath>..\..\..\..\..\..\..\platform\AT32F415_Firmware_Library_V2.1.6\libraries\drivers\src\at32f415_wdt.c</FilePath>
             </File>
             <File>
               <FileName>at32f415_wwdt.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\platform\AT32F415_Firmware_Library_V2.1.6\libraries\drivers\src\at32f415_wwdt.c</FilePath>
+              <FilePath>..\..\..\..\..\..\..\platform\AT32F415_Firmware_Library_V2.1.6\libraries\drivers\src\at32f415_wwdt.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -510,12 +510,12 @@
             <File>
               <FileName>startup_at32f415.s</FileName>
               <FileType>2</FileType>
-              <FilePath>..\..\..\..\..\platform\AT32F415_Firmware_Library_V2.1.6\libraries\cmsis\cm4\device_support\startup\mdk\startup_at32f415.s</FilePath>
+              <FilePath>..\..\..\..\..\..\..\platform\AT32F415_Firmware_Library_V2.1.6\libraries\cmsis\cm4\device_support\startup\mdk\startup_at32f415.s</FilePath>
             </File>
             <File>
               <FileName>system_at32f415.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\platform\AT32F415_Firmware_Library_V2.1.6\libraries\cmsis\cm4\device_support\system_at32f415.c</FilePath>
+              <FilePath>..\..\..\..\..\..\..\platform\AT32F415_Firmware_Library_V2.1.6\libraries\cmsis\cm4\device_support\system_at32f415.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -525,7 +525,7 @@
             <File>
               <FileName>scheduler.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\core\scheduler.c</FilePath>
+              <FilePath>..\..\..\..\scheduler.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -535,27 +535,27 @@
             <File>
               <FileName>appmgr.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\core\axis\application\appmgr.c</FilePath>
+              <FilePath>..\..\..\..\axis\application\appmgr.c</FilePath>
             </File>
             <File>
               <FileName>motencident.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\core\axis\application\motencident.c</FilePath>
+              <FilePath>..\..\..\..\axis\application\motencident.c</FilePath>
             </File>
             <File>
               <FileName>looprsp.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\core\axis\application\looprsp.c</FilePath>
+              <FilePath>..\..\..\..\axis\application\looprsp.c</FilePath>
             </File>
             <File>
               <FileName>offmotident.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\core\axis\application\offmotident.c</FilePath>
+              <FilePath>..\..\..\..\axis\application\offmotident.c</FilePath>
             </File>
             <File>
               <FileName>openloop.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\core\axis\application\openloop.c</FilePath>
+              <FilePath>..\..\..\..\axis\application\openloop.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -565,37 +565,37 @@
             <File>
               <FileName>axis.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\core\axis\axis.c</FilePath>
+              <FilePath>..\..\..\..\axis\axis.c</FilePath>
             </File>
             <File>
               <FileName>pathplan.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\core\axis\pathplan\pathplan.c</FilePath>
+              <FilePath>..\..\..\..\axis\pathplan\pathplan.c</FilePath>
             </File>
             <File>
               <FileName>motdrv.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\core\axis\motdrv\motdrv.c</FilePath>
+              <FilePath>..\..\..\..\axis\motdrv\motdrv.c</FilePath>
             </File>
             <File>
               <FileName>logicctrl.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\core\axis\logicctrl\logicctrl.c</FilePath>
+              <FilePath>..\..\..\..\axis\logicctrl\logicctrl.c</FilePath>
             </File>
             <File>
               <FileName>cursamp.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\core\axis\motdrv\cursamp.c</FilePath>
+              <FilePath>..\..\..\..\axis\motdrv\cursamp.c</FilePath>
             </File>
             <File>
               <FileName>encsamp.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\core\axis\motdrv\encsamp.c</FilePath>
+              <FilePath>..\..\..\..\axis\motdrv\encsamp.c</FilePath>
             </File>
             <File>
               <FileName>mclib.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\core\axis\motdrv\mclib.c</FilePath>
+              <FilePath>..\..\..\..\axis\motdrv\mclib.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -605,57 +605,57 @@
             <File>
               <FileName>func.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\core\func\func.c</FilePath>
+              <FilePath>..\..\..\..\func\func.c</FilePath>
             </File>
             <File>
               <FileName>scope.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\core\func\scope\scope.c</FilePath>
+              <FilePath>..\..\..\..\func\scope\scope.c</FilePath>
             </File>
             <File>
               <FileName>oled.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\core\func\panel\oled.c</FilePath>
+              <FilePath>..\..\..\..\func\panel\oled.c</FilePath>
             </File>
             <File>
               <FileName>dido.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\core\func\pinctrl\dido.c</FilePath>
+              <FilePath>..\..\..\..\func\pinctrl\dido.c</FilePath>
             </File>
             <File>
               <FileName>hw_version.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\core\func\pinctrl\hw_version.c</FilePath>
+              <FilePath>..\..\..\..\func\pinctrl\hw_version.c</FilePath>
             </File>
             <File>
               <FileName>touch_probe.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\core\func\pinctrl\touch_probe.c</FilePath>
+              <FilePath>..\..\..\..\func\pinctrl\touch_probe.c</FilePath>
             </File>
             <File>
               <FileName>analog.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\core\func\analog\analog.c</FilePath>
+              <FilePath>..\..\..\..\func\analog\analog.c</FilePath>
             </File>
             <File>
               <FileName>pwrmgr.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\core\func\analog\pwrmgr.c</FilePath>
+              <FilePath>..\..\..\..\func\analog\pwrmgr.c</FilePath>
             </File>
             <File>
               <FileName>thermistor.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\core\func\analog\thermistor.c</FilePath>
+              <FilePath>..\..\..\..\func\analog\thermistor.c</FilePath>
             </File>
             <File>
               <FileName>modbus.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\core\func\comm\modbus\modbus.c</FilePath>
+              <FilePath>..\..\..\..\func\comm\modbus\modbus.c</FilePath>
             </File>
             <File>
               <FileName>storage.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\core\func\paratbl\storage.c</FilePath>
+              <FilePath>..\..\..\..\func\paratbl\storage.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -743,7 +743,7 @@
             <File>
               <FileName>i2c_application.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\platform\AT32F415_Firmware_Library_V2.1.6\middlewares\i2c_application_library\i2c_application.c</FilePath>
+              <FilePath>..\..\..\..\..\..\..\platform\AT32F415_Firmware_Library_V2.1.6\middlewares\i2c_application_library\i2c_application.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -753,32 +753,32 @@
             <File>
               <FileName>alarm.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\core\basic\alarm\alarm.c</FilePath>
+              <FilePath>..\..\..\..\basic\alarm\alarm.c</FilePath>
             </File>
             <File>
               <FileName>almtbl.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\core\basic\alarm\almtbl.c</FilePath>
+              <FilePath>..\..\..\..\basic\alarm\almtbl.c</FilePath>
             </File>
             <File>
               <FileName>paraattr.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\core\basic\database\standard\paraattr.c</FilePath>
+              <FilePath>..\..\..\..\basic\database\standard\paraattr.c</FilePath>
             </File>
             <File>
               <FileName>delay.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\core\basic\delay\delay.c</FilePath>
+              <FilePath>..\..\..\..\basic\delay\delay.c</FilePath>
             </File>
             <File>
               <FileName>fft.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\core\basic\filter\fft.c</FilePath>
+              <FilePath>..\..\..\..\basic\filter\fft.c</FilePath>
             </File>
             <File>
               <FileName>lpf.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\core\basic\filter\lpf.c</FilePath>
+              <FilePath>..\..\..\..\basic\filter\lpf.c</FilePath>
             </File>
           </Files>
         </Group>

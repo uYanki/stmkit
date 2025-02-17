@@ -3,7 +3,7 @@
 
 #include "alarm.h"
 #include "paratbl.h"
-#include "common.h"
+#include "typebasic.h"
 
 #define CONFIG_CURSAMP_SW 0
 

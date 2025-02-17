@@ -1,7 +1,7 @@
 #ifndef __PARA_ATTR_H__
 #define __PARA_ATTR_H__
 
-#include "common.h"
+#include "typebasic.h"
 
 /**
  * @brief

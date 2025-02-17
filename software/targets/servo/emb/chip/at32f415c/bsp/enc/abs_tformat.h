@@ -1,7 +1,7 @@
 #ifndef __TFORMAT_H__
 #define __TFORMAT_H__
 
-#include "common.h"
+#include "typebasic.h"
 #include "bsp.h"
 
 #ifdef __cplusplus

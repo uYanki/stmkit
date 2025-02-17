@@ -1,7 +1,7 @@
 #ifndef __BSP_GPIO_H__
 #define __BSP_GPIO_H__
 
-#include "common.h"
+#include "typebasic.h"
 
 #ifdef __cplusplus
 extern "C" {
@@ -81,18 +81,13 @@ typedef enum {
 
 } pin_no_e;
 
-typedef enum {
-    B_OFF = 0,
-    B_ON  = 1,
-} pin_sts_e;
-
 //---------------------------------------------------------------------------
 // Functions
 //---------------------------------------------------------------------------
 
-void      PinSetLvl(pin_no_e ePinNo, pin_sts_e eNewState);
-pin_sts_e PinGetLvl(pin_no_e ePinNo);
-void      PinTgtLvl(pin_no_e ePinNo);
+void     PinSetLvl(pin_no_e ePinNo, switch_e eNewState);
+switch_e PinGetLvl(pin_no_e ePinNo);
+void     PinTgtLvl(pin_no_e ePinNo);
 
 #ifdef __cplusplus
 }

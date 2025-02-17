@@ -81,17 +81,12 @@ typedef enum {
 
 } pin_no_e;
 
-typedef enum {
-    B_OFF,
-    B_ON,
-} pin_sts_e;
-
 //---------------------------------------------------------------------------
 // Functions
 //---------------------------------------------------------------------------
 
-void      PinSetLvl(pin_no_e ePinNo, pin_sts_e eNewState);
-pin_sts_e PinGetLvl(pin_no_e ePinNo);
+void     PinSetLvl(pin_no_e ePinNo, switch_e eNewState);
+switch_e PinGetLvl(pin_no_e ePinNo);
 
 #ifdef __cplusplus
 }

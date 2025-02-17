@@ -795,7 +795,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\..\core\axis\axis.c</PathWithFileName>
+      <PathWithFileName>..\..\..\..\axis\axis.c</PathWithFileName>
       <FilenameWithoutPath>axis.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -807,7 +807,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\..\core\axis\pathplan\pathplan.c</PathWithFileName>
+      <PathWithFileName>..\..\..\..\axis\pathplan\pathplan.c</PathWithFileName>
       <FilenameWithoutPath>pathplan.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -819,7 +819,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\..\core\axis\motdrv\cursamp.c</PathWithFileName>
+      <PathWithFileName>..\..\..\..\axis\motdrv\cursamp.c</PathWithFileName>
       <FilenameWithoutPath>cursamp.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -831,7 +831,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\..\core\axis\motdrv\encsamp.c</PathWithFileName>
+      <PathWithFileName>..\..\..\..\axis\motdrv\encsamp.c</PathWithFileName>
       <FilenameWithoutPath>encsamp.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -843,7 +843,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\..\core\axis\motdrv\mclib.c</PathWithFileName>
+      <PathWithFileName>..\..\..\..\axis\motdrv\mclib.c</PathWithFileName>
       <FilenameWithoutPath>mclib.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -855,7 +855,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\..\core\axis\motdrv\motdrv.c</PathWithFileName>
+      <PathWithFileName>..\..\..\..\axis\motdrv\motdrv.c</PathWithFileName>
       <FilenameWithoutPath>motdrv.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -867,7 +867,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\..\core\axis\logicctrl\logicctrl.c</PathWithFileName>
+      <PathWithFileName>..\..\..\..\axis\logicctrl\logicctrl.c</PathWithFileName>
       <FilenameWithoutPath>logicctrl.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -879,7 +879,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\..\core\axis\application\appmgr.c</PathWithFileName>
+      <PathWithFileName>..\..\..\..\axis\application\appmgr.c</PathWithFileName>
       <FilenameWithoutPath>appmgr.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -891,7 +891,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\..\core\axis\application\looprsp.c</PathWithFileName>
+      <PathWithFileName>..\..\..\..\axis\application\looprsp.c</PathWithFileName>
       <FilenameWithoutPath>looprsp.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -903,7 +903,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\..\core\axis\application\motencident.c</PathWithFileName>
+      <PathWithFileName>..\..\..\..\axis\application\motencident.c</PathWithFileName>
       <FilenameWithoutPath>motencident.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -915,7 +915,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\..\core\axis\application\offmotident.c</PathWithFileName>
+      <PathWithFileName>..\..\..\..\axis\application\offmotident.c</PathWithFileName>
       <FilenameWithoutPath>offmotident.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -927,7 +927,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\..\core\axis\application\openloop.c</PathWithFileName>
+      <PathWithFileName>..\..\..\..\axis\application\openloop.c</PathWithFileName>
       <FilenameWithoutPath>openloop.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -947,7 +947,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\..\core\func\alarm\alarm.c</PathWithFileName>
+      <PathWithFileName>..\..\..\..\func\alarm\alarm.c</PathWithFileName>
       <FilenameWithoutPath>alarm.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -959,7 +959,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\..\core\func\alarm\almtbl.c</PathWithFileName>
+      <PathWithFileName>..\..\..\..\func\alarm\almtbl.c</PathWithFileName>
       <FilenameWithoutPath>almtbl.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -971,7 +971,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\..\core\func\alarm\paratbl.c</PathWithFileName>
+      <PathWithFileName>..\..\..\..\func\alarm\paratbl.c</PathWithFileName>
       <FilenameWithoutPath>paratbl.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -983,7 +983,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\..\core\func\analog\analog.c</PathWithFileName>
+      <PathWithFileName>..\..\..\..\func\analog\analog.c</PathWithFileName>
       <FilenameWithoutPath>analog.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -995,7 +995,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\..\core\func\analog\pwrmgr.c</PathWithFileName>
+      <PathWithFileName>..\..\..\..\func\analog\pwrmgr.c</PathWithFileName>
       <FilenameWithoutPath>pwrmgr.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -1007,7 +1007,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\..\core\func\analog\thermistor.c</PathWithFileName>
+      <PathWithFileName>..\..\..\..\func\analog\thermistor.c</PathWithFileName>
       <FilenameWithoutPath>thermistor.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -1019,7 +1019,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\..\core\func\delay\delay.c</PathWithFileName>
+      <PathWithFileName>..\..\..\..\func\delay\delay.c</PathWithFileName>
       <FilenameWithoutPath>delay.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -1031,7 +1031,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\..\core\func\filter\lpf.c</PathWithFileName>
+      <PathWithFileName>..\..\..\..\func\filter\lpf.c</PathWithFileName>
       <FilenameWithoutPath>lpf.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -1043,7 +1043,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\..\core\func\pinctrl\dido.c</PathWithFileName>
+      <PathWithFileName>..\..\..\..\func\pinctrl\dido.c</PathWithFileName>
       <FilenameWithoutPath>dido.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -1055,7 +1055,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\..\core\func\pinctrl\hw_version.c</PathWithFileName>
+      <PathWithFileName>..\..\..\..\func\pinctrl\hw_version.c</PathWithFileName>
       <FilenameWithoutPath>hw_version.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -1067,7 +1067,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\..\core\func\pinctrl\led.c</PathWithFileName>
+      <PathWithFileName>..\..\..\..\func\pinctrl\led.c</PathWithFileName>
       <FilenameWithoutPath>led.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -1079,7 +1079,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\..\core\func\pinctrl\touch_probe.c</PathWithFileName>
+      <PathWithFileName>..\..\..\..\func\pinctrl\touch_probe.c</PathWithFileName>
       <FilenameWithoutPath>touch_probe.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -1091,7 +1091,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\..\core\func\panel\oled.c</PathWithFileName>
+      <PathWithFileName>..\..\..\..\func\panel\oled.c</PathWithFileName>
       <FilenameWithoutPath>oled.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -1103,7 +1103,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\..\core\func\scope\scope.c</PathWithFileName>
+      <PathWithFileName>..\..\..\..\func\scope\scope.c</PathWithFileName>
       <FilenameWithoutPath>scope.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -1127,7 +1127,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\..\core\func\comm\modbus\modbus.c</PathWithFileName>
+      <PathWithFileName>..\..\..\..\func\comm\modbus\modbus.c</PathWithFileName>
       <FilenameWithoutPath>modbus.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -1139,7 +1139,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\..\core\func\func.c</PathWithFileName>
+      <PathWithFileName>..\..\..\..\func\func.c</PathWithFileName>
       <FilenameWithoutPath>func.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -1151,7 +1151,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\..\core\scheduler.c</PathWithFileName>
+      <PathWithFileName>..\..\..\..\scheduler.c</PathWithFileName>
       <FilenameWithoutPath>scheduler.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -1163,7 +1163,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\..\core\func\paratbl\storage.c</PathWithFileName>
+      <PathWithFileName>..\..\..\..\func\paratbl\storage.c</PathWithFileName>
       <FilenameWithoutPath>storage.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>

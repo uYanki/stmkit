@@ -282,7 +282,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\..\..\..\platform\AT32F403A_407_Firmware_Library_V2.1.9\libraries\cmsis\cm4\device_support\system_at32f403a_407.c</PathWithFileName>
+      <PathWithFileName>..\..\..\..\..\..\..\platform\AT32F403A_407_Firmware_Library_V2.1.9\libraries\cmsis\cm4\device_support\system_at32f403a_407.c</PathWithFileName>
       <FilenameWithoutPath>system_at32f403a_407.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -294,7 +294,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\..\..\..\platform\AT32F403A_407_Firmware_Library_V2.1.9\libraries\cmsis\cm4\device_support\startup\mdk\startup_at32f403a_407.s</PathWithFileName>
+      <PathWithFileName>..\..\..\..\..\..\..\platform\AT32F403A_407_Firmware_Library_V2.1.9\libraries\cmsis\cm4\device_support\startup\mdk\startup_at32f403a_407.s</PathWithFileName>
       <FilenameWithoutPath>startup_at32f403a_407.s</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -303,7 +303,7 @@
 
   <Group>
     <GroupName>fwlib</GroupName>
-    <tvExp>0</tvExp>
+    <tvExp>1</tvExp>
     <tvExpOptDlg>0</tvExpOptDlg>
     <cbSel>0</cbSel>
     <RteFlg>0</RteFlg>
@@ -314,7 +314,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\..\..\..\platform\AT32F403A_407_Firmware_Library_V2.1.9\libraries\drivers\src\at32f403a_407_bpr.c</PathWithFileName>
+      <PathWithFileName>..\..\..\..\..\..\..\platform\AT32F403A_407_Firmware_Library_V2.1.9\libraries\drivers\src\at32f403a_407_bpr.c</PathWithFileName>
       <FilenameWithoutPath>at32f403a_407_bpr.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -326,7 +326,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\..\..\..\platform\AT32F403A_407_Firmware_Library_V2.1.9\libraries\drivers\src\at32f403a_407_can.c</PathWithFileName>
+      <PathWithFileName>..\..\..\..\..\..\..\platform\AT32F403A_407_Firmware_Library_V2.1.9\libraries\drivers\src\at32f403a_407_can.c</PathWithFileName>
       <FilenameWithoutPath>at32f403a_407_can.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -338,7 +338,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\..\..\..\platform\AT32F403A_407_Firmware_Library_V2.1.9\libraries\drivers\src\at32f403a_407_crc.c</PathWithFileName>
+      <PathWithFileName>..\..\..\..\..\..\..\platform\AT32F403A_407_Firmware_Library_V2.1.9\libraries\drivers\src\at32f403a_407_crc.c</PathWithFileName>
       <FilenameWithoutPath>at32f403a_407_crc.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -350,7 +350,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\..\..\..\platform\AT32F403A_407_Firmware_Library_V2.1.9\libraries\drivers\src\at32f403a_407_crm.c</PathWithFileName>
+      <PathWithFileName>..\..\..\..\..\..\..\platform\AT32F403A_407_Firmware_Library_V2.1.9\libraries\drivers\src\at32f403a_407_crm.c</PathWithFileName>
       <FilenameWithoutPath>at32f403a_407_crm.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -362,7 +362,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\..\..\..\platform\AT32F403A_407_Firmware_Library_V2.1.9\libraries\drivers\src\at32f403a_407_dac.c</PathWithFileName>
+      <PathWithFileName>..\..\..\..\..\..\..\platform\AT32F403A_407_Firmware_Library_V2.1.9\libraries\drivers\src\at32f403a_407_dac.c</PathWithFileName>
       <FilenameWithoutPath>at32f403a_407_dac.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -374,7 +374,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\..\..\..\platform\AT32F403A_407_Firmware_Library_V2.1.9\libraries\drivers\src\at32f403a_407_debug.c</PathWithFileName>
+      <PathWithFileName>..\..\..\..\..\..\..\platform\AT32F403A_407_Firmware_Library_V2.1.9\libraries\drivers\src\at32f403a_407_debug.c</PathWithFileName>
       <FilenameWithoutPath>at32f403a_407_debug.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -386,7 +386,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\..\..\..\platform\AT32F403A_407_Firmware_Library_V2.1.9\libraries\drivers\src\at32f403a_407_dma.c</PathWithFileName>
+      <PathWithFileName>..\..\..\..\..\..\..\platform\AT32F403A_407_Firmware_Library_V2.1.9\libraries\drivers\src\at32f403a_407_dma.c</PathWithFileName>
       <FilenameWithoutPath>at32f403a_407_dma.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -398,7 +398,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\..\..\..\platform\AT32F403A_407_Firmware_Library_V2.1.9\libraries\drivers\src\at32f403a_407_emac.c</PathWithFileName>
+      <PathWithFileName>..\..\..\..\..\..\..\platform\AT32F403A_407_Firmware_Library_V2.1.9\libraries\drivers\src\at32f403a_407_emac.c</PathWithFileName>
       <FilenameWithoutPath>at32f403a_407_emac.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -410,7 +410,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\..\..\..\platform\AT32F403A_407_Firmware_Library_V2.1.9\libraries\drivers\src\at32f403a_407_exint.c</PathWithFileName>
+      <PathWithFileName>..\..\..\..\..\..\..\platform\AT32F403A_407_Firmware_Library_V2.1.9\libraries\drivers\src\at32f403a_407_exint.c</PathWithFileName>
       <FilenameWithoutPath>at32f403a_407_exint.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -422,7 +422,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\..\..\..\platform\AT32F403A_407_Firmware_Library_V2.1.9\libraries\drivers\src\at32f403a_407_flash.c</PathWithFileName>
+      <PathWithFileName>..\..\..\..\..\..\..\platform\AT32F403A_407_Firmware_Library_V2.1.9\libraries\drivers\src\at32f403a_407_flash.c</PathWithFileName>
       <FilenameWithoutPath>at32f403a_407_flash.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -434,7 +434,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\..\..\..\platform\AT32F403A_407_Firmware_Library_V2.1.9\libraries\drivers\src\at32f403a_407_gpio.c</PathWithFileName>
+      <PathWithFileName>..\..\..\..\..\..\..\platform\AT32F403A_407_Firmware_Library_V2.1.9\libraries\drivers\src\at32f403a_407_gpio.c</PathWithFileName>
       <FilenameWithoutPath>at32f403a_407_gpio.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -446,7 +446,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\..\..\..\platform\AT32F403A_407_Firmware_Library_V2.1.9\libraries\drivers\src\at32f403a_407_i2c.c</PathWithFileName>
+      <PathWithFileName>..\..\..\..\..\..\..\platform\AT32F403A_407_Firmware_Library_V2.1.9\libraries\drivers\src\at32f403a_407_i2c.c</PathWithFileName>
       <FilenameWithoutPath>at32f403a_407_i2c.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -458,7 +458,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\..\..\..\platform\AT32F403A_407_Firmware_Library_V2.1.9\libraries\drivers\src\at32f403a_407_misc.c</PathWithFileName>
+      <PathWithFileName>..\..\..\..\..\..\..\platform\AT32F403A_407_Firmware_Library_V2.1.9\libraries\drivers\src\at32f403a_407_misc.c</PathWithFileName>
       <FilenameWithoutPath>at32f403a_407_misc.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -470,7 +470,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\..\..\..\platform\AT32F403A_407_Firmware_Library_V2.1.9\libraries\drivers\src\at32f403a_407_pwc.c</PathWithFileName>
+      <PathWithFileName>..\..\..\..\..\..\..\platform\AT32F403A_407_Firmware_Library_V2.1.9\libraries\drivers\src\at32f403a_407_pwc.c</PathWithFileName>
       <FilenameWithoutPath>at32f403a_407_pwc.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -482,7 +482,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\..\..\..\platform\AT32F403A_407_Firmware_Library_V2.1.9\libraries\drivers\src\at32f403a_407_rtc.c</PathWithFileName>
+      <PathWithFileName>..\..\..\..\..\..\..\platform\AT32F403A_407_Firmware_Library_V2.1.9\libraries\drivers\src\at32f403a_407_rtc.c</PathWithFileName>
       <FilenameWithoutPath>at32f403a_407_rtc.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -494,7 +494,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\..\..\..\platform\AT32F403A_407_Firmware_Library_V2.1.9\libraries\drivers\src\at32f403a_407_sdio.c</PathWithFileName>
+      <PathWithFileName>..\..\..\..\..\..\..\platform\AT32F403A_407_Firmware_Library_V2.1.9\libraries\drivers\src\at32f403a_407_sdio.c</PathWithFileName>
       <FilenameWithoutPath>at32f403a_407_sdio.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -506,7 +506,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\..\..\..\platform\AT32F403A_407_Firmware_Library_V2.1.9\libraries\drivers\src\at32f403a_407_spi.c</PathWithFileName>
+      <PathWithFileName>..\..\..\..\..\..\..\platform\AT32F403A_407_Firmware_Library_V2.1.9\libraries\drivers\src\at32f403a_407_spi.c</PathWithFileName>
       <FilenameWithoutPath>at32f403a_407_spi.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -518,7 +518,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\..\..\..\platform\AT32F403A_407_Firmware_Library_V2.1.9\libraries\drivers\src\at32f403a_407_tmr.c</PathWithFileName>
+      <PathWithFileName>..\..\..\..\..\..\..\platform\AT32F403A_407_Firmware_Library_V2.1.9\libraries\drivers\src\at32f403a_407_tmr.c</PathWithFileName>
       <FilenameWithoutPath>at32f403a_407_tmr.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -530,7 +530,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\..\..\..\platform\AT32F403A_407_Firmware_Library_V2.1.9\libraries\drivers\src\at32f403a_407_usart.c</PathWithFileName>
+      <PathWithFileName>..\..\..\..\..\..\..\platform\AT32F403A_407_Firmware_Library_V2.1.9\libraries\drivers\src\at32f403a_407_usart.c</PathWithFileName>
       <FilenameWithoutPath>at32f403a_407_usart.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -542,7 +542,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\..\..\..\platform\AT32F403A_407_Firmware_Library_V2.1.9\libraries\drivers\src\at32f403a_407_usb.c</PathWithFileName>
+      <PathWithFileName>..\..\..\..\..\..\..\platform\AT32F403A_407_Firmware_Library_V2.1.9\libraries\drivers\src\at32f403a_407_usb.c</PathWithFileName>
       <FilenameWithoutPath>at32f403a_407_usb.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -554,7 +554,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\..\..\..\platform\AT32F403A_407_Firmware_Library_V2.1.9\libraries\drivers\src\at32f403a_407_wdt.c</PathWithFileName>
+      <PathWithFileName>..\..\..\..\..\..\..\platform\AT32F403A_407_Firmware_Library_V2.1.9\libraries\drivers\src\at32f403a_407_wdt.c</PathWithFileName>
       <FilenameWithoutPath>at32f403a_407_wdt.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -566,7 +566,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\..\..\..\platform\AT32F403A_407_Firmware_Library_V2.1.9\libraries\drivers\src\at32f403a_407_wwdt.c</PathWithFileName>
+      <PathWithFileName>..\..\..\..\..\..\..\platform\AT32F403A_407_Firmware_Library_V2.1.9\libraries\drivers\src\at32f403a_407_wwdt.c</PathWithFileName>
       <FilenameWithoutPath>at32f403a_407_wwdt.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -578,7 +578,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\..\..\..\platform\AT32F403A_407_Firmware_Library_V2.1.9\libraries\drivers\src\at32f403a_407_xmc.c</PathWithFileName>
+      <PathWithFileName>..\..\..\..\..\..\..\platform\AT32F403A_407_Firmware_Library_V2.1.9\libraries\drivers\src\at32f403a_407_xmc.c</PathWithFileName>
       <FilenameWithoutPath>at32f403a_407_xmc.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -590,7 +590,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\..\..\..\platform\AT32F403A_407_Firmware_Library_V2.1.9\libraries\drivers\src\at32f403a_407_acc.c</PathWithFileName>
+      <PathWithFileName>..\..\..\..\..\..\..\platform\AT32F403A_407_Firmware_Library_V2.1.9\libraries\drivers\src\at32f403a_407_acc.c</PathWithFileName>
       <FilenameWithoutPath>at32f403a_407_acc.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -602,7 +602,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\..\..\..\platform\AT32F403A_407_Firmware_Library_V2.1.9\libraries\drivers\src\at32f403a_407_adc.c</PathWithFileName>
+      <PathWithFileName>..\..\..\..\..\..\..\platform\AT32F403A_407_Firmware_Library_V2.1.9\libraries\drivers\src\at32f403a_407_adc.c</PathWithFileName>
       <FilenameWithoutPath>at32f403a_407_adc.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -611,7 +611,7 @@
 
   <Group>
     <GroupName>sched</GroupName>
-    <tvExp>0</tvExp>
+    <tvExp>1</tvExp>
     <tvExpOptDlg>0</tvExpOptDlg>
     <cbSel>0</cbSel>
     <RteFlg>0</RteFlg>
@@ -622,7 +622,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\..\core\scheduler.c</PathWithFileName>
+      <PathWithFileName>..\..\..\..\scheduler.c</PathWithFileName>
       <FilenameWithoutPath>scheduler.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -631,7 +631,7 @@
 
   <Group>
     <GroupName>axis/application</GroupName>
-    <tvExp>0</tvExp>
+    <tvExp>1</tvExp>
     <tvExpOptDlg>0</tvExpOptDlg>
     <cbSel>0</cbSel>
     <RteFlg>0</RteFlg>
@@ -642,7 +642,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\..\core\axis\application\appmgr.c</PathWithFileName>
+      <PathWithFileName>..\..\..\..\axis\application\appmgr.c</PathWithFileName>
       <FilenameWithoutPath>appmgr.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -654,7 +654,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\..\core\axis\application\motencident.c</PathWithFileName>
+      <PathWithFileName>..\..\..\..\axis\application\motencident.c</PathWithFileName>
       <FilenameWithoutPath>motencident.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -666,7 +666,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\..\core\axis\application\looprsp.c</PathWithFileName>
+      <PathWithFileName>..\..\..\..\axis\application\looprsp.c</PathWithFileName>
       <FilenameWithoutPath>looprsp.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -678,7 +678,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\..\core\axis\application\offmotident.c</PathWithFileName>
+      <PathWithFileName>..\..\..\..\axis\application\offmotident.c</PathWithFileName>
       <FilenameWithoutPath>offmotident.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -690,7 +690,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\..\core\axis\application\openloop.c</PathWithFileName>
+      <PathWithFileName>..\..\..\..\axis\application\openloop.c</PathWithFileName>
       <FilenameWithoutPath>openloop.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -699,7 +699,7 @@
 
   <Group>
     <GroupName>axis</GroupName>
-    <tvExp>0</tvExp>
+    <tvExp>1</tvExp>
     <tvExpOptDlg>0</tvExpOptDlg>
     <cbSel>0</cbSel>
     <RteFlg>0</RteFlg>
@@ -710,7 +710,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\..\core\axis\axis.c</PathWithFileName>
+      <PathWithFileName>..\..\..\..\axis\axis.c</PathWithFileName>
       <FilenameWithoutPath>axis.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -722,7 +722,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\..\core\axis\pathplan\pathplan.c</PathWithFileName>
+      <PathWithFileName>..\..\..\..\axis\pathplan\pathplan.c</PathWithFileName>
       <FilenameWithoutPath>pathplan.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -734,7 +734,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\..\core\axis\motdrv\motdrv.c</PathWithFileName>
+      <PathWithFileName>..\..\..\..\axis\motdrv\motdrv.c</PathWithFileName>
       <FilenameWithoutPath>motdrv.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -746,7 +746,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\..\core\axis\logicctrl\logicctrl.c</PathWithFileName>
+      <PathWithFileName>..\..\..\..\axis\logicctrl\logicctrl.c</PathWithFileName>
       <FilenameWithoutPath>logicctrl.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -758,7 +758,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\..\core\axis\motdrv\cursamp.c</PathWithFileName>
+      <PathWithFileName>..\..\..\..\axis\motdrv\cursamp.c</PathWithFileName>
       <FilenameWithoutPath>cursamp.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -770,7 +770,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\..\core\axis\motdrv\encsamp.c</PathWithFileName>
+      <PathWithFileName>..\..\..\..\axis\motdrv\encsamp.c</PathWithFileName>
       <FilenameWithoutPath>encsamp.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -782,7 +782,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\..\core\axis\motdrv\mclib.c</PathWithFileName>
+      <PathWithFileName>..\..\..\..\axis\motdrv\mclib.c</PathWithFileName>
       <FilenameWithoutPath>mclib.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -791,7 +791,7 @@
 
   <Group>
     <GroupName>func</GroupName>
-    <tvExp>1</tvExp>
+    <tvExp>0</tvExp>
     <tvExpOptDlg>0</tvExpOptDlg>
     <cbSel>0</cbSel>
     <RteFlg>0</RteFlg>
@@ -802,7 +802,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\..\core\func\func.c</PathWithFileName>
+      <PathWithFileName>..\..\..\..\func\func.c</PathWithFileName>
       <FilenameWithoutPath>func.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -814,7 +814,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\..\core\func\scope\scope.c</PathWithFileName>
+      <PathWithFileName>..\..\..\..\func\scope\scope.c</PathWithFileName>
       <FilenameWithoutPath>scope.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -826,7 +826,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\..\core\func\panel\oled.c</PathWithFileName>
+      <PathWithFileName>..\..\..\..\func\panel\oled.c</PathWithFileName>
       <FilenameWithoutPath>oled.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -838,7 +838,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\..\core\func\pinctrl\dido.c</PathWithFileName>
+      <PathWithFileName>..\..\..\..\func\pinctrl\dido.c</PathWithFileName>
       <FilenameWithoutPath>dido.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -850,7 +850,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\..\core\func\pinctrl\hw_version.c</PathWithFileName>
+      <PathWithFileName>..\..\..\..\func\pinctrl\hw_version.c</PathWithFileName>
       <FilenameWithoutPath>hw_version.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -862,7 +862,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\..\core\func\pinctrl\touch_probe.c</PathWithFileName>
+      <PathWithFileName>..\..\..\..\func\pinctrl\touch_probe.c</PathWithFileName>
       <FilenameWithoutPath>touch_probe.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -874,7 +874,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\..\core\func\analog\analog.c</PathWithFileName>
+      <PathWithFileName>..\..\..\..\func\analog\analog.c</PathWithFileName>
       <FilenameWithoutPath>analog.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -886,7 +886,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\..\core\func\analog\pwrmgr.c</PathWithFileName>
+      <PathWithFileName>..\..\..\..\func\analog\pwrmgr.c</PathWithFileName>
       <FilenameWithoutPath>pwrmgr.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -898,7 +898,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\..\core\func\analog\thermistor.c</PathWithFileName>
+      <PathWithFileName>..\..\..\..\func\analog\thermistor.c</PathWithFileName>
       <FilenameWithoutPath>thermistor.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -910,7 +910,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\..\core\func\comm\modbus\modbus.c</PathWithFileName>
+      <PathWithFileName>..\..\..\..\func\comm\modbus\modbus.c</PathWithFileName>
       <FilenameWithoutPath>modbus.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -922,7 +922,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\..\core\func\paratbl\storage.c</PathWithFileName>
+      <PathWithFileName>..\..\..\..\func\paratbl\storage.c</PathWithFileName>
       <FilenameWithoutPath>storage.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -942,7 +942,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\..\core\basic\alarm\almtbl.c</PathWithFileName>
+      <PathWithFileName>..\..\..\..\basic\alarm\almtbl.c</PathWithFileName>
       <FilenameWithoutPath>almtbl.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -954,7 +954,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\..\core\basic\database\standard\paraattr.c</PathWithFileName>
+      <PathWithFileName>..\..\..\..\basic\database\standard\paraattr.c</PathWithFileName>
       <FilenameWithoutPath>paraattr.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -963,7 +963,7 @@
 
   <Group>
     <GroupName>bsp/enc</GroupName>
-    <tvExp>0</tvExp>
+    <tvExp>1</tvExp>
     <tvExpOptDlg>0</tvExpOptDlg>
     <cbSel>0</cbSel>
     <RteFlg>0</RteFlg>
@@ -1019,7 +1019,7 @@
 
   <Group>
     <GroupName>bsp</GroupName>
-    <tvExp>0</tvExp>
+    <tvExp>1</tvExp>
     <tvExpOptDlg>0</tvExpOptDlg>
     <cbSel>0</cbSel>
     <RteFlg>0</RteFlg>
@@ -1182,7 +1182,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\..\core\basic\alarm\alarm.c</PathWithFileName>
+      <PathWithFileName>..\..\..\..\basic\alarm\alarm.c</PathWithFileName>
       <FilenameWithoutPath>alarm.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -1194,7 +1194,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\..\core\basic\delay\delay.c</PathWithFileName>
+      <PathWithFileName>..\..\..\..\basic\delay\delay.c</PathWithFileName>
       <FilenameWithoutPath>delay.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -1206,7 +1206,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\..\core\basic\filter\fft.c</PathWithFileName>
+      <PathWithFileName>..\..\..\..\basic\filter\fft.c</PathWithFileName>
       <FilenameWithoutPath>fft.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -1218,7 +1218,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\..\core\basic\filter\lpf.c</PathWithFileName>
+      <PathWithFileName>..\..\..\..\basic\filter\lpf.c</PathWithFileName>
       <FilenameWithoutPath>lpf.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>

@@ -282,7 +282,6 @@ typedef enum {
     POS_PLAN_MODE_SLOPE,      ///< 一次斜坡规划(直线插补)
 } pos_plan_mode_e;
 
-#define __attr_packed(x) x
 __attr_packed(typedef struct)
 {
     u16 u16MotPolePairs;   // 电机极对数

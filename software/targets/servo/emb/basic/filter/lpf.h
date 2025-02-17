@@ -1,7 +1,7 @@
 #ifndef __LPF_H__
 #define __LPF_H__
 
-#include "common.h"
+#include "typebasic.h"
 
 typedef struct {
     s32* x0;  ///< x(n)
