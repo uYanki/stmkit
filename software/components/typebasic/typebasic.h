@@ -9,6 +9,10 @@
 #include <stdio.h>
 #include <assert.h>
 
+#ifndef __WIN32
+#define inline
+#endif
+
 #ifdef __cplusplus
 extern "C" {
 #endif
@@ -522,8 +526,6 @@ static inline uint64_t bswap64(uint64_t x)
 
 static inline u16 le16(void* p)
 {
-    return *(u16*)p;
-
     u8* _p = p;
 
     return ((u16)_p[1] << 8) |
