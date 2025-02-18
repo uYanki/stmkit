@@ -1,7 +1,7 @@
 #ifndef __COMMON_H__
 #define __COMMON_H__
 
-#include "sdkinc.h"
+#include "typebasic.h"
 
 #ifdef __cplusplus
 extern "C" {

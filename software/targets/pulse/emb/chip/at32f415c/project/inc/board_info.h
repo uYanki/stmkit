@@ -2,7 +2,6 @@
 #define __PROJ_CONF_H__
 
 #include "at32f415_wk_config.h"
-#include "sdkopts.h"
 #include "projopts.h"
 
 #define __attr_packed(x) __packed x

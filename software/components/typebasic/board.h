@@ -5,6 +5,8 @@
 
 #if defined BOARD_STM32F407VET6_XWS
 #include "./variants/board_stm32f407vet6_xws.h"
+#elif defined BOARD_AT32F415CBT6_DEV
+#include "./variants/board_at32f415cbt6_dev.h"
 #elif defined BOARD_USER_DEFINED
 #include "board_info.h"
 

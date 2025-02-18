@@ -1,9 +1,9 @@
-#ifndef __BOARD_STM32F407VET6_XWS_H__
-#define __BOARD_STM32F407VET6_XWS_H__
+#ifndef __BOARD_INFO_H__
+#define __BOARD_INFO_H__
 
 #include "stm32f4xx_hal.h"
 
-#define CONFIG_ARCH_TYPE ARCH_ARM_CM4
+#define CONFIG_ARCH_TYPE  ARCH_ARM_CM4
 
 #define KEY1_PIN          GPIOE, GPIO_PIN_10
 #define KEY2_PIN          GPIOE, GPIO_PIN_11

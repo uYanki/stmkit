@@ -1,15 +1,12 @@
+#include <stdio.h>
 #include "stm32h7xx_hal.h"
-#include "bsp_uart.h"
-
-#define CONFIG_PRINTF_SW 1
-#define DBGUART_BASE &huart1
 
 extern UART_HandleTypeDef huart1;
+#define DBGUART_BASE &huart1
 
-//-----------------------------------------------------------------------------
 // redirect printf
 
-#if CONFIG_PRINTF_SW
+#if 1
 
 int fputc(int ch, FILE* f)
 {
@@ -107,7 +104,8 @@ __attribute__((weak, noreturn)) void __aeabi_assert(const char* expr, const char
 
 __attribute__((weak)) void abort(void)
 {
-    for (;;);
+    for (;;)
+        ;
 }
 
 #endif
