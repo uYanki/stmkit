@@ -17,5 +17,4 @@ bool DelayNonBlock(uint32_t nStartTick, uint32_t nWaitTime)
     }
 
     return nDeltaTick >= nWaitTime;
-
 }

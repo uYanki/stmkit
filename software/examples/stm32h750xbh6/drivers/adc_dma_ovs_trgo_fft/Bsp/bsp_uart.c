@@ -104,8 +104,7 @@ __attribute__((weak, noreturn)) void __aeabi_assert(const char* expr, const char
 
 __attribute__((weak)) void abort(void)
 {
-    for (;;)
-        ;
+    for (;;);
 }
 
 #endif
