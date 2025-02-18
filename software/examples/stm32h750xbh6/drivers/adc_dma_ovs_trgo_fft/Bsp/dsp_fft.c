@@ -22,7 +22,13 @@ float32_t round_n(float32_t value, uint8_t n)
     return round(value * coeff) / coeff;
 }
 
-#define BUFSRC 1
+#define BUFSRC 0 // 0:动态, 1:静态
+
+#if BUFSRC == 1
+float32_t buff1[FFT_N*2];
+float32_t buff2[FFT_N];
+float32_t buff3[FFT_N];
+#endif
 
 bool FFT(float32_t* aInput, uint32_t N, uint32_t Fs_Hz)
 {
@@ -30,12 +36,19 @@ bool FFT(float32_t* aInput, uint32_t N, uint32_t Fs_Hz)
 
     uint32_t i;
 
+	#if BUFSRC == 0
     float32_t* aFFT   = (float32_t*)malloc(sizeof(float32_t) * N * 2);
     float32_t* aMag   = (float32_t*)malloc(sizeof(float32_t) * N);
     float32_t* aPhase = (float32_t*)malloc(sizeof(float32_t) * N);
+	#else // BUFSRC == 1
+	  float32_t* aFFT   = buff1;
+    float32_t* aMag   = buff2;
+    float32_t* aPhase = buff3;
+	#endif
 	
     if (aFFT == 0 || aMag == 0 || aPhase == 0)
     {
+			  printf("alloc memory fail\n");
         goto exit;
     }
 

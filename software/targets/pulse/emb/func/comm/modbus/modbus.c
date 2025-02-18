@@ -147,7 +147,7 @@ void ModbusCreat(mbslave_t* pModbusSlave)
 
 void ModbusInit(mbslave_t* pModbusSlave)
 {
-    pModbusSlave->u8SlaveAddr = D.u16MbSlvId;
+    pModbusSlave->u8SlaveAddr = 1; // D.u16MbSlvId;
     ModbusSetSlaveID(pModbusSlave, 0xA1, true, "uyk", 3);
 }
 

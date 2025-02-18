@@ -338,7 +338,7 @@
             <v6Rtti>0</v6Rtti>
             <VariousControls>
               <MiscControls></MiscControls>
-              <Define>USE_HAL_DRIVER,STM32H750xx,ARM_MATH_CM7</Define>
+              <Define>USE_HAL_DRIVER,STM32H750xx,ARM_MATH_CM7,FFT_N=2048</Define>
               <Undefine></Undefine>
               <IncludePath>../Core/Inc;../../../Board;F:/embkit/software/platform/STM32Cube_FW_H7_V1.11.0/Drivers/STM32H7xx_HAL_Driver/Inc;F:/embkit/software/platform/STM32Cube_FW_H7_V1.11.0/Drivers/STM32H7xx_HAL_Driver/Inc/Legacy;F:/embkit/software/platform/STM32Cube_FW_H7_V1.11.0/Drivers/CMSIS/Device/ST/STM32H7xx/Include;F:/embkit/software/platform/STM32Cube_FW_H7_V1.11.0/Drivers/CMSIS/Include;..\Bsp</IncludePath>
             </VariousControls>
@@ -433,6 +433,11 @@
               <FileName>delay.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\Bsp\delay.c</FilePath>
+            </File>
+            <File>
+              <FileName>adc_ts.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Bsp\adc_ts.c</FilePath>
             </File>
           </Files>
         </Group>

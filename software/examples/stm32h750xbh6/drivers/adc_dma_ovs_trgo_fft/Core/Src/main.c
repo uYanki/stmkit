@@ -22,6 +22,7 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include "dsp_fft.h"
+#include "adc_ts.h"
 
 /* USER CODE END Includes */
 
@@ -40,7 +41,9 @@ typedef float float32_t;
 #define __AT_ADDR(addr) __attribute__((section(".ARM.__at_" #addr)))
 #endif
 
+#ifndef FFT_N
 #define FFT_N 2048  // ≈‰÷√œÓ: FFT µ„ ˝
+#endif
 
 /* USER CODE END PD */
 
@@ -238,6 +241,7 @@ int main(void)
         // Display ADC1 & ADC3 singal's Voltage
 
         static uint32_t tDispConvAD = 0;
+			
 
         if (DelayNonBlock(tDispConvAD, 1000))
         {
