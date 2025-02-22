@@ -115,7 +115,7 @@ ProjectManager.BackupPrevious=false
 ProjectManager.CompilerOptimize=6
 ProjectManager.ComputerToolchain=false
 ProjectManager.CoupleFile=false
-ProjectManager.CustomerFirmwarePackageC:\\embkit\\software\\platform\\STM32Cube_FW_F1_V1.8.5
+ProjectManager.CustomerFirmwarePackage=C\:\\embkit\\software\\platform\\STM32Cube_FW_F1_V1.8.5
 ProjectManager.DefaultFWLocation=false
 ProjectManager.DeletePrevious=true
 ProjectManager.DeviceId=STM32F103C8Tx

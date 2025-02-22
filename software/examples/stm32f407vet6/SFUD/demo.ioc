@@ -161,7 +161,7 @@ ProjectManager.BackupPrevious=false
 ProjectManager.CompilerOptimize=6
 ProjectManager.ComputerToolchain=false
 ProjectManager.CoupleFile=false
-ProjectManager.CustomerFirmwarePackageC:\\embkit\\software\\platform\\STM32Cube_FW_F4_V1.28.0
+ProjectManager.CustomerFirmwarePackage=C\:\\embkit\\software\\platform\\STM32Cube_FW_F4_V1.28.0
 ProjectManager.DefaultFWLocation=false
 ProjectManager.DeletePrevious=true
 ProjectManager.DeviceId=STM32F407VETx
