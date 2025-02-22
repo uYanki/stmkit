@@ -338,7 +338,7 @@
               <MiscControls>--diag_suppress=513,177</MiscControls>
               <Define>AT32F415CBT7,USE_STDPERIPH_DRIVER,BOARD_USER_DEFINED</Define>
               <Undefine></Undefine>
-              <IncludePath>..\..\..\..\..\..\..\platform\AT32F415_Firmware_Library_V2.1.6\libraries\drivers\inc;..\..\..\..\..\..\..\platform\AT32F415_Firmware_Library_V2.1.6\libraries\cmsis\cm4\core_support;..\..\..\..\..\..\..\platform\AT32F415_Firmware_Library_V2.1.6\libraries\cmsis\cm4\device_support;..\..\..\..\..\..\..\platform\AT32F415_Firmware_Library_V2.1.6\middlewares\i2c_application_library;..\inc;..\..\bsp;..\..\bsp\enc;..\..\..\..\..\..\..\components\typebasic;..\..\..\..\;..\..\..\..\basic;..\..\..\..\basic\alarm;..\..\..\..\basic\delay;..\..\..\..\basic\filter;..\..\..\..\axis\application;..\..\..\..\basic\database\standard;..\..\..\..\axis;..\..\..\..\axis\logicctrl;..\..\..\..\axis\motdrv;..\..\..\..\axis\pathplan;..\..\..\..\func;..\..\..\..\func\scope;..\..\..\..\func\delay;..\..\..\..\func\filter;..\..\..\..\func\alarm;..\..\..\..\func\paratbl;..\..\..\..\func\comm\modbus</IncludePath>
+              <IncludePath>c:\embkit\software\platform\AT32F415_Firmware_Library_V2.1.6\libraries\drivers\inc;c:\embkit\software\platform\AT32F415_Firmware_Library_V2.1.6\libraries\cmsis\cm4\core_support;c:\embkit\software\platform\AT32F415_Firmware_Library_V2.1.6\libraries\cmsis\cm4\device_support;c:\embkit\software\platform\AT32F415_Firmware_Library_V2.1.6\middlewares\i2c_application_library;..\inc;..\..\bsp;..\..\bsp\enc;..\..\..\..\..\..\..\components\typebasic;..\..\..\..\;..\..\..\..\basic;..\..\..\..\basic\alarm;..\..\..\..\basic\delay;..\..\..\..\basic\filter;..\..\..\..\axis\application;..\..\..\..\basic\database\standard;..\..\..\..\axis;..\..\..\..\axis\logicctrl;..\..\..\..\axis\motdrv;..\..\..\..\axis\pathplan;..\..\..\..\func;..\..\..\..\func\scope;..\..\..\..\func\delay;..\..\..\..\func\filter;..\..\..\..\func\alarm;..\..\..\..\func\paratbl;..\..\..\..\func\comm\modbus</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -410,97 +410,97 @@
             <File>
               <FileName>at32f415_adc.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\..\..\platform\AT32F415_Firmware_Library_V2.1.6\libraries\drivers\src\at32f415_adc.c</FilePath>
+              <FilePath>c:\embkit\software\platform\AT32F415_Firmware_Library_V2.1.6\libraries\drivers\src\at32f415_adc.c</FilePath>
             </File>
             <File>
               <FileName>at32f415_can.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\..\..\platform\AT32F415_Firmware_Library_V2.1.6\libraries\drivers\src\at32f415_can.c</FilePath>
+              <FilePath>c:\embkit\software\platform\AT32F415_Firmware_Library_V2.1.6\libraries\drivers\src\at32f415_can.c</FilePath>
             </File>
             <File>
               <FileName>at32f415_crc.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\..\..\platform\AT32F415_Firmware_Library_V2.1.6\libraries\drivers\src\at32f415_crc.c</FilePath>
+              <FilePath>c:\embkit\software\platform\AT32F415_Firmware_Library_V2.1.6\libraries\drivers\src\at32f415_crc.c</FilePath>
             </File>
             <File>
               <FileName>at32f415_crm.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\..\..\platform\AT32F415_Firmware_Library_V2.1.6\libraries\drivers\src\at32f415_crm.c</FilePath>
+              <FilePath>c:\embkit\software\platform\AT32F415_Firmware_Library_V2.1.6\libraries\drivers\src\at32f415_crm.c</FilePath>
             </File>
             <File>
               <FileName>at32f415_debug.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\..\..\platform\AT32F415_Firmware_Library_V2.1.6\libraries\drivers\src\at32f415_debug.c</FilePath>
+              <FilePath>c:\embkit\software\platform\AT32F415_Firmware_Library_V2.1.6\libraries\drivers\src\at32f415_debug.c</FilePath>
             </File>
             <File>
               <FileName>at32f415_dma.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\..\..\platform\AT32F415_Firmware_Library_V2.1.6\libraries\drivers\src\at32f415_dma.c</FilePath>
+              <FilePath>c:\embkit\software\platform\AT32F415_Firmware_Library_V2.1.6\libraries\drivers\src\at32f415_dma.c</FilePath>
             </File>
             <File>
               <FileName>at32f415_exint.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\..\..\platform\AT32F415_Firmware_Library_V2.1.6\libraries\drivers\src\at32f415_exint.c</FilePath>
+              <FilePath>c:\embkit\software\platform\AT32F415_Firmware_Library_V2.1.6\libraries\drivers\src\at32f415_exint.c</FilePath>
             </File>
             <File>
               <FileName>at32f415_flash.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\..\..\platform\AT32F415_Firmware_Library_V2.1.6\libraries\drivers\src\at32f415_flash.c</FilePath>
+              <FilePath>c:\embkit\software\platform\AT32F415_Firmware_Library_V2.1.6\libraries\drivers\src\at32f415_flash.c</FilePath>
             </File>
             <File>
               <FileName>at32f415_gpio.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\..\..\platform\AT32F415_Firmware_Library_V2.1.6\libraries\drivers\src\at32f415_gpio.c</FilePath>
+              <FilePath>c:\embkit\software\platform\AT32F415_Firmware_Library_V2.1.6\libraries\drivers\src\at32f415_gpio.c</FilePath>
             </File>
             <File>
               <FileName>at32f415_i2c.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\..\..\platform\AT32F415_Firmware_Library_V2.1.6\libraries\drivers\src\at32f415_i2c.c</FilePath>
+              <FilePath>c:\embkit\software\platform\AT32F415_Firmware_Library_V2.1.6\libraries\drivers\src\at32f415_i2c.c</FilePath>
             </File>
             <File>
               <FileName>at32f415_misc.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\..\..\platform\AT32F415_Firmware_Library_V2.1.6\libraries\drivers\src\at32f415_misc.c</FilePath>
+              <FilePath>c:\embkit\software\platform\AT32F415_Firmware_Library_V2.1.6\libraries\drivers\src\at32f415_misc.c</FilePath>
             </File>
             <File>
               <FileName>at32f415_pwc.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\..\..\platform\AT32F415_Firmware_Library_V2.1.6\libraries\drivers\src\at32f415_pwc.c</FilePath>
+              <FilePath>c:\embkit\software\platform\AT32F415_Firmware_Library_V2.1.6\libraries\drivers\src\at32f415_pwc.c</FilePath>
             </File>
             <File>
               <FileName>at32f415_sdio.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\..\..\platform\AT32F415_Firmware_Library_V2.1.6\libraries\drivers\src\at32f415_sdio.c</FilePath>
+              <FilePath>c:\embkit\software\platform\AT32F415_Firmware_Library_V2.1.6\libraries\drivers\src\at32f415_sdio.c</FilePath>
             </File>
             <File>
               <FileName>at32f415_spi.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\..\..\platform\AT32F415_Firmware_Library_V2.1.6\libraries\drivers\src\at32f415_spi.c</FilePath>
+              <FilePath>c:\embkit\software\platform\AT32F415_Firmware_Library_V2.1.6\libraries\drivers\src\at32f415_spi.c</FilePath>
             </File>
             <File>
               <FileName>at32f415_tmr.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\..\..\platform\AT32F415_Firmware_Library_V2.1.6\libraries\drivers\src\at32f415_tmr.c</FilePath>
+              <FilePath>c:\embkit\software\platform\AT32F415_Firmware_Library_V2.1.6\libraries\drivers\src\at32f415_tmr.c</FilePath>
             </File>
             <File>
               <FileName>at32f415_usart.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\..\..\platform\AT32F415_Firmware_Library_V2.1.6\libraries\drivers\src\at32f415_usart.c</FilePath>
+              <FilePath>c:\embkit\software\platform\AT32F415_Firmware_Library_V2.1.6\libraries\drivers\src\at32f415_usart.c</FilePath>
             </File>
             <File>
               <FileName>at32f415_usb.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\..\..\platform\AT32F415_Firmware_Library_V2.1.6\libraries\drivers\src\at32f415_usb.c</FilePath>
+              <FilePath>c:\embkit\software\platform\AT32F415_Firmware_Library_V2.1.6\libraries\drivers\src\at32f415_usb.c</FilePath>
             </File>
             <File>
               <FileName>at32f415_wdt.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\..\..\platform\AT32F415_Firmware_Library_V2.1.6\libraries\drivers\src\at32f415_wdt.c</FilePath>
+              <FilePath>c:\embkit\software\platform\AT32F415_Firmware_Library_V2.1.6\libraries\drivers\src\at32f415_wdt.c</FilePath>
             </File>
             <File>
               <FileName>at32f415_wwdt.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\..\..\platform\AT32F415_Firmware_Library_V2.1.6\libraries\drivers\src\at32f415_wwdt.c</FilePath>
+              <FilePath>c:\embkit\software\platform\AT32F415_Firmware_Library_V2.1.6\libraries\drivers\src\at32f415_wwdt.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -510,12 +510,12 @@
             <File>
               <FileName>startup_at32f415.s</FileName>
               <FileType>2</FileType>
-              <FilePath>..\..\..\..\..\..\..\platform\AT32F415_Firmware_Library_V2.1.6\libraries\cmsis\cm4\device_support\startup\mdk\startup_at32f415.s</FilePath>
+              <FilePath>c:\embkit\software\platform\AT32F415_Firmware_Library_V2.1.6\libraries\cmsis\cm4\device_support\startup\mdk\startup_at32f415.s</FilePath>
             </File>
             <File>
               <FileName>system_at32f415.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\..\..\platform\AT32F415_Firmware_Library_V2.1.6\libraries\cmsis\cm4\device_support\system_at32f415.c</FilePath>
+              <FilePath>c:\embkit\software\platform\AT32F415_Firmware_Library_V2.1.6\libraries\cmsis\cm4\device_support\system_at32f415.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -743,7 +743,7 @@
             <File>
               <FileName>i2c_application.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\..\..\platform\AT32F415_Firmware_Library_V2.1.6\middlewares\i2c_application_library\i2c_application.c</FilePath>
+              <FilePath>c:\embkit\software\platform\AT32F415_Firmware_Library_V2.1.6\middlewares\i2c_application_library\i2c_application.c</FilePath>
             </File>
           </Files>
         </Group>

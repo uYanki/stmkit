@@ -287,7 +287,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\..\..\..\..\..\platform\AT32F413_Firmware_Library_V2.1.5\libraries\drivers\src\at32f413_acc.c</PathWithFileName>
+      <PathWithFileName>c:\embkit\software\platform\AT32F413_Firmware_Library_V2.1.5\libraries\drivers\src\at32f413_acc.c</PathWithFileName>
       <FilenameWithoutPath>at32f413_acc.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -299,7 +299,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\..\..\..\..\..\platform\AT32F413_Firmware_Library_V2.1.5\libraries\drivers\src\at32f413_adc.c</PathWithFileName>
+      <PathWithFileName>c:\embkit\software\platform\AT32F413_Firmware_Library_V2.1.5\libraries\drivers\src\at32f413_adc.c</PathWithFileName>
       <FilenameWithoutPath>at32f413_adc.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -311,7 +311,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\..\..\..\..\..\platform\AT32F413_Firmware_Library_V2.1.5\libraries\drivers\src\at32f413_bpr.c</PathWithFileName>
+      <PathWithFileName>c:\embkit\software\platform\AT32F413_Firmware_Library_V2.1.5\libraries\drivers\src\at32f413_bpr.c</PathWithFileName>
       <FilenameWithoutPath>at32f413_bpr.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -323,7 +323,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\..\..\..\..\..\platform\AT32F413_Firmware_Library_V2.1.5\libraries\drivers\src\at32f413_can.c</PathWithFileName>
+      <PathWithFileName>c:\embkit\software\platform\AT32F413_Firmware_Library_V2.1.5\libraries\drivers\src\at32f413_can.c</PathWithFileName>
       <FilenameWithoutPath>at32f413_can.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -335,7 +335,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\..\..\..\..\..\platform\AT32F413_Firmware_Library_V2.1.5\libraries\drivers\src\at32f413_crc.c</PathWithFileName>
+      <PathWithFileName>c:\embkit\software\platform\AT32F413_Firmware_Library_V2.1.5\libraries\drivers\src\at32f413_crc.c</PathWithFileName>
       <FilenameWithoutPath>at32f413_crc.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -347,7 +347,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\..\..\..\..\..\platform\AT32F413_Firmware_Library_V2.1.5\libraries\drivers\src\at32f413_crm.c</PathWithFileName>
+      <PathWithFileName>c:\embkit\software\platform\AT32F413_Firmware_Library_V2.1.5\libraries\drivers\src\at32f413_crm.c</PathWithFileName>
       <FilenameWithoutPath>at32f413_crm.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -359,7 +359,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\..\..\..\..\..\platform\AT32F413_Firmware_Library_V2.1.5\libraries\drivers\src\at32f413_debug.c</PathWithFileName>
+      <PathWithFileName>c:\embkit\software\platform\AT32F413_Firmware_Library_V2.1.5\libraries\drivers\src\at32f413_debug.c</PathWithFileName>
       <FilenameWithoutPath>at32f413_debug.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -371,7 +371,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\..\..\..\..\..\platform\AT32F413_Firmware_Library_V2.1.5\libraries\drivers\src\at32f413_dma.c</PathWithFileName>
+      <PathWithFileName>c:\embkit\software\platform\AT32F413_Firmware_Library_V2.1.5\libraries\drivers\src\at32f413_dma.c</PathWithFileName>
       <FilenameWithoutPath>at32f413_dma.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -383,7 +383,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\..\..\..\..\..\platform\AT32F413_Firmware_Library_V2.1.5\libraries\drivers\src\at32f413_exint.c</PathWithFileName>
+      <PathWithFileName>c:\embkit\software\platform\AT32F413_Firmware_Library_V2.1.5\libraries\drivers\src\at32f413_exint.c</PathWithFileName>
       <FilenameWithoutPath>at32f413_exint.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -395,7 +395,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\..\..\..\..\..\platform\AT32F413_Firmware_Library_V2.1.5\libraries\drivers\src\at32f413_flash.c</PathWithFileName>
+      <PathWithFileName>c:\embkit\software\platform\AT32F413_Firmware_Library_V2.1.5\libraries\drivers\src\at32f413_flash.c</PathWithFileName>
       <FilenameWithoutPath>at32f413_flash.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -407,7 +407,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\..\..\..\..\..\platform\AT32F413_Firmware_Library_V2.1.5\libraries\drivers\src\at32f413_gpio.c</PathWithFileName>
+      <PathWithFileName>c:\embkit\software\platform\AT32F413_Firmware_Library_V2.1.5\libraries\drivers\src\at32f413_gpio.c</PathWithFileName>
       <FilenameWithoutPath>at32f413_gpio.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -419,7 +419,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\..\..\..\..\..\platform\AT32F413_Firmware_Library_V2.1.5\libraries\drivers\src\at32f413_i2c.c</PathWithFileName>
+      <PathWithFileName>c:\embkit\software\platform\AT32F413_Firmware_Library_V2.1.5\libraries\drivers\src\at32f413_i2c.c</PathWithFileName>
       <FilenameWithoutPath>at32f413_i2c.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -431,7 +431,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\..\..\..\..\..\platform\AT32F413_Firmware_Library_V2.1.5\libraries\drivers\src\at32f413_misc.c</PathWithFileName>
+      <PathWithFileName>c:\embkit\software\platform\AT32F413_Firmware_Library_V2.1.5\libraries\drivers\src\at32f413_misc.c</PathWithFileName>
       <FilenameWithoutPath>at32f413_misc.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -443,7 +443,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\..\..\..\..\..\platform\AT32F413_Firmware_Library_V2.1.5\libraries\drivers\src\at32f413_pwc.c</PathWithFileName>
+      <PathWithFileName>c:\embkit\software\platform\AT32F413_Firmware_Library_V2.1.5\libraries\drivers\src\at32f413_pwc.c</PathWithFileName>
       <FilenameWithoutPath>at32f413_pwc.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -455,7 +455,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\..\..\..\..\..\platform\AT32F413_Firmware_Library_V2.1.5\libraries\drivers\src\at32f413_rtc.c</PathWithFileName>
+      <PathWithFileName>c:\embkit\software\platform\AT32F413_Firmware_Library_V2.1.5\libraries\drivers\src\at32f413_rtc.c</PathWithFileName>
       <FilenameWithoutPath>at32f413_rtc.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -467,7 +467,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\..\..\..\..\..\platform\AT32F413_Firmware_Library_V2.1.5\libraries\drivers\src\at32f413_sdio.c</PathWithFileName>
+      <PathWithFileName>c:\embkit\software\platform\AT32F413_Firmware_Library_V2.1.5\libraries\drivers\src\at32f413_sdio.c</PathWithFileName>
       <FilenameWithoutPath>at32f413_sdio.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -479,7 +479,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\..\..\..\..\..\platform\AT32F413_Firmware_Library_V2.1.5\libraries\drivers\src\at32f413_spi.c</PathWithFileName>
+      <PathWithFileName>c:\embkit\software\platform\AT32F413_Firmware_Library_V2.1.5\libraries\drivers\src\at32f413_spi.c</PathWithFileName>
       <FilenameWithoutPath>at32f413_spi.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -491,7 +491,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\..\..\..\..\..\platform\AT32F413_Firmware_Library_V2.1.5\libraries\drivers\src\at32f413_tmr.c</PathWithFileName>
+      <PathWithFileName>c:\embkit\software\platform\AT32F413_Firmware_Library_V2.1.5\libraries\drivers\src\at32f413_tmr.c</PathWithFileName>
       <FilenameWithoutPath>at32f413_tmr.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -503,7 +503,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\..\..\..\..\..\platform\AT32F413_Firmware_Library_V2.1.5\libraries\drivers\src\at32f413_usart.c</PathWithFileName>
+      <PathWithFileName>c:\embkit\software\platform\AT32F413_Firmware_Library_V2.1.5\libraries\drivers\src\at32f413_usart.c</PathWithFileName>
       <FilenameWithoutPath>at32f413_usart.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -515,7 +515,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\..\..\..\..\..\platform\AT32F413_Firmware_Library_V2.1.5\libraries\drivers\src\at32f413_usb.c</PathWithFileName>
+      <PathWithFileName>c:\embkit\software\platform\AT32F413_Firmware_Library_V2.1.5\libraries\drivers\src\at32f413_usb.c</PathWithFileName>
       <FilenameWithoutPath>at32f413_usb.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -527,7 +527,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\..\..\..\..\..\platform\AT32F413_Firmware_Library_V2.1.5\libraries\drivers\src\at32f413_wdt.c</PathWithFileName>
+      <PathWithFileName>c:\embkit\software\platform\AT32F413_Firmware_Library_V2.1.5\libraries\drivers\src\at32f413_wdt.c</PathWithFileName>
       <FilenameWithoutPath>at32f413_wdt.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -539,7 +539,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\..\..\..\..\..\platform\AT32F413_Firmware_Library_V2.1.5\libraries\drivers\src\at32f413_wwdt.c</PathWithFileName>
+      <PathWithFileName>c:\embkit\software\platform\AT32F413_Firmware_Library_V2.1.5\libraries\drivers\src\at32f413_wwdt.c</PathWithFileName>
       <FilenameWithoutPath>at32f413_wwdt.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -559,7 +559,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\..\..\..\..\..\platform\AT32F413_Firmware_Library_V2.1.5\libraries\cmsis\cm4\device_support\startup\mdk\startup_at32f413.s</PathWithFileName>
+      <PathWithFileName>c:\embkit\software\platform\AT32F413_Firmware_Library_V2.1.5\libraries\cmsis\cm4\device_support\startup\mdk\startup_at32f413.s</PathWithFileName>
       <FilenameWithoutPath>startup_at32f413.s</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -571,7 +571,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\..\..\..\..\..\platform\AT32F413_Firmware_Library_V2.1.5\libraries\cmsis\cm4\device_support\system_at32f413.c</PathWithFileName>
+      <PathWithFileName>c:\embkit\software\platform\AT32F413_Firmware_Library_V2.1.5\libraries\cmsis\cm4\device_support\system_at32f413.c</PathWithFileName>
       <FilenameWithoutPath>system_at32f413.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -1099,7 +1099,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\..\..\..\..\..\platform\AT32F413_Firmware_Library_V2.1.5\middlewares\i2c_application_library\i2c_application.c</PathWithFileName>
+      <PathWithFileName>c:\embkit\software\platform\AT32F413_Firmware_Library_V2.1.5\middlewares\i2c_application_library\i2c_application.c</PathWithFileName>
       <FilenameWithoutPath>i2c_application.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>

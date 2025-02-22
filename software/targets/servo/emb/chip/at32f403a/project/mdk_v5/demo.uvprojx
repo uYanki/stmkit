@@ -338,7 +338,7 @@
               <MiscControls>--diag_suppress=513,174,177</MiscControls>
               <Define>AT32F403AVGT7,USE_STDPERIPH_DRIVER,AT_START_F403A_V1,BOARD_USER_DEFINED</Define>
               <Undefine></Undefine>
-              <IncludePath>..\..\..\..\..\..\..\platform\AT32F403A_407_Firmware_Library_V2.1.9\libraries\drivers\inc;..\..\..\..\..\..\..\platform\AT32F403A_407_Firmware_Library_V2.1.9\libraries\cmsis\cm4\core_support;..\..\..\..\..\..\..\platform\AT32F403A_407_Firmware_Library_V2.1.9\libraries\cmsis\cm4\device_support;..\inc;..\..\bsp;..\..\bsp\enc;..\..\..\..\..\..\..\components\typebasic;..\..\..\..\;..\..\..\..\basic;..\..\..\..\basic\database\standard;..\..\..\..\basic\delay;..\..\..\..\basic\filter;..\..\..\..\basic\alarm;..\..\..\..\axis;..\..\..\..\axis\application;..\..\..\..\axis\logicctrl;..\..\..\..\axis\motdrv;..\..\..\..\axis\pathplan;..\..\..\..\func;..\..\..\..\func\scope;..\..\..\..\func\delay;..\..\..\..\func\filter;..\..\..\..\func\alarm;..\..\..\..\func\paratbl;..\..\..\..\func\comm\modbus</IncludePath>
+              <IncludePath>c:\embkit\software\platform\AT32F403A_407_Firmware_Library_V2.1.9\libraries\drivers\inc;c:\embkit\software\platform\AT32F403A_407_Firmware_Library_V2.1.9\libraries\cmsis\cm4\core_support;c:\embkit\software\platform\AT32F403A_407_Firmware_Library_V2.1.9\libraries\cmsis\cm4\device_support;..\inc;..\..\bsp;..\..\bsp\enc;..\..\..\..\..\..\..\components\typebasic;..\..\..\..\;..\..\..\..\basic;..\..\..\..\basic\database\standard;..\..\..\..\basic\delay;..\..\..\..\basic\filter;..\..\..\..\basic\alarm;..\..\..\..\axis;..\..\..\..\axis\application;..\..\..\..\axis\logicctrl;..\..\..\..\axis\motdrv;..\..\..\..\axis\pathplan;..\..\..\..\func;..\..\..\..\func\scope;..\..\..\..\func\delay;..\..\..\..\func\filter;..\..\..\..\func\alarm;..\..\..\..\func\paratbl;..\..\..\..\func\comm\modbus</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -415,12 +415,12 @@
             <File>
               <FileName>system_at32f403a_407.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\..\..\platform\AT32F403A_407_Firmware_Library_V2.1.9\libraries\cmsis\cm4\device_support\system_at32f403a_407.c</FilePath>
+              <FilePath>c:\embkit\software\platform\AT32F403A_407_Firmware_Library_V2.1.9\libraries\cmsis\cm4\device_support\system_at32f403a_407.c</FilePath>
             </File>
             <File>
               <FileName>startup_at32f403a_407.s</FileName>
               <FileType>2</FileType>
-              <FilePath>..\..\..\..\..\..\..\platform\AT32F403A_407_Firmware_Library_V2.1.9\libraries\cmsis\cm4\device_support\startup\mdk\startup_at32f403a_407.s</FilePath>
+              <FilePath>c:\embkit\software\platform\AT32F403A_407_Firmware_Library_V2.1.9\libraries\cmsis\cm4\device_support\startup\mdk\startup_at32f403a_407.s</FilePath>
             </File>
           </Files>
         </Group>
@@ -430,127 +430,127 @@
             <File>
               <FileName>at32f403a_407_bpr.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\..\..\platform\AT32F403A_407_Firmware_Library_V2.1.9\libraries\drivers\src\at32f403a_407_bpr.c</FilePath>
+              <FilePath>c:\embkit\software\platform\AT32F403A_407_Firmware_Library_V2.1.9\libraries\drivers\src\at32f403a_407_bpr.c</FilePath>
             </File>
             <File>
               <FileName>at32f403a_407_can.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\..\..\platform\AT32F403A_407_Firmware_Library_V2.1.9\libraries\drivers\src\at32f403a_407_can.c</FilePath>
+              <FilePath>c:\embkit\software\platform\AT32F403A_407_Firmware_Library_V2.1.9\libraries\drivers\src\at32f403a_407_can.c</FilePath>
             </File>
             <File>
               <FileName>at32f403a_407_crc.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\..\..\platform\AT32F403A_407_Firmware_Library_V2.1.9\libraries\drivers\src\at32f403a_407_crc.c</FilePath>
+              <FilePath>c:\embkit\software\platform\AT32F403A_407_Firmware_Library_V2.1.9\libraries\drivers\src\at32f403a_407_crc.c</FilePath>
             </File>
             <File>
               <FileName>at32f403a_407_crm.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\..\..\platform\AT32F403A_407_Firmware_Library_V2.1.9\libraries\drivers\src\at32f403a_407_crm.c</FilePath>
+              <FilePath>c:\embkit\software\platform\AT32F403A_407_Firmware_Library_V2.1.9\libraries\drivers\src\at32f403a_407_crm.c</FilePath>
             </File>
             <File>
               <FileName>at32f403a_407_dac.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\..\..\platform\AT32F403A_407_Firmware_Library_V2.1.9\libraries\drivers\src\at32f403a_407_dac.c</FilePath>
+              <FilePath>c:\embkit\software\platform\AT32F403A_407_Firmware_Library_V2.1.9\libraries\drivers\src\at32f403a_407_dac.c</FilePath>
             </File>
             <File>
               <FileName>at32f403a_407_debug.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\..\..\platform\AT32F403A_407_Firmware_Library_V2.1.9\libraries\drivers\src\at32f403a_407_debug.c</FilePath>
+              <FilePath>c:\embkit\software\platform\AT32F403A_407_Firmware_Library_V2.1.9\libraries\drivers\src\at32f403a_407_debug.c</FilePath>
             </File>
             <File>
               <FileName>at32f403a_407_dma.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\..\..\platform\AT32F403A_407_Firmware_Library_V2.1.9\libraries\drivers\src\at32f403a_407_dma.c</FilePath>
+              <FilePath>c:\embkit\software\platform\AT32F403A_407_Firmware_Library_V2.1.9\libraries\drivers\src\at32f403a_407_dma.c</FilePath>
             </File>
             <File>
               <FileName>at32f403a_407_emac.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\..\..\platform\AT32F403A_407_Firmware_Library_V2.1.9\libraries\drivers\src\at32f403a_407_emac.c</FilePath>
+              <FilePath>c:\embkit\software\platform\AT32F403A_407_Firmware_Library_V2.1.9\libraries\drivers\src\at32f403a_407_emac.c</FilePath>
             </File>
             <File>
               <FileName>at32f403a_407_exint.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\..\..\platform\AT32F403A_407_Firmware_Library_V2.1.9\libraries\drivers\src\at32f403a_407_exint.c</FilePath>
+              <FilePath>c:\embkit\software\platform\AT32F403A_407_Firmware_Library_V2.1.9\libraries\drivers\src\at32f403a_407_exint.c</FilePath>
             </File>
             <File>
               <FileName>at32f403a_407_flash.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\..\..\platform\AT32F403A_407_Firmware_Library_V2.1.9\libraries\drivers\src\at32f403a_407_flash.c</FilePath>
+              <FilePath>c:\embkit\software\platform\AT32F403A_407_Firmware_Library_V2.1.9\libraries\drivers\src\at32f403a_407_flash.c</FilePath>
             </File>
             <File>
               <FileName>at32f403a_407_gpio.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\..\..\platform\AT32F403A_407_Firmware_Library_V2.1.9\libraries\drivers\src\at32f403a_407_gpio.c</FilePath>
+              <FilePath>c:\embkit\software\platform\AT32F403A_407_Firmware_Library_V2.1.9\libraries\drivers\src\at32f403a_407_gpio.c</FilePath>
             </File>
             <File>
               <FileName>at32f403a_407_i2c.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\..\..\platform\AT32F403A_407_Firmware_Library_V2.1.9\libraries\drivers\src\at32f403a_407_i2c.c</FilePath>
+              <FilePath>c:\embkit\software\platform\AT32F403A_407_Firmware_Library_V2.1.9\libraries\drivers\src\at32f403a_407_i2c.c</FilePath>
             </File>
             <File>
               <FileName>at32f403a_407_misc.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\..\..\platform\AT32F403A_407_Firmware_Library_V2.1.9\libraries\drivers\src\at32f403a_407_misc.c</FilePath>
+              <FilePath>c:\embkit\software\platform\AT32F403A_407_Firmware_Library_V2.1.9\libraries\drivers\src\at32f403a_407_misc.c</FilePath>
             </File>
             <File>
               <FileName>at32f403a_407_pwc.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\..\..\platform\AT32F403A_407_Firmware_Library_V2.1.9\libraries\drivers\src\at32f403a_407_pwc.c</FilePath>
+              <FilePath>c:\embkit\software\platform\AT32F403A_407_Firmware_Library_V2.1.9\libraries\drivers\src\at32f403a_407_pwc.c</FilePath>
             </File>
             <File>
               <FileName>at32f403a_407_rtc.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\..\..\platform\AT32F403A_407_Firmware_Library_V2.1.9\libraries\drivers\src\at32f403a_407_rtc.c</FilePath>
+              <FilePath>c:\embkit\software\platform\AT32F403A_407_Firmware_Library_V2.1.9\libraries\drivers\src\at32f403a_407_rtc.c</FilePath>
             </File>
             <File>
               <FileName>at32f403a_407_sdio.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\..\..\platform\AT32F403A_407_Firmware_Library_V2.1.9\libraries\drivers\src\at32f403a_407_sdio.c</FilePath>
+              <FilePath>c:\embkit\software\platform\AT32F403A_407_Firmware_Library_V2.1.9\libraries\drivers\src\at32f403a_407_sdio.c</FilePath>
             </File>
             <File>
               <FileName>at32f403a_407_spi.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\..\..\platform\AT32F403A_407_Firmware_Library_V2.1.9\libraries\drivers\src\at32f403a_407_spi.c</FilePath>
+              <FilePath>c:\embkit\software\platform\AT32F403A_407_Firmware_Library_V2.1.9\libraries\drivers\src\at32f403a_407_spi.c</FilePath>
             </File>
             <File>
               <FileName>at32f403a_407_tmr.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\..\..\platform\AT32F403A_407_Firmware_Library_V2.1.9\libraries\drivers\src\at32f403a_407_tmr.c</FilePath>
+              <FilePath>c:\embkit\software\platform\AT32F403A_407_Firmware_Library_V2.1.9\libraries\drivers\src\at32f403a_407_tmr.c</FilePath>
             </File>
             <File>
               <FileName>at32f403a_407_usart.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\..\..\platform\AT32F403A_407_Firmware_Library_V2.1.9\libraries\drivers\src\at32f403a_407_usart.c</FilePath>
+              <FilePath>c:\embkit\software\platform\AT32F403A_407_Firmware_Library_V2.1.9\libraries\drivers\src\at32f403a_407_usart.c</FilePath>
             </File>
             <File>
               <FileName>at32f403a_407_usb.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\..\..\platform\AT32F403A_407_Firmware_Library_V2.1.9\libraries\drivers\src\at32f403a_407_usb.c</FilePath>
+              <FilePath>c:\embkit\software\platform\AT32F403A_407_Firmware_Library_V2.1.9\libraries\drivers\src\at32f403a_407_usb.c</FilePath>
             </File>
             <File>
               <FileName>at32f403a_407_wdt.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\..\..\platform\AT32F403A_407_Firmware_Library_V2.1.9\libraries\drivers\src\at32f403a_407_wdt.c</FilePath>
+              <FilePath>c:\embkit\software\platform\AT32F403A_407_Firmware_Library_V2.1.9\libraries\drivers\src\at32f403a_407_wdt.c</FilePath>
             </File>
             <File>
               <FileName>at32f403a_407_wwdt.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\..\..\platform\AT32F403A_407_Firmware_Library_V2.1.9\libraries\drivers\src\at32f403a_407_wwdt.c</FilePath>
+              <FilePath>c:\embkit\software\platform\AT32F403A_407_Firmware_Library_V2.1.9\libraries\drivers\src\at32f403a_407_wwdt.c</FilePath>
             </File>
             <File>
               <FileName>at32f403a_407_xmc.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\..\..\platform\AT32F403A_407_Firmware_Library_V2.1.9\libraries\drivers\src\at32f403a_407_xmc.c</FilePath>
+              <FilePath>c:\embkit\software\platform\AT32F403A_407_Firmware_Library_V2.1.9\libraries\drivers\src\at32f403a_407_xmc.c</FilePath>
             </File>
             <File>
               <FileName>at32f403a_407_acc.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\..\..\platform\AT32F403A_407_Firmware_Library_V2.1.9\libraries\drivers\src\at32f403a_407_acc.c</FilePath>
+              <FilePath>c:\embkit\software\platform\AT32F403A_407_Firmware_Library_V2.1.9\libraries\drivers\src\at32f403a_407_acc.c</FilePath>
             </File>
             <File>
               <FileName>at32f403a_407_adc.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\..\..\platform\AT32F403A_407_Firmware_Library_V2.1.9\libraries\drivers\src\at32f403a_407_adc.c</FilePath>
+              <FilePath>c:\embkit\software\platform\AT32F403A_407_Firmware_Library_V2.1.9\libraries\drivers\src\at32f403a_407_adc.c</FilePath>
             </File>
           </Files>
         </Group>

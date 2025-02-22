@@ -287,7 +287,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\..\..\..\..\..\platform\AT32F415_Firmware_Library_V2.1.6\libraries\drivers\src\at32f415_adc.c</PathWithFileName>
+      <PathWithFileName>c:\embkit\software\platform\AT32F415_Firmware_Library_V2.1.6\libraries\drivers\src\at32f415_adc.c</PathWithFileName>
       <FilenameWithoutPath>at32f415_adc.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -299,7 +299,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\..\..\..\..\..\platform\AT32F415_Firmware_Library_V2.1.6\libraries\drivers\src\at32f415_can.c</PathWithFileName>
+      <PathWithFileName>c:\embkit\software\platform\AT32F415_Firmware_Library_V2.1.6\libraries\drivers\src\at32f415_can.c</PathWithFileName>
       <FilenameWithoutPath>at32f415_can.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -311,7 +311,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\..\..\..\..\..\platform\AT32F415_Firmware_Library_V2.1.6\libraries\drivers\src\at32f415_crc.c</PathWithFileName>
+      <PathWithFileName>c:\embkit\software\platform\AT32F415_Firmware_Library_V2.1.6\libraries\drivers\src\at32f415_crc.c</PathWithFileName>
       <FilenameWithoutPath>at32f415_crc.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -323,7 +323,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\..\..\..\..\..\platform\AT32F415_Firmware_Library_V2.1.6\libraries\drivers\src\at32f415_crm.c</PathWithFileName>
+      <PathWithFileName>c:\embkit\software\platform\AT32F415_Firmware_Library_V2.1.6\libraries\drivers\src\at32f415_crm.c</PathWithFileName>
       <FilenameWithoutPath>at32f415_crm.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -335,7 +335,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\..\..\..\..\..\platform\AT32F415_Firmware_Library_V2.1.6\libraries\drivers\src\at32f415_debug.c</PathWithFileName>
+      <PathWithFileName>c:\embkit\software\platform\AT32F415_Firmware_Library_V2.1.6\libraries\drivers\src\at32f415_debug.c</PathWithFileName>
       <FilenameWithoutPath>at32f415_debug.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -347,7 +347,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\..\..\..\..\..\platform\AT32F415_Firmware_Library_V2.1.6\libraries\drivers\src\at32f415_dma.c</PathWithFileName>
+      <PathWithFileName>c:\embkit\software\platform\AT32F415_Firmware_Library_V2.1.6\libraries\drivers\src\at32f415_dma.c</PathWithFileName>
       <FilenameWithoutPath>at32f415_dma.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -359,7 +359,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\..\..\..\..\..\platform\AT32F415_Firmware_Library_V2.1.6\libraries\drivers\src\at32f415_exint.c</PathWithFileName>
+      <PathWithFileName>c:\embkit\software\platform\AT32F415_Firmware_Library_V2.1.6\libraries\drivers\src\at32f415_exint.c</PathWithFileName>
       <FilenameWithoutPath>at32f415_exint.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -371,7 +371,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\..\..\..\..\..\platform\AT32F415_Firmware_Library_V2.1.6\libraries\drivers\src\at32f415_flash.c</PathWithFileName>
+      <PathWithFileName>c:\embkit\software\platform\AT32F415_Firmware_Library_V2.1.6\libraries\drivers\src\at32f415_flash.c</PathWithFileName>
       <FilenameWithoutPath>at32f415_flash.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -383,7 +383,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\..\..\..\..\..\platform\AT32F415_Firmware_Library_V2.1.6\libraries\drivers\src\at32f415_gpio.c</PathWithFileName>
+      <PathWithFileName>c:\embkit\software\platform\AT32F415_Firmware_Library_V2.1.6\libraries\drivers\src\at32f415_gpio.c</PathWithFileName>
       <FilenameWithoutPath>at32f415_gpio.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -395,7 +395,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\..\..\..\..\..\platform\AT32F415_Firmware_Library_V2.1.6\libraries\drivers\src\at32f415_i2c.c</PathWithFileName>
+      <PathWithFileName>c:\embkit\software\platform\AT32F415_Firmware_Library_V2.1.6\libraries\drivers\src\at32f415_i2c.c</PathWithFileName>
       <FilenameWithoutPath>at32f415_i2c.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -407,7 +407,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\..\..\..\..\..\platform\AT32F415_Firmware_Library_V2.1.6\libraries\drivers\src\at32f415_misc.c</PathWithFileName>
+      <PathWithFileName>c:\embkit\software\platform\AT32F415_Firmware_Library_V2.1.6\libraries\drivers\src\at32f415_misc.c</PathWithFileName>
       <FilenameWithoutPath>at32f415_misc.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -419,7 +419,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\..\..\..\..\..\platform\AT32F415_Firmware_Library_V2.1.6\libraries\drivers\src\at32f415_pwc.c</PathWithFileName>
+      <PathWithFileName>c:\embkit\software\platform\AT32F415_Firmware_Library_V2.1.6\libraries\drivers\src\at32f415_pwc.c</PathWithFileName>
       <FilenameWithoutPath>at32f415_pwc.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -431,7 +431,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\..\..\..\..\..\platform\AT32F415_Firmware_Library_V2.1.6\libraries\drivers\src\at32f415_sdio.c</PathWithFileName>
+      <PathWithFileName>c:\embkit\software\platform\AT32F415_Firmware_Library_V2.1.6\libraries\drivers\src\at32f415_sdio.c</PathWithFileName>
       <FilenameWithoutPath>at32f415_sdio.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -443,7 +443,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\..\..\..\..\..\platform\AT32F415_Firmware_Library_V2.1.6\libraries\drivers\src\at32f415_spi.c</PathWithFileName>
+      <PathWithFileName>c:\embkit\software\platform\AT32F415_Firmware_Library_V2.1.6\libraries\drivers\src\at32f415_spi.c</PathWithFileName>
       <FilenameWithoutPath>at32f415_spi.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -455,7 +455,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\..\..\..\..\..\platform\AT32F415_Firmware_Library_V2.1.6\libraries\drivers\src\at32f415_tmr.c</PathWithFileName>
+      <PathWithFileName>c:\embkit\software\platform\AT32F415_Firmware_Library_V2.1.6\libraries\drivers\src\at32f415_tmr.c</PathWithFileName>
       <FilenameWithoutPath>at32f415_tmr.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -467,7 +467,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\..\..\..\..\..\platform\AT32F415_Firmware_Library_V2.1.6\libraries\drivers\src\at32f415_usart.c</PathWithFileName>
+      <PathWithFileName>c:\embkit\software\platform\AT32F415_Firmware_Library_V2.1.6\libraries\drivers\src\at32f415_usart.c</PathWithFileName>
       <FilenameWithoutPath>at32f415_usart.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -479,7 +479,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\..\..\..\..\..\platform\AT32F415_Firmware_Library_V2.1.6\libraries\drivers\src\at32f415_usb.c</PathWithFileName>
+      <PathWithFileName>c:\embkit\software\platform\AT32F415_Firmware_Library_V2.1.6\libraries\drivers\src\at32f415_usb.c</PathWithFileName>
       <FilenameWithoutPath>at32f415_usb.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -491,7 +491,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\..\..\..\..\..\platform\AT32F415_Firmware_Library_V2.1.6\libraries\drivers\src\at32f415_wdt.c</PathWithFileName>
+      <PathWithFileName>c:\embkit\software\platform\AT32F415_Firmware_Library_V2.1.6\libraries\drivers\src\at32f415_wdt.c</PathWithFileName>
       <FilenameWithoutPath>at32f415_wdt.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -503,7 +503,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\..\..\..\..\..\platform\AT32F415_Firmware_Library_V2.1.6\libraries\drivers\src\at32f415_wwdt.c</PathWithFileName>
+      <PathWithFileName>c:\embkit\software\platform\AT32F415_Firmware_Library_V2.1.6\libraries\drivers\src\at32f415_wwdt.c</PathWithFileName>
       <FilenameWithoutPath>at32f415_wwdt.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -523,7 +523,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\..\..\..\..\..\platform\AT32F415_Firmware_Library_V2.1.6\libraries\cmsis\cm4\device_support\startup\mdk\startup_at32f415.s</PathWithFileName>
+      <PathWithFileName>c:\embkit\software\platform\AT32F415_Firmware_Library_V2.1.6\libraries\cmsis\cm4\device_support\startup\mdk\startup_at32f415.s</PathWithFileName>
       <FilenameWithoutPath>startup_at32f415.s</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -535,7 +535,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\..\..\..\..\..\platform\AT32F415_Firmware_Library_V2.1.6\libraries\cmsis\cm4\device_support\system_at32f415.c</PathWithFileName>
+      <PathWithFileName>c:\embkit\software\platform\AT32F415_Firmware_Library_V2.1.6\libraries\cmsis\cm4\device_support\system_at32f415.c</PathWithFileName>
       <FilenameWithoutPath>system_at32f415.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -1055,7 +1055,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\..\..\..\..\..\platform\AT32F415_Firmware_Library_V2.1.6\middlewares\i2c_application_library\i2c_application.c</PathWithFileName>
+      <PathWithFileName>c:\embkit\software\platform\AT32F415_Firmware_Library_V2.1.6\middlewares\i2c_application_library\i2c_application.c</PathWithFileName>
       <FilenameWithoutPath>i2c_application.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>

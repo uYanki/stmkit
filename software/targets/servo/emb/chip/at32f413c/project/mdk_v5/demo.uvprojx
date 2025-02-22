@@ -338,7 +338,7 @@
               <MiscControls>--diag_suppress=513,177</MiscControls>
               <Define>AT32F413CBT7,USE_STDPERIPH_DRIVER,BOARD_USER_DEFINED</Define>
               <Undefine></Undefine>
-              <IncludePath>..\..\..\..\..\..\..\platform\AT32F413_Firmware_Library_V2.1.5\libraries\drivers\inc;..\..\..\..\..\..\..\platform\AT32F413_Firmware_Library_V2.1.5\libraries\cmsis\cm4\core_support;..\..\..\..\..\..\..\platform\AT32F413_Firmware_Library_V2.1.5\libraries\cmsis\cm4\device_support;..\..\..\..\..\..\..\platform\AT32F413_Firmware_Library_V2.1.5\middlewares\i2c_application_library;..\..\..\..\..\..\..\components\typebasic;..\inc;..\..\bsp;..\..\bsp\enc;..\..\..\..\;..\..\..\..\basic;..\..\..\..\basic\alarm;..\..\..\..\basic\delay;..\..\..\..\basic\filter;..\..\..\..\axis\application;..\..\..\..\basic\database\standard;..\..\..\..\axis;..\..\..\..\axis\logicctrl;..\..\..\..\axis\motdrv;..\..\..\..\axis\pathplan;..\..\..\..\func;..\..\..\..\func\scope;..\..\..\..\func\delay;..\..\..\..\func\filter;..\..\..\..\func\alarm;..\..\..\..\func\paratbl;..\..\..\..\func\comm\modbus</IncludePath>
+              <IncludePath>c:\embkit\software\platform\AT32F413_Firmware_Library_V2.1.5\libraries\drivers\inc;c:\embkit\software\platform\AT32F413_Firmware_Library_V2.1.5\libraries\cmsis\cm4\core_support;c:\embkit\software\platform\AT32F413_Firmware_Library_V2.1.5\libraries\cmsis\cm4\device_support;c:\embkit\software\platform\AT32F413_Firmware_Library_V2.1.5\middlewares\i2c_application_library;..\..\..\..\..\..\..\components\typebasic;..\inc;..\..\bsp;..\..\bsp\enc;..\..\..\..\;..\..\..\..\basic;..\..\..\..\basic\alarm;..\..\..\..\basic\delay;..\..\..\..\basic\filter;..\..\..\..\axis\application;..\..\..\..\basic\database\standard;..\..\..\..\axis;..\..\..\..\axis\logicctrl;..\..\..\..\axis\motdrv;..\..\..\..\axis\pathplan;..\..\..\..\func;..\..\..\..\func\scope;..\..\..\..\func\delay;..\..\..\..\func\filter;..\..\..\..\func\alarm;..\..\..\..\func\paratbl;..\..\..\..\func\comm\modbus</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -410,112 +410,112 @@
             <File>
               <FileName>at32f413_acc.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\..\..\platform\AT32F413_Firmware_Library_V2.1.5\libraries\drivers\src\at32f413_acc.c</FilePath>
+              <FilePath>c:\embkit\software\platform\AT32F413_Firmware_Library_V2.1.5\libraries\drivers\src\at32f413_acc.c</FilePath>
             </File>
             <File>
               <FileName>at32f413_adc.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\..\..\platform\AT32F413_Firmware_Library_V2.1.5\libraries\drivers\src\at32f413_adc.c</FilePath>
+              <FilePath>c:\embkit\software\platform\AT32F413_Firmware_Library_V2.1.5\libraries\drivers\src\at32f413_adc.c</FilePath>
             </File>
             <File>
               <FileName>at32f413_bpr.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\..\..\platform\AT32F413_Firmware_Library_V2.1.5\libraries\drivers\src\at32f413_bpr.c</FilePath>
+              <FilePath>c:\embkit\software\platform\AT32F413_Firmware_Library_V2.1.5\libraries\drivers\src\at32f413_bpr.c</FilePath>
             </File>
             <File>
               <FileName>at32f413_can.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\..\..\platform\AT32F413_Firmware_Library_V2.1.5\libraries\drivers\src\at32f413_can.c</FilePath>
+              <FilePath>c:\embkit\software\platform\AT32F413_Firmware_Library_V2.1.5\libraries\drivers\src\at32f413_can.c</FilePath>
             </File>
             <File>
               <FileName>at32f413_crc.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\..\..\platform\AT32F413_Firmware_Library_V2.1.5\libraries\drivers\src\at32f413_crc.c</FilePath>
+              <FilePath>c:\embkit\software\platform\AT32F413_Firmware_Library_V2.1.5\libraries\drivers\src\at32f413_crc.c</FilePath>
             </File>
             <File>
               <FileName>at32f413_crm.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\..\..\platform\AT32F413_Firmware_Library_V2.1.5\libraries\drivers\src\at32f413_crm.c</FilePath>
+              <FilePath>c:\embkit\software\platform\AT32F413_Firmware_Library_V2.1.5\libraries\drivers\src\at32f413_crm.c</FilePath>
             </File>
             <File>
               <FileName>at32f413_debug.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\..\..\platform\AT32F413_Firmware_Library_V2.1.5\libraries\drivers\src\at32f413_debug.c</FilePath>
+              <FilePath>c:\embkit\software\platform\AT32F413_Firmware_Library_V2.1.5\libraries\drivers\src\at32f413_debug.c</FilePath>
             </File>
             <File>
               <FileName>at32f413_dma.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\..\..\platform\AT32F413_Firmware_Library_V2.1.5\libraries\drivers\src\at32f413_dma.c</FilePath>
+              <FilePath>c:\embkit\software\platform\AT32F413_Firmware_Library_V2.1.5\libraries\drivers\src\at32f413_dma.c</FilePath>
             </File>
             <File>
               <FileName>at32f413_exint.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\..\..\platform\AT32F413_Firmware_Library_V2.1.5\libraries\drivers\src\at32f413_exint.c</FilePath>
+              <FilePath>c:\embkit\software\platform\AT32F413_Firmware_Library_V2.1.5\libraries\drivers\src\at32f413_exint.c</FilePath>
             </File>
             <File>
               <FileName>at32f413_flash.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\..\..\platform\AT32F413_Firmware_Library_V2.1.5\libraries\drivers\src\at32f413_flash.c</FilePath>
+              <FilePath>c:\embkit\software\platform\AT32F413_Firmware_Library_V2.1.5\libraries\drivers\src\at32f413_flash.c</FilePath>
             </File>
             <File>
               <FileName>at32f413_gpio.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\..\..\platform\AT32F413_Firmware_Library_V2.1.5\libraries\drivers\src\at32f413_gpio.c</FilePath>
+              <FilePath>c:\embkit\software\platform\AT32F413_Firmware_Library_V2.1.5\libraries\drivers\src\at32f413_gpio.c</FilePath>
             </File>
             <File>
               <FileName>at32f413_i2c.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\..\..\platform\AT32F413_Firmware_Library_V2.1.5\libraries\drivers\src\at32f413_i2c.c</FilePath>
+              <FilePath>c:\embkit\software\platform\AT32F413_Firmware_Library_V2.1.5\libraries\drivers\src\at32f413_i2c.c</FilePath>
             </File>
             <File>
               <FileName>at32f413_misc.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\..\..\platform\AT32F413_Firmware_Library_V2.1.5\libraries\drivers\src\at32f413_misc.c</FilePath>
+              <FilePath>c:\embkit\software\platform\AT32F413_Firmware_Library_V2.1.5\libraries\drivers\src\at32f413_misc.c</FilePath>
             </File>
             <File>
               <FileName>at32f413_pwc.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\..\..\platform\AT32F413_Firmware_Library_V2.1.5\libraries\drivers\src\at32f413_pwc.c</FilePath>
+              <FilePath>c:\embkit\software\platform\AT32F413_Firmware_Library_V2.1.5\libraries\drivers\src\at32f413_pwc.c</FilePath>
             </File>
             <File>
               <FileName>at32f413_rtc.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\..\..\platform\AT32F413_Firmware_Library_V2.1.5\libraries\drivers\src\at32f413_rtc.c</FilePath>
+              <FilePath>c:\embkit\software\platform\AT32F413_Firmware_Library_V2.1.5\libraries\drivers\src\at32f413_rtc.c</FilePath>
             </File>
             <File>
               <FileName>at32f413_sdio.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\..\..\platform\AT32F413_Firmware_Library_V2.1.5\libraries\drivers\src\at32f413_sdio.c</FilePath>
+              <FilePath>c:\embkit\software\platform\AT32F413_Firmware_Library_V2.1.5\libraries\drivers\src\at32f413_sdio.c</FilePath>
             </File>
             <File>
               <FileName>at32f413_spi.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\..\..\platform\AT32F413_Firmware_Library_V2.1.5\libraries\drivers\src\at32f413_spi.c</FilePath>
+              <FilePath>c:\embkit\software\platform\AT32F413_Firmware_Library_V2.1.5\libraries\drivers\src\at32f413_spi.c</FilePath>
             </File>
             <File>
               <FileName>at32f413_tmr.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\..\..\platform\AT32F413_Firmware_Library_V2.1.5\libraries\drivers\src\at32f413_tmr.c</FilePath>
+              <FilePath>c:\embkit\software\platform\AT32F413_Firmware_Library_V2.1.5\libraries\drivers\src\at32f413_tmr.c</FilePath>
             </File>
             <File>
               <FileName>at32f413_usart.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\..\..\platform\AT32F413_Firmware_Library_V2.1.5\libraries\drivers\src\at32f413_usart.c</FilePath>
+              <FilePath>c:\embkit\software\platform\AT32F413_Firmware_Library_V2.1.5\libraries\drivers\src\at32f413_usart.c</FilePath>
             </File>
             <File>
               <FileName>at32f413_usb.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\..\..\platform\AT32F413_Firmware_Library_V2.1.5\libraries\drivers\src\at32f413_usb.c</FilePath>
+              <FilePath>c:\embkit\software\platform\AT32F413_Firmware_Library_V2.1.5\libraries\drivers\src\at32f413_usb.c</FilePath>
             </File>
             <File>
               <FileName>at32f413_wdt.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\..\..\platform\AT32F413_Firmware_Library_V2.1.5\libraries\drivers\src\at32f413_wdt.c</FilePath>
+              <FilePath>c:\embkit\software\platform\AT32F413_Firmware_Library_V2.1.5\libraries\drivers\src\at32f413_wdt.c</FilePath>
             </File>
             <File>
               <FileName>at32f413_wwdt.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\..\..\platform\AT32F413_Firmware_Library_V2.1.5\libraries\drivers\src\at32f413_wwdt.c</FilePath>
+              <FilePath>c:\embkit\software\platform\AT32F413_Firmware_Library_V2.1.5\libraries\drivers\src\at32f413_wwdt.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -525,12 +525,12 @@
             <File>
               <FileName>startup_at32f413.s</FileName>
               <FileType>2</FileType>
-              <FilePath>..\..\..\..\..\..\..\platform\AT32F413_Firmware_Library_V2.1.5\libraries\cmsis\cm4\device_support\startup\mdk\startup_at32f413.s</FilePath>
+              <FilePath>c:\embkit\software\platform\AT32F413_Firmware_Library_V2.1.5\libraries\cmsis\cm4\device_support\startup\mdk\startup_at32f413.s</FilePath>
             </File>
             <File>
               <FileName>system_at32f413.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\..\..\platform\AT32F413_Firmware_Library_V2.1.5\libraries\cmsis\cm4\device_support\system_at32f413.c</FilePath>
+              <FilePath>c:\embkit\software\platform\AT32F413_Firmware_Library_V2.1.5\libraries\cmsis\cm4\device_support\system_at32f413.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -761,7 +761,7 @@
             <File>
               <FileName>i2c_application.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\..\..\platform\AT32F413_Firmware_Library_V2.1.5\middlewares\i2c_application_library\i2c_application.c</FilePath>
+              <FilePath>c:\embkit\software\platform\AT32F413_Firmware_Library_V2.1.5\middlewares\i2c_application_library\i2c_application.c</FilePath>
             </File>
           </Files>
         </Group>
