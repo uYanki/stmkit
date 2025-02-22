@@ -1,8 +1,7 @@
 #include "ws2812.h"
 #include "main.h"
 
-extern TIM_HandleTypeDef htim2;
-extern DMA_HandleTypeDef hdma_tim2_ch3;
+extern SPI_HandleTypeDef hspi1;
 
 /*Some Static Colors------------------------------*/
 const rgb_t RED     = {255, 0, 0};  // 显示红色RGB数据
@@ -64,7 +63,7 @@ void Reset_Load(void)
 */
 void RGB_SendArray(void)
 {
-    HAL_TIM_PWM_Start_DMA(&htim2, TIM_CHANNEL_3, (uint32_t*)Pixel_Buf, (Pixel_NUM + 1) * 24);
+    HAL_SPI_Transmit_DMA(&hspi1, (uint8_t*) Pixel_Buf, (Pixel_NUM + 1) * 24*4);
 }
 
 /*

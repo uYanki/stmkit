@@ -3,13 +3,13 @@
 
 #include "main.h"
 
-// 重装值 89
-// 周期 800k => 1.25us
-// code_1: (58+1)/(89+1) * 1.25us = 0.82us
-// code_0: (25+1)/(89+1) * 1.25us = 0.36us
+// SPI CLK 4.5MHz
+// 1bit = 0.22us
+// code_1 (220ns~420ns L, 750ns ~ 1.6us H): 0xFC (111111 00)
+// code_0 (220ns~420ns H, 750ns ~ 1.6us L): 0xC0 (11 000000)
 
-#define CODE_1 (58)  // 1码定时器计数次数
-#define CODE_0 (25)  // 0码定时器计数次数
+#define CODE_1 (0xFC)  // 1码
+#define CODE_0 (0xC0)  // 0码
 
 typedef struct {
     uint8_t R;
