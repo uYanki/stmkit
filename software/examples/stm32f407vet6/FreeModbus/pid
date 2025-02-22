@@ -1,0 +1,94 @@
+
+#ifndef S64_MAX
+    #define S64_MAX 0x7FFFFFFFFFFFFFFF
+#endif
+
+            f32 Ts = 1;  // second
+    
+            static PID_t PosPID = {
+                .Kp  = 0.3f,
+                .Ki  = 0.1f,
+                .Kd  = 0.0f,
+                .out = 0,
+                .lo  = -S64_MAX,
+                .hi  = S64_MAX,
+    						.out =0,
+    						.fbk=0,
+            };
+    					
+         	P(MotSta.s64UserPosFb) = PosPID.out; //<----
+    
+            PosPID.Ts  = Ts;
+            PosPID.ref = P(MotSta.s64UserPosRef);
+            PosPID.fbk = P(MotSta.s64UserPosFb);
+            PID_Handler_Tustin(&PosPID);  // pulse
+    
+            static PID_t SpdPID = {
+                .Kp  = 0.2f,
+                .Ki  = 0.2f,
+                .Kd  = 0.0f,
+                .out = 0,
+                .lo  = -300,
+                .hi  = 300,
+            };
+    					
+    						P(MotSta.s16UserSpdFb)  =  SpdPID.out ; // <---------
+    
+            SpdPID.Ts  = Ts;
+            // PID.ref = P(MotSta.s16UserSpdRef);
+            SpdPID.ref = (PosPID.out - PosPID.fbk )/ Ts;
+            SpdPID.fbk = P(MotSta.s16UserSpdFb) * (s32) P(DrvCfg.u32EncRes) / 60;
+            PID_Handler_Tustin(&SpdPID);  // v = pulse/s
+
+goto exit;
+
+            static PID_t TrqPID = {
+                .Kp  = 0.1f,
+                .Ki  = 0.2f,
+                .Kd  = 0.0f,
+                .out = 0,
+                .lo  = -2000,
+                .hi  = 2000,
+            };
+    
+            f32 cur = sqrt(R(07, s16IqFb) * R(07, s16IqFb) + R(07, s16IdFb) * R(07, s16IdFb));  // I = A
+    
+            TrqPID.Ts  = Ts;
+            TrqPID.ref = ( SpdPID.fbk- SpdPID.out ) / Ts;
+            TrqPID.fbk = cur;
+            PID_Handler_Inc(&TrqPID);  // a = pulse/s^2
+    
+            static PID_t IdPID = {
+                .Kp  = 0.1f,
+                .Ki  = 0.2f,
+                .Kd  = 0.0f,
+                .out = 0,
+                .lo  = 0,
+                .hi  = 2000,
+            };
+    
+            IdPID.Ts  = Ts;
+            IdPID.ref = TrqPID.out / Ts;
+            IdPID.fbk = R(07, s16IdFb);
+            PID_Handler_Inc(&IdPID);
+    
+            R(07, u16ElecAngRef) = P(PosCtl.s32EncPos) / (f32) P(DrvCfg.u32EncRes) * 360 * P(DrvCfg.u16MotPolePairs);
+    
+            R(07, s16VdRef) = IdPID.out;
+            R(07, s16VqRef) = 0;  // lock
+    
+    					exit:
+    				 P(DbgSta.u32DbgBuf[3]) = PosPID.out;
+            P(DbgSta.u32DbgBuf[4]) = SpdPID.out;
+            P(DbgSta.u32DbgBuf[5]) = TrqPID.out;
+            P(DbgSta.u32DbgBuf[6]) = IdPID.out;
+    			
+    					P(MotSta.s64UserPosFb) = PosPID.out;
+    					P(MotSta.s16UserSpdFb)  =  SpdPID.out ;  
+    							
+        }
+
+
+
+            
+
