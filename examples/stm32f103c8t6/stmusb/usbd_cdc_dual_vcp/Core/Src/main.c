@@ -23,7 +23,7 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include <stdio.h>
-
+#include "usbd_cdc_if.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -101,7 +101,9 @@ int main(void)
 
     while (1)
     {
-			usb_printf("hello world\n");
+			vcp1_printf("vcp1: hello world\n");
+			HAL_Delay(1000);
+			vcp2_printf("vcp2: hello world\n");
 			HAL_Delay(1000);
     /* USER CODE END WHILE */
 

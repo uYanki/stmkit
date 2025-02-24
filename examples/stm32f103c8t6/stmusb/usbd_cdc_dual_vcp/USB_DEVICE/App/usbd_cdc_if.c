@@ -123,8 +123,8 @@ extern USBD_HandleTypeDef hUsbDeviceFS;
 
 static int8_t CDC_Init_FS(void);
 static int8_t CDC_DeInit_FS(void);
-static int8_t CDC_Control_FS(uint8_t cmd, uint8_t* pbuf, uint16_t length);
-static int8_t CDC_Receive_FS(uint8_t* pbuf, uint32_t *Len, uint8_t epnum);
+static int8_t CDC_Control_FS(uint8_t cmd, uint8_t* pbuf, uint16_t length, uint16_t index);
+static int8_t CDC_Receive_FS(uint8_t* pbuf, uint32_t *Len, uint16_t index);
 
 /* USER CODE BEGIN PRIVATE_FUNCTIONS_DECLARATION */
 
@@ -175,7 +175,7 @@ static int8_t CDC_DeInit_FS(void)
   * @param  length: Number of data to be sent (in bytes)
   * @retval Result of the operation: USBD_OK if all operations are OK else USBD_FAIL
   */
-static int8_t CDC_Control_FS(uint8_t cmd, uint8_t* pbuf, uint16_t length)
+static int8_t CDC_Control_FS(uint8_t cmd, uint8_t* pbuf, uint16_t length, uint16_t index)
 {
   /* USER CODE BEGIN 5 */
   switch(cmd)
@@ -256,11 +256,14 @@ static int8_t CDC_Control_FS(uint8_t cmd, uint8_t* pbuf, uint16_t length)
   * @param  Len: Number of data received (in bytes)
   * @retval Result of the operation: USBD_OK if all operations are OK else USBD_FAIL
   */
-static int8_t CDC_Receive_FS(uint8_t* Buf, uint32_t *Len, uint8_t epnum)
+static int8_t CDC_Receive_FS(uint8_t* Buf, uint32_t *Len, uint16_t index)
 {
   /* USER CODE BEGIN 6 */
   USBD_CDC_SetRxBuffer(&hUsbDeviceFS, &Buf[0]);
-  USBD_CDC_ReceivePacket(&hUsbDeviceFS, epnum);
+  USBD_CDC_ReceivePacket(&hUsbDeviceFS, index);
+#if defined(LOOPBACK_TEST) || 1
+  CDC_Transmit_FS(Buf, *Len, index);
+#endif
   return (USBD_OK);
   /* USER CODE END 6 */
 }
@@ -276,16 +279,46 @@ static int8_t CDC_Receive_FS(uint8_t* Buf, uint32_t *Len, uint8_t epnum)
   * @param  Len: Number of data to be sent (in bytes)
   * @retval USBD_OK if all operations are OK else USBD_FAIL or USBD_BUSY
   */
-uint8_t CDC_Transmit_FS(uint8_t* Buf, uint16_t Len, uint8_t epnum)
+uint8_t CDC_Transmit_FS(uint8_t* Buf, uint16_t Len, uint16_t index)
 {
   uint8_t result = USBD_OK;
   /* USER CODE BEGIN 7 */
+  int i;
+  int rest_len;
   USBD_CDC_HandleTypeDef *hcdc = (USBD_CDC_HandleTypeDef*)hUsbDeviceFS.pClassData;
+	
   if (hcdc->TxState != 0){
     return USBD_BUSY;
   }
-  USBD_CDC_SetTxBuffer(&hUsbDeviceFS, Buf, Len);
-  result = USBD_CDC_TransmitPacket(&hUsbDeviceFS, epnum);
+
+  rest_len = Len;
+  for (i = 0; result == USBD_OK && i <= Len; rest_len = Len - i) {
+    
+    if (rest_len >= USB_FS_MAX_PACKET_SIZE) {
+      USBD_CDC_SetTxBuffer(&hUsbDeviceFS, &Buf[i], USB_FS_MAX_PACKET_SIZE);
+      i += USB_FS_MAX_PACKET_SIZE;
+      do {
+        result = USBD_CDC_TransmitPacket(&hUsbDeviceFS, index);
+      } while (result == USBD_BUSY);
+
+    } else if (rest_len == 0) {
+      // It's necessary to send zero-length packet to compliance USB protocol.
+      USBD_CDC_SetTxBuffer(&hUsbDeviceFS, &Buf[0], 0);
+      do {
+        result = USBD_CDC_TransmitPacket(&hUsbDeviceFS, index);
+      } while (result == USBD_BUSY);
+      break;
+
+    } else {
+      USBD_CDC_SetTxBuffer(&hUsbDeviceFS, &Buf[i], rest_len);
+      do {
+        result = USBD_CDC_TransmitPacket(&hUsbDeviceFS, index);
+      } while (result == USBD_BUSY);
+      break;
+
+    }
+  }
+
   /* USER CODE END 7 */
   return result;
 }
@@ -295,14 +328,22 @@ uint8_t CDC_Transmit_FS(uint8_t* Buf, uint16_t Len, uint8_t epnum)
 #include <stdarg.h>
 #include "usbd_cdc_if.h"
 static uint8_t TxBuffer[APP_TX_DATA_SIZE] = {0};
-void usb_printf(const char* format, ...) {
+void vcp1_printf(const char* format, ...) {
     va_list  args;
     uint32_t length;
     va_start(args, format);
     length = vsnprintf((char*)TxBuffer, APP_TX_DATA_SIZE, (char*)format, args);
     va_end(args);
-    CDC_Transmit_FS(TxBuffer, length, CDC_IN_EP);
-	  CDC_Transmit_FS(TxBuffer, length, CDC_IN_EP2);
+    CDC_Transmit_FS(TxBuffer, length, 0);
+}
+
+void vcp2_printf(const char* format, ...) {
+    va_list  args;
+    uint32_t length;
+    va_start(args, format);
+    length = vsnprintf((char*)TxBuffer, APP_TX_DATA_SIZE, (char*)format, args);
+    va_end(args);
+    CDC_Transmit_FS(TxBuffer, length, 2);
 }
 /* USER CODE END PRIVATE_FUNCTIONS_IMPLEMENTATION */
 
