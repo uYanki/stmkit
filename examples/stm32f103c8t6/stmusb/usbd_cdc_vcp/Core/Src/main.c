@@ -101,8 +101,10 @@ int main(void)
 
     while (1)
     {
-			usb_printf("hello world\n");
-			HAL_Delay(1000);
+			printf("printf\n");
+			HAL_Delay(500);
+			usb_printf("usb_printf\n");
+			HAL_Delay(500);
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
@@ -227,7 +229,12 @@ static void MX_GPIO_Init(void)
 /* USER CODE BEGIN 4 */
 int fputc(int ch, FILE* f)
 {
+#if 0
     HAL_UART_Transmit(&huart1, (uint8_t*)&ch, 1, 0xFF);
+#else
+		while(!(CDC_Transmit_FS((uint8_t*)&ch, 1) == USBD_OK));
+	  while(!(CDC_Transmit_FS((uint8_t*)&ch, 1) == USBD_BUSY));
+#endif
     return ch;
 }
 

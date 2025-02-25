@@ -11,4 +11,8 @@
 * [ ] bootlooader 差分升级
 * [ ] lwip
   * [ ] iap
+  * [ ] ...
+* [ ] CH32
+* [ ] QT HID USB
+* [ ] usb ramdisk iap
 
