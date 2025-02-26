@@ -24,6 +24,7 @@
 /* USER CODE BEGIN Includes */
 #include <stdio.h>
 #include "usbd_hid.h"
+#include <string.h>
 
 /* USER CODE END Includes */
 
@@ -46,7 +47,7 @@
 UART_HandleTypeDef huart1;
 
 /* USER CODE BEGIN PV */
-static uint8_t            Mouse_Buffer[4] = {0, 0, 0, 0}; // button,x,y,Wheel
+static uint8_t            KeyBoard_Buffer[8] = {0};
 extern USBD_HandleTypeDef hUsbDeviceFS;
 /* USER CODE END PV */
 
@@ -61,38 +62,21 @@ static void MX_USART1_UART_Init(void);
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
 
-#define CURSOR_STEP 2
-#define ROLLER_STEP 1
-
 typedef enum {
-    BUTTON_CLICK_L   = 0,
-    BUTTON_CLICK_R   = 1,
-    BUTTON_CLICK_M   = 2,
-    BUTTON_RIGHT     = 3,
-    BUTTON_LEFT      = 4,
-    BUTTON_UP        = 5,
-    BUTTON_DOWN      = 6,
-    BUTTON_ROLL_UP   = 7,
-    BUTTON_ROLL_DOWN = 8
-} button_e;
+    KEY_A,
+    KEY_B,
+    KEY_C,
+    KEY_D,
+} key_t;
 
-uint32_t GetKeyState(button_e button)
+uint32_t GetKeyState(key_t button)
 {
     switch (button)
     {
-#if 0
-        case BUTTON_LEFT: return HAL_GPIO_ReadPin(KEY1_GPIO_Port, KEY1_Pin) == 0;
-        case BUTTON_UP: return HAL_GPIO_ReadPin(KEY2_GPIO_Port, KEY2_Pin) == 0;
-        case BUTTON_DOWN: return HAL_GPIO_ReadPin(KEY3_GPIO_Port, KEY3_Pin) == 0;
-        case BUTTON_RIGHT: return HAL_GPIO_ReadPin(KEY4_GPIO_Port, KEY4_Pin) == 0;
-#else
-        case BUTTON_ROLL_UP: return HAL_GPIO_ReadPin(KEY1_GPIO_Port, KEY1_Pin) == 0;
-        case BUTTON_ROLL_DOWN: return HAL_GPIO_ReadPin(KEY2_GPIO_Port, KEY2_Pin) == 0;
-
-        case BUTTON_CLICK_L: return HAL_GPIO_ReadPin(KEY3_GPIO_Port, KEY3_Pin) == 0;
-        case BUTTON_CLICK_R: return HAL_GPIO_ReadPin(KEY4_GPIO_Port, KEY4_Pin) == 0;
-        case BUTTON_CLICK_M: return HAL_GPIO_ReadPin(KEY0_GPIO_Port, KEY0_Pin) == 0;
-#endif
+        case KEY_A: return HAL_GPIO_ReadPin(KEY1_GPIO_Port, KEY1_Pin) == 0;
+        case KEY_B: return HAL_GPIO_ReadPin(KEY2_GPIO_Port, KEY2_Pin) == 0;
+        case KEY_C: return HAL_GPIO_ReadPin(KEY3_GPIO_Port, KEY3_Pin) == 0;
+        case KEY_D: return HAL_GPIO_ReadPin(KEY4_GPIO_Port, KEY4_Pin) == 0;
         default: return 0;
     }
 }
@@ -104,138 +88,47 @@ uint32_t GetKeyState(button_e button)
  * Output        : None.
  * Return value  : The direction value.
  */
-uint8_t JoyState(void)
+void KeyScan(void)
 {
-    uint8_t t;
-
-    for (t = 1; t < 4; t++)
-    {
-        Mouse_Buffer[t] = 0;
-    }
-
-    t = 0;  // use as flag to show if any key was pressed
+    uint8_t state = 0;
 
     /**
-     * @brief Mouse move
+     * @brief Key event
      **/
-
-    /* "right" key is pressed */
-    if (GetKeyState(BUTTON_RIGHT))
+	
+    /* "A" key is updated*/
+    if (GetKeyState(KEY_A))
     {
-        Mouse_Buffer[1] += CURSOR_STEP;
-        t |= 1;
+        KeyBoard_Buffer[2] = 0x04; // A
+        state              = 1;
     }
 
-    /* "left" key is pressed */
-    if (GetKeyState(BUTTON_LEFT))
+    /* "B" key is updated */
+    if (GetKeyState(KEY_B))
     {
-        Mouse_Buffer[1] -= CURSOR_STEP;
-        t |= 1;
+        KeyBoard_Buffer[2] = 0x1B; // X
+        state              = 1;
     }
 
-    /* "up" key is pressed */
-    if (GetKeyState(BUTTON_UP))
+    /* "C" key is updated */
+    if (GetKeyState(KEY_C))
     {
-        Mouse_Buffer[2] -= CURSOR_STEP;
-        t |= 1;
+        KeyBoard_Buffer[2] = 0x1C; // Y
+        state              = 1;
     }
 
-    /* "down" key is pressed */
-    if (GetKeyState(BUTTON_DOWN))
+    /* "D" key is updated */
+    if (GetKeyState(KEY_D))
     {
-        Mouse_Buffer[2] += CURSOR_STEP;
-        t |= 1;
+        KeyBoard_Buffer[2] = 0x1D; // Z
+        state              = 1;
     }
 
-    /**
-     * @brief Mouse Roll
-     **/
-    /* "Roll_up" key is pressed */
-    if (GetKeyState(BUTTON_ROLL_UP))
-    {
-        Mouse_Buffer[3] += ROLLER_STEP;
-        t |= 1;
-    }
-    /* "Roll_up" key is pressed */
-    if (GetKeyState(BUTTON_ROLL_DOWN))
-    {
-        Mouse_Buffer[3] -= ROLLER_STEP;
-        t |= 1;
-    }
 
-    /**
-     * @brief Mouse CLICK
-     **/
+		USBD_HID_SendReport(&hUsbDeviceFS, KeyBoard_Buffer, sizeof(KeyBoard_Buffer));
 
-    /*  "Left Click" key is pressed */
-    if (GetKeyState(BUTTON_CLICK_L))
-    {
-        if (!(Mouse_Buffer[0] & 1))
-        {
-            Mouse_Buffer[0] |= 1;
-            t |= 1;
-        }
-    }
-    else
-    {
-        if (Mouse_Buffer[0] & 1)
-        {
-            Mouse_Buffer[0] &= (~1);
-            t |= 1;
-        }
-    }
-
-    /*  "Right Click" key is pressed */
-    if (GetKeyState(BUTTON_CLICK_R))
-    {
-        if (!(Mouse_Buffer[0] & 2))
-        {
-            Mouse_Buffer[0] |= 2;
-            t |= 1;
-        }
-    }
-    else
-    {
-        if (Mouse_Buffer[0] & 2)
-        {
-            Mouse_Buffer[0] &= (~2);
-            t |= 1;
-        }
-    }
-
-    /*  "Middle Click" key is pressed */
-    if (GetKeyState(BUTTON_CLICK_M))
-    {
-        if (!(Mouse_Buffer[0] & 4))
-        {
-            Mouse_Buffer[0] |= 4;
-            t |= 1;
-        }
-    }
-    else
-    {
-        if (Mouse_Buffer[0] & 4)
-        {
-            Mouse_Buffer[0] &= (~4);
-            t |= 1;
-        }
-    }
-
-    return t;
-}
-
-/**
- * Function Name : Joystick_Send.
- * Description   : prepares buffer to be sent containing Joystick event infos.
- * Input         : Keys: keys received from terminal.
- * Output        : None.
- * Return value  : None.
- */
-void Joystick_Send(uint8_t Keys)
-{
-    printf("report %02X %02X %02X %02X\n", Mouse_Buffer[0], Mouse_Buffer[1], Mouse_Buffer[2], Mouse_Buffer[3]);
-
-    USBD_HID_SendReport(&hUsbDeviceFS, Mouse_Buffer, sizeof(Mouse_Buffer));
+	  KeyBoard_Buffer[2] = 0;
+		USBD_HID_SendReport(&hUsbDeviceFS, KeyBoard_Buffer, sizeof(KeyBoard_Buffer));
 }
 
 /* USER CODE END 0 */
@@ -279,11 +172,8 @@ int main(void)
 
     while (1)
     {
-        if (JoyState() != 0)
-        {
-            Joystick_Send(JoyState());
-            HAL_Delay(10);
-        }
+        KeyScan();
+			  HAL_Delay(10);
         /* USER CODE END WHILE */
 
         /* USER CODE BEGIN 3 */
