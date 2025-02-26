@@ -95,40 +95,41 @@ void KeyScan(void)
     /**
      * @brief Key event
      **/
-	
+
     /* "A" key is updated*/
     if (GetKeyState(KEY_A))
     {
-        KeyBoard_Buffer[2] = 0x04; // A
+        KeyBoard_Buffer[2] = 0x04;  // A
         state              = 1;
     }
 
     /* "B" key is updated */
     if (GetKeyState(KEY_B))
     {
-        KeyBoard_Buffer[2] = 0x1B; // X
+        KeyBoard_Buffer[2] = 0x1B;  // X
         state              = 1;
     }
 
     /* "C" key is updated */
     if (GetKeyState(KEY_C))
     {
-        KeyBoard_Buffer[2] = 0x1C; // Y
+        KeyBoard_Buffer[2] = 0x1C;  // Y
         state              = 1;
     }
 
     /* "D" key is updated */
     if (GetKeyState(KEY_D))
     {
-        KeyBoard_Buffer[2] = 0x1D; // Z
+        KeyBoard_Buffer[2] = 0x1D;  // Z
         state              = 1;
     }
 
+    // press
+    USBD_HID_SendReport(&hUsbDeviceFS, KeyBoard_Buffer, sizeof(KeyBoard_Buffer));
 
-		USBD_HID_SendReport(&hUsbDeviceFS, KeyBoard_Buffer, sizeof(KeyBoard_Buffer));
-
-	  KeyBoard_Buffer[2] = 0;
-		USBD_HID_SendReport(&hUsbDeviceFS, KeyBoard_Buffer, sizeof(KeyBoard_Buffer));
+    // release
+    KeyBoard_Buffer[2] = 0;
+    USBD_HID_SendReport(&hUsbDeviceFS, KeyBoard_Buffer, sizeof(KeyBoard_Buffer));
 }
 
 /* USER CODE END 0 */
@@ -173,7 +174,7 @@ int main(void)
     while (1)
     {
         KeyScan();
-			  HAL_Delay(10);
+        HAL_Delay(10);
         /* USER CODE END WHILE */
 
         /* USER CODE BEGIN 3 */

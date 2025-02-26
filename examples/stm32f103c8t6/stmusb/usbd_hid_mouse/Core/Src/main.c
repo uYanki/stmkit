@@ -46,8 +46,15 @@
 UART_HandleTypeDef huart1;
 
 /* USER CODE BEGIN PV */
-static uint8_t            Mouse_Buffer[4] = {0, 0, 0, 0}; // button,x,y,Wheel
+
+// 0: button (bit2 - middle button, bit1 - right, bit0 - left),
+// 1: x
+// 2: y
+// 3: wheel
+
+static uint8_t            Mouse_Buffer[4] = {0, 0, 0, 0};
 extern USBD_HandleTypeDef hUsbDeviceFS;
+
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
