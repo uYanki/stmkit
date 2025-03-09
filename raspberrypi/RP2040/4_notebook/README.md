@@ -59,3 +59,9 @@ gcc-arm-none-eabi-10.3-2021.10-win32.exe
 }
 ```
 
+## Note
+
+若打开 QtCreator 时报错，删除 gcc-arm-none-eabi 相关的环境变量 即可。
+
+![弹窗](.assets/README/ac8a727df65e6686f921d965517111a4.png)
+
