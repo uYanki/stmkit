@@ -1,0 +1,36 @@
+/*
+ ============================================================================
+ Name        : rot2d.c
+ Author      : <Your Name Here>
+ Version     : 1.0
+ Copyright   : MIT
+ Description : Rotate the vector
+ ============================================================================
+ */
+
+#include "ccontrol.h"
+
+int CControl_Test()
+{
+    clock_t start, end;
+    float   cpu_time_used;
+    start = clock();
+
+    /* Create vector */
+    const float x[2] = {2, -1};
+
+    /* Rotate the vector */
+    rot2d(x, PI);
+
+    /* Print */
+    print(x, 2, 1);
+
+    /* Memory leak */
+    detectmemoryleak();
+
+    end           = clock();
+    cpu_time_used = ((float)(end - start)) / CLOCKS_PER_SEC;
+    printf("\nTotal speed  was %f\n", cpu_time_used);
+
+    return EXIT_SUCCESS;
+}

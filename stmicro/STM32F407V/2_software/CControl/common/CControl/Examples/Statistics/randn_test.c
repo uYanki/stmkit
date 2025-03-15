@@ -1,0 +1,37 @@
+/*
+ ============================================================================
+ Name        : randn.c
+ Author      : Daniel Mårtensson
+ Version     : 1.0
+ Copyright   : MIT
+ Description : Compute Gaussian Distribution
+ ============================================================================
+ */
+
+#include "ccontrol.h"
+
+int CControl_Test()
+{
+    /* Start clock */
+    clock_t start, end;
+    float   cpu_time_used;
+    start = clock();
+
+    float x[1000];
+    randn(x, 1000, 10, 10);
+    float Mean = 0;
+    int   i;
+    for (i = 0; i < 1000; i++)
+    {
+        Mean += x[i];
+    }
+    Mean = Mean / 1000;
+    printf("Mean = %f\n", Mean);
+
+    /* Compute the speed */
+    end           = clock();
+    cpu_time_used = ((float)(end - start)) / CLOCKS_PER_SEC;
+    printf("\nTotal speed  was %f\n", cpu_time_used);
+
+    return EXIT_SUCCESS;
+}

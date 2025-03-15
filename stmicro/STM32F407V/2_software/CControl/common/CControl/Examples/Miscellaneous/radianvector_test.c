@@ -1,0 +1,35 @@
+/*
+ ============================================================================
+ Name        : radianvector.c
+ Author      : <Your Name Here>
+ Version     : 1.0
+ Copyright   : MIT
+ Description : Return a vector of radians between 0 and 2*PI
+ ============================================================================
+ */
+
+#include "ccontrol.h"
+
+int CControl_Test()
+{
+    clock_t start, end;
+    float   cpu_time_used;
+    start = clock();
+
+    /* Create radian vector */
+    size_t N       = 8;
+    float* radians = radianvector(N);
+    print(radians, N, 1);
+
+    /* Free */
+    free(radians);
+
+    /* Detect memory leakage */
+    detectmemoryleak();
+
+    end           = clock();
+    cpu_time_used = ((float)(end - start)) / CLOCKS_PER_SEC;
+    printf("\nTotal speed  was %f\n", cpu_time_used);
+
+    return EXIT_SUCCESS;
+}
