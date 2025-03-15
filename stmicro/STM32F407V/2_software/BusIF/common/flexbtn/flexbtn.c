@@ -8,7 +8,11 @@
 #define LOG_LOCAL_TAG   "flexbtn"
 
 #ifndef nullptr
-#define nullptr NULL
+#define nullptr (void*)0
+#endif
+
+#ifndef MIN
+#define MIN(a,b)  ((a)<(b)? (a):(b))
 #endif
 
 #ifndef ASSERT

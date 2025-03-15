@@ -1,8 +1,6 @@
-#include "sdkinc.h"
+#include "qr_encode.h"
 
 #if CONFIG_DEMOS_SW
-
-#include "qr_encode.h"
 
 #define CONFIG_QRCODE_DISPLAY_MODE QRCODE_DISPLAY_IMAGE
 
