@@ -4,6 +4,7 @@
 
 #include <string.h>
 #include "delay.h"
+#include "bittab.h"
 
 //---------------------------------------------------------------------------
 // Definitions
