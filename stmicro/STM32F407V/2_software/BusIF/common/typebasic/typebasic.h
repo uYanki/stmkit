@@ -526,7 +526,7 @@ static inline uint64_t bswap64(uint64_t x)
 
 static inline u16 le16(void* p)
 {
-    u8* _p = p;
+    u8* _p = (u8*) p;
 
     return ((u16)_p[1] << 8) |
            ((u16)_p[0] << 0);
@@ -534,7 +534,7 @@ static inline u16 le16(void* p)
 
 static inline u32 le32(void* p)
 {
-    u16* _p = p;
+    u16* _p = (u16*)p;
 
     return ((u32)le16(_p + 1) << 16) |
            ((u32)le16(_p + 0) << 0);
@@ -542,7 +542,7 @@ static inline u32 le32(void* p)
 
 static inline u64 le64(void* p)
 {
-    u32* _p = p;
+    u32* _p = (u32*)p;
 
     return ((u64)le32(_p + 1) << 32) |
            ((u64)le32(_p + 0) << 0);
@@ -550,7 +550,7 @@ static inline u64 le64(void* p)
 
 static inline u16 be16(void* p)
 {
-    u8* _p = p;
+    u8* _p = (u8*)p;
 
     return ((u16)_p[0] << 8) |
            ((u16)_p[1] << 0);
@@ -558,7 +558,7 @@ static inline u16 be16(void* p)
 
 static inline u32 be32(void* p)
 {
-    u16* _p = p;
+    u16* _p = (u16*)p;
 
     return ((u32)be16(_p + 0) << 16) |
            ((u32)be16(_p + 1) << 0);
@@ -566,7 +566,7 @@ static inline u32 be32(void* p)
 
 static inline u64 be64(void* p)
 {
-    u32* _p = p;
+    u32* _p = (u32*)p;
 
     return ((u64)be32(_p + 0) << 32) |
            ((u64)be32(_p + 1) << 0);

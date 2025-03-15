@@ -467,20 +467,20 @@ void ST7735_Test(void)
 #elif defined(BOARD_STM32F407VET6_XWS)
 
     spi_mst_t spi = {
-        .MISO = {GPIOA, GPIO_PIN_5},
-        .MOSI = {GPIOA, GPIO_PIN_5}, /*SDA*/
-        .SCLK = {GPIOA, GPIO_PIN_6}, /*SCL*/
-        .CS   = {GPIOA, GPIO_PIN_3}, /*CS*/
+        .MISO = {GPIOA, GPIO_PIN_6}, 
+        .MOSI = {GPIOA, GPIO_PIN_6}, /*SDA*/
+        .SCLK = {GPIOA, GPIO_PIN_5}, /*SCL*/
+        .CS   = {GPIOA, GPIO_PIN_4}, /*CS*/
     };
 
     spi_st7735_t st7735 = {
         .hSPI = &spi,
-        .DC   = {GPIOC, GPIO_PIN_0 }, /*DC*/
+        .DC   = {GPIOA, GPIO_PIN_0 }, /*DC*/
 #if CONFIG_ST7735_RST_CONTROL_SW
-        .RST = {GPIOA, GPIO_PIN_1 }, /*RST*/
+        .RST  = {GPIOC, GPIO_PIN_0 }, /*RST*/
 #endif
 #if CONFIG_ST7735_BL_CONTROL_SW
-        .BL = {GPIOC, GPIO_PIN_13}, /*BL*/
+        .BL   = {GPIOC, GPIO_PIN_13}, /*BL*/
 #endif
         .u16ScreenW = ST7735_WIDTH,
         .u16ScreenH = ST7735_HEIGHT,
@@ -523,7 +523,7 @@ void ST7735_Test(void)
 
 #endif
 
-    SPI_Master_Init(&spi, 1000000, SPI_DUTYCYCLE_50_50, ST7735_SPI_TIMING | SPI_FLAG_SOFT_CS);
+    SPI_Master_Init(&spi, 100000, SPI_DUTYCYCLE_50_50, ST7735_SPI_TIMING | SPI_FLAG_SOFT_CS);
 
     ST7735_Init(&st7735);
     ST7735_BackLight(&st7735, true);
