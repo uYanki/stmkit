@@ -1,28 +1,34 @@
 
 
-import pywinusb.hid as hid
-import time, copy
-
-from abc import abstractmethod
-
-# request
-IAP_CMD_EARSE    = 0x55A0
-IAP_CMD_ADDR     = 0x55A1
-IAP_CMD_DATA     = 0x55A2
-IAP_CMD_VERIFY   = 0x55A3
-IAP_CMD_JUMP_APP = 0x55A4
-IAP_CMD_SYNC     = 0x55B0
-
-IAP_ACK          = 0xFF00
-IAP_NACK         = 0x00FF
-
-
 # response state
-RESPONSE_IDLE          = 0
-RESPONSE_WAITING       = 1
+from abc import abstractmethod
+import copy
+import time
+import pywinusb.hid as hid
+
+RESPONSE_IDLE = 0
+RESPONSE_WAITING = 1
 RESPONSE_ERROR_TIMEOUT = 2
-RESPONSE_ERROR_ACK     = 3
-RESPONSE_SUCCESS       = 4
+RESPONSE_ERROR_ACK = 3
+RESPONSE_SUCCESS = 4
+
+
+IAP_EV_CONNECT = 0xA0
+IAP_EV_DISCONNECT = 0xA1
+
+IAP_CMD_GET_ID = 0xB1
+
+IAP_CMD_SHORT_READ = 0xD0
+IAP_CMD_SHORT_WRITE = 0xD1
+
+IAP_CMD_SET_MTA = 0xC0
+IAP_CMD_PROGRAM_START = 0xC1
+IAP_CMD_PROGRAM_END = 0xC2
+IAP_CMD_EARSE = 0xC3
+IAP_CMD_UPLOAD = 0xC4
+IAP_CMD_DOWNLOAD = 0xC5
+IAP_CMD_VERIFY = 0xC6
+
 
 class FrameBuffer:
     buffer = [0x00]*64
@@ -36,20 +42,20 @@ class FrameBuffer:
 
     def set_byte(self, offset, byte):
         offset += self.alloffset
-        if (offset + 1) >= len(self.buffer) :
+        if (offset + 1) >= len(self.buffer):
             raise Exception("out of memory")
-        self.buffer[offset + 0] = (byte & 0xFF) 
+        self.buffer[offset + 0] = (byte & 0xFF)
 
     def set_word_be(self, offset, word):
         offset += self.alloffset
-        if (offset + 2) >= len(self.buffer) :
+        if (offset + 2) >= len(self.buffer):
             raise Exception("out of memory")
         self.buffer[offset + 0] = (word & 0xFF00) >> 8
         self.buffer[offset + 1] = (word & 0x00FF) >> 0
 
     def set_dword_be(self, offset, dword):
         offset += self.alloffset
-        if (offset + 4) >= len(self.buffer) :
+        if (offset + 4) >= len(self.buffer):
             raise Exception("out of memory")
         self.buffer[offset + 0] = (dword & 0xFF000000) >> 24
         self.buffer[offset + 1] = (dword & 0x00FF0000) >> 16
@@ -58,30 +64,30 @@ class FrameBuffer:
 
     def copy_from(self, offset, buffer):
         offset += self.alloffset
-        if (offset + len(buffer)) >= len(self.buffer) :
-            raise Exception("out of memory")  
+        if (offset + len(buffer)) >= len(self.buffer):
+            raise Exception("out of memory")
         self.buffer[offset:offset+len(buffer)] = buffer
-        
+
     def get_byte(self, offset):
         offset += self.alloffset
-        if (offset + 1) >= len(self.buffer) :
+        if (offset + 1) >= len(self.buffer):
             raise Exception("out of memory")
-        byte = self.buffer[offset + 0] 
+        byte = self.buffer[offset + 0]
         return byte
 
     def get_word_be(self, offset):
         offset += self.alloffset
-        if (offset + 2) >= len(self.buffer) :
+        if (offset + 2) >= len(self.buffer):
             raise Exception("out of memory")
-        word  = self.buffer[offset+0] << 8
+        word = self.buffer[offset+0] << 8
         word |= self.buffer[offset+1] << 0
         return word
 
     def get_dword_be(self, offset):
         offset += self.alloffset
-        if (offset + 4) >= len(self.buffer) :
+        if (offset + 4) >= len(self.buffer):
             raise Exception("out of memory")
-        dword =  self.buffer[offset+0] << 24
+        dword = self.buffer[offset+0] << 24
         dword |= self.buffer[offset+1] << 16
         dword |= self.buffer[offset+2] << 8
         dword |= self.buffer[offset+3] << 0
@@ -96,7 +102,7 @@ class USB_Backend():
     REQUEST_HEADER_SIZE = 1
 
     def open(self, VID, PID):
-        filter = hid.HidDeviceFilter(vendor_id = VID, product_id = PID)
+        filter = hid.HidDeviceFilter(vendor_id=VID, product_id=PID)
         hid_devices = filter.get_devices()
 
         if len(hid_devices) == 0:
@@ -108,7 +114,7 @@ class USB_Backend():
         self.__output_reports = self.__device.find_output_reports()
 
         return True
-    
+
     def close(self):
         self.__device.close()
 
@@ -117,10 +123,10 @@ class USB_Backend():
         self.__output_reports[0].set_raw_data(buffer)
         self.__output_reports[0].send()
 
-
     @abstractmethod  # 虚函数
     def response_handler(self, data):
         pass
+
 
 class IAP_Comm(FrameBuffer, USB_Backend):
 
@@ -133,31 +139,41 @@ class IAP_Comm(FrameBuffer, USB_Backend):
         self.__response_state = RESPONSE_WAITING
         super().send_request(self.buffer)
 
-    # 
+    #
+
+    def start(self):
+        self.clear()
+        self.set_byte(0, IAP_CMD_PROGRAM_START)
+        self.send_request()
+
+    def stop(self):
+        self.clear()
+        self.set_word_be(0, IAP_CMD_PROGRAM_END)
+        self.send_request()
 
     def earse(self, address, length):
         self.clear()
-        self.set_word_be(0, IAP_CMD_EARSE)
-        self.set_dword_be(2, address)
-        self.set_dword_be(6, length)
+        self.set_byte(0, IAP_CMD_EARSE)
+        self.set_dword_be(1, address)
+        self.set_dword_be(5, length)
         self.send_request()
 
     def set_addr(self, address):
         self.clear()
-        self.set_word_be(0, IAP_CMD_ADDR)
-        self.set_dword_be(2, address)
+        self.set_byte(0, IAP_CMD_SET_MTA)
+        self.set_dword_be(1, address)
         self.send_request()
 
-    def data(self, data):
+    def download(self, data):
         self.clear()
 
-        self.set_word_be(0, IAP_CMD_DATA)
+        self.set_byte(0, IAP_CMD_DOWNLOAD)
 
         size = len(data)
         offset = 0
 
-        max_data_size = 63 - 2 - 2 - self.REQUEST_HEADER_SIZE 
-        self.set_word_be(2, max_data_size)
+        max_data_size = 63 - 2 - 1 - self.REQUEST_HEADER_SIZE
+        self.set_word_be(1, max_data_size)
 
         while size > max_data_size:
             self.copy_from(4, data[offset: offset + max_data_size])
@@ -165,26 +181,16 @@ class IAP_Comm(FrameBuffer, USB_Backend):
             size -= max_data_size
             offset += max_data_size
 
-        self.set_word_be(2, size)
-        self.copy_from(4, data[offset: ])
+        self.set_byte(0, size)
+        self.copy_from(4, data[offset:])
         self.send_request()
 
     def verify(self):
         self.clear()
-        self.set_word_be(0, IAP_CMD_VERIFY)
+        self.set_byte(0, IAP_CMD_VERIFY)
         self.send_request()
 
-    def jump_app(self):
-        self.clear()
-        self.set_word_be(0, IAP_CMD_JUMP_APP)
-        self.send_request()
-
-    def sync(self):
-        self.clear()
-        self.set_word_be(0, IAP_CMD_SYNC)
-        self.send_request()
-
-    def wait_response(self, timeout_ms = 1000):
+    def wait_response(self, timeout_ms=1000):
 
         while self.__response_state == RESPONSE_WAITING:
             if timeout_ms == 0:
@@ -194,7 +200,8 @@ class IAP_Comm(FrameBuffer, USB_Backend):
             timeout_ms -= 2
 
         if self.__response_state != RESPONSE_IDLE and self.__response_state != RESPONSE_SUCCESS:
-            raise Exception(f"error occurs when waiting response: {self.__response_state}")
+            raise Exception(
+                f"error occurs when waiting response: {self.__response_state}")
 
         return self.__response_state
 
@@ -203,35 +210,33 @@ class IAP_Comm(FrameBuffer, USB_Backend):
         rxframe.buffer = data
 
         rxframe.alloffset = self.REQUEST_HEADER_SIZE
-        iap_cmd = rxframe.get_word_be(0)
+        iap_cmd = rxframe.get_byte(0)
 
-        if iap_cmd in [IAP_CMD_EARSE, IAP_CMD_ADDR, IAP_CMD_JUMP_APP]:
+        # self.__response_state = RESPONSE_SUCCESS
+
+        print(data)
+
+        if iap_cmd in [IAP_CMD_EARSE, IAP_EV_CONNECT, IAP_CMD_PROGRAM_START, IAP_CMD_PROGRAM_END, IAP_CMD_SET_MTA]:
             self.__response_state = RESPONSE_SUCCESS
-        elif iap_cmd in [IAP_CMD_VERIFY]:
-            self.__response_state = RESPONSE_SUCCESS
-            rxlen = rxframe.get_dword_be(2)
-            print("len", rxlen)
-        elif iap_cmd in [IAP_CMD_SYNC]:
-            ack = rxframe.get_word_be(2)
-            if ack == IAP_ACK:
-                pass
+        # elif iap_cmd in [IAP_CMD_VERIFY]:
+        #     self.__response_state = RESPONSE_SUCCESS
+        #     rxlen = rxframe.get_dword_be(2)
+        #     print("len", rxlen)
+
 
 if __name__ == '__main__':
 
     iap = IAP_Comm()
 
-    if iap.open(0x34B7,0xFFFF) == False: # hpmicro
-    # if iap.open(0x2E3C,0xAF01) == False:  # arterytek
+    if iap.open(0x34B7, 0xFFFF) == False:  # hpmicro
+        # if iap.open(0x2E3C,0xAF01) == False:  # arterytek
         raise Exception("fail to open usb hid device")
 
     print("usb connected")
-    iap.earse(0,0)
+    iap.earse(0, 0)
     iap.wait_response()
 
     iap.data([0x11]*100*1024)
 
     iap.verify()
     iap.wait_response()
-
-
-

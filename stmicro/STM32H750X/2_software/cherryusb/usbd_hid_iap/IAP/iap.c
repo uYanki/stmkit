@@ -1,17 +1,6 @@
 #include <stdbool.h>
 #include "iap.h"
 
-typedef struct {
-    uint8_t header;
-    uint8_t packet[62];
-    uint8_t tail;
-} iap_frame_t;
-
-typedef struct {
-    uint8_t pid;  // Packet identifier
-    uint8_t data[61];
-} iap_packet_t;
-
 /**
  * @brief Event Packet
  */
@@ -26,46 +15,55 @@ typedef struct {
 #define IAP_CMD_GET_ID 0xB1
 
 //
-// read / write
+// program signal
 //
-
-// request: pid(1) + addr(4) + len(4)
-// response: pid(1) + data(n)
-#define IAP_CMD_SHORT_READ 0xD0
-// request: pid(1) + addr(4) + len(4) + data(n)
-// request: pid(1)
-#define IAP_CMD_SHORT_WRITE 0xD1
-
-//
-// block read / write
-//
-
-// request: pid(1) + addr(4)
-// response: pid(1)
-#define IAP_CMD_SET_MTA 0xC0  // Memory Transfer Address
 
 // request: pid(1)
-// response: pid(1)
+// response: success / error
 #define IAP_CMD_PROGRAM_START 0xC1
 
 // request: pid(1)
-// response: pid(1)
+// response: success / error
 #define IAP_CMD_PROGRAM_END 0xC2
 
-// request: pid(1) + len(4)
-// response: pid(1)
+//
+// program - earse
+//
+
+// request: pid(1) + addr(4) + len(4)
+// response: success / error
 #define IAP_CMD_EARSE 0xC3
 
-// request: pid(1) + len(4)
+//
+// program - read / write
+//
+
+// request: pid(1) + addr(4) + len(1)
 // response: pid(1) + data(n)
+#define IAP_CMD_SHORT_READ 0xD0
+
+// request: pid(1) + addr(4) + len(1) + data(n)
+// response: success / error
+#define IAP_CMD_SHORT_WRITE 0xD1
+
+//
+// program - block read / write
+//
+
+// request: pid(1) + addr(4)
+// response: success / error
+#define IAP_CMD_SET_MTA 0xC0  // Memory Transfer Address
+
+// request: pid(1) + len(2)
+// response: pid(1) + len(2) + data(n)
 #define IAP_CMD_UPLOAD 0xC4
 
-// request: pid(1) + len(4) + data(n)
+// request: pid(1) + len(2) + data(n)
 // response: none
 #define IAP_CMD_DOWNLOAD 0xC5
 
 // request: pid(1) + crc16(2)
-// response: pid(1) + result(1)
+// response: success / error
 #define IAP_CMD_VERIFY 0xC6
 
 /**
@@ -101,6 +99,15 @@ uint16_t ModbusCRC16(uint8_t* pucFrame, uint16_t usLen)
     return ucCRCHi << 8 | ucCRCLo;
 }
 
+uint8_t be8(uint8_t* ptr)
+{
+    uint8_t res;
+
+    res = ptr[0];
+
+    return res;
+}
+
 uint16_t be16(uint8_t* ptr)
 {
     uint16_t res;
@@ -123,23 +130,51 @@ uint32_t be32(uint8_t* ptr)
     return res;
 }
 
-void iap_response(uint8_t pid)
+#if 0
+
+uint16_t read_be16(uint8_t* p)
 {
+    return (p[0] << 8) | p[1];
 }
+
+uint32_t read_be32(uint8_t* p)
+{
+    return (p[0] << 24) | (p[1] << 16) | (p[2] << 8) | p[3];
+}
+
+void write_be16(uint8_t* p, uint16_t word)
+{
+    p[0] = (word & 0xFF00) >> 8;
+    p[1] = (word & 0x00FF) >> 0;
+}
+
+void write_be32(uint8_t* p, uint32_t dword)
+{
+    p[0] = (dword & 0xFF000000) >> 24;
+    p[1] = (dword & 0x00FF0000) >> 16;
+    p[2] = (dword & 0x0000FF00) >> 8;
+    p[3] = (dword & 0x000000FF) >> 0;
+}
+
+#endif
 
 void iap_response_error(iap_packet_t* response, uint8_t err)
 {
     response->pid     = IAP_ERR;
     response->data[0] = err;
+
+    iap_response(response);
 }
 
 void iap_response_success(iap_packet_t* response)
 {
     response->pid     = IAP_ERR;
     response->data[0] = 0;
+
+    iap_response(response);
 }
 
-void iap_cmd_exec(iap_packet_t* request, iap_packet_t* response)
+void iap_exec(iap_packet_t* request, iap_packet_t* response)
 {
     uint32_t addr, len;
     uint16_t crc16;
@@ -148,6 +183,7 @@ void iap_cmd_exec(iap_packet_t* request, iap_packet_t* response)
     {
         case IAP_EV_CONNECT:
         {
+            iap_response(response);
             break;
         }
         case IAP_EV_DISCONNECT:
@@ -167,29 +203,47 @@ void iap_cmd_exec(iap_packet_t* request, iap_packet_t* response)
         case IAP_CMD_PROGRAM_START:
         {
             flashif.unlock();
+
+            iap_response_success(response);
+
             break;
         }
         case IAP_CMD_PROGRAM_END:
         {
             flashif.lock();
+
+            iap_response_success(response);
+
             break;
         }
         case IAP_CMD_EARSE:
         {
-            len = be32(&request->data[0]);
-            flashif.earse(current_programmed_address, len);
+            addr = be32(&request->data[0]);  // 4
+            len  = be32(&request->data[4]);  // 4
+
+            flashif.earse(addr, len);
+
+            iap_response_success(response);
+
             break;
         }
         case IAP_CMD_UPLOAD:
         {
-            len = be32(&request->data[0]);
-            flashif.read(addr, len, &request->data[4]);
+            len = be16(&request->data[0]);  // 2
+
+            response->pid = IAP_CMD_SHORT_READ;
+            memcpy(&response->data[0], &request->data[0], 4);
+            flashif.read(addr, len, &response->data[4]);
             current_programmed_length += len;
+
+            iap_response(response);
+
             break;
         }
         case IAP_CMD_DOWNLOAD:
         {
-            len = be32(&request->data[0]);
+            len = be16(&request->data[0]);  // 2
+
             flashif.write(current_programmed_address, len, &request->data[4]);
             current_programmed_length += len;
             break;
@@ -214,22 +268,33 @@ void iap_cmd_exec(iap_packet_t* request, iap_packet_t* response)
         }
         case IAP_CMD_SHORT_READ:
         {
-            addr = be32(&request->data[0]);
-            len  = be32(&request->data[4]);
-            flashif.read(addr, len, &request->data[8]);
+            addr = be32(&request->data[0]);  // 4
+            len  = be8(&request->data[4]);   // 1
+
+            response->pid     = IAP_CMD_SHORT_READ;
+            response->data[0] = len;                      // 1
+            flashif.read(addr, len, &response->data[1]);  // n
+
+            iap_response(response);
+
             break;
         }
         case IAP_CMD_SHORT_WRITE:
         {
-            addr = be32(&request->data[0]);
-            len  = be32(&request->data[4]);
+            addr = be32(&request->data[0]);  // 4
+            len  = be8(&request->data[4]);   // 1
+
             flashif.earse(addr, len);
-            flashif.write(addr, len, &request->data[8]);
+            flashif.write(addr, len, &request->data[5]);  // n
+
+            iap_response_success(response);
 
             break;
         }
     }
 }
+
+#if 0
 
 void iap_init()
 {
@@ -289,6 +354,8 @@ bool iap_verify()
 {
     return false;
 }
+
+#endif
 
 #if 0
 

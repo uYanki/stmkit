@@ -22,6 +22,7 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include <stdio.h>
+#include "flash_if.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -41,6 +42,8 @@
 
 /* Private variables ---------------------------------------------------------*/
 
+QSPI_HandleTypeDef hqspi;
+
 UART_HandleTypeDef huart1;
 
 PCD_HandleTypeDef hpcd_USB_OTG_FS;
@@ -55,6 +58,7 @@ static void MPU_Config(void);
 static void MX_GPIO_Init(void);
 static void MX_USB_OTG_FS_PCD_Init(void);
 static void MX_USART1_UART_Init(void);
+static void MX_QUADSPI_Init(void);
 /* USER CODE BEGIN PFP */
 
 void usb_dc_low_level_init(void)
@@ -69,7 +73,7 @@ void usb_dc_low_level_deinit(void)
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
-	
+
 #include "partition.h"
 #include "iap.h"
 
@@ -112,27 +116,14 @@ int main(void)
     /* Initialize all configured peripherals */
     MX_GPIO_Init();
     MX_USART1_UART_Init();
+    MX_QUADSPI_Init();
     /* USER CODE BEGIN 2 */
-		
-    hid_custom_init(0, USB_OTG_FS_PERIPH_BASE);
-		
-		iap_mode_e iap_mode = IAP_NONE;
 
-    iap_init();
-
-//    iap_mode = iap_detect();
-
-//    if (iap_mode != IAP_NONE)
-//    {
-//       // iap_cycle(iap_mode);
-//    }
-
-//    if (iap_verify() == true)
-//    {
-//        iap_goto_app();
-//    }
-
-		
+			if (flashif.init())
+			{
+					hid_custom_init(0, USB_OTG_FS_PERIPH_BASE);
+			}
+				
     /* USER CODE END 2 */
 
     /* Infinite loop */
@@ -206,6 +197,39 @@ void SystemClock_Config(void)
     {
         Error_Handler();
     }
+}
+
+/**
+ * @brief QUADSPI Initialization Function
+ * @param None
+ * @retval None
+ */
+static void MX_QUADSPI_Init(void)
+{
+    /* USER CODE BEGIN QUADSPI_Init 0 */
+
+    /* USER CODE END QUADSPI_Init 0 */
+
+    /* USER CODE BEGIN QUADSPI_Init 1 */
+
+    /* USER CODE END QUADSPI_Init 1 */
+    /* QUADSPI parameter configuration*/
+    hqspi.Instance                = QUADSPI;
+    hqspi.Init.ClockPrescaler     = 1;
+    hqspi.Init.FifoThreshold      = 4;
+    hqspi.Init.SampleShifting     = QSPI_SAMPLE_SHIFTING_HALFCYCLE;
+    hqspi.Init.FlashSize          = 22;
+    hqspi.Init.ChipSelectHighTime = QSPI_CS_HIGH_TIME_4_CYCLE;
+    hqspi.Init.ClockMode          = QSPI_CLOCK_MODE_0;
+    hqspi.Init.FlashID            = QSPI_FLASH_ID_1;
+    hqspi.Init.DualFlash          = QSPI_DUALFLASH_DISABLE;
+    if (HAL_QSPI_Init(&hqspi) != HAL_OK)
+    {
+        Error_Handler();
+    }
+    /* USER CODE BEGIN QUADSPI_Init 2 */
+
+    /* USER CODE END QUADSPI_Init 2 */
 }
 
 /**
@@ -300,10 +324,11 @@ static void MX_GPIO_Init(void)
     /* USER CODE END MX_GPIO_Init_1 */
 
     /* GPIO Ports Clock Enable */
-    __HAL_RCC_GPIOA_CLK_ENABLE();
-    __HAL_RCC_GPIOB_CLK_ENABLE();
     __HAL_RCC_GPIOC_CLK_ENABLE();
+    __HAL_RCC_GPIOB_CLK_ENABLE();
+    __HAL_RCC_GPIOA_CLK_ENABLE();
     __HAL_RCC_GPIOH_CLK_ENABLE();
+    __HAL_RCC_GPIOF_CLK_ENABLE();
 
     /*Configure GPIO pin Output Level */
     HAL_GPIO_WritePin(LED_GPIO_Port, LED_Pin, GPIO_PIN_RESET);

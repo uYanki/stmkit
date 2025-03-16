@@ -1,41 +1,5 @@
-/*
- * Copyright (c) 2022 HPMicro
- *
- * SPDX-License-Identifier: BSD-3-Clause
- *
- */
-
 #include "usbd_core.h"
 #include "usbd_hid.h"
-
-// extern IAP_InfoType IAP_Info;
-
-// request: report_id(1) + cmd(2) + addr(4) + len(4)
-// response: report_id(1) + cmd(2) + state(2)
-#define IAP_CMD_EARSE 0x55A0
-
-// request: report_id(1) + cmd(2) + addr(4)
-// response: report_id(1) + cmd(2)
-#define IAP_CMD_ADDR 0x55A1
-
-// request: report_id(1) + cmd(2) + len(2) + data(n)
-// response: report_id(1) + cmd(2)
-#define IAP_CMD_DATA 0x55A2
-
-// request: report_id(1) + cmd(2) + crc16(2)
-// response: report_id(1) + cmd(2) + state(2)
-#define IAP_CMD_VERIFY 0x55A3
-
-// request: report_id(1) + cmd(2)
-// response: report_id(1) + cmd(2)
-#define IAP_CMD_JUMP_APP 0x55A4
-
-// request: report_id(1) + cmd(2)
-// response: report_id(1) + cmd(2)
-#define IAP_CMD_SYNC 0x55B0
-
-#define IAP_ACK      0xFF00
-#define IAP_NACK     0x00FF
 
 #if 0
 #define USBD_VID 0x2E3C /* AT32 VID */
@@ -57,7 +21,7 @@
 #define HIDRAW_OUT_EP_MPS_FS   64
 #define HIDRAW_OUT_EP_INTERVAL 10
 
-#define USBD_MAX_POWER 100
+#define USBD_MAX_POWER         100
 
 /*!< hid report counter */
 #define HID_REPORT_CNT 64
@@ -372,91 +336,13 @@ static void usbd_hid_custom_in_callback(uint8_t busid, uint8_t ep, uint32_t nbyt
     custom_state = HID_STATE_IDLE;
 }
 
-uint16_t read_be16(uint8_t* p)
+#include "iap.h"
+
+void iap_response(iap_packet_t* response)
 {
-    return (p[0] << 8) | p[1];
-}
-
-uint32_t read_be32(uint8_t* p)
-{
-    return (p[0] << 24) | (p[1] << 16) | (p[2] << 8) | p[3];
-}
-
-void write_be16(uint8_t* p, uint16_t word)
-{
-    p[0] = (word & 0xFF00) >> 8;
-    p[1] = (word & 0x00FF) >> 0;
-}
-
-void write_be32(uint8_t* p, uint32_t dword)
-{
-    p[0] = (dword & 0xFF000000) >> 24;
-    p[1] = (dword & 0x00FF0000) >> 16;
-    p[2] = (dword & 0x0000FF00) >> 8;
-    p[3] = (dword & 0x000000FF) >> 0;
-}
-
-void iap_response()
-{
-    uint8_t busid = 0;
-
-    read_buffer[0] = 0x02; /* IN: report id */
-    usbd_ep_start_write(busid, HIDRAW_IN_EP, read_buffer, HID_REPORT_CNT);
-}
-
-uint32_t start_address  = 0;
-uint32_t program_length = 0;
-
-// #include "hpm_platform.h"
-
-void cmd_cbk(uint8_t* buff, uint16_t len)
-{
-    uint16_t iap_cmd = read_be16(&buff[0]);
-
-    static uint32_t length = 0;
-
-    memset(&buff[0], 0x00, HID_REPORT_CNT);
-    write_be16(&buff[0], iap_cmd);
-
-    switch (iap_cmd)
-    {
-        case IAP_CMD_EARSE:
-        {
-            uint32_t address = read_be32(&buff[2]);
-            uint32_t length  = read_be32(&buff[6]);
-
-            iap_response();
-            break;
-        }
-        case IAP_CMD_ADDR:
-        {
-            start_address = read_be32(&buff[2]);
-            iap_response();
-            break;
-        }
-        case IAP_CMD_DATA:
-        {
-            program_length += read_be16(&buff[2]);
-            break;
-        }
-        case IAP_CMD_VERIFY:
-        {
-            write_be32(&buff[2], program_length);
-            printf("len=%d\n", program_length);
-            iap_response();
-            break;
-        }
-        case IAP_CMD_JUMP_APP:
-        {
-            break;
-        }
-        case IAP_CMD_SYNC:
-        {
-            write_be16(&buff[2], IAP_ACK);
-            iap_response();
-            break;
-        }
-    }
+    uint8_t busid  = 0;
+    send_buffer[0] = 0x02; /* IN: report id */
+    usbd_ep_start_write(busid, HIDRAW_IN_EP, send_buffer, HID_REPORT_CNT);
 }
 
 static void usbd_hid_custom_out_callback(uint8_t busid, uint8_t ep, uint32_t nbytes)
@@ -465,7 +351,7 @@ static void usbd_hid_custom_out_callback(uint8_t busid, uint8_t ep, uint32_t nby
 
     if (nbytes > 2)  // minsize = REPORT_ID + IAP_CMD
     {
-        cmd_cbk(&read_buffer[0], nbytes);
+        iap_exec((iap_packet_t*)&read_buffer[1], (iap_packet_t*)&send_buffer[1]);
     }
 }
 

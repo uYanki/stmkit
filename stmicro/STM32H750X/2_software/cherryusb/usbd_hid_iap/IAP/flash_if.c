@@ -1,6 +1,6 @@
 #include "flash_if.h"
 
-#include "stm32h7xx_hal.h"
+#if 0
 
 #define ADDR_FLASH_SECTOR_0_BANK1 (FLASH_BANK1_BASE)
 #define ADDR_FLASH_SECTOR_1_BANK1 (ADDR_FLASH_SECTOR_0_BANK1 + 0x2000)  // 8KB
@@ -65,8 +65,6 @@ static bool flash_read(uint32_t address, uint32_t length, uint8_t* buffer)
     return false;
 }
 
-#include "stm32h7xx_hal_flash.h"
-
 static bool flash_write(uint32_t address, uint32_t length, uint8_t* buffer)
 {
     while (length > 0)
@@ -122,6 +120,56 @@ static bool flash_earse(uint32_t address, uint32_t length)
 
     return HAL_FLASHEx_Erase(&FlashEarse, &SectorError) == HAL_OK;
 }
+
+#else
+
+#include "sfud.h"
+
+static bool flash_init()
+{
+    if (sfud_init() == SFUD_SUCCESS)
+    {
+        /* enable qspi fast read mode, set four data lines width */
+        sfud_qspi_fast_read_enable(sfud_get_device(SFUD_W25Q64_DEVICE_INDEX), 4);
+
+        return true;
+    }
+
+    return false;
+}
+
+static bool flash_lock()
+{
+    return true;
+}
+
+static bool flash_unlock()
+{
+    return true;
+}
+
+static bool flash_read(uint32_t address, uint32_t length, uint8_t* buffer)
+{
+    sfud_flash* flash = sfud_get_device(SFUD_W25Q64_DEVICE_INDEX);
+
+    return sfud_read(flash, address, length, buffer) == SFUD_SUCCESS;
+}
+
+static bool flash_write(uint32_t address, uint32_t length, uint8_t* buffer)
+{
+    sfud_flash* flash = sfud_get_device(SFUD_W25Q64_DEVICE_INDEX);
+
+    return sfud_write(flash, address, length, buffer) == SFUD_SUCCESS;
+}
+
+static bool flash_earse(uint32_t address, uint32_t length)
+{
+    sfud_flash* flash = sfud_get_device(SFUD_W25Q64_DEVICE_INDEX);
+
+    return sfud_erase(flash, address, length) == SFUD_SUCCESS;
+}
+
+#endif
 
 flash_if_t flashif = {
     .init   = flash_init,
