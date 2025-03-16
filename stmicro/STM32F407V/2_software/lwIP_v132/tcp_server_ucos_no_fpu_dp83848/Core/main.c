@@ -10,9 +10,9 @@ OS_STK Stk_TaskStartUp[TASK_STARTUP_STK_SIZE];
 OS_STK Stk_Task_LED[TASK_TEST_LED_STK_SIZE];
 OS_STK Stk_Task_TCP_Server[TASK_TCP_SERVER_STK_SIZE];
 
- void Task_StartUp(void* pdata);
- void Task_LED(void* pdata);
- void Task_TCP_Server(void* pdata);
+void Task_StartUp(void* pdata);
+void Task_LED(void* pdata);
+void Task_TCP_Server(void* pdata);
 
 int main(void)
 {
@@ -31,7 +31,7 @@ int main(void)
 
     // 启动UCOS-II内核
     OSStart();
-								 
+
     return 0;
 }
 
@@ -39,7 +39,7 @@ void Task_StartUp(void* pdata)
 {
     // 初始化UCOS时钟
     // OS_TICKS_PER_SEC 为 UCOS-II 每秒嘀嗒数
-    SysTick_Config(SystemCoreClock / OS_TICKS_PER_SEC - 1);
+    SysTick_Config(SystemCoreClock / OS_TICKS_PER_SEC);
 
     // 优先级说明，使用OS_USER_PRIO_GET(n)宏来获取
     // OS_USER_PRIO_GET(0)最高,OS_USER_PRIO_GET(1)次之，依次类推
@@ -50,12 +50,12 @@ void Task_StartUp(void* pdata)
 
     while (1)
     {
-       OSTimeDlyHMSM(0, 0, 1, 0);  // 1000ms
+        OSTimeDlyHMSM(0, 0, 1, 0);  // 1000ms
     }
 }
 
 // LED闪烁任务
- void Task_LED(void* pdata)
+void Task_LED(void* pdata)
 {
     while (1)
     {
@@ -65,7 +65,7 @@ void Task_StartUp(void* pdata)
 }
 
 // TCP 服务器收发任务
- void Task_TCP_Server(void* pdata)
+void Task_TCP_Server(void* pdata)
 {
     __IO uint32_t LocalTime = 0; /* this variable is used to create a time reference incremented by 10ms */
 

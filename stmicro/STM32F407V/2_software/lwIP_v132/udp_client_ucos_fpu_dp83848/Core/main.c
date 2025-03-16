@@ -2,17 +2,17 @@
 
 static void NVIC_Configuration(void);
 
-#define TASK_STARTUP_STK_SIZE    4000
-#define TASK_TEST_LED_STK_SIZE   4000
-#define TASK_TCP_SERVER_STK_SIZE 4000
+#define TASK_STARTUP_STK_SIZE    400
+#define TASK_TEST_LED_STK_SIZE   400
+#define TASK_UDP_CLIENT_STK_SIZE 4000
 
 OS_STK Stk_TaskStartUp[TASK_STARTUP_STK_SIZE];
 OS_STK Stk_Task_LED[TASK_TEST_LED_STK_SIZE];
-OS_STK Stk_Task_TCP_Server[TASK_TCP_SERVER_STK_SIZE];
+OS_STK Stk_Task_UDP_Client[TASK_UDP_CLIENT_STK_SIZE];
 
 void Task_StartUp(void* pdata);
 void Task_LED(void* pdata);
-void Task_TCP_Server(void* pdata);
+void Task_UDP_Client(void* pdata);
 
 int main(void)
 {
@@ -45,7 +45,7 @@ void Task_StartUp(void* pdata)
     // OS_USER_PRIO_GET(0)最高,OS_USER_PRIO_GET(1)次之，依次类推
     // OS_USER_PRIO_GET(0)：最高的优先级，主要用于在处理紧急事务，需要将优先处理的任务设置为最高这个优先级
 
-    OSTaskCreate(Task_TCP_Server, (void*)0, &Stk_Task_TCP_Server[TASK_TCP_SERVER_STK_SIZE - 1], OS_USER_PRIO_GET(5));
+    OSTaskCreate(Task_UDP_Client, (void*)0, &Stk_Task_UDP_Client[TASK_UDP_CLIENT_STK_SIZE - 1], OS_USER_PRIO_GET(5));
     OSTaskCreate(Task_LED, (void*)0, &Stk_Task_LED[TASK_TEST_LED_STK_SIZE - 1], OS_USER_PRIO_GET(6));
 
     while (1)
@@ -63,9 +63,8 @@ void Task_LED(void* pdata)
         GPIO_ToggleBits(LED1);
     }
 }
-
-// TCP 服务器收发任务
-void Task_TCP_Server(void* pdata)
+// UDP服务器收发任务
+void Task_UDP_Client(void* pdata)
 {
     __IO uint32_t LocalTime = 0; /* this variable is used to create a time reference incremented by 10ms */
 
@@ -73,14 +72,14 @@ void Task_TCP_Server(void* pdata)
     ETH_BSP_Config();
     LwIP_Init();
 
-    /* TCP_server Init */
-    tcp_server_init();
-
+    /* UDP_client Init */
+    UDP_client_init();
     while (1)
     {
-        LocalTime += 2;
+        udp_send(udp_pcb, udp_p);  // 发送数据
+        LocalTime += 10;
         LwIP_Periodic_Handle(LocalTime);
-        OSTimeDlyHMSM(0, 0, 0, 5);  // 挂起5ms，以便其他线程运行
+        OSTimeDlyHMSM(0, 0, 0, 10);  // 挂起10ms，以便其他线程运行
     }
 }
 

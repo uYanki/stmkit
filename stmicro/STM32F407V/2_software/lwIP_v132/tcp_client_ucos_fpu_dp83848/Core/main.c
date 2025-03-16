@@ -2,17 +2,17 @@
 
 static void NVIC_Configuration(void);
 
-#define TASK_STARTUP_STK_SIZE    4000
-#define TASK_TEST_LED_STK_SIZE   4000
-#define TASK_TCP_SERVER_STK_SIZE 4000
+#define TASK_STARTUP_STK_SIZE    400
+#define TASK_TEST_LED_STK_SIZE   400
+#define TASK_TCP_CLIENT_STK_SIZE 4000
 
 OS_STK Stk_TaskStartUp[TASK_STARTUP_STK_SIZE];
 OS_STK Stk_Task_LED[TASK_TEST_LED_STK_SIZE];
-OS_STK Stk_Task_TCP_Server[TASK_TCP_SERVER_STK_SIZE];
+OS_STK Stk_Task_TCP_Client[TASK_TCP_CLIENT_STK_SIZE];
 
 void Task_StartUp(void* pdata);
 void Task_LED(void* pdata);
-void Task_TCP_Server(void* pdata);
+void Task_TCP_Client(void* pdata);
 
 int main(void)
 {
@@ -45,7 +45,7 @@ void Task_StartUp(void* pdata)
     // OS_USER_PRIO_GET(0)最高,OS_USER_PRIO_GET(1)次之，依次类推
     // OS_USER_PRIO_GET(0)：最高的优先级，主要用于在处理紧急事务，需要将优先处理的任务设置为最高这个优先级
 
-    OSTaskCreate(Task_TCP_Server, (void*)0, &Stk_Task_TCP_Server[TASK_TCP_SERVER_STK_SIZE - 1], OS_USER_PRIO_GET(5));
+    OSTaskCreate(Task_TCP_Client, (void*)0, &Stk_Task_TCP_Client[TASK_TCP_CLIENT_STK_SIZE - 1], OS_USER_PRIO_GET(5));
     OSTaskCreate(Task_LED, (void*)0, &Stk_Task_LED[TASK_TEST_LED_STK_SIZE - 1], OS_USER_PRIO_GET(6));
 
     while (1)
@@ -64,23 +64,35 @@ void Task_LED(void* pdata)
     }
 }
 
-// TCP 服务器收发任务
-void Task_TCP_Server(void* pdata)
+// tcp客户端收发任务
+void Task_TCP_Client(void* pdata)
 {
-    __IO uint32_t LocalTime = 0; /* this variable is used to create a time reference incremented by 10ms */
+    __IO uint32_t   LocalTime  = 0; /* this variable is used to create a time reference incremented by 10ms */
+    unsigned char   tcp_data[] = "tcp client !\r\n";
+    struct tcp_pcb* pcb;
 
     /* configure ethernet (GPIOs, clocks, MAC, DMA) */
     ETH_BSP_Config();
     LwIP_Init();
 
-    /* TCP_server Init */
-    tcp_server_init();
+    /* TCP_Client Init */
+    TCP_Client_Init(TCP_LOCAL_PORT, TCP_SERVER_PORT, TCP_SERVER_IP);
 
     while (1)
     {
-        LocalTime += 2;
+        pcb = Check_TCP_Connect();
+
+        if (pcb != 0)
+        {
+            // 主动向服务器发送函数
+            TCP_Client_Send_Data(pcb, tcp_data, sizeof(tcp_data));
+        }
+
+        LocalTime += 100;
         LwIP_Periodic_Handle(LocalTime);
-        OSTimeDlyHMSM(0, 0, 0, 5);  // 挂起5ms，以便其他线程运行
+
+        // 挂起100ms，以便其他线程运行
+        OSTimeDlyHMSM(0, 0, 0, 100);
     }
 }
 
