@@ -108,6 +108,8 @@ static sfud_err spi_write_read(const sfud_spi* spi, const uint8_t* write_buf, si
     return result;
 }
 
+#ifdef SFUD_USING_QSPI
+
 /**
  * QSPI fast read data
  */
@@ -195,6 +197,8 @@ static sfud_err qspi_read(const struct __sfud_spi* spi, uint32_t addr, sfud_qspi
     return result;
 }
 
+#endif
+
 /* about 100 microsecond delay */
 static void retry_delay_100us(void)
 {
@@ -212,7 +216,9 @@ sfud_err sfud_spi_port_init(sfud_flash* flash)
         {
             /* set the interfaces and data */
             flash->spi.wr        = spi_write_read;
+#ifdef SFUD_USING_QSPI
             flash->spi.qspi_read = qspi_read;
+#endif
             flash->spi.lock      = spi_lock;
             flash->spi.unlock    = spi_unlock;
             flash->spi.user_data = &spi1;

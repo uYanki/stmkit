@@ -198,6 +198,9 @@ void iap_exec(iap_packet_t* request, iap_packet_t* response)
         {
             current_programmed_address = be32(&request->data[0]);
             current_programmed_length  = 0;
+
+            iap_response_success(response);
+
             break;
         }
         case IAP_CMD_PROGRAM_START:
@@ -232,8 +235,8 @@ void iap_exec(iap_packet_t* request, iap_packet_t* response)
             len = be16(&request->data[0]);  // 2
 
             response->pid = IAP_CMD_SHORT_READ;
-            memcpy(&response->data[0], &request->data[0], 4);
-            flashif.read(addr, len, &response->data[4]);
+            memcpy(&response->data[0], &request->data[0], 2);
+            flashif.read(current_programmed_address, len, &response->data[2]);
             current_programmed_length += len;
 
             iap_response(response);
@@ -244,8 +247,10 @@ void iap_exec(iap_packet_t* request, iap_packet_t* response)
         {
             len = be16(&request->data[0]);  // 2
 
-            flashif.write(current_programmed_address, len, &request->data[4]);
+            flashif.write(current_programmed_address, len, &request->data[2]);
             current_programmed_length += len;
+            current_programmed_address += len;
+
             break;
         }
         case IAP_CMD_VERIFY:
@@ -275,7 +280,7 @@ void iap_exec(iap_packet_t* request, iap_packet_t* response)
             response->data[0] = len;                      // 1
             flashif.read(addr, len, &response->data[1]);  // n
 
-            iap_response(response);
+            iap_response(request);
 
             break;
         }

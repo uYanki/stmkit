@@ -129,8 +129,7 @@ static bool flash_init()
 {
     if (sfud_init() == SFUD_SUCCESS)
     {
-        /* enable qspi fast read mode, set four data lines width */
-        sfud_qspi_fast_read_enable(sfud_get_device(SFUD_W25Q64_DEVICE_INDEX), 4);
+        sfud_flash* flash = sfud_get_device(SFUD_W25Q64_DEVICE_INDEX);
 
         return true;
     }

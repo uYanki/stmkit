@@ -11,6 +11,8 @@
 // #include "FreeRTOS.h"
 // #include "task.h"
 
+// #define CONFIG_USBDEV_ADVANCE_DESC 1
+
 #define CONFIG_USB_PRINTF(...) printf(__VA_ARGS__)
 
 #define usb_malloc(size)       pvPortMalloc(size)

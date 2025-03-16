@@ -1,8 +1,8 @@
 
+# -*- coding: utf-8 -*-
 
 # response state
 from abc import abstractmethod
-import copy
 import time
 import pywinusb.hid as hid
 
@@ -12,9 +12,9 @@ RESPONSE_ERROR_TIMEOUT = 2
 RESPONSE_ERROR_ACK = 3
 RESPONSE_SUCCESS = 4
 
-
 IAP_EV_CONNECT = 0xA0
 IAP_EV_DISCONNECT = 0xA1
+# IAP_EV_HEARTBEAT = 0xA2
 
 IAP_CMD_GET_ID = 0xB1
 
@@ -29,12 +29,15 @@ IAP_CMD_UPLOAD = 0xC4
 IAP_CMD_DOWNLOAD = 0xC5
 IAP_CMD_VERIFY = 0xC6
 
+IAP_OK = 0xFF
+IAP_ERR = 0xFF
+
 
 class FrameBuffer:
     buffer = [0x00]*64
     alloffset = 0
 
-    def __init__(self) -> None:
+    def __init__(self):
         self.clear()
 
     def clear(self):
@@ -42,20 +45,20 @@ class FrameBuffer:
 
     def set_byte(self, offset, byte):
         offset += self.alloffset
-        if (offset + 1) >= len(self.buffer):
+        if (offset + 1) > len(self.buffer):
             raise Exception("out of memory")
         self.buffer[offset + 0] = (byte & 0xFF)
 
     def set_word_be(self, offset, word):
         offset += self.alloffset
-        if (offset + 2) >= len(self.buffer):
+        if (offset + 2) > len(self.buffer):
             raise Exception("out of memory")
         self.buffer[offset + 0] = (word & 0xFF00) >> 8
         self.buffer[offset + 1] = (word & 0x00FF) >> 0
 
     def set_dword_be(self, offset, dword):
         offset += self.alloffset
-        if (offset + 4) >= len(self.buffer):
+        if (offset + 4) > len(self.buffer):
             raise Exception("out of memory")
         self.buffer[offset + 0] = (dword & 0xFF000000) >> 24
         self.buffer[offset + 1] = (dword & 0x00FF0000) >> 16
@@ -64,20 +67,20 @@ class FrameBuffer:
 
     def copy_from(self, offset, buffer):
         offset += self.alloffset
-        if (offset + len(buffer)) >= len(self.buffer):
+        if (offset + len(buffer)) > len(self.buffer):
             raise Exception("out of memory")
         self.buffer[offset:offset+len(buffer)] = buffer
 
     def get_byte(self, offset):
         offset += self.alloffset
-        if (offset + 1) >= len(self.buffer):
+        if (offset + 1) > len(self.buffer):
             raise Exception("out of memory")
         byte = self.buffer[offset + 0]
         return byte
 
     def get_word_be(self, offset):
         offset += self.alloffset
-        if (offset + 2) >= len(self.buffer):
+        if (offset + 2) > len(self.buffer):
             raise Exception("out of memory")
         word = self.buffer[offset+0] << 8
         word |= self.buffer[offset+1] << 0
@@ -85,7 +88,7 @@ class FrameBuffer:
 
     def get_dword_be(self, offset):
         offset += self.alloffset
-        if (offset + 4) >= len(self.buffer):
+        if (offset + 4) > len(self.buffer):
             raise Exception("out of memory")
         dword = self.buffer[offset+0] << 24
         dword |= self.buffer[offset+1] << 16
@@ -132,7 +135,7 @@ class IAP_Comm(FrameBuffer, USB_Backend):
 
     __response_state = RESPONSE_IDLE
 
-    def __init__(self) -> None:
+    def __init__(self):
         self.alloffset = self.REQUEST_HEADER_SIZE
 
     def send_request(self):
@@ -176,13 +179,30 @@ class IAP_Comm(FrameBuffer, USB_Backend):
         self.set_word_be(1, max_data_size)
 
         while size > max_data_size:
-            self.copy_from(4, data[offset: offset + max_data_size])
+            self.copy_from(3, data[offset: offset + max_data_size])
             self.send_request()
             size -= max_data_size
             offset += max_data_size
 
-        self.set_byte(0, size)
-        self.copy_from(4, data[offset:])
+        # self.set_byte(1, size)
+        # self.copy_from(3, data[offset:])
+        # self.send_request()
+
+    def short_read(self, addr, len):
+        self.clear()
+        self.set_byte(0, IAP_CMD_SHORT_READ)
+        self.set_dword_be(1, addr)
+        self.set_byte(5, len)
+
+        self.send_request()
+
+    def short_write(self, addr, data):
+        self.clear()
+        self.set_byte(0, IAP_CMD_SHORT_WRITE)
+        self.set_dword_be(1, addr)
+        self.set_byte(5, len(data))
+        self.copy_from(6, data)
+
         self.send_request()
 
     def verify(self):
@@ -216,8 +236,8 @@ class IAP_Comm(FrameBuffer, USB_Backend):
 
         print(data)
 
-        if iap_cmd in [IAP_CMD_EARSE, IAP_EV_CONNECT, IAP_CMD_PROGRAM_START, IAP_CMD_PROGRAM_END, IAP_CMD_SET_MTA]:
-            self.__response_state = RESPONSE_SUCCESS
+        # if iap_cmd in [IAP_CMD_EARSE, IAP_EV_CONNECT, IAP_CMD_PROGRAM_START, IAP_CMD_PROGRAM_END, IAP_CMD_SET_MTA, IAP_CMD_SHORT_READ, IAP_CMD_SHORT_WRITE]:
+        self.__response_state = RESPONSE_SUCCESS
         # elif iap_cmd in [IAP_CMD_VERIFY]:
         #     self.__response_state = RESPONSE_SUCCESS
         #     rxlen = rxframe.get_dword_be(2)
@@ -233,10 +253,56 @@ if __name__ == '__main__':
         raise Exception("fail to open usb hid device")
 
     print("usb connected")
-    iap.earse(0, 0)
+    # iap.earse(0, 0)
+
+    # iap.short_write(0x0, bytes("caonima", encoding="utf-8"))
+    # iap.wait_response()
+
+    # iap.short_read(0x0, 8)
+    # iap.wait_response()
+
+    data = [0x00]*512
+
+    for i in range(len(data)):
+        data[i] = i
+
+    iap.start()
     iap.wait_response()
 
-    iap.data([0x11]*100*1024)
+    offset = 32
 
-    iap.verify()
+    iap.earse(offset, len(data))
     iap.wait_response()
+
+    iap.set_addr(offset)
+    iap.wait_response()
+
+    time.sleep(1)
+
+    print("download")
+    iap.download(data)
+
+    time.sleep(1)
+
+    print("short_read 0")
+    iap.short_read(offset+0*32, 32)
+    iap.wait_response()
+
+    print("short_read 1")
+    iap.short_read(offset+1*32, 32)
+    iap.wait_response()
+
+    print("short_read 2")
+    iap.short_read(offset+2*32, 32)
+    iap.wait_response()
+
+    print("short_read 3")
+    iap.short_read(offset+3*32, 32)
+    iap.wait_response()
+
+    print("short_read 4")
+    iap.short_read(4*32, 32)
+    iap.wait_response()
+
+    print("stop")
+    iap.stop()
