@@ -1,82 +1,31 @@
 #include <stdbool.h>
+#include <string.h>
+
 #include "iap.h"
+#include "flash_if.h"
 
-/**
- * @brief Event Packet
- */
+#define IAP_EV_CONNECT        0x20
+#define IAP_EV_DISCONNECT     0x21
 
-#define IAP_EV_CONNECT    0xA0
-#define IAP_EV_DISCONNECT 0xA1
+#define IAP_CMD_GET_VERSION   0x30
+#define IAP_CMD_ECHO          0x31
+#define IAP_CMD_BRUST_READ    0x32
+#define IAP_CMD_BRUST_WRITE   0x33
+#define IAP_CMD_EARSE         0x34
+#define IAP_CMD_PROGRAM_START 0x35
+#define IAP_CMD_PROGRAM_END   0x36
+#define IAP_CMD_SET_MTA       0x37
+#define IAP_CMD_GET_MTA       0x38
+#define IAP_CMD_BLOCK_READ    0x39
+#define IAP_CMD_BLOCK_WRITE   0x3A
+#define IAP_CMD_BLOCK_VERIFY  0x3B
+#define IAP_CMD_JUMP_APP      0x3C
 
-/**
- * @brief Command Packet
- */
-
-#define IAP_CMD_GET_ID 0xB1
-
-//
-// program signal
-//
-
-// request: pid(1)
-// response: success / error
-#define IAP_CMD_PROGRAM_START 0xC1
-
-// request: pid(1)
-// response: success / error
-#define IAP_CMD_PROGRAM_END 0xC2
-
-//
-// program - earse
-//
-
-// request: pid(1) + addr(4) + len(4)
-// response: success / error
-#define IAP_CMD_EARSE 0xC3
-
-//
-// program - read / write
-//
-
-// request: pid(1) + addr(4) + len(1)
-// response: pid(1) + data(n)
-#define IAP_CMD_SHORT_READ 0xD0
-
-// request: pid(1) + addr(4) + len(1) + data(n)
-// response: success / error
-#define IAP_CMD_SHORT_WRITE 0xD1
-
-//
-// program - block read / write
-//
-
-// request: pid(1) + addr(4)
-// response: success / error
-#define IAP_CMD_SET_MTA 0xC0  // Memory Transfer Address
-
-// request: pid(1) + len(2)
-// response: pid(1) + len(2) + data(n)
-#define IAP_CMD_UPLOAD 0xC4
-
-// request: pid(1) + len(2) + data(n)
-// response: none
-#define IAP_CMD_DOWNLOAD 0xC5
-
-// request: pid(1) + crc16(2)
-// response: success / error
-#define IAP_CMD_VERIFY 0xC6
-
-/**
- * @brief Error Packet
- */
-
-// response: pid(1) + err(1)
-#define IAP_ERR 0x80
+#define IAP_OK_MASK           0x00
+#define IAP_ERR_MASK          0x80
 
 uint32_t current_programmed_address = 0;
 uint32_t current_programmed_length  = 0;
-
-#include "flash_if.h"
 
 static const uint8_t aucCRCHi[] = {
     0x00, 0xC1, 0x81, 0x40, 0x01, 0xC0, 0x80, 0x41, 0x01, 0xC0, 0x80, 0x41, 0x00, 0xC1, 0x81, 0x40, 0x01, 0xC0, 0x80, 0x41, 0x00, 0xC1, 0x81, 0x40, 0x00, 0xC1, 0x81, 0x40, 0x01, 0xC0, 0x80, 0x41, 0x01, 0xC0, 0x80, 0x41, 0x00, 0xC1, 0x81, 0x40, 0x00, 0xC1, 0x81, 0x40, 0x01, 0xC0, 0x80, 0x41, 0x00, 0xC1, 0x81, 0x40, 0x01, 0xC0, 0x80, 0x41, 0x01, 0xC0, 0x80, 0x41, 0x00, 0xC1, 0x81, 0x40, 0x01, 0xC0, 0x80, 0x41, 0x00, 0xC1, 0x81, 0x40, 0x00, 0xC1, 0x81, 0x40, 0x01, 0xC0, 0x80, 0x41, 0x00, 0xC1, 0x81, 0x40, 0x01, 0xC0, 0x80, 0x41, 0x01, 0xC0, 0x80, 0x41, 0x00, 0xC1, 0x81, 0x40, 0x00, 0xC1, 0x81, 0x40, 0x01, 0xC0, 0x80, 0x41, 0x01, 0xC0, 0x80, 0x41, 0x00, 0xC1, 0x81, 0x40, 0x01, 0xC0, 0x80, 0x41, 0x00, 0xC1, 0x81, 0x40, 0x00, 0xC1, 0x81, 0x40, 0x01, 0xC0, 0x80, 0x41, 0x01, 0xC0, 0x80, 0x41, 0x00, 0xC1, 0x81, 0x40, 0x00, 0xC1, 0x81, 0x40, 0x01, 0xC0, 0x80, 0x41, 0x00, 0xC1, 0x81, 0x40, 0x01, 0xC0, 0x80, 0x41, 0x01, 0xC0, 0x80, 0x41, 0x00, 0xC1, 0x81, 0x40, 0x00, 0xC1, 0x81, 0x40, 0x01, 0xC0, 0x80, 0x41, 0x01, 0xC0, 0x80, 0x41, 0x00, 0xC1, 0x81, 0x40, 0x01, 0xC0, 0x80, 0x41, 0x00, 0xC1, 0x81, 0x40, 0x00, 0xC1, 0x81, 0x40, 0x01, 0xC0, 0x80, 0x41, 0x00, 0xC1, 0x81, 0x40, 0x01, 0xC0, 0x80, 0x41, 0x01, 0xC0, 0x80, 0x41, 0x00, 0xC1, 0x81, 0x40, 0x01, 0xC0, 0x80, 0x41, 0x00, 0xC1, 0x81, 0x40, 0x00, 0xC1, 0x81, 0x40, 0x01, 0xC0, 0x80, 0x41, 0x01, 0xC0, 0x80, 0x41, 0x00, 0xC1, 0x81, 0x40, 0x00, 0xC1, 0x81, 0x40, 0x01, 0xC0, 0x80, 0x41, 0x00, 0xC1, 0x81, 0x40, 0x01, 0xC0, 0x80, 0x41, 0x01, 0xC0, 0x80, 0x41, 0x00, 0xC1, 0x81, 0x40};
@@ -99,38 +48,10 @@ uint16_t ModbusCRC16(uint8_t* pucFrame, uint16_t usLen)
     return ucCRCHi << 8 | ucCRCLo;
 }
 
-uint8_t be8(uint8_t* ptr)
+uint8_t be8(uint8_t* p)
 {
-    uint8_t res;
-
-    res = ptr[0];
-
-    return res;
+    return p[0];
 }
-
-uint16_t be16(uint8_t* ptr)
-{
-    uint16_t res;
-
-    res = ptr[0] << 8;
-    res |= ptr[1] << 0;
-
-    return res;
-}
-
-uint32_t be32(uint8_t* ptr)
-{
-    uint32_t res;
-
-    res = ptr[0] << 24;
-    res |= ptr[1] << 16;
-    res |= ptr[2] << 8;
-    res |= ptr[3] << 0;
-
-    return res;
-}
-
-#if 0
 
 uint16_t read_be16(uint8_t* p)
 {
@@ -156,58 +77,92 @@ void write_be32(uint8_t* p, uint32_t dword)
     p[3] = (dword & 0x000000FF) >> 0;
 }
 
-#endif
-
-void iap_response_error(iap_packet_t* response, uint8_t err)
+void iap_response_error(iap_packet_t* packet, uint8_t err)
 {
-    response->pid     = IAP_ERR;
-    response->data[0] = err;
+    packet->pid |= IAP_ERR_MASK;
+    packet->data[0] = err;
 
-    iap_response(response);
+    iap_response(packet, 1);
 }
 
-void iap_response_success(iap_packet_t* response)
+void iap_response_success(iap_packet_t* packet)
 {
-    response->pid     = IAP_ERR;
-    response->data[0] = 0;
+    packet->pid &= ~IAP_ERR_MASK;
 
-    iap_response(response);
+    iap_response(packet, 0);
 }
 
-void iap_exec(iap_packet_t* request, iap_packet_t* response)
+void iap_execute(iap_packet_t* packet)
 {
-    uint32_t addr, len;
-    uint16_t crc16;
-
-    switch (request->pid)
+    switch (packet->pid)
     {
         case IAP_EV_CONNECT:
         {
-            iap_response(response);
+            iap_response_success(packet);
+
             break;
         }
         case IAP_EV_DISCONNECT:
         {
-            break;
-        }
-        case IAP_CMD_GET_ID:
-        {
-            break;
-        }
-        case IAP_CMD_SET_MTA:
-        {
-            current_programmed_address = be32(&request->data[0]);
-            current_programmed_length  = 0;
-
-            iap_response_success(response);
+            iap_response_success(packet);
 
             break;
         }
+
+        case IAP_CMD_ECHO:
+        {
+					  uint16_t len  = read_be16(&packet->data[0]);  // 2
+
+            iap_response(packet, len);
+
+            break;
+        }
+
+        case IAP_CMD_EARSE:
+        {
+            uint32_t addr = read_be32(&packet->data[0]);  // 4
+            uint32_t len  = read_be32(&packet->data[4]);  // 4
+
+            flashif.unlock();
+            flashif.earse(addr, len);
+            flashif.lock();
+
+            iap_response_success(packet);
+
+            break;
+        }
+
+        case IAP_CMD_BRUST_READ:
+        {
+            uint32_t addr = read_be32(&packet->data[0]);  // 4
+            uint16_t len  = read_be16(&packet->data[4]);  // 2
+
+            flashif.read(addr, len, &packet->data[6]);  // n
+
+            iap_response(packet, 2+4+len);
+
+            break;
+        }
+
+        case IAP_CMD_BRUST_WRITE:
+        {
+            uint32_t addr = read_be32(&packet->data[0]);  // 4
+            uint16_t len  = read_be16(&packet->data[4]);  // 2
+
+            flashif.unlock();
+            flashif.earse(addr, len);
+            flashif.write(addr, len, &packet->data[6]);  // n
+            flashif.lock();
+
+            iap_response_success(packet);
+
+            break;
+        }
+
         case IAP_CMD_PROGRAM_START:
         {
             flashif.unlock();
-
-            iap_response_success(response);
+            iap_response_success(packet);
 
             break;
         }
@@ -215,85 +170,74 @@ void iap_exec(iap_packet_t* request, iap_packet_t* response)
         {
             flashif.lock();
 
-            iap_response_success(response);
+            iap_response_success(packet);
 
             break;
         }
-        case IAP_CMD_EARSE:
+        case IAP_CMD_SET_MTA:
         {
-            addr = be32(&request->data[0]);  // 4
-            len  = be32(&request->data[4]);  // 4
+            current_programmed_address = read_be32(&packet->data[0]);
+            current_programmed_length  = 0;
 
-            flashif.earse(addr, len);
-
-            iap_response_success(response);
+            iap_response_success(packet);
 
             break;
         }
-        case IAP_CMD_UPLOAD:
+        case IAP_CMD_GET_MTA:
         {
-            len = be16(&request->data[0]);  // 2
+            write_be32(&packet->data[0], current_programmed_address);
 
-            response->pid = IAP_CMD_SHORT_READ;
-            memcpy(&response->data[0], &request->data[0], 2);
-            flashif.read(current_programmed_address, len, &response->data[2]);
-            current_programmed_length += len;
-
-            iap_response(response);
+            iap_response(packet, 4);
 
             break;
         }
-        case IAP_CMD_DOWNLOAD:
-        {
-            len = be16(&request->data[0]);  // 2
 
-            flashif.write(current_programmed_address, len, &request->data[2]);
+        case IAP_CMD_BLOCK_READ:
+        {
+            uint16_t len = read_be16(&packet->data[0]);  // 2
+
+            flashif.read(current_programmed_address, len, &packet->data[2]);  // n
+
             current_programmed_length += len;
             current_programmed_address += len;
 
+            iap_response(packet, 2 + len);
+
             break;
         }
-        case IAP_CMD_VERIFY:
+        case IAP_CMD_BLOCK_WRITE:
         {
-            crc16 = be16(&request->data[0]);
+            uint16_t len = read_be16(&packet->data[0]);  // 2
 
-            addr = current_programmed_address - current_programmed_length;
-            len  = current_programmed_length;
+            flashif.write(current_programmed_address, len, &packet->data[2]);
+
+            current_programmed_length += len;
+            current_programmed_address += len;
+
+            // iap_response_success(packet);
+
+            break;
+        }
+        case IAP_CMD_BLOCK_VERIFY:
+        {
+            uint16_t crc16 = read_be16(&packet->data[0]);
+
+            uint32_t addr = current_programmed_address - current_programmed_length;
+            uint32_t len  = current_programmed_length;
 
             if (crc16 == ModbusCRC16((uint8_t*)addr, len))
             {
-                iap_response_success(response);
+                iap_response_success(packet);
             }
             else
             {
-                iap_response_error(response, 1);
+                iap_response_error(packet, 1);
             }
 
             break;
         }
-        case IAP_CMD_SHORT_READ:
+        case IAP_CMD_JUMP_APP:
         {
-            addr = be32(&request->data[0]);  // 4
-            len  = be8(&request->data[4]);   // 1
-
-            response->pid     = IAP_CMD_SHORT_READ;
-            response->data[0] = len;                      // 1
-            flashif.read(addr, len, &response->data[1]);  // n
-
-            iap_response(request);
-
-            break;
-        }
-        case IAP_CMD_SHORT_WRITE:
-        {
-            addr = be32(&request->data[0]);  // 4
-            len  = be8(&request->data[4]);   // 1
-
-            flashif.earse(addr, len);
-            flashif.write(addr, len, &request->data[5]);  // n
-
-            iap_response_success(response);
-
             break;
         }
     }

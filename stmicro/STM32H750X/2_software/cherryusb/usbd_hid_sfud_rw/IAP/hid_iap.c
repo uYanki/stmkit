@@ -336,11 +336,11 @@ static void usbd_event_handler(uint8_t busid, uint8_t event)
 
 #include "iap.h"
 
-void iap_response(iap_packet_t* response)
+void iap_response(iap_packet_t* response, uint16_t data_len)
 {
     uint8_t busid  = 0;
-    send_buffer[0] = 0x02; /* IN: report id */
-    usbd_ep_start_write(busid, HIDRAW_IN_EP, send_buffer, HIDRAW_IN_EP_SIZE);
+    read_buffer[0] = 0x02; /* IN: report id */
+    usbd_ep_start_write(busid, HIDRAW_IN_EP, read_buffer, HIDRAW_IN_EP_SIZE);
 }
 
 static void usbd_hid_custom_in_callback(uint8_t busid, uint8_t ep, uint32_t nbytes)
@@ -358,7 +358,7 @@ static void usbd_hid_custom_out_callback(uint8_t busid, uint8_t ep, uint32_t nby
 
     if (nbytes > 2)  // minsize = REPORT_ID + IAP_CMD
     {
-        iap_exec((iap_packet_t*)&read_buffer[1], (iap_packet_t*)&send_buffer[1]);
+        iap_execute( (iap_packet_t*) &read_buffer[1] );
     }
 }
 

@@ -33,7 +33,7 @@ typedef struct {
 // void iap_goto_app();
 // void iap_cycle(iap_mode_e iap_mode);
 
-void iap_exec(iap_packet_t* request, iap_packet_t* response);
-void iap_response(iap_packet_t* response);
+void iap_execute(iap_packet_t* packet);
+void iap_response(iap_packet_t* response, uint16_t len);
 
 #endif
