@@ -3,7 +3,7 @@
   * [ ] vnc
 * [ ] usb2can
 * [ ] matlab
-* [ ] i2c slave
+* [ ] luafs
 * [ ] cobs 编码
 * [ ] ppp 编码
 * [ ] auto init
