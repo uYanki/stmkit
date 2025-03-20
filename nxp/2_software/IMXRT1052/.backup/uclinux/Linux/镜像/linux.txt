@@ -1,0 +1,30 @@
+  feature_add_snvs_pin_btn_wackup
+  feature_leds
+  feature_lpuart
+  feature_rtc
+  feature_schedule
+  feature_spi_nor_jffs2
+  feature_spi_nor_jffs2_winbond
+  feature_spi_nor_ubi
+  feature_spi_nor_ubi_winbond
+  feature_tsc2007
+  feature_w25q128bv
+  feature_w25q256
+  feature_w25q256_jffs2
+  feature_w25q32
+* master
+  master_ubi
+commit 50baef18e895aa58fffec4b2df94f4ed4bb8bd5f
+Author: bluesky <zdg.bd@qq.com>
+Date:   Thu Aug 2 17:21:00 2018 +0800
+
+    add w25q32 for imxrt to use
+
+commit ac10123620b19d792856f576b2f8d5dcce61cba4
+Merge: a68cebe d1ee847
+Author: forlinx <forlinx@email.com>
+Date:   Fri Jul 20 09:10:11 2018 +0800
+
+    Merge branch 'feature_w25q128bv'
+    
+    merge w25q128 nor flash to master

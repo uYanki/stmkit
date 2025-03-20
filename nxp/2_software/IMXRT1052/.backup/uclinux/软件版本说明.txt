@@ -1,0 +1,4 @@
+ЧызЂвт
+winbond nor flash jffs2 filesystem
+
+uclinux4.5

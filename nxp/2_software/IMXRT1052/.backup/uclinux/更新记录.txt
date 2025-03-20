@@ -1,0 +1,9 @@
+2018-06-27
+更新linux软件功能适应核心板:FET1050-C V1.1 底板:OK1050-C_V1.2
+1.TF卡启动，norflash烧写.
+2.支持usb host/usb otg 转host.
+3.支持4.3寸LCD显示电容触摸/电阻触控
+4.4.3寸显示支持.
+5.支持串口.
+6.支持网口.
+7.支持 16MB norflash 32MB SDRAM

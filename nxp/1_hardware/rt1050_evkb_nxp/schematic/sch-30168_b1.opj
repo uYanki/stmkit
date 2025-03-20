@@ -1,0 +1,73 @@
+(ExpressProject ""
+  (ProjectVersion "19981106")
+  (ProjectType "PCB")
+  (Folder "Design Resources"
+    (Folder "Library")
+    (File ".\sch-30168_b1.dsn"
+      (Type "Schematic Design"))
+    (BuildFileAddedOrDeleted "x")
+    (CompileFileAddedOrDeleted "x")
+    (Netlist_TAB "0")
+    ("Create Allegro Netlist" "TRUE")
+    ("Allegro Netlist Directory" "allegro")
+    ("View Allegro Netlist Files" "FALSE")
+    ("Allegro Netlist Create DCF File" "FALSE")
+    ("Update Allegro Board" "FALSE")
+    ("Allegro Netlist Output Board File" "allegro\SCH-30168_B1.brd")
+    ("Allegro Netlist Remove Etch" "FALSE")
+    ("Allegro Netlist Place Changed Component" "ALWAYS_REPLACE")
+    ("Allegro Netlist Open Board in Allegro" "ALLEGRO")
+    ("Allegro Setup Backup Versions" "3")
+    ("Allegro Setup Ignore Constraints" "FALSE")
+    ("Allegro Setup Part Type Length" "31")
+    ("Allegro Netlist Combine Property String" "PCB Footprint")
+    ("Allegro Netlist Ignore Fixed Property" "FALSE")
+    ("Allegro Netlist User Defined Property" "FALSE")
+    (BOM_Scope "0")
+    (BOM_Mode "0")
+    (BOM_Report_File
+       "C:\Work\5-Project\29_i.MX6RT\EVK_board\EVKB board\Rev_A1\1-sch\SCH-30168_B1.BOM")
+    (BOM_Merge_Include "FALSE")
+    (BOM_Property_Combine_7.0
+       "{Item}\t{Quantity}\t{AGILE_PN}\t{ASSY_OPT}\t{Reference}\t{Value}\t{Description}\t{ASSY_NOTE}\t{Mfg Name}\t{Mfg Part Number}\t{PCB Footprint}")
+    (BOM_Header
+       "Item\tQuantity\tAgilePN\tASSY_OPT\tReference\tValue\tDescription\tASSY_NOTE\tMfg Name\tMfg Part Number\tPCB Footprint")
+    (BOM_Include_File
+       "C:\PRODUCTION MATERIAL AND RELATED TRAINING\UPLOADING THE MATERIAL\X-IMXRT1050-EVKB(975-30168)\SCHEMATIC B1\SCH-30168_B1.INC")
+    (BOM_Include_File_Combine_7.0 "{Item}\t{Quantity}\t{Reference}\t{Value}")
+    (BOM_One_Part_Per_Line "FALSE")
+    (Open_BOM_in_Excel "TRUE")
+    (BOM_View_Output "FALSE")
+    (NoModify))
+  (Folder "Outputs"
+    (File ".\allegro\pstxnet.dat"
+      (Type "Report")
+      (DisplayName "pstxnet.dat"))
+    (File ".\allegro\pstxprt.dat"
+      (Type "Report")
+      (DisplayName "pstxprt.dat"))
+    (File ".\allegro\pstchip.dat"
+      (Type "Report")
+      (DisplayName "pstchip.dat"))
+    (File ".\sch-30168_b1.bom"
+      (Type "Report"))
+    (File
+       "c:\work\5-project\29_i.mx6rt\evk_board\evkb board\rev_a1\1-sch\sch-30168_b1.bom"
+      (Type "Report")))
+  (Folder "Referenced Projects")
+  (ISPCBBASICLICENSE "false")
+  (GlobalState
+    (FileView
+      (Path "Design Resources")
+      (Path "Design Resources" ".\sch-30168_b1.dsn")
+      (Path "Design Resources" ".\sch-30168_b1.dsn" "6RT_EVK")
+      (Path "Outputs")
+      (Select "Design Resources" ".\sch-30168_b1.dsn"))
+    (HierarchyView)
+    (Doc
+      (Type "COrCapturePMDoc")
+      (Frame
+        (Placement "44 2 3 -1 -1 -8 -31 0 200 0 212"))
+      (Tab 0)))
+  (MPSSessionName "nxa22544")
+  (PartMRUSelector))

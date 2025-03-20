@@ -1,0 +1,111 @@
+卷 软件资料 文件夹 的文件夹 PATH 列表
+卷序列号为 ECA0-9F46
+I:.
+│  imxrt-Linux模块支持列表-2018.06.27.xlsx
+│  文件夹目录名批列出.bat
+│  更新记录.txt
+│  用户资料目录结构.txt
+│  软件版本说明.txt
+│  
+├─Linux
+│  ├─工具
+│  │  └─TF
+│  │      └─烧写
+│  │              createSdcard-console.md5.txt
+│  │              createSdcard-console.tar.gz
+│  │              
+│  ├─测试程序
+│  │  │  testapp.zip
+│  │  │  
+│  │  └─imxrt_app
+│  │          fbwrite
+│  │          helloworld
+│  │          i2cdetect
+│  │          i2cdump
+│  │          i2cget
+│  │          i2cset
+│  │          logo.bmp
+│  │          memtester
+│  │          pthread
+│  │          uart
+│  │          
+│  ├─源码
+│  │      rootfs-build-tmpdir.tar.bz2
+│  │      rootfs_md5.txt
+│  │      
+│  └─镜像
+│          complete.bmp
+│          linux.txt
+│          projects.txt
+│          rootfs_flash.dtb
+│          rootfs_flash.jffs2
+│          rootfs_flash.uImage
+│          splash-rt1050-series_24.bmp
+│          u-boot-dtb.imx
+│          u-boot.flexspi
+│          u-boot.info.txt
+│          
+├─原厂资料
+│  └─文档
+│      ├─参考手册
+│      │  └─i.MX RT1050 Processor Reference Manual (REV 1)
+│      │          IMXRT1050RM.pdf
+│      │          
+│      ├─应用说明
+│      │  ├─How to Enable Boot from HyperFlash and SD Card (REV 0)
+│      │  │      AN12107.pdf
+│      │  │      
+│      │  ├─How to Enable Boot from QSPI Flash (REV 0)
+│      │  │      AN12108.pdf
+│      │  │      
+│      │  ├─i.MXRT1050 Migration Guide (REV 0)
+│      │  │      AN12146.pdf
+│      │  │      
+│      │  ├─i.MXRT1050 Product Lifetime Usage Estimates (REV 0)
+│      │  │      AN12170.pdf
+│      │  │      
+│      │  ├─Implementing the IEEE 1588 V2 on i.MX RT Using PTPd, FreeRTOS, and lwIP TCPIP stack (REV 0)
+│      │  │      AN12149.pdf
+│      │  │      
+│      │  └─Measuring Interrupt Latency (REV 1)
+│      │          AN12078.pdf
+│      │          
+│      ├─应用说明软件
+│      │  ├─Application software for AN12149 (REV 0)
+│      │  │      AN12149SW.zip
+│      │  │      
+│      │  └─Software for AN12103 Application note (REV 0)
+│      │          AN12103SW.zip
+│      │          
+│      └─用户指南
+│          ├─IMXRT1050 EVKB Board Hardware User’s Guide (REV 0) new
+│          │      IMXRT1050EVKBHUG.pdf
+│          │      
+│          └─MIMXRT1050 EVK Board Hardware User’s Guide (REV 2)
+│                  MIMXRT1050EVKHUG.pdf
+│                  
+├─工具
+│  │  arm-v7-linux-uclibceabi-pthreads-20170818.tar.bz2
+│  │  arm-v7-linux-uclibceabi-pthreads-20170818_md5.txt
+│  │  Hyper Terminal.rar
+│  │  linux-cortexm-2.5.0.tar.gz
+│  │  linux-cortexm-2.5.0_md5.txt
+│  │  sscom32.exe
+│  │  
+│  └─Hyper Terminal
+│      └─Hyper Terminal
+│          │  Granados.dll
+│          │  HyperTerminal.exe
+│          │  logo.ico
+│          │  unins000.dat
+│          │  unins000.exe
+│          │  
+│          └─zh-Hans
+│                  HyperTerminal.resources.dll
+│                  
+├─应用
+│      无.txt
+│      
+└─手册
+        OK1052-C_Linux-用户手册-V1.0-2018_08_06.pdf
+        

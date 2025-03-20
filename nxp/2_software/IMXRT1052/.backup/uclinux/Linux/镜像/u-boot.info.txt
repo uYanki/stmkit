@@ -1,0 +1,32 @@
+  feature_528M
+  feature_Sfuse_SD_to_NorFlash_Ubi
+  feature_boot_linux_from_tfcard
+  feature_imx_thermal
+  feature_lpuart
+  feature_lpuart_ubi
+  feature_mmcflash_mcuapp
+  feature_mmcflash_mcuapp_16M_32M
+  feature_sdram_16m
+  feature_spi_nor_jffs2
+  feature_spi_nor_jffs2_winbond
+  feature_spi_nor_ubi
+  feature_spi_nor_ubi_jffs2_winbond
+  feature_spi_nor_ubi_winbond
+  feature_vdd_soc
+  feature_w25q256
+* master
+  master_ubi
+commit 597daa3bf0f8e35b3ce73fb2af45722b3d3bdc7d
+Merge: 4ef6772 be22782
+Author: forlinx <forlinx@email.com>
+Date:   Thu Aug 2 14:58:44 2018 +0800
+
+    Merge branch 'feature_sdram_16m'
+    
+    merge 16M sdram to uboot
+
+commit 4ef677243463d0242db572a455358f06f65b0dbb
+Author: bluesky <zdg.bd@qq.com>
+Date:   Thu Aug 2 09:09:48 2018 +0800
+
+    change sdram to origin src and RT=7

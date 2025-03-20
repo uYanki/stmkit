@@ -1,0 +1,33 @@
+  feature_add_snvs_pin_btn_wackup
+  feature_burn_with_ssh
+  feature_dhcp_ubi
+  feature_hard_burn
+  feature_i2c_tools
+  feature_leds
+  feature_lpuart
+  feature_lpuart_ubi
+  feature_mmcflash_mcuapp
+  feature_rootfs_fit_schedule_change_test
+  feature_rtc
+  feature_spi_nor_jffs2
+  feature_spi_nor_ubi
+  feature_tsc2007
+  feature_ubi_jffs2
+  feature_ubi_jffs2_bug
+  feature_ubi_jffs2_w25q128
+  feature_ubi_w25q128
+  feature_w25q256
+  feature_w25q256_jffs2
+* master
+  master_ubi
+commit 257728b40273359c91385ef032145a06966063c7
+Author: bluesky <zdg.bd@qq.com>
+Date:   Mon Aug 6 15:10:24 2018 +0800
+
+    remove stress test
+
+commit 67633a4e3b36c3558a6784c53cd99d0405fc5eb7
+Author: bluesky <zdg.bd@qq.com>
+Date:   Wed Jul 25 10:02:41 2018 +0800
+
+    add mcu flash dts for mcu_app

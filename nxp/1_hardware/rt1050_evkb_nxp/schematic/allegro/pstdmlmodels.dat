@@ -1,0 +1,27 @@
+("allegro\\pstdmlmodels.dat" 
+ (PackagedDevice 
+  (DEFAULT_RESISTOR_15000OHM_2_1 
+   (ESpice ".subckt DEFAULT_RESISTOR_15000OHM_2_1 1 2
+R1 1 2 15000
+.ends DEFAULT_RESISTOR_15000OHM_2_1
+" ) 
+   (PinConnections 
+    (1 2 ) 
+    (2 1 ) ) ) 
+  (DEFAULT_RESISTOR_180000OHM_2_1 
+   (ESpice ".subckt DEFAULT_RESISTOR_180000OHM_2_1 1 2
+R1 1 2 180000
+.ends DEFAULT_RESISTOR_180000OHM_2_1
+" ) 
+   (PinConnections 
+    (1 2 ) 
+    (2 1 ) ) ) 
+  (DEFAULT_RESISTOR_4700OHM_2_1 
+   (ESpice ".subckt DEFAULT_RESISTOR_4700OHM_2_1 1 2
+R1 1 2 4700
+.ends DEFAULT_RESISTOR_4700OHM_2_1
+" ) 
+   (PinConnections 
+    (1 2 ) 
+    (2 1 ) ) ) ) 
+ (LibraryVersion 136.2 ) ) 
