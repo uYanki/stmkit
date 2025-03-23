@@ -8,20 +8,17 @@
 #define IAP_EV_DISCONNECT     0x21
 
 #define IAP_CMD_GET_VERSION   0x30
-#define IAP_CMD_ECHO          0x31
+
 #define IAP_CMD_BRUST_READ    0x32
 #define IAP_CMD_BRUST_WRITE   0x33
 #define IAP_CMD_EARSE         0x34
-#define IAP_CMD_PROGRAM_START 0x35
-#define IAP_CMD_PROGRAM_END   0x36
+
 #define IAP_CMD_SET_MTA       0x37
-#define IAP_CMD_GET_MTA       0x38
 #define IAP_CMD_BLOCK_READ    0x39
 #define IAP_CMD_BLOCK_WRITE   0x3A
-#define IAP_CMD_BLOCK_VERIFY  0x3B
+#define IAP_CMD_BLOCK_WRITE_END   0x36
 #define IAP_CMD_JUMP_APP      0x3C
 
-#define IAP_OK_MASK           0x00
 #define IAP_ERR_MASK          0x80
 
 uint32_t current_programmed_address = 0;
@@ -96,6 +93,15 @@ void iap_execute(iap_packet_t* packet)
 {
     switch (packet->pid)
     {
+				case IAP_CMD_GET_VERSION:
+				{
+						write_be32(&packet->data[0], 0x00000101);
+					
+				  	iap_response(packet, 4);
+					
+						break;
+				}
+				
         case IAP_EV_CONNECT:
         {
             iap_response_success(packet);
@@ -105,15 +111,6 @@ void iap_execute(iap_packet_t* packet)
         case IAP_EV_DISCONNECT:
         {
             iap_response_success(packet);
-
-            break;
-        }
-
-        case IAP_CMD_ECHO:
-        {
-					  uint16_t len  = read_be16(&packet->data[0]);  // 2
-
-            iap_response(packet, len);
 
             break;
         }
@@ -158,36 +155,13 @@ void iap_execute(iap_packet_t* packet)
 
             break;
         }
-
-        case IAP_CMD_PROGRAM_START:
-        {
-            flashif.unlock();
-            iap_response_success(packet);
-
-            break;
-        }
-        case IAP_CMD_PROGRAM_END:
-        {
-            flashif.lock();
-
-            iap_response_success(packet);
-
-            break;
-        }
+				
         case IAP_CMD_SET_MTA:
         {
             current_programmed_address = read_be32(&packet->data[0]);
             current_programmed_length  = 0;
 
             iap_response_success(packet);
-
-            break;
-        }
-        case IAP_CMD_GET_MTA:
-        {
-            write_be32(&packet->data[0], current_programmed_address);
-
-            iap_response(packet, 4);
 
             break;
         }
@@ -214,25 +188,27 @@ void iap_execute(iap_packet_t* packet)
             current_programmed_length += len;
             current_programmed_address += len;
 
-            // iap_response_success(packet);
+         //   iap_response_success(packet);
 
             break;
         }
-        case IAP_CMD_BLOCK_VERIFY:
+        case IAP_CMD_BLOCK_WRITE_END:
         {
             uint16_t crc16 = read_be16(&packet->data[0]);
 
             uint32_t addr = current_programmed_address - current_programmed_length;
             uint32_t len  = current_programmed_length;
 
-            if (crc16 == ModbusCRC16((uint8_t*)addr, len))
-            {
+					 iap_response_success(packet);
+					
+//            if (crc16 == ModbusCRC16((uint8_t*)addr, len))
+//            {
                 iap_response_success(packet);
-            }
-            else
-            {
-                iap_response_error(packet, 1);
-            }
+//            }
+//            else
+//            {
+//                iap_response_error(packet, 1);
+//            }
 
             break;
         }

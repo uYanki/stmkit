@@ -279,7 +279,7 @@ static const uint8_t hid_custom_report_desc[HID_CUSTOM_REPORT_DESC_SIZE] = {
     0x09, 0x01,       /*   USAGE (Vendor Usage 1) */
     0x15, 0x00,       /*   LOGICAL_MINIMUM (0) */
     0x26, 0xff, 0x00, /*   LOGICAL_MAXIMUM (255) */
-    0x95, 0x40 - 1,   /*   REPORT_COUNT (63) */
+    0x95, HIDRAW_IN_EP_SIZE - 1,   /*   REPORT_COUNT (63) */
     0x75, 0x08,       /*   REPORT_SIZE (8) */
     0x81, 0x02,       /*   INPUT (Data,Var,Abs) */
     /* <___________________________________________________> */
@@ -287,7 +287,7 @@ static const uint8_t hid_custom_report_desc[HID_CUSTOM_REPORT_DESC_SIZE] = {
     0x09, 0x01,       /*   USAGE (Vendor Usage 1) */
     0x15, 0x00,       /*   LOGICAL_MINIMUM (0) */
     0x26, 0xff, 0x00, /*   LOGICAL_MAXIMUM (255) */
-    0x95, 0x40 - 1,   /*   REPORT_COUNT (63) */
+    0x95, HIDRAW_OUT_EP_SIZE - 1,   /*   REPORT_COUNT (63) */
     0x75, 0x08,       /*   REPORT_SIZE (8) */
     0x91, 0x02,       /*   OUTPUT (Data,Var,Abs) */
     /* USER CODE END 0 */
@@ -354,7 +354,7 @@ static void usbd_hid_custom_in_callback(uint8_t busid, uint8_t ep, uint32_t nbyt
 
 static void usbd_hid_custom_out_callback(uint8_t busid, uint8_t ep, uint32_t nbytes)
 {
-    usbd_ep_start_read(busid, ep, read_buffer, HIDRAW_IN_EP_SIZE);
+    usbd_ep_start_read(busid, ep, read_buffer, HIDRAW_OUT_EP_SIZE);
 
     if (nbytes > 2)  // minsize = REPORT_ID + IAP_CMD
     {
