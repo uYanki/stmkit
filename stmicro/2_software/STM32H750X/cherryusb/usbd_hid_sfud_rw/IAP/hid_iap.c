@@ -13,7 +13,7 @@
 #define HIDRAW_IN_EP 0x81
 #ifdef CONFIG_USB_HS
 #define HIDRAW_IN_EP_SIZE  1024
-#define HIDRAW_IN_INTERVAL 4
+#define HIDRAW_IN_INTERVAL 5
 #else
 #define HIDRAW_IN_EP_SIZE  64
 #define HIDRAW_IN_INTERVAL 10
@@ -22,7 +22,7 @@
 #define HIDRAW_OUT_EP 0x02
 #ifdef CONFIG_USB_HS
 #define HIDRAW_OUT_EP_SIZE     1024
-#define HIDRAW_OUT_EP_INTERVAL 4
+#define HIDRAW_OUT_EP_INTERVAL 5
 #else
 #define HIDRAW_OUT_EP_SIZE     64
 #define HIDRAW_OUT_EP_INTERVAL 10
@@ -348,7 +348,7 @@ static void usbd_hid_custom_in_callback(uint8_t busid, uint8_t ep, uint32_t nbyt
     (void)busid;
     (void)ep;
 
-    USB_LOG_RAW("actual in len:%d\r\n", nbytes);
+    // USB_LOG_RAW("actual in len:%d\r\n", nbytes);
     custom_state = HID_STATE_IDLE;
 }
 

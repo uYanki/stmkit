@@ -53,6 +53,20 @@ class IAP_Comm(usbd_hid_backend):
         # print([hex(n) for n in data])
 
 
+def ModbusCRC16(data):
+
+    crc = 0xFFFF  # 初始值为0xFFFF
+    for byte in data:
+        crc ^= byte  # 异或运算
+        for _ in range(8):  # 移位操作
+            if crc & 0x0001:  # 检查最低位
+                crc >>= 1  # 右移一位
+                crc ^= 0xA001  # 异或多项式
+            else:
+                crc >>= 1  # 右移一位
+    return crc & 0xFFFF  # 返回校验码的低16位
+
+
 if __name__ == '__main__':
 
     iap = IAP_Comm()
@@ -65,20 +79,14 @@ if __name__ == '__main__':
 
     selected_test = 3
 
-    if selected_test == 1:  # echo
-
-        iap.send_request(iap_packet_encode.echo(
-            bytearray("caonima", encoding="utf-8")))
-        iap.wait_response()
-
-    elif selected_test == 2:  # brust read write
+    if selected_test == 2:  # brust read write
 
         address = 0x0000009
 
         # report_id (1) + packet_id (1) + address(4) + length (2)
-        data_maxsize_in_frame = 56
+        data_maxsize_in_frame = 60
 
-        data = bytearray([(n % 256) for n in range(data_maxsize_in_frame)])
+        data = bytearray([(n % 256) for n in range(500)])
 
         iap.send_request(iap_packet_encode.brust_read(address, len(data)))
         iap.wait_response()
@@ -95,14 +103,11 @@ if __name__ == '__main__':
         data = bytearray([(n % 256) for n in range(0x512)])
 
         # report_id (1) + packet_id (1) + length (2)
-        data_maxsize_in_frame = 60
+        data_maxsize_in_frame = 56
 
         '''download'''
 
         iap.send_request(iap_packet_encode.earse(address, len(data)))
-        iap.wait_response()
-
-        iap.send_request(iap_packet_encode.program_start())
         iap.wait_response()
 
         iap.send_request(iap_packet_encode.set_mta(address))
@@ -122,42 +127,37 @@ if __name__ == '__main__':
 
             iap.send_request(iap_packet_encode.block_write(
                 data[offset:offset+xfer_size]))
-            # iap.wait_response()
-            # time.sleep(0.001)
-
-            remain_size -= xfer_size
-            offset += xfer_size
-
-            # 断开检测
-            if (offset - offset_1k) > 1024:
-                iap.send_request(iap_packet_encode.get_mta())
-                iap.wait_response()
-                offset_1k = offset
-
-        iap.send_request(iap_packet_encode.program_end())
-        iap.wait_response()
-
-        #
-
-        '''upload'''
-
-        iap.send_request(iap_packet_encode.set_mta(address))
-        iap.wait_response()
-
-        xfer_size = 0
-        remain_size = len(data)
-        offset = 0
-        offset_1k = 0
-
-        while remain_size > 0:
-
-            if remain_size > data_maxsize_in_frame:
-                xfer_size = data_maxsize_in_frame
-            else:
-                xfer_size = remain_size
-
-            iap.send_request(iap_packet_encode.block_read(xfer_size))
             iap.wait_response()
 
             remain_size -= xfer_size
             offset += xfer_size
+
+        iap.send_request(iap_packet_encode.block_write_end(ModbusCRC16(data)))
+        iap.wait_response(2000)
+
+        print("success")
+
+        '''upload'''
+
+        if False:
+
+            iap.send_request(iap_packet_encode.set_mta(address))
+            iap.wait_response()
+
+            xfer_size = 0
+            remain_size = len(data)
+            offset = 0
+            offset_1k = 0
+
+            while remain_size > 0:
+
+                if remain_size > data_maxsize_in_frame:
+                    xfer_size = data_maxsize_in_frame
+                else:
+                    xfer_size = remain_size
+
+                iap.send_request(iap_packet_encode.block_read(xfer_size))
+                iap.wait_response()
+
+                remain_size -= xfer_size
+                offset += xfer_size
