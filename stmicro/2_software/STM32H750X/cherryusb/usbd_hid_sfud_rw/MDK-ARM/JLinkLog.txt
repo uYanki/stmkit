@@ -1,0 +1,78 @@
+T1B14 015:471.422   SEGGER J-Link V7.92m Log File
+T1B14 015:471.477   DLL Compiled: Oct 26 2023 16:14:53
+T1B14 015:471.488   Logging started @ 2025-03-26 15:58
+T1B14 015:471.496   Process: C:\Keil_v5\UV4\UV4.exe
+T1B14 015:471.504 - 5.597ms
+T1B14 015:471.515 JLINK_SetWarnOutHandler(...)
+T1B14 015:471.523 - 0.008ms
+T1B14 015:471.532 JLINK_OpenEx(...)
+T1B14 015:727.404   Firmware: J-Link V11 compiled Apr 27 2041 16:36:21
+T1B14 015:727.778   Firmware: J-Link V11 compiled Apr 27 2041 16:36:21
+T1B14 015:748.437   Hardware: V11.00
+T1B14 015:748.462   S/N: 601012352
+T1B14 015:748.474   OEM: SEGGER
+T1B14 015:748.486   Feature(s): RDI, FlashBP, FlashDL, JFlash, GDB
+T1B14 015:749.714   Bootloader: (Could not read)
+T1B14 015:755.155   USB speed mode: High speed (480 MBit/s)
+T1B14 015:755.189   Active J-Link Eco level: 3 (https://wiki.segger.com/J-Link_Eco)
+T1B14 015:755.448   TELNET listener socket opened on port 19021
+T1B14 015:761.024   WEBSRV WEBSRV_Init(): Starting webserver thread(s)
+T1B14 015:763.267   WEBSRV Failed to put socket into listener state (port 19080)
+T1B14 015:763.300   WEBSRV Failed to put socket into listener state (port 19081)
+T1B14 015:763.376   WEBSRV Webserver running on local port 19082
+T1B14 015:763.494   Looking for J-Link GUI Server exe at: C:\Keil_v5\ARM\Segger\JLinkGUIServer.exe
+T1B14 015:763.538   Looking for J-Link GUI Server exe at: C:\Program Files\SEGGER\JLink_V812a\JLinkGUIServer.exe
+T1B14 015:763.558   Forking J-Link GUI Server: C:\Program Files\SEGGER\JLink_V812a\JLinkGUIServer.exe
+T1B14 015:776.039   J-Link GUI Server info: "J-Link GUI server V8.10l "
+T1B14 015:776.261 - 304.728ms returns "O.K."
+T1B14 015:776.288 JLINK_GetEmuCaps()
+T1B14 015:776.300 - 0.011ms returns 0xB9FF7BBF
+T1B14 015:776.313 JLINK_TIF_GetAvailable(...)
+T1B14 015:776.486 - 0.173ms
+T1B14 015:776.502 JLINK_SetErrorOutHandler(...)
+T1B14 015:776.511 - 0.008ms
+T1B14 015:776.760 JLINK_ExecCommand("ProjectFile = "F:\emkit\stmicro\2_software\STM32H750X\cherryusb\usbd_hid_sfud_rw\MDK-ARM\JLinkSettings.ini"", ...). 
+T1B14 015:778.026 - 1.265ms returns 0x00
+T1B14 015:778.053 JLINK_ExecCommand("Device = STM32H750XBHx", ...). 
+T1B14 015:778.506   Flash bank @ 0x90000000: SFL: Parsing sectorization info from ELF file
+T1B14 015:778.526     FlashDevice.SectorInfo[0]: .SectorSize = 0x00010000, .SectorStartAddr = 0x00000000
+T1B14 015:787.863   Device "STM32H750XB" selected.
+T1B14 015:788.087 - 10.010ms returns 0x00
+T1B14 015:788.098 JLINK_ExecCommand("DisableConnectionTimeout", ...). 
+T1B14 015:788.106 - 0.001ms returns 0x01
+T1B14 015:788.112 JLINK_GetHardwareVersion()
+T1B14 015:788.117 - 0.005ms returns 110000
+T1B14 015:788.122 JLINK_GetDLLVersion()
+T1B14 015:788.127 - 0.004ms returns 79213
+T1B14 015:788.132 JLINK_GetOEMString(...)
+T1B14 015:788.137 JLINK_GetFirmwareString(...)
+T1B14 015:788.142 - 0.004ms
+T1B14 015:788.150 JLINK_GetDLLVersion()
+T1B14 015:788.154 - 0.004ms returns 79213
+T1B14 015:788.159 JLINK_GetCompileDateTime()
+T1B14 015:788.164 - 0.004ms
+T1B14 015:788.170 JLINK_GetFirmwareString(...)
+T1B14 015:788.175 - 0.004ms
+T1B14 015:788.180 JLINK_GetHardwareVersion()
+T1B14 015:788.184 - 0.004ms returns 110000
+T1B14 015:788.190 JLINK_GetSN()
+T1B14 015:788.195 - 0.004ms returns 601012352
+T1B14 015:788.200 JLINK_GetOEMString(...)
+T1B14 015:788.207 JLINK_TIF_Select(JLINKARM_TIF_JTAG)
+T1B14 015:789.182 - 0.974ms returns 0x00
+T1B14 015:789.203 JLINK_HasError()
+T1B14 015:789.215 JLINK_SetSpeed(5000)
+T1B14 015:789.359 - 0.144ms
+T1B14 015:789.626 JLINK_HasError()
+T1B14 015:789.642 JLINK_SetResetType(JLINKARM_RESET_TYPE_NORMAL)
+T1B14 015:789.651 - 0.009ms returns JLINKARM_RESET_TYPE_NORMAL
+T1B14 015:789.661 JLINK_Reset()
+T1B14 015:789.807 - 0.145ms
+T1B14 015:789.819 JLINK_GetIdData(pIdData)
+T1B14 015:790.047 - 0.227ms
+T1B14 015:790.059 JLINK_GetIdData(pIdData)
+T1B14 015:790.318 - 0.259ms
+T1B14 015:792.573 JLINK_GetFirmwareString(...)
+T1B14 015:792.592 - 0.019ms
+T571C 108:313.608   
+  ***** Error: Connection to emulator lost!

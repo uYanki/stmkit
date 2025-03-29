@@ -1,1 +1,0 @@
-idf_component_register(SRCS connect/connect.c main.c ../../src/corsacOTA.c)

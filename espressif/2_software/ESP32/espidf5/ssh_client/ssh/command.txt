@@ -1,0 +1,4 @@
+# define ssh execute command
+uname -a
+ls -l
+cat /etc/os-release
