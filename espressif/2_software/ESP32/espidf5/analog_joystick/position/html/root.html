@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link rel="stylesheet" type="text/css" href="main.css">
+	<script src="//cdn.rawgit.com/Mikhus/canvas-gauges/gh-pages/download/2.1.7/all/gauge.min.js"></script>
+	<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+	<title>JoyStick Pose</title>
+</head>
+
+<body>
+	<h1 id="header"></h1>
+
+	<div class="wrapper">
+		<div id="myDiv" class="box1"></div>
+		<div id="myDiv2" class="box2">
+			<canvas id="canvas1"></canvas>
+		</div>
+		<div id="myDiv3" class="box3">
+			<canvas id="canvas2"></canvas>
+		</div>
+	</div>
+
+	<script>
+		// wait for the page to load
+		//window.addEventListener('DOMContentLoaded', init);
+
+		var trace = {
+			x:[], y:[],
+			mode: 'markers',
+			marker: {
+				size: 20,
+				color: 'rgb(255, 0, 0)',
+				line: {
+				color: 'rgb(60, 60, 60)',
+				width: 0.5},
+				opacity: 0.8},
+			type: 'scatter'
+		};
+
+		var data = [trace];
+		var layout = { 
+			title:'VRx / VRr',
+			plot_bgcolor: 'rgb(66, 203, 245)',
+			height: 600,
+			width: 600,
+			margin: {
+				l: 40,
+				r: 20,
+				b: 30,
+				t: 30,
+			},
+		};
+
+		Plotly.newPlot('myDiv', data, layout)
+
+		var gauge1 = new LinearGauge({
+			renderTo: 'canvas1',
+			width: 620,
+			height: 120,
+			//units: "Deg",
+			minValue: -10,
+			maxValue: 10,
+			majorTicks: [
+				"-10", "-8", "-6", "-4", "-2", "0", "2", "4", "6", "8", "10"
+			],
+			valueBox: false,
+			minorTicks: 2,
+			strokeTicks: true,
+			highlights: [
+				{ from: -10, to: 0, color: "rgba(0, 0, 255, .3)" },
+				{ from: 0, to: 10, color: "rgba(255, 0, 0, .75)" }
+			],
+			colorPlate: "#fff",
+			colorBarProgress: "#ffffff",
+			colorBar: "#ffffff",
+			borderShadowWidth: 0,
+			borders: false,
+			needleType: "line",
+			needleWidth: 8,
+			animationDuration: 1500,
+			animationRule: "linear",
+			tickSide: "right",
+			numberSide: "right",
+			needleSide: "right",
+			barStrokeWidth: 0,
+			barProgress: false,
+			barBeginCircle: false
+		}).draw();
+
+		var gauge2 = new LinearGauge({
+			renderTo: 'canvas2',
+			width: 120,
+			height: 600,
+			//units: "Deg",
+			minValue: -10,
+			maxValue: 10,
+			majorTicks: [
+				"-10", "-8", "-6", "-4", "-2", "0", "2", "4", "6", "8", "10"
+			],
+			valueBox: false,
+			minorTicks: 2,
+			strokeTicks: true,
+			highlights: [
+				{ from: -10, to: 0, color: "rgba(0, 0, 255, .3)" },
+				{ from: 0, to: 10, color: "rgba(255, 0, 0, .75)" }
+			],
+			colorPlate: "#fff",
+			colorBarProgress: "#ffffff",
+			colorBar: "#ffffff",
+			borderShadowWidth: 0,
+			borders: false,
+			needleType: "line",
+			needleWidth: 8,
+			animationDuration: 1500,
+			animationRule: "linear",
+			tickSide: "left",
+			numberSide: "left",
+			needleSide: "left",
+			barStrokeWidth: 0,
+			barProgress: false,
+			barBeginCircle: false
+		}).draw();
+
+		document.getElementById("canvas1").style.display = "none";
+		document.getElementById("canvas2").style.display = "none";
+
+	</script>
+
+	<script type="text/javascript" src="main.js"></script>
+</body>
+</html>
+
