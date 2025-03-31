@@ -869,7 +869,12 @@ void handle_ep0(struct usbh_bus *bus)
             break;
         case USB_EP0_STATE_IN_DATA:
             if (ep0_status & USB_CSRL0_RXRDY) {
-                size = HWREGH(USB_BASE + MUSB_IND_RXCOUNT_OFFSET);
+                size = urb->transfer_buffer_length;
+                if (size > USB_GET_MAXPACKETSIZE(urb->ep->wMaxPacketSize)) {
+                    size = USB_GET_MAXPACKETSIZE(urb->ep->wMaxPacketSize);
+                }
+
+                size = MIN(size, HWREGH(USB_BASE + MUSB_IND_RXCOUNT_OFFSET));
                 musb_read_packet(bus, 0, urb->transfer_buffer, size);
                 HWREGB(USB_BASE + MUSB_IND_TXCSRL_OFFSET) &= ~USB_CSRL0_RXRDY;
                 urb->transfer_buffer += size;
@@ -928,7 +933,6 @@ void USBH_IRQHandler(uint8_t busid)
     uint8_t ep_idx;
     uint8_t old_ep_idx;
     struct usbh_bus *bus;
-    uint32_t size;
 
     bus = &g_usbhost_bus[busid];
 
@@ -1020,7 +1024,7 @@ void USBH_IRQHandler(uint8_t busid)
                     urb->errorcode = 0;
                     musb_urb_waitup(urb);
                 } else {
-                    musb_write_packet(bus, ep_idx, urb->transfer_buffer, MIN(urb->transfer_buffer_length, USB_GET_MAXPACKETSIZE(urb->ep->wMaxPacketSize)));
+                    musb_write_packet(bus, ep_idx, urb->transfer_buffer, size);
                     HWREGB(USB_BASE + MUSB_IND_TXCSRL_OFFSET) = USB_TXCSRL1_TXRDY;
                 }
             }
@@ -1052,7 +1056,11 @@ void USBH_IRQHandler(uint8_t busid)
                 urb->errorcode = -USB_ERR_STALL;
                 musb_urb_waitup(urb);
             } else if (ep_csrl_status & USB_RXCSRL1_RXRDY) {
-                size = HWREGH(USB_BASE + MUSB_IND_RXCOUNT_OFFSET);
+                uint32_t size = urb->transfer_buffer_length;
+                if (size > USB_GET_MAXPACKETSIZE(urb->ep->wMaxPacketSize)) {
+                    size = USB_GET_MAXPACKETSIZE(urb->ep->wMaxPacketSize);
+                }
+                size = MIN(size, HWREGH(USB_BASE + MUSB_IND_RXCOUNT_OFFSET));
 
                 musb_read_packet(bus, ep_idx, urb->transfer_buffer, size);
 

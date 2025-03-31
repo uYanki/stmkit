@@ -347,7 +347,7 @@ static int usbh_bl616_disconnect(struct usbh_hubport *hport, uint8_t intf)
     return ret;
 }
 
-void usbh_bl616_rx_thread(CONFIG_USB_OSAL_THREAD_SET_ARGV)
+void usbh_bl616_rx_thread(void *argument)
 {
     int ret;
     usb_data_t *usb_hdr;
@@ -356,7 +356,7 @@ void usbh_bl616_rx_thread(CONFIG_USB_OSAL_THREAD_SET_ARGV)
     rnm_scan_ind_msg_t *scanmsg;
     uint8_t *data;
 
-    (void)CONFIG_USB_OSAL_THREAD_GET_ARGV;
+    (void)argument;
     USB_LOG_INFO("Create bl616 wifi rx thread\r\n");
 
     while (1) {
