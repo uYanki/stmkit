@@ -89,7 +89,7 @@ void UsbHidThread::run()
             }
 
             // check if disconnect
-            if ((QDateTime::currentMSecsSinceEpoch() - tick) > 500)
+            if ((QDateTime::currentMSecsSinceEpoch() - tick) > 100)
             {
                 tick = QDateTime::currentMSecsSinceEpoch();
 
@@ -103,8 +103,12 @@ void UsbHidThread::run()
                 }
             }
 
-            // release cpu
-            usleep(100);
+            if( m_TimeDlyUs > 0 )
+            {
+                // release cpu
+                usleep(m_TimeDlyUs);
+            }
+
         }
         else  // disconnected
         {
@@ -154,5 +158,15 @@ void UsbHidThread::scan()
     }
 
     hid_free_enumeration(devs);
+}
+
+void UsbHidThread::enterHighPerformanceMode()
+{
+    m_TimeDlyUs = 0;
+}
+
+void UsbHidThread::exitHighPerformanceMode()
+{
+    m_TimeDlyUs = 10;
 }
 

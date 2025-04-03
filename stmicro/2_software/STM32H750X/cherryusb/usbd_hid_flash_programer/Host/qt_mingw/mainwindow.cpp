@@ -289,6 +289,8 @@ void MainWindow::doDownlaod(uint8_t* rxdata, uint16_t rxlen)  // USB不会丢帧
                     log(QtInfoMsg, "download begin");
                 });
 
+                m_UsbThread->enterHighPerformanceMode();
+
                 break;
             }
 
@@ -309,6 +311,8 @@ void MainWindow::doDownlaod(uint8_t* rxdata, uint16_t rxlen)  // USB不会丢帧
                 }
                 else
                 {
+                    m_UsbThread->exitHighPerformanceMode();
+
                     uint16_t crc16 = ModbusCRC16((uint8_t*)txdata.constData(), txdata.length());  // usb有硬件校验,此处不使用
                     m_UsbThread->sendData(Protocol::BlockWriteEnd(crc16));
                 }
@@ -364,7 +368,12 @@ void MainWindow::doUpload(uint8_t* rxdata, uint16_t length)
     }
     else
     {
-        uint32_t data_once_txsize = 32;
+        uint32_t data_once_txsize = USBD_HID_IN_REPORT_MAXSIZE - 1 - 2;
+
+        if( data_once_txsize > 16)
+        {
+            data_once_txsize = 16;
+        }
 
         switch (pid)
         {
@@ -382,6 +391,8 @@ void MainWindow::doUpload(uint8_t* rxdata, uint16_t length)
                     log(QtInfoMsg, QString("starting from address 0x%1, upload %2 bytes of data").arg(start_address, 8, 16, QLatin1Char('0')).arg(data_total_txsize));
                     ui->btnExecute->setText(QString("Uploading... %1%").arg(0));
                 });
+
+                m_UsbThread->enterHighPerformanceMode();
 
                 break;
             }
@@ -411,6 +422,8 @@ void MainWindow::doUpload(uint8_t* rxdata, uint16_t length)
                 }
                 else
                 {
+                    m_UsbThread->exitHighPerformanceMode();
+
                     m_TransferAddr.pop_front();
                     m_TransferSize.pop_front();
 

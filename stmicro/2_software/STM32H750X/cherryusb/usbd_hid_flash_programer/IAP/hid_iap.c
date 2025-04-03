@@ -16,7 +16,7 @@
 #define HIDRAW_IN_INTERVAL 5
 #else
 #define HIDRAW_IN_EP_SIZE  64
-#define HIDRAW_IN_INTERVAL 10
+#define HIDRAW_IN_INTERVAL 0
 #endif
 /*!< hidraw out endpoint */
 #define HIDRAW_OUT_EP 0x02
@@ -25,7 +25,7 @@
 #define HIDRAW_OUT_EP_INTERVAL 5
 #else
 #define HIDRAW_OUT_EP_SIZE     64
-#define HIDRAW_OUT_EP_INTERVAL 10
+#define HIDRAW_OUT_EP_INTERVAL 0
 #endif
 
 #define USBD_MAX_POWER     100

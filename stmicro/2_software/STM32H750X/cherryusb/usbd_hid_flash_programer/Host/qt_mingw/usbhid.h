@@ -25,6 +25,9 @@ public:
 
     static void scan();
 
+    void enterHighPerformanceMode();
+    void exitHighPerformanceMode();
+
 protected:
     void run() Q_DECL_OVERRIDE;  // 线程任务
 
@@ -45,6 +48,8 @@ private:
 
     bool m_bPause = false;
     bool m_bStop  = false;
+
+    uint16_t m_TimeDlyUs = 10; // for release cpu when connected
 };
 
 #endif  // USBHID_H
