@@ -180,22 +180,20 @@ void MainWindow::dropEvent(QDropEvent* event)
     event->accept();
 }
 
-bool MainWindow::eventFilter(QObject *obj, QEvent *event)
+bool MainWindow::eventFilter(QObject* obj, QEvent* event)
 {
     if (obj == ui->editFilePath1 || obj == ui->editFilePath2 || obj == ui->editFilePath3 || obj == ui->editFilePath4)
     {
-
-
         if (event->type() == QEvent::MouseButtonDblClick)
         {
             QString filepath = QFileDialog::getOpenFileName(
-                nullptr,  // 父窗口
-                "选择文件",  // 对话框标题
-                "",  // 默认目录
+                nullptr,                          // 父窗口
+                "选择文件",                       // 对话框标题
+                "",                               // 默认目录
                 "所有文件(*.*);;文本文件(*.bin)"  // 文件过滤器
             );
 
-            if(!filepath.isEmpty())
+            if (!filepath.isEmpty())
             {
                 QLineEdit* edit = static_cast<QLineEdit*>(obj);
                 edit->setText(filepath);
@@ -254,8 +252,8 @@ void MainWindow::doDownlaod(uint8_t* rxdata, uint16_t rxlen)  // USB不会丢帧
     {
         // new thread
         QTimer::singleShot(0, [=] {
-            log(QtInfoMsg, "download fail");
-            log(QtCriticalMsg, QString("reponse error at %1 when downloading").arg(Protocol::stringify(pid)));
+            log(QtInfoCanMsg, "download fail");
+            log(QtCriticalCanMsg, QString("reponse error at %1 when downloading").arg(Protocol::stringify(pid)));
             ui->btnExecute->setEnabled(true);
             ui->btnExecute->setText("Execute");
         });
@@ -271,7 +269,7 @@ void MainWindow::doDownlaod(uint8_t* rxdata, uint16_t rxlen)  // USB不会丢帧
                 // 使用QTimer来更新UI, 防止非主线程中操作UI导致奔溃
                 QTimer::singleShot(0, [=] {
                     ui->btnExecute->setEnabled(false);
-                    log(QtInfoMsg, QString("earse flash at address 0x%1, length %2 bytes").arg(start_address, 8, 16, QLatin1Char('0')).arg(earse_size));
+                    log(QtInfoCanMsg, QString("earse flash at address 0x%1, length %2 bytes").arg(start_address, 8, 16, QLatin1Char('0')).arg(earse_size));
                 });
 
                 break;
@@ -286,7 +284,7 @@ void MainWindow::doDownlaod(uint8_t* rxdata, uint16_t rxlen)  // USB不会丢帧
 
                 // new thread
                 QTimer::singleShot(0, [=] {
-                    log(QtInfoMsg, "download begin");
+                    log(QtInfoCanMsg, "download begin");
                 });
 
                 m_UsbThread->enterHighPerformanceMode();
@@ -329,7 +327,7 @@ void MainWindow::doDownlaod(uint8_t* rxdata, uint16_t rxlen)  // USB不会丢帧
                 {
                     // new thread
                     QTimer::singleShot(0, [=] {
-                        log(QtInfoMsg, "download end");
+                        log(QtInfoCanMsg, "download end");
                         ui->btnExecute->setEnabled(true);
                         ui->btnExecute->setText("Execute");
                     });
@@ -364,13 +362,13 @@ void MainWindow::doUpload(uint8_t* rxdata, uint16_t length)
 
     if (err)
     {
-        log(QtCriticalMsg, QString("reponse error at %1 when downloading").arg(Protocol::stringify(pid)));
+        log(QtCriticalCanMsg, QString("reponse error at %1 when downloading").arg(Protocol::stringify(pid)));
     }
     else
     {
         uint32_t data_once_txsize = USBD_HID_IN_REPORT_MAXSIZE - 1 - 2;
 
-        if( data_once_txsize > 16)
+        if (data_once_txsize > 16)
         {
             data_once_txsize = 16;
         }
@@ -387,8 +385,8 @@ void MainWindow::doUpload(uint8_t* rxdata, uint16_t length)
                 // new thread
                 QTimer::singleShot(0, [=] {
                     ui->btnExecute->setEnabled(false);
-                    log(QtInfoMsg, QString("upload start"));
-                    log(QtInfoMsg, QString("starting from address 0x%1, upload %2 bytes of data").arg(start_address, 8, 16, QLatin1Char('0')).arg(data_total_txsize));
+                    log(QtInfoCanMsg, QString("upload start"));
+                    log(QtInfoCanMsg, QString("starting from address 0x%1, upload %2 bytes of data").arg(start_address, 8, 16, QLatin1Char('0')).arg(data_total_txsize));
                     ui->btnExecute->setText(QString("Uploading... %1%").arg(0));
                 });
 
@@ -404,7 +402,7 @@ void MainWindow::doUpload(uint8_t* rxdata, uint16_t length)
 
                 // new thread
                 QTimer::singleShot(0, [=] {
-                    log(QtDebugMsg, QString("0x%1 ").arg(current_pos, 8, 16, QLatin1Char('0')) + rawdata.toHex(' ') + QString(" | ") + QString::fromLocal8Bit(rawdata));
+                    log(QtDebugCanMsg, QString("0x%1 ").arg(current_pos, 8, 16, QLatin1Char('0')) + rawdata.toHex(' ') + QString(" | ") + QString::fromLocal8Bit(rawdata));
                 });
 
                 uint16_t len = std::min(data_total_txsize - current_pos, data_once_txsize);
@@ -431,7 +429,7 @@ void MainWindow::doUpload(uint8_t* rxdata, uint16_t length)
                     {
                         // new thread
                         QTimer::singleShot(0, [=] {
-                            log(QtInfoMsg, "upload end");
+                            log(QtInfoCanMsg, "upload end");
                             ui->btnExecute->setEnabled(true);
                             ui->btnExecute->setText(QString("Execute"));
                         });
@@ -453,30 +451,30 @@ void MainWindow::doUpload(uint8_t* rxdata, uint16_t length)
     }
 }
 
-void MainWindow::log(QtMsgType type, const QString& msg)
+void MainWindow::log(QtCanMsgType type, const QString& canmsg)
 {
     QString message;
     QColor  color;
     switch (type)
     {
-        case QtDebugMsg:
-            message = QString("Debug: %1").arg(msg);
+        case QtDebugCanMsg:
+            message = QString("Debug: %1").arg(canmsg);
             color   = Qt::darkGray;
             break;
-        case QtInfoMsg:
-            message = QString("Info: %1").arg(msg);
+        case QtInfoCanMsg:
+            message = QString("Info: %1").arg(canmsg);
             color   = Qt::darkGreen;
             break;
-        case QtWarningMsg:
-            message = QString("Warning: %1").arg(msg);
+        case QtWarningCanMsg:
+            message = QString("Warning: %1").arg(canmsg);
             color   = Qt::darkRed;
             break;
-        case QtCriticalMsg:
-            message = QString("Critical: %1").arg(msg);
+        case QtCriticalCanMsg:
+            message = QString("Critical: %1").arg(canmsg);
             color   = Qt::red;
             break;
-        case QtFatalMsg:
-            message = QString("Fatal: %1").arg(msg);
+        case QtFatalCanMsg:
+            message = QString("Fatal: %1").arg(canmsg);
             color   = Qt::red;
             break;
         default:
@@ -491,7 +489,7 @@ void MainWindow::log(QtMsgType type, const QString& msg)
 void MainWindow::onUsbConnected()
 {
     updataConnStatusLabel();
-    log(QtInfoMsg, "device connected");
+    log(QtInfoCanMsg, "device connected");
 
     if (ui->chkAutoDownload->isChecked())
     {
@@ -502,7 +500,7 @@ void MainWindow::onUsbConnected()
 void MainWindow::onUsbDisconnected()
 {
     updataConnStatusLabel();
-    log(QtWarningMsg, "device disconnected");
+    log(QtWarningCanMsg, "device disconnected");
 }
 
 void MainWindow::onUsbDataReady(uint8_t* rxdata, uint16_t rxlen)
@@ -557,7 +555,7 @@ void MainWindow::on_btnExecute_clicked()
             {
                 if (fileinfo.size() > 1024 * 1024 * 2)  // 2M
                 {
-                    log(QtFatalMsg, QString("%1 to large").arg(filepath));
+                    log(QtFatalCanMsg, QString("%1 to large").arg(filepath));
                     return;
                 }
 
@@ -570,7 +568,7 @@ void MainWindow::on_btnExecute_clicked()
 
         if (m_TransferData.count() == 0)
         {
-            log(QtFatalMsg, QString("no data to download"));
+            log(QtFatalCanMsg, QString("no data to download"));
             return;
         }
 
@@ -604,7 +602,7 @@ void MainWindow::on_btnExecute_clicked()
 
         if (m_TransferAddr.count() == 0)
         {
-            log(QtFatalMsg, QString("no data to upload"));
+            log(QtFatalCanMsg, QString("no data to upload"));
             return;
         }
 
