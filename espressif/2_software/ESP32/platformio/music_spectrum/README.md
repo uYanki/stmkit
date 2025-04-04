@@ -1,6 +1,6 @@
 # 音乐频谱（ADC）
 
-![hardware](.assest/README/hardware.jpg)
+![hardware](.assets/README/hardware.jpg)
 
 |      | OLED | MAX4466 |
 | ---- | ---- | ------- |

@@ -46,7 +46,7 @@
 
 // COMMENT THIS DEFINITION OUT IF YOUR ESP32 DOES NOT HAVE A FLASH DISK
 // #define FILE_SYSTEM FILE_SYSTEM_LITTLEFS  // FILE_SYSTEM_FAT  // the file system must correspond to Tools | Partition scheme setting: FILE_SYSTEM_FAT (for FAT partition scheme), FILE_SYSTEM_LITTLEFS (for SPIFFS partition scheme) or FILE_SYSTEM_SD_CARD (if SC card is attached)
-                                          // FAT file system can be bitwise combined with FILE_SYSTEM_SD_CARD, like #define FILE_SYSTEM (FILE_SYSTEM_FAT | FILE_SYSTEM_SD_CARD)
+// FAT file system can be bitwise combined with FILE_SYSTEM_SD_CARD, like #define FILE_SYSTEM (FILE_SYSTEM_FAT | FILE_SYSTEM_SD_CARD)
 
 // When file system is used a disc will be created and formatted. You can later FTP .html and other files to /var/www/html directory,
 // which is the root directory of a HTTP server.
@@ -58,8 +58,8 @@
 // #define how ESP32 will connecto to WiFi router
 // this information will be written into /etc/wpa_supplicant/wpa_supplicant.conf file if fileSystem.hpp will be included
 // if these #definitions are missing STAtion will not be set up
-#define DEFAULT_STA_SSID     "HUAWEI-Y6AZGD"  // <- replace with your information
-#define DEFAULT_STA_PASSWORD "13631520360"    // <- replace with your information
+#define DEFAULT_STA_SSID     "myssid"      // <- replace with your information
+#define DEFAULT_STA_PASSWORD "mypassword"  // <- replace with your information
 // #define DEFAULT_STA_SSID                          "YOUR_STA_SSID"       // <- replace with your information
 // #define DEFAULT_STA_PASSWORD                      "YOUR_STA_PASSWORD"   // <- replace with your information
 // the use of DHCP or static IP address will be set in /network/interfaces if fileSystem.hpp is included, the following is information needed for static IP configuration

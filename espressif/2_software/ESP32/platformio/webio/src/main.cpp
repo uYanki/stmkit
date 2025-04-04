@@ -14,8 +14,8 @@ extern String processor(const String& var);
 int relayGPIOs[NUM_RELAYS] = {2, 26, 27, 25, 33};
 
 // Replace with your network credentials
-const char* ssid     = "HUAWEI-Y6AZGD";
-const char* password = "13631520360";
+const char* ssid     = "myssid";
+const char* password = "mypassword";
 
 const char* PARAM_INPUT_1 = "relay";
 const char* PARAM_INPUT_2 = "state";

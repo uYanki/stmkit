@@ -12,8 +12,8 @@ static const BaseType_t app_cpu = 0;
 static const BaseType_t app_cpu = 1;
 #endif
 #define NTP "ntp.aliyun.com"
-const char* ssid     = "HUAWEI-Y6AZGD";
-const char* password = "13631520360";
+const char* ssid     = "myssid";
+const char* password = "mypassword";
 
 void shell_putc(char ch)
 {

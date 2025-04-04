@@ -13,8 +13,8 @@
 
 #include <ArduinoOTA.h>
 
-const char* ssid     = "HUAWEI-Y6AZGD";
-const char* password = "13631520360";
+const char* ssid     = "myssid";
+const char* password = "mypassword";
 
 SSD1306Wire display(0x3c, SDA, SCL);  // ADDRESS, SDA, SCL
 
