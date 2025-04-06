@@ -1,18 +1,18 @@
 /* generated HAL source file - do not edit */
 #include "hal_data.h"
-sci_uart_instance_ctrl_t g_uart7_ctrl;
+sci_uart_instance_ctrl_t g_dbguart_ctrl;
 
-baud_setting_t g_uart7_baud_setting =
+baud_setting_t g_dbguart_baud_setting =
         {
         /* Baud rate calculated with 0.469% error. */.semr_baudrate_bits_b.abcse = 0,
           .semr_baudrate_bits_b.abcs = 0, .semr_baudrate_bits_b.bgdm = 1, .cks = 0, .brr = 53, .mddr = (uint8_t) 256, .semr_baudrate_bits_b.brme =
                   false };
 
 /** UART extended configuration for UARTonSCI HAL driver */
-const sci_uart_extended_cfg_t g_uart7_cfg_extend =
+const sci_uart_extended_cfg_t g_dbguart_cfg_extend =
 { .clock = SCI_UART_CLOCK_INT, .rx_edge_start = SCI_UART_START_BIT_FALLING_EDGE, .noise_cancel =
           SCI_UART_NOISE_CANCELLATION_DISABLE,
-  .rx_fifo_trigger = SCI_UART_RX_FIFO_TRIGGER_MAX, .p_baud_setting = &g_uart7_baud_setting, .flow_control =
+  .rx_fifo_trigger = SCI_UART_RX_FIFO_TRIGGER_1, .p_baud_setting = &g_dbguart_baud_setting, .flow_control =
           SCI_UART_FLOW_CONTROL_RTS,
 #if 0xFF != 0xFF
                 .flow_control_pin       = BSP_IO_PORT_FF_PIN_0xFF,
@@ -31,10 +31,10 @@ const sci_uart_extended_cfg_t g_uart7_cfg_extend =
   { .ircr_bits_b.ire = 0, .ircr_bits_b.irrxinv = 0, .ircr_bits_b.irtxinv = 0, }, };
 
 /** UART interface configuration */
-const uart_cfg_t g_uart7_cfg =
+const uart_cfg_t g_dbguart_cfg =
 { .channel = 7, .data_bits = UART_DATA_BITS_8, .parity = UART_PARITY_OFF, .stop_bits = UART_STOP_BITS_1, .p_callback =
-          user_uart_callback,
-  .p_context = NULL, .p_extend = &g_uart7_cfg_extend,
+          NULL,
+  .p_context = NULL, .p_extend = &g_dbguart_cfg_extend,
 #define RA_NOT_DEFINED (1)
 #if (RA_NOT_DEFINED == RA_NOT_DEFINED)
   .p_transfer_tx = NULL,
@@ -72,8 +72,8 @@ const uart_cfg_t g_uart7_cfg =
         };
 
 /* Instance structure to use this module. */
-const uart_instance_t g_uart7 =
-{ .p_ctrl = &g_uart7_ctrl, .p_cfg = &g_uart7_cfg, .p_api = &g_uart_on_sci };
+const uart_instance_t g_dbguart =
+{ .p_ctrl = &g_dbguart_ctrl, .p_cfg = &g_dbguart_cfg, .p_api = &g_uart_on_sci };
 void g_hal_init(void)
 {
     g_common_init ();

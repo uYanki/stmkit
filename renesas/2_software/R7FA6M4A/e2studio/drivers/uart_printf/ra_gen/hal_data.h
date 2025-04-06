@@ -8,15 +8,15 @@
 #include "r_uart_api.h"
 FSP_HEADER
 /** UART on SCI Instance. */
-extern const uart_instance_t g_uart7;
+extern const uart_instance_t g_dbguart;
 
 /** Access the UART instance using these structures when calling API functions directly (::p_api is not used). */
-extern sci_uart_instance_ctrl_t g_uart7_ctrl;
-extern const uart_cfg_t g_uart7_cfg;
-extern const sci_uart_extended_cfg_t g_uart7_cfg_extend;
+extern sci_uart_instance_ctrl_t g_dbguart_ctrl;
+extern const uart_cfg_t g_dbguart_cfg;
+extern const sci_uart_extended_cfg_t g_dbguart_cfg_extend;
 
-#ifndef user_uart_callback
-void user_uart_callback(uart_callback_args_t *p_args);
+#ifndef NULL
+void NULL(uart_callback_args_t *p_args);
 #endif
 void hal_entry(void);
 void g_hal_init(void);

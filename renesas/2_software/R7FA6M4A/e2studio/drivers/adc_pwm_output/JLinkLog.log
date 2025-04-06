@@ -25,7 +25,7 @@ T4B28 000:590.346   Looking for J-Link GUI Server exe at: C:\Program Files\SEGGE
 T4B28 000:590.361   Forking J-Link GUI Server: C:\Program Files\SEGGER\JLink_V812a\JLinkGUIServer.exe
 T4B28 000:591.731   J-Link GUI Server info: "J-Link GUI server V8.12a "
 T4B28 000:592.218 - 589.702ms returns "O.K."
-T4B28 000:592.305 JLINK_ExecCommand("ProjectFile=F:\emkit\renesas\2_software\R7FA6M4A\e2studio\drivers\adc_pwm/adc_pwm Debug_Flat.jlink", ...). 
+T4B28 000:592.305 JLINK_ExecCommand("ProjectFile=F:\emkit\renesas\2_software\R7FA6M4A\e2studio\drivers\adc_pwm_output/adc_pwm_output Debug_Flat.jlink", ...). 
 T4B28 000:616.280 - 23.977ms returns 0x00
 T4B28 000:616.509 JLINK_ExecCommand("device=R7FA6M4AF", ...). 
 T4B28 000:617.347   Flash bank @ 0x0100A100: SFL: Parsing sectorization info from ELF file

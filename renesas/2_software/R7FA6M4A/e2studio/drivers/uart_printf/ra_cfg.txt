@@ -415,8 +415,8 @@ FSP Configuration
       4th Port ELC Trigger Source: Disabled
       Pin Configuration Name: g_bsp_pin_cfg
       
-    Instance "g_uart7 UART (r_sci_uart)"
-      General: Name: g_uart7
+    Instance "g_dbguart UART (r_sci_uart)"
+      General: Name: g_dbguart
       General: Channel: 7
       General: Data Bits: 8bits
       General: Parity: None
@@ -430,7 +430,7 @@ FSP Configuration
       Extra: Clock Source: Internal Clock
       Extra: Start bit detection: Falling Edge
       Extra: Noise Filter: Disable
-      Extra: Receive FIFO Trigger Level: Max
+      Extra: Receive FIFO Trigger Level: One
       Extra: IrDA: Enable: Disabled
       Extra: IrDA: RXD Polarity Switching: Normal
       Extra: IrDA: TXD Polarity Switching: Normal
@@ -438,7 +438,7 @@ FSP Configuration
       Extra: RS-485: DE Pin Polarity: Active High
       Extra: RS-485: DE Port Number: Disabled
       Extra: RS-485: DE Pin Number: Disabled
-      Interrupts: Callback: user_uart_callback
+      Interrupts: Callback: NULL
       Interrupts: Receive Interrupt Priority: Priority 12
       Interrupts: Transmit Data Empty Interrupt Priority: Priority 12
       Interrupts: Transmit End Interrupt Priority: Priority 12
