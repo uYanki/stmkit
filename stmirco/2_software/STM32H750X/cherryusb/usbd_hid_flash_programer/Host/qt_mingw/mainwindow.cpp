@@ -252,8 +252,8 @@ void MainWindow::doDownlaod(uint8_t* rxdata, uint16_t rxlen)  // USB不会丢帧
     {
         // new thread
         QTimer::singleShot(0, [=] {
-            log(QtInfoCanMsg, "download fail");
-            log(QtCriticalCanMsg, QString("reponse error at %1 when downloading").arg(Protocol::stringify(pid)));
+            log(QtInfoMsg, "download fail");
+            log(QtCriticalMsg, QString("reponse error at %1 when downloading").arg(Protocol::stringify(pid)));
             ui->btnExecute->setEnabled(true);
             ui->btnExecute->setText("Execute");
         });
@@ -269,7 +269,7 @@ void MainWindow::doDownlaod(uint8_t* rxdata, uint16_t rxlen)  // USB不会丢帧
                 // 使用QTimer来更新UI, 防止非主线程中操作UI导致奔溃
                 QTimer::singleShot(0, [=] {
                     ui->btnExecute->setEnabled(false);
-                    log(QtInfoCanMsg, QString("earse flash at address 0x%1, length %2 bytes").arg(start_address, 8, 16, QLatin1Char('0')).arg(earse_size));
+                    log(QtInfoMsg, QString("earse flash at address 0x%1, length %2 bytes").arg(start_address, 8, 16, QLatin1Char('0')).arg(earse_size));
                 });
 
                 break;
@@ -284,7 +284,7 @@ void MainWindow::doDownlaod(uint8_t* rxdata, uint16_t rxlen)  // USB不会丢帧
 
                 // new thread
                 QTimer::singleShot(0, [=] {
-                    log(QtInfoCanMsg, "download begin");
+                    log(QtInfoMsg, "download begin");
                 });
 
                 m_UsbThread->enterHighPerformanceMode();
@@ -327,7 +327,7 @@ void MainWindow::doDownlaod(uint8_t* rxdata, uint16_t rxlen)  // USB不会丢帧
                 {
                     // new thread
                     QTimer::singleShot(0, [=] {
-                        log(QtInfoCanMsg, "download end");
+                        log(QtInfoMsg, "download end");
                         ui->btnExecute->setEnabled(true);
                         ui->btnExecute->setText("Execute");
                     });
@@ -362,7 +362,7 @@ void MainWindow::doUpload(uint8_t* rxdata, uint16_t length)
 
     if (err)
     {
-        log(QtCriticalCanMsg, QString("reponse error at %1 when downloading").arg(Protocol::stringify(pid)));
+        log(QtCriticalMsg, QString("reponse error at %1 when downloading").arg(Protocol::stringify(pid)));
     }
     else
     {
@@ -385,8 +385,8 @@ void MainWindow::doUpload(uint8_t* rxdata, uint16_t length)
                 // new thread
                 QTimer::singleShot(0, [=] {
                     ui->btnExecute->setEnabled(false);
-                    log(QtInfoCanMsg, QString("upload start"));
-                    log(QtInfoCanMsg, QString("starting from address 0x%1, upload %2 bytes of data").arg(start_address, 8, 16, QLatin1Char('0')).arg(data_total_txsize));
+                    log(QtInfoMsg, QString("upload start"));
+                    log(QtInfoMsg, QString("starting from address 0x%1, upload %2 bytes of data").arg(start_address, 8, 16, QLatin1Char('0')).arg(data_total_txsize));
                     ui->btnExecute->setText(QString("Uploading... %1%").arg(0));
                 });
 
@@ -402,7 +402,7 @@ void MainWindow::doUpload(uint8_t* rxdata, uint16_t length)
 
                 // new thread
                 QTimer::singleShot(0, [=] {
-                    log(QtDebugCanMsg, QString("0x%1 ").arg(current_pos, 8, 16, QLatin1Char('0')) + rawdata.toHex(' ') + QString(" | ") + QString::fromLocal8Bit(rawdata));
+                    log(QtDebugMsg, QString("0x%1 ").arg(current_pos, 8, 16, QLatin1Char('0')) + rawdata.toHex(' ') + QString(" | ") + QString::fromLocal8Bit(rawdata));
                 });
 
                 uint16_t len = std::min(data_total_txsize - current_pos, data_once_txsize);
@@ -429,7 +429,7 @@ void MainWindow::doUpload(uint8_t* rxdata, uint16_t length)
                     {
                         // new thread
                         QTimer::singleShot(0, [=] {
-                            log(QtInfoCanMsg, "upload end");
+                            log(QtInfoMsg, "upload end");
                             ui->btnExecute->setEnabled(true);
                             ui->btnExecute->setText(QString("Execute"));
                         });
@@ -451,30 +451,30 @@ void MainWindow::doUpload(uint8_t* rxdata, uint16_t length)
     }
 }
 
-void MainWindow::log(QtCanMsgType type, const QString& canmsg)
+void MainWindow::log(QtMsgType type, const QString& msg)
 {
     QString message;
     QColor  color;
     switch (type)
     {
-        case QtDebugCanMsg:
-            message = QString("Debug: %1").arg(canmsg);
+        case QtDebugMsg:
+            message = QString("Debug: %1").arg(msg);
             color   = Qt::darkGray;
             break;
-        case QtInfoCanMsg:
-            message = QString("Info: %1").arg(canmsg);
+        case QtInfoMsg:
+            message = QString("Info: %1").arg(msg);
             color   = Qt::darkGreen;
             break;
-        case QtWarningCanMsg:
-            message = QString("Warning: %1").arg(canmsg);
+        case QtWarningMsg:
+            message = QString("Warning: %1").arg(msg);
             color   = Qt::darkRed;
             break;
-        case QtCriticalCanMsg:
-            message = QString("Critical: %1").arg(canmsg);
+        case QtCriticalMsg:
+            message = QString("Critical: %1").arg(msg);
             color   = Qt::red;
             break;
-        case QtFatalCanMsg:
-            message = QString("Fatal: %1").arg(canmsg);
+        case QtFatalMsg:
+            message = QString("Fatal: %1").arg(msg);
             color   = Qt::red;
             break;
         default:
@@ -489,7 +489,7 @@ void MainWindow::log(QtCanMsgType type, const QString& canmsg)
 void MainWindow::onUsbConnected()
 {
     updataConnStatusLabel();
-    log(QtInfoCanMsg, "device connected");
+    log(QtInfoMsg, "device connected");
 
     if (ui->chkAutoDownload->isChecked())
     {
@@ -500,7 +500,7 @@ void MainWindow::onUsbConnected()
 void MainWindow::onUsbDisconnected()
 {
     updataConnStatusLabel();
-    log(QtWarningCanMsg, "device disconnected");
+    log(QtWarningMsg, "device disconnected");
 }
 
 void MainWindow::onUsbDataReady(uint8_t* rxdata, uint16_t rxlen)
@@ -555,7 +555,7 @@ void MainWindow::on_btnExecute_clicked()
             {
                 if (fileinfo.size() > 1024 * 1024 * 2)  // 2M
                 {
-                    log(QtFatalCanMsg, QString("%1 to large").arg(filepath));
+                    log(QtFatalMsg, QString("%1 to large").arg(filepath));
                     return;
                 }
 
@@ -568,7 +568,7 @@ void MainWindow::on_btnExecute_clicked()
 
         if (m_TransferData.count() == 0)
         {
-            log(QtFatalCanMsg, QString("no data to download"));
+            log(QtFatalMsg, QString("no data to download"));
             return;
         }
 
@@ -602,7 +602,7 @@ void MainWindow::on_btnExecute_clicked()
 
         if (m_TransferAddr.count() == 0)
         {
-            log(QtFatalCanMsg, QString("no data to upload"));
+            log(QtFatalMsg, QString("no data to upload"));
             return;
         }
 
