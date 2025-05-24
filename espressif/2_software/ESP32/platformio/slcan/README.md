@@ -1,0 +1,1 @@
+这个 SLCAN 1MBit 对应 cangaroo 里的 500KBit

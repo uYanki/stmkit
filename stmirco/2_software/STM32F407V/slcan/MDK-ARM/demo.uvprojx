@@ -313,7 +313,7 @@
           </ArmAdsMisc>
           <Cads>
             <interw>1</interw>
-            <Optim>4</Optim>
+            <Optim>1</Optim>
             <oTime>0</oTime>
             <SplitLS>0</SplitLS>
             <OneElfS>1</OneElfS>
@@ -339,7 +339,7 @@
               <MiscControls></MiscControls>
               <Define>USE_HAL_DRIVER,STM32F407xx,USE_FULL_LL_DRIVER</Define>
               <Undefine></Undefine>
-              <IncludePath>../Core/Inc;../USB_DEVICE/App;../USB_DEVICE/Target;../Core/Lib/unixtime;../Core/Lib/uCanOpen;../Core/Lib/RingBuffer;../Core/Lib/Peripheral;../Core/Lib/Lawicel;../Core/Lib/interface;E:/gsdk/platform/stm32f4_hal/fwlib/STM32Cube_FW_F4_V1.28.0/Drivers/STM32F4xx_HAL_Driver/Inc;E:/gsdk/platform/stm32f4_hal/fwlib/STM32Cube_FW_F4_V1.28.0/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy;E:/gsdk/platform/stm32f4_hal/fwlib/STM32Cube_FW_F4_V1.28.0/Middlewares/ST/STM32_USB_Device_Library/Core/Inc;E:/gsdk/platform/stm32f4_hal/fwlib/STM32Cube_FW_F4_V1.28.0/Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc;E:/gsdk/platform/stm32f4_hal/fwlib/STM32Cube_FW_F4_V1.28.0/Drivers/CMSIS/Device/ST/STM32F4xx/Include;E:/gsdk/platform/stm32f4_hal/fwlib/STM32Cube_FW_F4_V1.28.0/Drivers/CMSIS/Include;F:/xServo/libcpu/STM32Cube_FW_F4_V1.28.0/Drivers/STM32F4xx_HAL_Driver/Inc;F:/xServo/libcpu/STM32Cube_FW_F4_V1.28.0/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy;F:/xServo/libcpu/STM32Cube_FW_F4_V1.28.0/Middlewares/ST/STM32_USB_Device_Library/Core/Inc;F:/xServo/libcpu/STM32Cube_FW_F4_V1.28.0/Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc;F:/xServo/libcpu/STM32Cube_FW_F4_V1.28.0/Drivers/CMSIS/Device/ST/STM32F4xx/Include;F:/xServo/libcpu/STM32Cube_FW_F4_V1.28.0/Drivers/CMSIS/Include</IncludePath>
+              <IncludePath>../Core/Inc;../USB_DEVICE/App;../USB_DEVICE/Target;../Core/Lib/unixtime;../Core/Lib/uCanOpen;../Core/Lib/RingBuffer;../Core/Lib/Peripheral;../Core/Lib/Lawicel;../Core/Lib/interface;E:/gsdk/platform/stm32f4_hal/fwlib/STM32Cube_FW_F4_V1.28.0/Drivers/STM32F4xx_HAL_Driver/Inc;E:/gsdk/platform/stm32f4_hal/fwlib/STM32Cube_FW_F4_V1.28.0/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy;E:/gsdk/platform/stm32f4_hal/fwlib/STM32Cube_FW_F4_V1.28.0/Middlewares/ST/STM32_USB_Device_Library/Core/Inc;E:/gsdk/platform/stm32f4_hal/fwlib/STM32Cube_FW_F4_V1.28.0/Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc;E:/gsdk/platform/stm32f4_hal/fwlib/STM32Cube_FW_F4_V1.28.0/Drivers/CMSIS/Device/ST/STM32F4xx/Include;E:/gsdk/platform/stm32f4_hal/fwlib/STM32Cube_FW_F4_V1.28.0/Drivers/CMSIS/Include;C:/emkit/libc/stmicro/STM32Cube_FW_F4_V1.28.0/Drivers/STM32F4xx_HAL_Driver/Inc;C:/emkit/libc/stmicro/STM32Cube_FW_F4_V1.28.0/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy;C:/emkit/libc/stmicro/STM32Cube_FW_F4_V1.28.0/Middlewares/ST/STM32_USB_Device_Library/Core/Inc;C:/emkit/libc/stmicro/STM32Cube_FW_F4_V1.28.0/Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc;C:/emkit/libc/stmicro/STM32Cube_FW_F4_V1.28.0/Drivers/CMSIS/Device/ST/STM32F4xx/Include;C:/emkit/libc/stmicro/STM32Cube_FW_F4_V1.28.0/Drivers/CMSIS/Include</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -465,7 +465,7 @@
             <File>
               <FileName>stm32f4xx_ll_gpio.c</FileName>
               <FileType>1</FileType>
-              <FilePath>F:/xServo/libcpu/STM32Cube_FW_F4_V1.28.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_gpio.c</FilePath>
+              <FilePath>C:/emkit/libc/stmicro/STM32Cube_FW_F4_V1.28.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_gpio.c</FilePath>
               <FileOption>
                 <CommonProperty>
                   <UseCPPCompiler>2</UseCPPCompiler>
@@ -521,7 +521,7 @@
             <File>
               <FileName>stm32f4xx_hal_pcd.c</FileName>
               <FileType>1</FileType>
-              <FilePath>F:/xServo/libcpu/STM32Cube_FW_F4_V1.28.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pcd.c</FilePath>
+              <FilePath>C:/emkit/libc/stmicro/STM32Cube_FW_F4_V1.28.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pcd.c</FilePath>
               <FileOption>
                 <CommonProperty>
                   <UseCPPCompiler>2</UseCPPCompiler>
@@ -577,7 +577,7 @@
             <File>
               <FileName>stm32f4xx_hal_pcd_ex.c</FileName>
               <FileType>1</FileType>
-              <FilePath>F:/xServo/libcpu/STM32Cube_FW_F4_V1.28.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pcd_ex.c</FilePath>
+              <FilePath>C:/emkit/libc/stmicro/STM32Cube_FW_F4_V1.28.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pcd_ex.c</FilePath>
               <FileOption>
                 <CommonProperty>
                   <UseCPPCompiler>2</UseCPPCompiler>
@@ -633,7 +633,7 @@
             <File>
               <FileName>stm32f4xx_ll_usb.c</FileName>
               <FileType>1</FileType>
-              <FilePath>F:/xServo/libcpu/STM32Cube_FW_F4_V1.28.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_usb.c</FilePath>
+              <FilePath>C:/emkit/libc/stmicro/STM32Cube_FW_F4_V1.28.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_usb.c</FilePath>
               <FileOption>
                 <CommonProperty>
                   <UseCPPCompiler>2</UseCPPCompiler>
@@ -689,7 +689,7 @@
             <File>
               <FileName>stm32f4xx_hal_rcc.c</FileName>
               <FileType>1</FileType>
-              <FilePath>F:/xServo/libcpu/STM32Cube_FW_F4_V1.28.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c</FilePath>
+              <FilePath>C:/emkit/libc/stmicro/STM32Cube_FW_F4_V1.28.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c</FilePath>
               <FileOption>
                 <CommonProperty>
                   <UseCPPCompiler>2</UseCPPCompiler>
@@ -745,7 +745,7 @@
             <File>
               <FileName>stm32f4xx_hal_rcc_ex.c</FileName>
               <FileType>1</FileType>
-              <FilePath>F:/xServo/libcpu/STM32Cube_FW_F4_V1.28.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c</FilePath>
+              <FilePath>C:/emkit/libc/stmicro/STM32Cube_FW_F4_V1.28.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c</FilePath>
               <FileOption>
                 <CommonProperty>
                   <UseCPPCompiler>2</UseCPPCompiler>
@@ -801,7 +801,7 @@
             <File>
               <FileName>stm32f4xx_hal_flash.c</FileName>
               <FileType>1</FileType>
-              <FilePath>F:/xServo/libcpu/STM32Cube_FW_F4_V1.28.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c</FilePath>
+              <FilePath>C:/emkit/libc/stmicro/STM32Cube_FW_F4_V1.28.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c</FilePath>
               <FileOption>
                 <CommonProperty>
                   <UseCPPCompiler>2</UseCPPCompiler>
@@ -857,7 +857,7 @@
             <File>
               <FileName>stm32f4xx_hal_flash_ex.c</FileName>
               <FileType>1</FileType>
-              <FilePath>F:/xServo/libcpu/STM32Cube_FW_F4_V1.28.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c</FilePath>
+              <FilePath>C:/emkit/libc/stmicro/STM32Cube_FW_F4_V1.28.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c</FilePath>
               <FileOption>
                 <CommonProperty>
                   <UseCPPCompiler>2</UseCPPCompiler>
@@ -913,7 +913,7 @@
             <File>
               <FileName>stm32f4xx_hal_flash_ramfunc.c</FileName>
               <FileType>1</FileType>
-              <FilePath>F:/xServo/libcpu/STM32Cube_FW_F4_V1.28.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.c</FilePath>
+              <FilePath>C:/emkit/libc/stmicro/STM32Cube_FW_F4_V1.28.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.c</FilePath>
               <FileOption>
                 <CommonProperty>
                   <UseCPPCompiler>2</UseCPPCompiler>
@@ -969,7 +969,7 @@
             <File>
               <FileName>stm32f4xx_hal_gpio.c</FileName>
               <FileType>1</FileType>
-              <FilePath>F:/xServo/libcpu/STM32Cube_FW_F4_V1.28.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c</FilePath>
+              <FilePath>C:/emkit/libc/stmicro/STM32Cube_FW_F4_V1.28.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c</FilePath>
               <FileOption>
                 <CommonProperty>
                   <UseCPPCompiler>2</UseCPPCompiler>
@@ -1025,7 +1025,7 @@
             <File>
               <FileName>stm32f4xx_hal_dma_ex.c</FileName>
               <FileType>1</FileType>
-              <FilePath>F:/xServo/libcpu/STM32Cube_FW_F4_V1.28.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c</FilePath>
+              <FilePath>C:/emkit/libc/stmicro/STM32Cube_FW_F4_V1.28.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c</FilePath>
               <FileOption>
                 <CommonProperty>
                   <UseCPPCompiler>2</UseCPPCompiler>
@@ -1081,7 +1081,7 @@
             <File>
               <FileName>stm32f4xx_hal_dma.c</FileName>
               <FileType>1</FileType>
-              <FilePath>F:/xServo/libcpu/STM32Cube_FW_F4_V1.28.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c</FilePath>
+              <FilePath>C:/emkit/libc/stmicro/STM32Cube_FW_F4_V1.28.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c</FilePath>
               <FileOption>
                 <CommonProperty>
                   <UseCPPCompiler>2</UseCPPCompiler>
@@ -1137,7 +1137,7 @@
             <File>
               <FileName>stm32f4xx_hal_pwr.c</FileName>
               <FileType>1</FileType>
-              <FilePath>F:/xServo/libcpu/STM32Cube_FW_F4_V1.28.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c</FilePath>
+              <FilePath>C:/emkit/libc/stmicro/STM32Cube_FW_F4_V1.28.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c</FilePath>
               <FileOption>
                 <CommonProperty>
                   <UseCPPCompiler>2</UseCPPCompiler>
@@ -1193,7 +1193,7 @@
             <File>
               <FileName>stm32f4xx_hal_pwr_ex.c</FileName>
               <FileType>1</FileType>
-              <FilePath>F:/xServo/libcpu/STM32Cube_FW_F4_V1.28.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.c</FilePath>
+              <FilePath>C:/emkit/libc/stmicro/STM32Cube_FW_F4_V1.28.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.c</FilePath>
               <FileOption>
                 <CommonProperty>
                   <UseCPPCompiler>2</UseCPPCompiler>
@@ -1249,7 +1249,7 @@
             <File>
               <FileName>stm32f4xx_hal_cortex.c</FileName>
               <FileType>1</FileType>
-              <FilePath>F:/xServo/libcpu/STM32Cube_FW_F4_V1.28.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c</FilePath>
+              <FilePath>C:/emkit/libc/stmicro/STM32Cube_FW_F4_V1.28.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c</FilePath>
               <FileOption>
                 <CommonProperty>
                   <UseCPPCompiler>2</UseCPPCompiler>
@@ -1305,7 +1305,7 @@
             <File>
               <FileName>stm32f4xx_hal.c</FileName>
               <FileType>1</FileType>
-              <FilePath>F:/xServo/libcpu/STM32Cube_FW_F4_V1.28.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c</FilePath>
+              <FilePath>C:/emkit/libc/stmicro/STM32Cube_FW_F4_V1.28.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c</FilePath>
               <FileOption>
                 <CommonProperty>
                   <UseCPPCompiler>2</UseCPPCompiler>
@@ -1361,7 +1361,7 @@
             <File>
               <FileName>stm32f4xx_hal_exti.c</FileName>
               <FileType>1</FileType>
-              <FilePath>F:/xServo/libcpu/STM32Cube_FW_F4_V1.28.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.c</FilePath>
+              <FilePath>C:/emkit/libc/stmicro/STM32Cube_FW_F4_V1.28.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.c</FilePath>
               <FileOption>
                 <CommonProperty>
                   <UseCPPCompiler>2</UseCPPCompiler>
@@ -1417,7 +1417,7 @@
             <File>
               <FileName>stm32f4xx_ll_rcc.c</FileName>
               <FileType>1</FileType>
-              <FilePath>F:/xServo/libcpu/STM32Cube_FW_F4_V1.28.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_rcc.c</FilePath>
+              <FilePath>C:/emkit/libc/stmicro/STM32Cube_FW_F4_V1.28.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_rcc.c</FilePath>
               <FileOption>
                 <CommonProperty>
                   <UseCPPCompiler>2</UseCPPCompiler>
@@ -1473,7 +1473,7 @@
             <File>
               <FileName>stm32f4xx_ll_utils.c</FileName>
               <FileType>1</FileType>
-              <FilePath>F:/xServo/libcpu/STM32Cube_FW_F4_V1.28.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_utils.c</FilePath>
+              <FilePath>C:/emkit/libc/stmicro/STM32Cube_FW_F4_V1.28.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_utils.c</FilePath>
               <FileOption>
                 <CommonProperty>
                   <UseCPPCompiler>2</UseCPPCompiler>
@@ -1529,7 +1529,7 @@
             <File>
               <FileName>stm32f4xx_ll_exti.c</FileName>
               <FileType>1</FileType>
-              <FilePath>F:/xServo/libcpu/STM32Cube_FW_F4_V1.28.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_exti.c</FilePath>
+              <FilePath>C:/emkit/libc/stmicro/STM32Cube_FW_F4_V1.28.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_exti.c</FilePath>
               <FileOption>
                 <CommonProperty>
                   <UseCPPCompiler>2</UseCPPCompiler>
@@ -1585,7 +1585,7 @@
             <File>
               <FileName>stm32f4xx_hal_can.c</FileName>
               <FileType>1</FileType>
-              <FilePath>F:/xServo/libcpu/STM32Cube_FW_F4_V1.28.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_can.c</FilePath>
+              <FilePath>C:/emkit/libc/stmicro/STM32Cube_FW_F4_V1.28.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_can.c</FilePath>
               <FileOption>
                 <CommonProperty>
                   <UseCPPCompiler>2</UseCPPCompiler>
@@ -1641,7 +1641,7 @@
             <File>
               <FileName>stm32f4xx_ll_rtc.c</FileName>
               <FileType>1</FileType>
-              <FilePath>F:/xServo/libcpu/STM32Cube_FW_F4_V1.28.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_rtc.c</FilePath>
+              <FilePath>C:/emkit/libc/stmicro/STM32Cube_FW_F4_V1.28.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_rtc.c</FilePath>
               <FileOption>
                 <CommonProperty>
                   <UseCPPCompiler>2</UseCPPCompiler>
@@ -1697,7 +1697,7 @@
             <File>
               <FileName>stm32f4xx_hal_tim.c</FileName>
               <FileType>1</FileType>
-              <FilePath>F:/xServo/libcpu/STM32Cube_FW_F4_V1.28.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c</FilePath>
+              <FilePath>C:/emkit/libc/stmicro/STM32Cube_FW_F4_V1.28.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c</FilePath>
               <FileOption>
                 <CommonProperty>
                   <UseCPPCompiler>2</UseCPPCompiler>
@@ -1753,7 +1753,7 @@
             <File>
               <FileName>stm32f4xx_hal_tim_ex.c</FileName>
               <FileType>1</FileType>
-              <FilePath>F:/xServo/libcpu/STM32Cube_FW_F4_V1.28.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c</FilePath>
+              <FilePath>C:/emkit/libc/stmicro/STM32Cube_FW_F4_V1.28.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c</FilePath>
               <FileOption>
                 <CommonProperty>
                   <UseCPPCompiler>2</UseCPPCompiler>
@@ -1809,7 +1809,7 @@
             <File>
               <FileName>stm32f4xx_hal_uart.c</FileName>
               <FileType>1</FileType>
-              <FilePath>F:/xServo/libcpu/STM32Cube_FW_F4_V1.28.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c</FilePath>
+              <FilePath>C:/emkit/libc/stmicro/STM32Cube_FW_F4_V1.28.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c</FilePath>
               <FileOption>
                 <CommonProperty>
                   <UseCPPCompiler>2</UseCPPCompiler>
@@ -1939,7 +1939,7 @@
             <File>
               <FileName>usbd_core.c</FileName>
               <FileType>1</FileType>
-              <FilePath>F:/xServo/libcpu/STM32Cube_FW_F4_V1.28.0/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_core.c</FilePath>
+              <FilePath>C:/emkit/libc/stmicro/STM32Cube_FW_F4_V1.28.0/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_core.c</FilePath>
               <FileOption>
                 <CommonProperty>
                   <UseCPPCompiler>2</UseCPPCompiler>
@@ -1995,7 +1995,7 @@
             <File>
               <FileName>usbd_ctlreq.c</FileName>
               <FileType>1</FileType>
-              <FilePath>F:/xServo/libcpu/STM32Cube_FW_F4_V1.28.0/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.c</FilePath>
+              <FilePath>C:/emkit/libc/stmicro/STM32Cube_FW_F4_V1.28.0/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.c</FilePath>
               <FileOption>
                 <CommonProperty>
                   <UseCPPCompiler>2</UseCPPCompiler>
@@ -2051,7 +2051,7 @@
             <File>
               <FileName>usbd_ioreq.c</FileName>
               <FileType>1</FileType>
-              <FilePath>F:/xServo/libcpu/STM32Cube_FW_F4_V1.28.0/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ioreq.c</FilePath>
+              <FilePath>C:/emkit/libc/stmicro/STM32Cube_FW_F4_V1.28.0/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ioreq.c</FilePath>
               <FileOption>
                 <CommonProperty>
                   <UseCPPCompiler>2</UseCPPCompiler>
@@ -2107,7 +2107,7 @@
             <File>
               <FileName>usbd_cdc.c</FileName>
               <FileType>1</FileType>
-              <FilePath>F:/xServo/libcpu/STM32Cube_FW_F4_V1.28.0/Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Src/usbd_cdc.c</FilePath>
+              <FilePath>C:/emkit/libc/stmicro/STM32Cube_FW_F4_V1.28.0/Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Src/usbd_cdc.c</FilePath>
               <FileOption>
                 <CommonProperty>
                   <UseCPPCompiler>2</UseCPPCompiler>
