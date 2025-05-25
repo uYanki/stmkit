@@ -1,0 +1,60 @@
+<!DOCTYPE CrossStudio_Session_File>
+<session>
+ <Bookmarks/>
+ <Breakpoints groups="Breakpoints" active_group="Breakpoints"/>
+ <ExecutionProfileWindow/>
+ <FrameBuffer/>
+ <Memory1/>
+ <Memory2/>
+ <Memory3/>
+ <Memory4/>
+ <Project>
+  <ProjectSessionItem path="cangaroo"/>
+  <ProjectSessionItem path="cangaroo;cangaroo - hpm6750evkmini"/>
+  <ProjectSessionItem path="cangaroo;cangaroo - hpm6750evkmini;components"/>
+  <ProjectSessionItem path="cangaroo;cangaroo - hpm6750evkmini;drivers"/>
+  <ProjectSessionItem path="cangaroo;cangaroo - hpm6750evkmini;middleware"/>
+  <ProjectSessionItem path="cangaroo;cangaroo - hpm6750evkmini;middleware;cherryrb"/>
+  <ProjectSessionItem path="cangaroo;cangaroo - hpm6750evkmini;sdk_sample"/>
+  <ProjectSessionItem path="cangaroo;cangaroo - hpm6750evkmini;sdk_sample;cangaroo"/>
+  <ProjectSessionItem path="cangaroo;cangaroo - hpm6750evkmini;sdk_sample;cangaroo;src"/>
+  <ProjectSessionItem path="cangaroo;cangaroo - hpm6750evkmini;soc"/>
+  <ProjectSessionItem path="cangaroo;cangaroo - hpm6750evkmini;soc;HPM6700"/>
+  <ProjectSessionItem path="cangaroo;cangaroo - hpm6750evkmini;soc;HPM6700;HPM6750"/>
+  <ProjectSessionItem path="cangaroo;cangaroo - hpm6750evkmini;soc;HPM6700;HPM6750;boot"/>
+  <ProjectSessionItem path="cangaroo;cangaroo - hpm6750evkmini;utils"/>
+ </Project>
+ <Register1/>
+ <Register2/>
+ <Register3/>
+ <Register4/>
+ <Threads>
+  <ThreadsWindow showLists=""/>
+ </Threads>
+ <TraceWindow>
+  <Trace enabled="Yes"/>
+ </TraceWindow>
+ <Watch1>
+  <Watches active="1" update="Never"/>
+ </Watch1>
+ <Watch2>
+  <Watches active="0" update="Never"/>
+ </Watch2>
+ <Watch3>
+  <Watches active="0" update="Never"/>
+ </Watch3>
+ <Watch4>
+  <Watches active="0" update="Never"/>
+ </Watch4>
+ <Files>
+  <SessionOpenFile windowGroup="DockEditLeft" x="42" y="935" useTextEdit="1" path="../../src/slcan.c" left="0" selected="1" top="931" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="48" y="28" useTextEdit="1" path="../../src/slcan.h" left="0" top="12" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="10" useTextEdit="1" path="../../src/main.c" left="0" top="0" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="13" y="274" useTextEdit="1" path="../../src/cdc_acm.c" left="0" top="260" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="12" y="294" useTextEdit="1" path="../../src/board.c" left="0" top="254" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="4" y="20" useTextEdit="1" path="../../src/cdc_acm.h" left="0" top="6" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="8" y="44" useTextEdit="1" path="../../src/usb_config.h" left="0" top="3" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="24" y="19" useTextEdit="1" path="../../../../middleware/cherryrb/chry_ringbuffer.c" left="0" top="15" codecName="Default"/>
+ </Files>
+ <EMStudioWindow activeProject="cangaroo - hpm6750evkmini" fileDialogDefaultFilter="*.c" autoConnectTarget="J-Link" buildConfiguration="Debug" sessionSettings="" debugSearchFileMap="" fileDialogInitialDirectory="" debugSearchPath="" autoConnectCapabilities="3199"/>
+</session>
