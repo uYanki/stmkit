@@ -1,0 +1,85 @@
+<!DOCTYPE CrossStudio_Session_File>
+<session>
+ <Bookmarks/>
+ <Breakpoints groups="Breakpoints" active_group="Breakpoints">
+  <BreakpointListItem trigger="" line="429" counter="0" hardwareBreakpoint="" isFunctionBreakpoint="false" action="" expression="" stopAll="false" group="Breakpoints" type="Breakpoint" state="2" filename="../../ioLibrary_Driver/Ethernet/wizchip_conf.c" useHWbreakpoint="false"/>
+ </Breakpoints>
+ <ExecutionProfileWindow/>
+ <FrameBuffer>
+  <FrameBufferWindow width="0" keepAspectRatio="0" zoomToFitWindow="0" showGrid="0" addressSpace="" format="0" height="0" autoEvaluate="0" scaleFactor="1" refreshPeriod="0" name="spi_drive_wizchip_w5xxx - hpm6750evkmini_Debug" addressText="" accessByDisplayWidth="0"/>
+ </FrameBuffer>
+ <Memory1>
+  <MemoryWindow addressSpace="" dataSize="1" autoEvaluate="0" viewMode="0" viewType="4" addressOrder="0" columnsText="" refreshPeriod="0" name="spi_drive_wizchip_w5xxx - hpm6750evkmini_Debug" sizeText="" addressText=""/>
+ </Memory1>
+ <Memory2>
+  <MemoryWindow addressSpace="" dataSize="1" autoEvaluate="0" viewMode="0" viewType="4" addressOrder="0" columnsText="" refreshPeriod="0" name="spi_drive_wizchip_w5xxx - hpm6750evkmini_Debug" sizeText="" addressText=""/>
+ </Memory2>
+ <Memory3>
+  <MemoryWindow addressSpace="" dataSize="1" autoEvaluate="0" viewMode="0" viewType="4" addressOrder="0" columnsText="" refreshPeriod="0" name="spi_drive_wizchip_w5xxx - hpm6750evkmini_Debug" sizeText="" addressText=""/>
+ </Memory3>
+ <Memory4>
+  <MemoryWindow addressSpace="" dataSize="1" autoEvaluate="0" viewMode="0" viewType="4" addressOrder="0" columnsText="" refreshPeriod="0" name="spi_drive_wizchip_w5xxx - hpm6750evkmini_Debug" sizeText="" addressText=""/>
+ </Memory4>
+ <Project>
+  <ProjectSessionItem path="spi_drive_wizchip_w5xxx"/>
+  <ProjectSessionItem path="spi_drive_wizchip_w5xxx;spi_drive_wizchip_w5xxx - hpm6750evkmini"/>
+  <ProjectSessionItem path="spi_drive_wizchip_w5xxx;spi_drive_wizchip_w5xxx - hpm6750evkmini;components"/>
+  <ProjectSessionItem path="spi_drive_wizchip_w5xxx;spi_drive_wizchip_w5xxx - hpm6750evkmini;sdk_sample"/>
+  <ProjectSessionItem path="spi_drive_wizchip_w5xxx;spi_drive_wizchip_w5xxx - hpm6750evkmini;sdk_sample;spi_drive_wizchip_w5xxx"/>
+  <ProjectSessionItem path="spi_drive_wizchip_w5xxx;spi_drive_wizchip_w5xxx - hpm6750evkmini;sdk_sample;spi_drive_wizchip_w5xxx;ioLibrary_Driver"/>
+  <ProjectSessionItem path="spi_drive_wizchip_w5xxx;spi_drive_wizchip_w5xxx - hpm6750evkmini;sdk_sample;spi_drive_wizchip_w5xxx;ioLibrary_Driver;Application"/>
+  <ProjectSessionItem path="spi_drive_wizchip_w5xxx;spi_drive_wizchip_w5xxx - hpm6750evkmini;sdk_sample;spi_drive_wizchip_w5xxx;ioLibrary_Driver;Application;loopback"/>
+  <ProjectSessionItem path="spi_drive_wizchip_w5xxx;spi_drive_wizchip_w5xxx - hpm6750evkmini;sdk_sample;spi_drive_wizchip_w5xxx;ioLibrary_Driver;Ethernet"/>
+  <ProjectSessionItem path="spi_drive_wizchip_w5xxx;spi_drive_wizchip_w5xxx - hpm6750evkmini;sdk_sample;spi_drive_wizchip_w5xxx;ioLibrary_Driver;Ethernet;W5500"/>
+  <ProjectSessionItem path="spi_drive_wizchip_w5xxx;spi_drive_wizchip_w5xxx - hpm6750evkmini;sdk_sample;spi_drive_wizchip_w5xxx;ioLibrary_Driver;Internet"/>
+  <ProjectSessionItem path="spi_drive_wizchip_w5xxx;spi_drive_wizchip_w5xxx - hpm6750evkmini;sdk_sample;spi_drive_wizchip_w5xxx;ioLibrary_Driver;Internet;DHCP"/>
+  <ProjectSessionItem path="spi_drive_wizchip_w5xxx;spi_drive_wizchip_w5xxx - hpm6750evkmini;sdk_sample;spi_drive_wizchip_w5xxx;port"/>
+  <ProjectSessionItem path="spi_drive_wizchip_w5xxx;spi_drive_wizchip_w5xxx - hpm6750evkmini;sdk_sample;spi_drive_wizchip_w5xxx;port;src"/>
+  <ProjectSessionItem path="spi_drive_wizchip_w5xxx;spi_drive_wizchip_w5xxx - hpm6750evkmini;sdk_sample;spi_drive_wizchip_w5xxx;src"/>
+  <ProjectSessionItem path="spi_drive_wizchip_w5xxx;spi_drive_wizchip_w5xxx - hpm6750evkmini;soc"/>
+  <ProjectSessionItem path="spi_drive_wizchip_w5xxx;spi_drive_wizchip_w5xxx - hpm6750evkmini;soc;HPM6700"/>
+  <ProjectSessionItem path="spi_drive_wizchip_w5xxx;spi_drive_wizchip_w5xxx - hpm6750evkmini;soc;HPM6700;HPM6750"/>
+  <ProjectSessionItem path="spi_drive_wizchip_w5xxx;spi_drive_wizchip_w5xxx - hpm6750evkmini;soc;HPM6700;HPM6750;toolchains"/>
+  <ProjectSessionItem path="spi_drive_wizchip_w5xxx;spi_drive_wizchip_w5xxx - hpm6750evkmini;soc;HPM6700;HPM6750;toolchains;segger"/>
+ </Project>
+ <Register1>
+  <RegisterWindow invisibleNodes="" visibleNodes="ABI, RV32I/pc;ABI, RV32I/ra;ABI, RV32I/sp;ABI, RV32I/gp;ABI, RV32I/tp;ABI, RV32I/a0;ABI, RV32I/a1;ABI, RV32I/a2;ABI, RV32I/a3;ABI, RV32I/a4;ABI, RV32I/a5;ABI, RV32I/a6;ABI, RV32I/a7;ABI, RV32I/t0;ABI, RV32I/t1;ABI, RV32I/t2;ABI, RV32I/t3;ABI, RV32I/t4;ABI, RV32I/t5;ABI, RV32I/t6;ABI, RV32I/s0;ABI, RV32I/s1;ABI, RV32I/s2;ABI, RV32I/s3;ABI, RV32I/s4;ABI, RV32I/s5;ABI, RV32I/s6;ABI, RV32I/s7;ABI, RV32I/s8;ABI, RV32I/s9;ABI, RV32I/s10;ABI, RV32I/s11;CPU, RV32I/pc;CPU, RV32I/x1;CPU, RV32I/x2;CPU, RV32I/x3;CPU, RV32I/x4;CPU, RV32I/x5;CPU, RV32I/x6;CPU, RV32I/x7;CPU, RV32I/x8;CPU, RV32I/x9;CPU, RV32I/x10;CPU, RV32I/x11;CPU, RV32I/x12;CPU, RV32I/x13;CPU, RV32I/x14;CPU, RV32I/x15;CPU, RV32I/x16;CPU, RV32I/x17;CPU, RV32I/x18;CPU, RV32I/x19;CPU, RV32I/x20;CPU, RV32I/x21;CPU, RV32I/x22;CPU, RV32I/x23;CPU, RV32I/x24;CPU, RV32I/x25;CPU, RV32I/x26;CPU, RV32I/x27;CPU, RV32I/x28;CPU, RV32I/x29;CPU, RV32I/x30;CPU, RV32I/x31" binaryNodes="" asciiNodes="" openNodes="ABI, RV32I;CPU, RV32I" name="spi_drive_wizchip_w5xxx - hpm6750evkmini_Debug" decimalNodes="" octalNodes="" unsignedNodes=""/>
+ </Register1>
+ <Register2>
+  <RegisterWindow invisibleNodes="" visibleNodes="ABI, RV32I/pc;ABI, RV32I/ra;ABI, RV32I/sp;ABI, RV32I/gp;ABI, RV32I/tp;ABI, RV32I/a0;ABI, RV32I/a1;ABI, RV32I/a2;ABI, RV32I/a3;ABI, RV32I/a4;ABI, RV32I/a5;ABI, RV32I/a6;ABI, RV32I/a7;ABI, RV32I/t0;ABI, RV32I/t1;ABI, RV32I/t2;ABI, RV32I/t3;ABI, RV32I/t4;ABI, RV32I/t5;ABI, RV32I/t6;ABI, RV32I/s0;ABI, RV32I/s1;ABI, RV32I/s2;ABI, RV32I/s3;ABI, RV32I/s4;ABI, RV32I/s5;ABI, RV32I/s6;ABI, RV32I/s7;ABI, RV32I/s8;ABI, RV32I/s9;ABI, RV32I/s10;ABI, RV32I/s11;CPU, RV32I/pc;CPU, RV32I/x1;CPU, RV32I/x2;CPU, RV32I/x3;CPU, RV32I/x4;CPU, RV32I/x5;CPU, RV32I/x6;CPU, RV32I/x7;CPU, RV32I/x8;CPU, RV32I/x9;CPU, RV32I/x10;CPU, RV32I/x11;CPU, RV32I/x12;CPU, RV32I/x13;CPU, RV32I/x14;CPU, RV32I/x15;CPU, RV32I/x16;CPU, RV32I/x17;CPU, RV32I/x18;CPU, RV32I/x19;CPU, RV32I/x20;CPU, RV32I/x21;CPU, RV32I/x22;CPU, RV32I/x23;CPU, RV32I/x24;CPU, RV32I/x25;CPU, RV32I/x26;CPU, RV32I/x27;CPU, RV32I/x28;CPU, RV32I/x29;CPU, RV32I/x30;CPU, RV32I/x31" binaryNodes="" asciiNodes="" openNodes="ABI, RV32I;CPU, RV32I" name="spi_drive_wizchip_w5xxx - hpm6750evkmini_Debug" decimalNodes="" octalNodes="" unsignedNodes=""/>
+ </Register2>
+ <Register3>
+  <RegisterWindow invisibleNodes="" visibleNodes="ABI, RV32I/pc;ABI, RV32I/ra;ABI, RV32I/sp;ABI, RV32I/gp;ABI, RV32I/tp;ABI, RV32I/a0;ABI, RV32I/a1;ABI, RV32I/a2;ABI, RV32I/a3;ABI, RV32I/a4;ABI, RV32I/a5;ABI, RV32I/a6;ABI, RV32I/a7;ABI, RV32I/t0;ABI, RV32I/t1;ABI, RV32I/t2;ABI, RV32I/t3;ABI, RV32I/t4;ABI, RV32I/t5;ABI, RV32I/t6;ABI, RV32I/s0;ABI, RV32I/s1;ABI, RV32I/s2;ABI, RV32I/s3;ABI, RV32I/s4;ABI, RV32I/s5;ABI, RV32I/s6;ABI, RV32I/s7;ABI, RV32I/s8;ABI, RV32I/s9;ABI, RV32I/s10;ABI, RV32I/s11;CPU, RV32I/pc;CPU, RV32I/x1;CPU, RV32I/x2;CPU, RV32I/x3;CPU, RV32I/x4;CPU, RV32I/x5;CPU, RV32I/x6;CPU, RV32I/x7;CPU, RV32I/x8;CPU, RV32I/x9;CPU, RV32I/x10;CPU, RV32I/x11;CPU, RV32I/x12;CPU, RV32I/x13;CPU, RV32I/x14;CPU, RV32I/x15;CPU, RV32I/x16;CPU, RV32I/x17;CPU, RV32I/x18;CPU, RV32I/x19;CPU, RV32I/x20;CPU, RV32I/x21;CPU, RV32I/x22;CPU, RV32I/x23;CPU, RV32I/x24;CPU, RV32I/x25;CPU, RV32I/x26;CPU, RV32I/x27;CPU, RV32I/x28;CPU, RV32I/x29;CPU, RV32I/x30;CPU, RV32I/x31" binaryNodes="" asciiNodes="" openNodes="ABI, RV32I;CPU, RV32I" name="spi_drive_wizchip_w5xxx - hpm6750evkmini_Debug" decimalNodes="" octalNodes="" unsignedNodes=""/>
+ </Register3>
+ <Register4>
+  <RegisterWindow invisibleNodes="" visibleNodes="ABI, RV32I/pc;ABI, RV32I/ra;ABI, RV32I/sp;ABI, RV32I/gp;ABI, RV32I/tp;ABI, RV32I/a0;ABI, RV32I/a1;ABI, RV32I/a2;ABI, RV32I/a3;ABI, RV32I/a4;ABI, RV32I/a5;ABI, RV32I/a6;ABI, RV32I/a7;ABI, RV32I/t0;ABI, RV32I/t1;ABI, RV32I/t2;ABI, RV32I/t3;ABI, RV32I/t4;ABI, RV32I/t5;ABI, RV32I/t6;ABI, RV32I/s0;ABI, RV32I/s1;ABI, RV32I/s2;ABI, RV32I/s3;ABI, RV32I/s4;ABI, RV32I/s5;ABI, RV32I/s6;ABI, RV32I/s7;ABI, RV32I/s8;ABI, RV32I/s9;ABI, RV32I/s10;ABI, RV32I/s11;CPU, RV32I/pc;CPU, RV32I/x1;CPU, RV32I/x2;CPU, RV32I/x3;CPU, RV32I/x4;CPU, RV32I/x5;CPU, RV32I/x6;CPU, RV32I/x7;CPU, RV32I/x8;CPU, RV32I/x9;CPU, RV32I/x10;CPU, RV32I/x11;CPU, RV32I/x12;CPU, RV32I/x13;CPU, RV32I/x14;CPU, RV32I/x15;CPU, RV32I/x16;CPU, RV32I/x17;CPU, RV32I/x18;CPU, RV32I/x19;CPU, RV32I/x20;CPU, RV32I/x21;CPU, RV32I/x22;CPU, RV32I/x23;CPU, RV32I/x24;CPU, RV32I/x25;CPU, RV32I/x26;CPU, RV32I/x27;CPU, RV32I/x28;CPU, RV32I/x29;CPU, RV32I/x30;CPU, RV32I/x31" binaryNodes="" asciiNodes="" openNodes="ABI, RV32I;CPU, RV32I" name="spi_drive_wizchip_w5xxx - hpm6750evkmini_Debug" decimalNodes="" octalNodes="" unsignedNodes=""/>
+ </Register4>
+ <Threads>
+  <ThreadsWindow showLists=""/>
+ </Threads>
+ <TraceWindow>
+  <Trace enabled="Yes"/>
+ </TraceWindow>
+ <Watch1>
+  <Watches active="1" update="Never"/>
+ </Watch1>
+ <Watch2>
+  <Watches active="0" update="Never"/>
+ </Watch2>
+ <Watch3>
+  <Watches active="0" update="Never"/>
+ </Watch3>
+ <Watch4>
+  <Watches active="0" update="Never"/>
+ </Watch4>
+ <Files>
+  <SessionOpenFile windowGroup="DockEditLeft" x="30" y="8" useTextEdit="1" path="../../src/main.c" left="0" selected="1" top="2" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="105" useTextEdit="1" path="../../ioLibrary_Driver/Application/loopback/loopback.c" left="0" top="72" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="13" y="336" useTextEdit="1" path="../../ioLibrary_Driver/Ethernet/socket.c" left="0" top="294" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="26" y="14" useTextEdit="1" path="../../port/src/port.c" left="0" top="12" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="716" useTextEdit="1" path="../../ioLibrary_Driver/Internet/DHCP/dhcp.c" left="0" top="710" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="8" y="62" useTextEdit="1" path="../../ioLibrary_Driver/Internet/DHCP/dhcp.h" left="0" top="47" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="15" y="413" useTextEdit="1" path="../../ioLibrary_Driver/Ethernet/wizchip_conf.h" left="0" top="395" codecName="Default"/>
+ </Files>
+ <EMStudioWindow activeProject="spi_drive_wizchip_w5xxx - hpm6750evkmini" fileDialogDefaultFilter="*.c" autoConnectTarget="J-Link" buildConfiguration="Debug" sessionSettings="" debugSearchFileMap="" fileDialogInitialDirectory="" debugSearchPath="" autoConnectCapabilities="3199"/>
+</session>
