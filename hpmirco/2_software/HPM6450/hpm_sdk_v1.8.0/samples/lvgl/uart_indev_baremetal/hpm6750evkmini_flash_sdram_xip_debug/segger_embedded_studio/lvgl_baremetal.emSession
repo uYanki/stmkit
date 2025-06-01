@@ -12,11 +12,12 @@
   <ProjectSessionItem path="lvgl_baremetal"/>
   <ProjectSessionItem path="lvgl_baremetal;lvgl_baremetal - hpm6750evkmini"/>
   <ProjectSessionItem path="lvgl_baremetal;lvgl_baremetal - hpm6750evkmini;components"/>
-  <ProjectSessionItem path="lvgl_baremetal;lvgl_baremetal - hpm6750evkmini;drivers"/>
-  <ProjectSessionItem path="lvgl_baremetal;lvgl_baremetal - hpm6750evkmini;drivers;src"/>
+  <ProjectSessionItem path="lvgl_baremetal;lvgl_baremetal - hpm6750evkmini;components;debug_console"/>
+  <ProjectSessionItem path="lvgl_baremetal;lvgl_baremetal - hpm6750evkmini;components;dma_mgr"/>
   <ProjectSessionItem path="lvgl_baremetal;lvgl_baremetal - hpm6750evkmini;middleware"/>
   <ProjectSessionItem path="lvgl_baremetal;lvgl_baremetal - hpm6750evkmini;middleware;lvgl"/>
   <ProjectSessionItem path="lvgl_baremetal;lvgl_baremetal - hpm6750evkmini;middleware;lvgl;demos"/>
+  <ProjectSessionItem path="lvgl_baremetal;lvgl_baremetal - hpm6750evkmini;middleware;lvgl;demos;benchmark"/>
   <ProjectSessionItem path="lvgl_baremetal;lvgl_baremetal - hpm6750evkmini;middleware;lvgl;demos;keypad_encoder"/>
   <ProjectSessionItem path="lvgl_baremetal;lvgl_baremetal - hpm6750evkmini;middleware;lvgl;src"/>
   <ProjectSessionItem path="lvgl_baremetal;lvgl_baremetal - hpm6750evkmini;middleware;lvgl;src;drivers"/>
@@ -50,14 +51,11 @@
   <Watches active="0" update="Never"/>
  </Watch4>
  <Files>
-  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="0" useTextEdit="1" path="../../../../../drivers/src/hpm_gpio_drv.c" left="0" top="0" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="23" y="16" useTextEdit="1" path="../../../../../middleware/lvgl/lvgl/demos/keypad_encoder/lv_demo_keypad_encoder.c" left="0" top="0" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="0" useTextEdit="1" path="../../src/hpm_spi.c" left="0" top="0" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="18" y="22" useTextEdit="1" path="../../src/lv_port_disp.c" left="0" top="0" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="15" y="251" useTextEdit="1" path="../../src/board.c" left="0" top="225" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="15" y="24" useTextEdit="1" path="../../src/main.c" left="0" top="0" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="88" useTextEdit="1" path="../../src/board.h" left="0" top="56" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="0" useTextEdit="1" path="../../../../../middleware/lvgl/lvgl/src/drivers/display/st7789/lv_st7789.c" left="0" selected="1" top="33" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="13" y="20" useTextEdit="1" path="../../src/main.c" left="0" top="3" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="23" y="20" useTextEdit="1" path="../../../../../middleware/lvgl/lvgl/demos/benchmark/lv_demo_benchmark.c" left="0" top="0" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="34" y="24" useTextEdit="1" path="../../src/hpm_spi.c" left="0" top="114" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="17" y="48" useTextEdit="1" path="../../src/lv_port_disp.h" left="0" top="24" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="279" useTextEdit="1" path="../../src/lv_port_disp.c" left="0" selected="1" top="396" codecName="Default"/>
  </Files>
  <EMStudioWindow activeProject="lvgl_baremetal - hpm6750evkmini" fileDialogDefaultFilter="*.c" autoConnectTarget="J-Link" buildConfiguration="Debug" sessionSettings="" debugSearchFileMap="" fileDialogInitialDirectory="" debugSearchPath="" autoConnectCapabilities="3199"/>
 </session>
