@@ -53,8 +53,9 @@ extern usbhid_keyboard_indev_t kb_indev;
  **********************/
 extern lv_display_t*        lcd_disp;
 extern struct usbh_hid_lvgl hid_indev;
+
 /* Initialize low level display driver */
-void                        lv_port_disp_init(void);
+void lv_port_disp_init(void);
 
 /**********************
  *      MACROS

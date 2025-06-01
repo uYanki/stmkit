@@ -77,7 +77,7 @@ usbhid_keyboard_indev_t kb_indev;
 
 #if USE_DMA_MGR
 static volatile bool txdma_complete = true;
-//ATTR_PLACE_AT_NONCACHEABLE_WITH_ALIGNMENT(4) 
+// ATTR_PLACE_AT_NONCACHEABLE_WITH_ALIGNMENT(4)
 ATTR_PLACE_AT_FAST_RAM_WITH_ALIGNMENT(4)
 uint8_t framebuf[MY_DISP_HOR_RES * MY_DISP_VER_RES * sizeof(lv_color_t) / 10] = {0};
 #endif
@@ -379,7 +379,7 @@ static void lcd_send_color(lv_display_t* disp, const uint8_t* cmd, size_t cmd_si
             {
                 vTaskDelay(1);
             }
-            
+
             remain_size -= transfer_size;
             param += transfer_size;
         }

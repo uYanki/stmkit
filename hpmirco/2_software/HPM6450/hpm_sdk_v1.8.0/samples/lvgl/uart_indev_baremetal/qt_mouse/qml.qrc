@@ -1,0 +1,9 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>fontawesome-webfont.ttf</file>
+        <file>ClickWave.qml</file>
+        <file>lvglUSBmouse.ico</file>
+        <file>About.qml</file>
+    </qresource>
+</RCC>
