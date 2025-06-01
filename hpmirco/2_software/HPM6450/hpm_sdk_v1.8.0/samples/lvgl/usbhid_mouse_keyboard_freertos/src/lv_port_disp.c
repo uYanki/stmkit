@@ -17,10 +17,10 @@
 #include "hpm_gpio_drv.h"
 #include "hpm_gpiom_drv.h"
 #include "hpm_clock_drv.h"
-#include "hpm_gptmr_drv.h"
-#include "hpm_spi.h"
 #include "lv_conf.h"
 #include "board.h"
+#include "hpm_dma_mgr.h"
+#include "hpm_spi.h"
 
 #if (LV_USE_OS != LV_OS_NONE)
 #include <FreeRTOS.h>
@@ -31,21 +31,13 @@
 #include "lv_port_disp.h"
 #include "src/drivers/display/st7789/lv_st7789.h"
 
-#define LCD_DC_PIN           HPM_GPIO0, GPIO_DI_GPIOB, 10
-#define LCD_RST_PIN          HPM_GPIO0, GPIO_DI_GPIOB, 11
-#define LCD_BL_PIN           HPM_GPIO0, GPIO_DI_GPIOA, 23
-#define LCD_CS_PIN           HPM_GPIO0, GPIO_OE_GPIOA, 18
-#define LCD_SPI_BASE         HPM_SPI1
-#define LCD_SPI_CLK_NAME     clock_spi1
-#define LCD_SPI_SCLK_FREQ    10000000UL
-#define LCD_SPI_DMA          HPM_HDMA
-#define LCD_SPI_DMAMUX       HPM_DMAMUX
-#define LCD_SPI_RX_DMA_REQ   HPM_DMA_SRC_SPI1_RX
-#define LCD_SPI_TX_DMA_REQ   HPM_DMA_SRC_SPI1_TX
-#define LCD_SPI_RX_DMA_CH    0
-#define LCD_SPI_TX_DMA_CH    1
-#define LCD_SPI_RX_DMAMUX_CH DMA_SOC_CHN_TO_DMAMUX_CHN(LCD_SPI_DMA, LCD_SPI_RX_DMA_CH)
-#define LCD_SPI_TX_DMAMUX_CH DMA_SOC_CHN_TO_DMAMUX_CHN(LCD_SPI_DMA, LCD_SPI_TX_DMA_CH)
+#define LCD_DC_PIN        HPM_GPIO0, GPIO_DI_GPIOB, 10
+#define LCD_RST_PIN       HPM_GPIO0, GPIO_DI_GPIOB, 11
+#define LCD_BL_PIN        HPM_GPIO0, GPIO_DI_GPIOA, 23
+#define LCD_CS_PIN        HPM_GPIO0, GPIO_OE_GPIOA, 18
+#define LCD_SPI_BASE      HPM_SPI1
+#define LCD_SPI_CLK_NAME  clock_spi1
+#define LCD_SPI_SCLK_FREQ 10000000UL
 
 /*********************
  *      DEFINES
@@ -82,6 +74,13 @@ static void    usbhid_keyboard_indev_init(void);
 lv_display_t*           lcd_disp;
 usbhid_mouse_indev_t    mouse_indev;
 usbhid_keyboard_indev_t kb_indev;
+
+#if USE_DMA_MGR
+static volatile bool txdma_complete = true;
+//ATTR_PLACE_AT_NONCACHEABLE_WITH_ALIGNMENT(4) 
+ATTR_PLACE_AT_FAST_RAM_WITH_ALIGNMENT(4)
+uint8_t framebuf[MY_DISP_HOR_RES * MY_DISP_VER_RES * sizeof(lv_color_t) / 10] = {0};
+#endif
 
 /**********************
  *      MACROS
@@ -122,6 +121,15 @@ void lv_port_disp_init(void)
     lv_color_t* buf1 = NULL;
     lv_color_t* buf2 = NULL;
 
+#if USE_DMA_MGR
+
+    uint32_t buf_size = sizeof(framebuf);
+
+    buf1 = (lv_color_t*)&framebuf[0];
+    buf2 = (lv_color_t*)&framebuf[buf_size / 2];
+
+#else
+
     uint32_t buf_size = MY_DISP_HOR_RES * MY_DISP_VER_RES / 10 * lv_color_format_get_size(lv_display_get_color_format(lcd_disp));
 
     buf1 = lv_malloc(buf_size);
@@ -138,6 +146,9 @@ void lv_port_disp_init(void)
         lv_free(buf1);
         return;
     }
+
+#endif
+
     lv_display_set_buffers(lcd_disp, buf1, buf2, buf_size, LV_DISPLAY_RENDER_MODE_PARTIAL);
 
     // indev
@@ -248,6 +259,12 @@ static void usbhid_keyboard_indev_init(void)
  *   STATIC FUNCTIONS
  **********************/
 
+void spi_txdma_complete_callback(uint32_t channel)
+{
+    (void)channel;
+    txdma_complete = true;
+}
+
 /* Initialize LCD I/O bus, reset LCD */
 static int32_t lcd_io_init(void)
 {
@@ -284,6 +301,11 @@ static int32_t lcd_io_init(void)
 
     hpm_spi_initialize(LCD_SPI_BASE, &init_config);
     hpm_spi_set_sclk_frequency(LCD_SPI_BASE, LCD_SPI_SCLK_FREQ);
+
+#if USE_DMA_MGR
+    dma_mgr_init();
+    hpm_spi_dma_install_callback(LCD_SPI_BASE, spi_txdma_complete_callback, NULL);
+#endif
 
     /* reset LCD */
     gpio_write_pin(LCD_RST_PIN, 0);
@@ -337,14 +359,45 @@ static void lcd_send_color(lv_display_t* disp, const uint8_t* cmd, size_t cmd_si
         /* DC high (data) */
         gpio_write_pin(LCD_DC_PIN, 1);
 
-        while (param_size > SPI_SOC_TRANSFER_COUNT_MAX)
+#if USE_DMA_MGR
+
+        uint32_t remain_size   = param_size;
+        uint32_t transfer_size = 0;
+
+        while (remain_size > 0)
         {
-            hpm_spi_transmit_blocking(LCD_SPI_BASE, param, SPI_SOC_TRANSFER_COUNT_MAX, BUS_SPI_POLL_TIMEOUT);
-            param += SPI_SOC_TRANSFER_COUNT_MAX;
-            param_size -= SPI_SOC_TRANSFER_COUNT_MAX;
+            transfer_size = (remain_size > SPI_SOC_TRANSFER_COUNT_MAX) ? SPI_SOC_TRANSFER_COUNT_MAX : remain_size;
+
+            txdma_complete = false;
+            if (hpm_spi_transmit_nonblocking(LCD_SPI_BASE, (uint8_t*)param, transfer_size) != status_success)
+            {
+                printf("hpm_spi_transmit_nonblocking fail\n");
+                break;
+            }
+
+            while (txdma_complete == false)
+            {
+                vTaskDelay(1);
+            }
+            
+            remain_size -= transfer_size;
+            param += transfer_size;
         }
 
-        hpm_spi_transmit_blocking(LCD_SPI_BASE, param, param_size, BUS_SPI_POLL_TIMEOUT);
+#else
+
+        uint32_t remain_size   = param_size;
+        uint32_t transfer_size = 0;
+
+        while (remain_size > 0)
+        {
+            transfer_size = (remain_size > SPI_SOC_TRANSFER_COUNT_MAX) ? SPI_SOC_TRANSFER_COUNT_MAX : remain_size;
+            hpm_spi_transmit_blocking(LCD_SPI_BASE, param, transfer_size, BUS_SPI_POLL_TIMEOUT);
+            remain_size -= transfer_size;
+            param += transfer_size;
+        }
+
+#endif
     }
 
     /* CS high */

@@ -1,6 +1,62 @@
 <!DOCTYPE CrossStudio_Session_File>
 <session>
-	<Files>
-		<SessionOpenFile path="{}"/>
-	</Files>
+ <Bookmarks/>
+ <Breakpoints groups="Breakpoints" active_group="Breakpoints"/>
+ <ExecutionProfileWindow/>
+ <FrameBuffer/>
+ <Memory1/>
+ <Memory2/>
+ <Memory3/>
+ <Memory4/>
+ <Project>
+  <ProjectSessionItem path="lvgl_baremetal"/>
+  <ProjectSessionItem path="lvgl_baremetal;lvgl_baremetal - hpm6750evkmini"/>
+  <ProjectSessionItem path="lvgl_baremetal;lvgl_baremetal - hpm6750evkmini;components"/>
+  <ProjectSessionItem path="lvgl_baremetal;lvgl_baremetal - hpm6750evkmini;components;debug_console"/>
+  <ProjectSessionItem path="lvgl_baremetal;lvgl_baremetal - hpm6750evkmini;components;dma_mgr"/>
+  <ProjectSessionItem path="lvgl_baremetal;lvgl_baremetal - hpm6750evkmini;drivers"/>
+  <ProjectSessionItem path="lvgl_baremetal;lvgl_baremetal - hpm6750evkmini;middleware"/>
+  <ProjectSessionItem path="lvgl_baremetal;lvgl_baremetal - hpm6750evkmini;middleware;cherryusb"/>
+  <ProjectSessionItem path="lvgl_baremetal;lvgl_baremetal - hpm6750evkmini;middleware;cherryusb;port"/>
+  <ProjectSessionItem path="lvgl_baremetal;lvgl_baremetal - hpm6750evkmini;middleware;cherryusb;port;ehci"/>
+  <ProjectSessionItem path="lvgl_baremetal;lvgl_baremetal - hpm6750evkmini;middleware;lvgl"/>
+  <ProjectSessionItem path="lvgl_baremetal;lvgl_baremetal - hpm6750evkmini;middleware;lvgl;demos"/>
+  <ProjectSessionItem path="lvgl_baremetal;lvgl_baremetal - hpm6750evkmini;sdk_sample"/>
+  <ProjectSessionItem path="lvgl_baremetal;lvgl_baremetal - hpm6750evkmini;sdk_sample;lvgl"/>
+  <ProjectSessionItem path="lvgl_baremetal;lvgl_baremetal - hpm6750evkmini;sdk_sample;lvgl;usbhid_mouse_keyboard_freertos"/>
+  <ProjectSessionItem path="lvgl_baremetal;lvgl_baremetal - hpm6750evkmini;sdk_sample;lvgl;usbhid_mouse_keyboard_freertos;src"/>
+ </Project>
+ <Register1/>
+ <Register2/>
+ <Register3/>
+ <Register4/>
+ <Threads>
+  <ThreadsWindow showLists=""/>
+ </Threads>
+ <TraceWindow>
+  <Trace enabled="Yes"/>
+ </TraceWindow>
+ <Watch1>
+  <Watches active="1" update="Never"/>
+ </Watch1>
+ <Watch2>
+  <Watches active="0" update="Never"/>
+ </Watch2>
+ <Watch3>
+  <Watches active="0" update="Never"/>
+ </Watch3>
+ <Watch4>
+  <Watches active="0" update="Never"/>
+ </Watch4>
+ <Files>
+  <SessionOpenFile windowGroup="DockEditLeft" x="46" y="21" useTextEdit="1" path="../../src/main.c" left="0" top="11" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="385" useTextEdit="1" path="../../src/lv_port_disp.c" left="0" selected="1" top="0" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="1" y="1281" useTextEdit="1" path="../../src/hpm_spi.c" left="0" top="1264" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="0" useTextEdit="1" path="../../../../../components/dma_mgr/hpm_dma_mgr.h" left="0" top="60" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="0" useTextEdit="1" path="../../../../../middleware/cherryusb/port/ehci/usb_glue_hpm.c" left="0" top="0" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="0" useTextEdit="1" path="../../../../../middleware/cherryusb/port/ehci/usb_hc_ehci.c" left="0" top="0" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="18" useTextEdit="1" path="../../src/hpm_spi.h" left="0" top="0" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="0" useTextEdit="1" path="../../../../../soc/HPM6700/HPM6750/hpm_misc.h" left="0" top="0" codecName="Default"/>
+ </Files>
+ <EMStudioWindow activeProject="lvgl_baremetal - hpm6750evkmini" fileDialogDefaultFilter="*.c" autoConnectTarget="J-Link" buildConfiguration="Debug" sessionSettings="" debugSearchFileMap="" fileDialogInitialDirectory="" debugSearchPath="" autoConnectCapabilities="3199"/>
 </session>
