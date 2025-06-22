@@ -60,13 +60,13 @@ void Error_Handler(void);
 #define ENC_TIM htim4
 #define LED_Pin GPIO_PIN_1
 #define LED_GPIO_Port GPIOA
-#define KEY1_Pin GPIO_PIN_10
+#define KEY1_Pin GPIO_PIN_12
 #define KEY1_GPIO_Port GPIOB
-#define KEY2_Pin GPIO_PIN_11
+#define KEY2_Pin GPIO_PIN_13
 #define KEY2_GPIO_Port GPIOB
-#define KEY3_Pin GPIO_PIN_12
+#define KEY3_Pin GPIO_PIN_14
 #define KEY3_GPIO_Port GPIOB
-#define KEY4_Pin GPIO_PIN_13
+#define KEY4_Pin GPIO_PIN_15
 #define KEY4_GPIO_Port GPIOB
 #define KEY_Pin GPIO_PIN_8
 #define KEY_GPIO_Port GPIOA
