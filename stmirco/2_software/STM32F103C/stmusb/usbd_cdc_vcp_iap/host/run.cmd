@@ -1,0 +1,1 @@
+java --module-path "C:/Users/uYanki/Downloads/openjfx-21.0.7_windows-x64_bin-sdk/javafx-sdk-21.0.7/lib" --add-modules javafx.controls,javafx.fxml -jar STM32Flasher.jar
