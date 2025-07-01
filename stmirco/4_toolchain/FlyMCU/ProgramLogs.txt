@@ -1,0 +1,74 @@
+[2023-01-04 22:05:Program Success:37FFDB054D43303534581343 E:\board-stm32f103rc-berial\6.Firmware\7.lcd\st7735_spi1.hex
+[2023-01-10 01:50:Program Success:37FFDB054D43303534581343 E:\board-stm32f103rc-berial\7.Example\HAL\19.GUI\01 EmberGL\06 LitMonkey\MDK-ARM\demo\demo.hex
+[2023-04-09 00:17:Program Success:D55C6A1A000000005C05CF01 E:\board-stm32f103rc-berial\6.Firmware\2.i2c_scan\i2c_scan.hex
+[2023-04-09 00:17:Program Success:D55C6A1A000000005C05CF01 E:\board-stm32f103rc-berial\6.Firmware\1.helloworld\helloworld.hex
+[2023-04-09 00:20:Program Success:D55C6A1A000000005C05CF01 E:\board-stm32f103rc-berial\7.Example\std\Demos\i2c\scan\Objects\demo.hex
+[2023-04-09 00:22:Program Success:D55C6A1A000000005C05CF01 E:\board-stm32f103rc-berial\7.Example\hal\spi\ws2812\MDK-ARM\demo\demo.hex
+[2023-04-09 00:23:Program Success:D55C6A1A000000005C05CF01 E:\board-stm32f103rc-berial\7.Example\hal\tim\ws2812\MDK-ARM\demo\demo.hex
+[2023-04-09 00:24:Program Success:37FFDB054D43303534581343 E:\board-stm32f103rc-berial\7.Example\hal\tim\ws2812\MDK-ARM\demo\demo.hex
+[2023-04-09 00:44:Program Success:D55C6A1A000000005C05CF01 E:\board-stm32f103rc-berial\7.Example\std\Demos\i2c\scan\Objects\demo.hex
+[2023-04-09 00:44:Program Success:D55C6A1A000000005C05CF01 E:\board-stm32f103rc-berial\7.Example\std\Demos\i2c\mpu6050\Objects\demo.hex
+[2023-04-09 00:45:Program Success:D55C6A1A000000005C05CF01 E:\board-stm32f103rc-berial\6.Firmware\4.mpu6050\euler.hex
+[2023-04-09 00:45:Program Success:D55C6A1A000000005C05CF01 E:\board-stm32f103rc-berial\6.Firmware\4.mpu6050\kalman.hex
+[2023-04-09 00:46:Program Success:D55C6A1A000000005C05CF01 E:\board-stm32f103rc-berial\6.Firmware\4.mpu6050\dmp.hex
+[2023-04-09 00:58:Program Success:D55C6A1A000000005C05CF01 E:\board-stm32f103rc-berial\6.Firmware\4.mpu6050\euler.hex
+[2023-04-09 01:49:Program Success:D55C6A1A000000005C05CF01 E:\board-stm32f103rc-berial\6.Firmware\4.mpu6050\dmp.hex
+[2023-04-09 01:50:Program Success:D55C6A1A000000005C05CF01 E:\board-stm32f103rc-berial\6.Firmware\4.mpu6050\kalman.hex
+[2023-04-09 01:50:Program Success:D55C6A1A000000005C05CF01 E:\board-stm32f103rc-berial\6.Firmware\1.helloworld\helloworld.hex
+[2023-04-09 11:23:Program Success:D55C6A1A000000005C05CF01 E:\board-stm32f103rc-berial\6.Firmware\4.mpu6050\euler.hex
+[2023-04-09 11:24:Program Success:D55C6A1A000000005C05CF01 E:\board-stm32f103rc-berial\6.Firmware\4.mpu6050\dmp.hex
+[2023-04-09 11:29:Program Success:D55C6A1A000000005C05CF01 E:\board-stm32f103rc-berial\7.Example\hal\i2c\mpu6050\dmp\MDK-ARM\demo\demo.hex
+[2023-04-09 11:34:Program Success:D55C6A1A000000005C05CF01 E:\board-stm32f103rc-berial\7.Example\hal\i2c\mpu6050\dmp\MDK-ARM\demo\demo.hex
+[2023-04-09 11:58:Program Success:FFFFFFFFFFFFFFFFFFFFFFFF E:\board-stm32f103rc-berial\7.Example\hal\spi\st7735\base\MDK-ARM\demo\demo.hex
+[2023-04-29 03:51:Program Success:D55C6A1A000000005C05CF01 D:\Desktop\2.4inch_Arduino_ILI9341_V3.0\STM32 Demo_STM32F103RCT6\STM32综合测试程序ILI9341_IO模拟\OBJ\TOUCH.hex
+[2023-04-29 03:55:Program Success:D55C6A1A000000005C05CF01 D:\Desktop\2.4inch_Arduino_ILI9341_V3.0\STM32 Demo_STM32F103RCT6\STM32综合测试程序ILI9341_IO模拟\OBJ\TOUCH.hex
+[2023-04-29 03:58:Program Success:D55C6A1A000000005C05CF01 D:\Desktop\2.4inch_Arduino_ILI9341_V3.0\STM32 Demo_STM32F103RCT6\STM32综合测试程序ILI9341_IO模拟\OBJ\TOUCH.hex
+[2023-04-29 03:59:Program Success:D55C6A1A000000005C05CF01 D:\Desktop\2.4inch_Arduino_ILI9341_V3.0\STM32 Demo_STM32F103RCT6\STM32综合测试程序ILI9341_IO模拟\OBJ\TOUCH.hex
+[2023-04-29 04:08:Program Success:D55C6A1A000000005C05CF01 D:\Desktop\2.4inch_Arduino_ILI9341_V3.0\STM32 Demo_STM32F103RCT6\STM32综合测试程序ILI9341_IO模拟\OBJ\TOUCH.hex
+[2023-04-29 16:09:Program Success:D55C6A1A000000005C05CF01 E:\board-stm32f103rc-berial\7.Example\hal\spi\st7735\base\MDK-ARM\demo\demo.hex
+[2023-04-29 16:09:Program Success:D55C6A1A000000005C05CF01 D:\Desktop\2.4inch_Arduino_ILI9341_V3.0\STM32 Demo_STM32F103RCT6\STM32综合测试程序ILI9341_IO模拟\OBJ\TOUCH.hex
+[2023-04-29 16:13:Program Success:D55C6A1A000000005C05CF01 E:\board-stm32f103rc-berial\6.Firmware\7.lcd\st7735_spi1.hex
+[2023-04-29 16:17:Program Success:D55C6A1A000000005C05CF01 D:\Desktop\2.4inch_Arduino_ILI9341_V3.0\STM32 Demo_STM32F103RCT6\STM32综合测试程序ILI9341_IO模拟\OBJ\TOUCH.hex
+[2023-04-29 16:19:Program Success:D55C6A1A000000005C05CF01 D:\Desktop\2.4inch_Arduino_ILI9341_V3.0\STM32 Demo_STM32F103RCT6\STM32综合测试程序ILI9341_IO模拟\OBJ\TOUCH.hex
+[2023-04-29 16:21:Program Success:D55C6A1A000000005C05CF01 D:\Desktop\2.4inch_Arduino_ILI9341_V3.0\STM32 Demo_STM32F103RCT6\STM32综合测试程序ILI9341_IO模拟\OBJ\TOUCH.hex
+[2023-04-29 16:26:Program Success:D55C6A1A000000005C05CF01 D:\Desktop\2.4inch_Arduino_ILI9341_V3.0\STM32 Demo_STM32F103RCT6\STM32综合测试程序ILI9341_IO模拟\OBJ\TOUCH.hex
+[2023-04-29 16:30:Program Success:D55C6A1A000000005C05CF01 D:\Desktop\2.4inch_Arduino_ILI9341_V3.0\STM32 Demo_STM32F103RCT6\STM32综合测试程序ILI9341_IO模拟\OBJ\TOUCH.hex
+[2023-04-29 16:37:Program Success:D55C6A1A000000005C05CF01 D:\Desktop\2.4inch_Arduino_ILI9341_V3.0\STM32 Demo_STM32F103RCT6\STM32综合测试程序ILI9341_IO模拟\OBJ\TOUCH.hex
+[2023-04-29 16:40:Program Success:D55C6A1A000000005C05CF01 D:\Desktop\2.4inch_Arduino_ILI9341_V3.0\STM32 Demo_STM32F103RCT6\STM32综合测试程序ILI9341_IO模拟\OBJ\TOUCH.hex
+[2023-04-29 16:41:Program Success:FFFFFFFFFFFFFFFFFFFFFFFF D:\Desktop\2.4inch_Arduino_ILI9341_V3.0\STM32 Demo_STM32F103RCT6\STM32综合测试程序ILI9341_IO模拟\OBJ\TOUCH.hex
+[2023-04-29 16:46:Program Success:D55C6A1A000000005C05CF01 D:\Desktop\2.4inch_Arduino_ILI9341_V3.0\STM32 Demo_STM32F103RCT6\STM32综合测试程序ILI9341_IO模拟\OBJ\TOUCH.hex
+[2023-05-24 17:12:Program Success:FFFFFFFFFFFFFFFFFFFFFFFF D:\bdy\梁山Pi开发板资料\资源包\04软件资料\代码例程-视频注释版\001寄存器点灯\Project\Objects\GD32F450.hex
+[2023-05-24 17:34:Program Success:FFFFFFFFFFFFFFFFFFFFFFFF D:\bdy\梁山Pi开发板资料\资源包\04软件资料\代码例程-视频注释版\001寄存器点灯\Project\Objects\GD32F450.hex
+[2023-05-24 17:35:Program Success:FFFFFFFFFFFFFFFFFFFFFFFF D:\bdy\梁山Pi开发板资料\资源包\04软件资料\代码例程-视频版\003滴答定时器灯闪烁\Project\Objects\GD32F450.hex
+[2023-05-24 17:38:Program Success:FFFFFFFFFFFFFFFFFFFFFFFF D:\bdy\梁山Pi开发板资料\资源包\04软件资料\代码例程-视频版\007外部中断按键点灯\Project\Objects\GD32F450.hex
+[2023-05-24 17:43:Program Success:FFFFFFFFFFFFFFFFFFFFFFFF D:\bdy\梁山Pi开发板资料\资源包\04软件资料\代码例程-视频版\005串口打印信息\Project\Objects\GD32F450.hex
+[2023-05-24 17:53:Program Success:FFFFFFFFFFFFFFFFFFFFFFFF D:\bdy\梁山Pi开发板资料\资源包\04软件资料\代码例程-视频版\005串口打印信息\Project\Objects\GD32F450.hex
+[2023-05-24 17:54:Program Success:FFFFFFFFFFFFFFFFFFFFFFFF D:\bdy\梁山Pi开发板资料\资源包\04软件资料\代码例程-视频版\004位带操作\Project\Objects\GD32F450.hex
+[2023-05-24 17:56:Program Success:FFFFFFFFFFFFFFFFFFFFFFFF D:\bdy\梁山Pi开发板资料\资源包\04软件资料\代码例程-视频版\005串口打印信息\Project\Objects\GD32F450.hex
+[2023-05-24 17:57:Program Success:FFFFFFFFFFFFFFFFFFFFFFFF D:\bdy\梁山Pi开发板资料\资源包\04软件资料\代码例程-视频版\005串口打印信息\Project\Objects\GD32F450.hex
+[2023-05-24 18:11:Program Success:FFFFFFFFFFFFFFFFFFFFFFFF D:\bdy\梁山Pi开发板资料\资源包\04软件资料\代码例程-视频版\005串口打印信息\Project\Objects\GD32F450.hex
+[2023-05-24 18:12:Program Success:FFFFFFFFFFFFFFFFFFFFFFFF D:\bdy\梁山Pi开发板资料\资源包\04软件资料\代码例程-视频版\005串口打印信息\Project\Objects\GD32F450.hex
+[2023-05-24 18:12:Program Success:FFFFFFFFFFFFFFFFFFFFFFFF D:\bdy\梁山Pi开发板资料\资源包\04软件资料\代码例程-视频版\005串口打印信息\Project\Objects\GD32F450.hex
+[2023-05-24 18:20:Program Success:FFFFFFFFFFFFFFFFFFFFFFFF D:\bdy\梁山Pi开发板资料\资源包\04软件资料\代码例程-视频版\005串口打印信息\Project\Objects\GD32F450.hex
+[2023-05-24 18:23:Program Success:FFFFFFFFFFFFFFFFFFFFFFFF D:\bdy\梁山Pi开发板资料\资源包\04软件资料\代码例程-视频版\005串口打印信息\Project\Objects\GD32F450.hex
+[2023-05-24 18:51:Program Success:FFFFFFFFFFFFFFFFFFFFFFFF D:\bdy\梁山Pi开发板资料\资源包\04软件资料\代码例程-视频版\005串口打印信息\Project\Objects\GD32F450.hex
+[2023-05-24 18:51:Program Success:FFFFFFFFFFFFFFFFFFFFFFFF D:\bdy\梁山Pi开发板资料\资源包\04软件资料\代码例程-视频版\005串口打印信息\Project\Objects\GD32F450.hex
+[2023-05-24 19:02:Program Success:FFFFFFFFFFFFFFFFFFFFFFFF D:\bdy\梁山Pi开发板资料\资源包\04软件资料\代码例程-视频版\005串口打印信息\Project\Objects\GD32F450.hex
+[2023-05-24 19:24:Program Success:FFFFFFFFFFFFFFFFFFFFFFFF D:\bdy\梁山Pi开发板资料\资源包\04软件资料\代码例程-视频版\005串口打印信息\Project\Objects\GD32F450.hex
+[2023-05-24 19:27:Program Success:FFFFFFFFFFFFFFFFFFFFFFFF D:\bdy\梁山Pi开发板资料\资源包\04软件资料\代码例程-视频版\005串口打印信息\Project\Objects\GD32F450.hex
+[2023-05-24 19:33:Program Success:FFFFFFFFFFFFFFFFFFFFFFFF D:\bdy\梁山Pi开发板资料\资源包\04软件资料\代码例程-视频版\004位带操作\Project\Objects\GD32F450.hex
+[2023-06-09 23:59:Program Success:33FFD605474D303523552043 C:\Users\Administrator\Desktop\11\MDK-ARM\11\11.hex
+[2023-06-10 00:02:Program Success:33FFD605474D303523552043 D:\board-stm32f103rc-berial\6.Firmware\1.helloworld\MDK-ARM\01.GPIO\01.hex
+[2023-06-20 00:21:Program Success:FFFFFFFFFFFFFFFFFFFFFFFF D:\bdy\梁山Pi开发板资料\资源包\04软件资料\代码例程-视频版\004位带操作\Project\Objects\GD32F450.hex
+[2023-06-20 00:22:Program Success:FFFFFFFFFFFFFFFFFFFFFFFF C:\Users\Administrator\Downloads\gd32f427-tiny-maix-master\build\GD32F450Z_START.hex
+[2023-06-20 00:43:Program Success:FFFFFFFFFFFFFFFFFFFFFFFF C:\Users\Administrator\Downloads\gd32f427-tiny-maix-master\build\GD32F450Z_START.hex
+[2023-06-20 00:55:Program Success:FFFFFFFFFFFFFFFFFFFFFFFF C:\Users\Administrator\Downloads\gd32f427-tiny-maix-master\build\GD32F450Z_START.hex
+[2023-06-20 00:57:Program Success:FFFFFFFFFFFFFFFFFFFFFFFF C:\Users\Administrator\Downloads\gd32f427-tiny-maix-master\build\GD32F450Z_START.hex
+[2023-06-20 00:59:Program Success:FFFFFFFFFFFFFFFFFFFFFFFF C:\Users\Administrator\Downloads\gd32f427-tiny-maix-master\build\GD32F450Z_START.hex
+[2023-07-15 16:26:Program Success:37FFDB054D43303534581343 D:\board-stm32f103rc-berial\6.Firmware\3.adc_read\adc_read.hex
+[2023-07-15 16:37:Program Success:37FFDB054D43303534581343 D:\board-stm32f103rc-berial\6.Firmware\3.adc_read\adc_read.hex
+[2023-07-15 16:38:Program Success:37FFDB054D43303534581343 D:\board-stm32f103rc-berial\6.Firmware\3.adc_read\project\MDK-ARM\05.ADC\05.hex
+[2023-07-15 16:38:Program Success:37FFDB054D43303534581343 D:\board-stm32f103rc-berial\6.Firmware\3.adc_read\project\MDK-ARM\05.ADC\05.hex
+[2023-07-15 16:39:Program Success:37FFDB054D43303534581343 D:\board-stm32f103rc-berial\6.Firmware\3.adc_read\project\MDK-ARM\05.ADC\05.hex
+[2023-09-02 20:13:Program Success:37FFDB054D43303534581343 C:\Users\Administrator\Downloads\STM32F103RB_USB_to_UART_SPI_I2C-master\Debug\STM32_MULTIPROTOCOL.hex
+[2024-07-25 00:28:Program Success:F5421400004054501B27B505 F:\gsdk\examples\at32std_f415cb\MDK-ARM\Object\demo.hex
